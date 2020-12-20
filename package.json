@@ -1,0 +1,22 @@
+{
+  "name": "adriatico-tours",
+  "version": "1.0.0",
+  "description": "Tours and Trips Booking website",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass assets/sass/main.scss assets/css/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boki136/Adriatico-Tours.git"
+  },
+  "author": "Boris Gersic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boki136/Adriatico-Tours/issues"
+  },
+  "homepage": "https://github.com/Boki136/Adriatico-Tours#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
