@@ -1,0 +1,245 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+//Color Used On Website
+
+$dark-cyan: #00AB99;
+$bright-red: #EA3F28;
+$vivid-yellow: #EFCA08;
+$dark-grey: $dark-grey;
+
+// Font Awsome Skeleton
+
+%font-awsome {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+// Buttons
+
+@mixin primary-button {
+    background: $dark-cyan;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 9px 30px;
+    border: none;
+    font-weight: 500;
+}
+
+
+
+/********************* Navbar  **/
+
+.menu-utilities {
+    background: #555555;
+    height: 35px;
+    margin-bottom: 25px;
+
+    ul {
+        text-align: right;
+        padding-right: 15%;
+    }
+  
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 35px;
+        margin-right: 8px;
+         color: #ffffff;
+
+         & span {
+             padding-left: 3px;
+         }
+    }
+
+    a {
+        color: #ffffff;
+    }
+}
+
+#menu {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+
+    ul {
+        padding: 8px 0 0 0;
+    }
+
+        li {
+            display: inline-block;
+            margin: 0 8px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+
+         &:nth-child(1)::after {
+           @extend %font-awsome;
+            content: "\f078";
+            vertical-align: middle;
+            padding-left: 3px;
+            font-size: 12px;
+            color: #555555;
+
+        }
+
+            a {
+                color: #555555;
+                font-size: 1em;
+                display: inline-block;
+            }
+        }
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    max-height: 200px;
+}
+
+.menu_content {
+    width:55%;
+    position: relative;
+}
+
+.menu_content-search {
+    width: 100%;
+    padding: 0.45em;
+    border-radius: 5px;
+    border: 1px solid #cacaca;
+    outline: #ffffff;
+}
+
+.search-btn {
+
+    position: absolute;
+    right: 0;
+    outline: #ffffff;
+    line-height: 37px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: none;
+    padding-left: 8px;
+    background: #f7f7f7;
+    border: 1px solid #a5a5a5;
+    border-left: 1px solid #dedede;
+
+
+    & i {
+        color: #555555;
+        padding: 5px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        background: darken(#f7f7f7, 5%);
+    }
+}
+
+.menu-cta {
+    @include primary-button;
+       margin: 0 0 28px 2%;
+
+    &:hover {
+        color: #ffffff;
+        background: lighten($dark-cyan, 3%);
+    }
+}
+
+.destination_expand {
+    width: 65%;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    transition: 5s ease-in;
+
+}
+
+.destination_expand-section {
+    border: 1px solid #cacaca;
+    width: 33%;
+
+    h2 {
+        font-size: 18px;
+        margin: 8px;
+        color: $dark-cyan;
+
+        &::before {
+        @extend %font-awsome;
+        content: "\f35a";
+        font-size:16px;
+        padding-right: 5px;
+
+             }
+
+        }
+
+    ul {
+        padding: 5%;
+
+    }
+
+}
+
+.destination_expand-img {
+    width: 100%;
+}
+
+.destination_expand-link {
+    border-bottom: 1px dashed #cacaca;
+    border-width: 70%;
+    padding: 0.3em 0;
+    position: relative;
+
+    & a {
+        color: $dark-grey
+    }
+
+    & i {
+        position: absolute;
+        right: 0;
+        font-size: 13px;
+        padding-top: 10px;
+        color: $dark-cyan;
+    }
+}
+
+
+
+/***********************Media Query ***/
+
+@media only screen and (max-width: 1050px) {
+
+    #menu {
+        width: 95%;
+    }
+
+     #menu li {
+         margin-left: 3px;
+     }
+
+}
+
+@media only screen and (max-width: 840px) {
+
+
+    .navbar-cta {
+        padding: 9px 15px;
+    }
+
+    #menu li:nth-child(4) {
+        margin-left: 0;
+    }
+}

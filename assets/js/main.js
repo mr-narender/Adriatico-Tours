@@ -1,3 +1,5 @@
+// Expand the destinations event 
 
-alert("Hello");
-$("body").css("background-color", "red");
+$(".dropdown").click(function() {
+    $(".destination_expand").css("display", "flex").show();
+})
