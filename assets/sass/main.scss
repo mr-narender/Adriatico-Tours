@@ -291,6 +291,7 @@ $dark-grey: #555555;
 
 #mobile-menu {
     clear: both;
+    background: grey;
 }
 
 .mobile_menu-content {
@@ -334,19 +335,20 @@ $dark-grey: #555555;
     z-index: 5;
     position: absolute;
     top: 0;
+    border-right: 1px solid $dark-cyan;
 
 }
 
 .level-one {
-    padding: 5% 5% 0 15%;
+    padding: 5% 0;
     font-size: 30px;
-        margin-top: 150px;
+    margin-top: 150px;
+    display: none;
 }
 
 .mobile_menu-expand-link {
-   padding: 15px 0;
+  padding: 15px 0 15px 10%;
 
- 
         a {
             color: #ffffff;
         }
@@ -356,26 +358,36 @@ $dark-grey: #555555;
             font-size: 20px;
             padding-left: 20px;
         }
+
+        &:hover {
+            background: $dark-grey;
+        }
 }
 
 .rotate {
     transform: rotate(90deg);
-    padding-left: 0 !important;
+    padding: 5% 0 !important;
     margin-left: 20px;
-
 }
 
 .level-two {
-    margin: 0 0 0 2%;
     font-size: 25px;
     display: none;
 
+    li {
+       
+        padding: 15px 0 15px 15%;
+    }
 }
 
-.level-three {
-    margin: 0 0 0 4%;
+.level-two ul {
+    
     font-size: 22px;
     display: none;
+
+    li {
+    padding: 15px 0 15px 20%;
+    }
     
 }
 
@@ -414,15 +426,19 @@ $dark-grey: #555555;
 
     .menu-utilities {
         margin: 0;
-        height: 50px;
+        height: 60px;
         vertical-align: middle;
-        line-height: 50px;
+        line-height: 60px;
 
         ul {
             text-align: left;
             padding-right: 0;
             padding-left: 15px;
-            font-size: 0.85em;
+            font-size: 0.95em;
+
+            li {
+                margin-right: 5px;
+            }
 
         &:nth-child(1) {
             float: left;
@@ -461,7 +477,7 @@ $dark-grey: #555555;
     }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 585px) {
 
     .menu-utilities ul:nth-child(2) {
             display: none;

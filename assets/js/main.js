@@ -24,8 +24,10 @@ $(document).ready(function () {
     var mobileMenu = $(".mobile_menu-expand");
     mobileMenu.width(0);
     $(".menu-open").click(function () {
+        $(".level-one").show();
         $(mobileMenu).show().animate({
             'width': '65%'
+
         }, 175);
     })
 
@@ -36,12 +38,23 @@ $(document).ready(function () {
         $(mobileMenu).show().animate({
             'width': '0'
         }, 100);
-    })
+
+        $(".level-one").toggle();
+        $(".level-two,.level-three").hide();
+        $(".arrow-drop-lg, .arrow-drop-sm").removeClass("rotate");
+
+
+    });
+
 
     // Menu Content Functionality
 
 
-    $(".arrow-drop").click(function () {
+
+    //Second Level Expand
+
+
+    $(".arrow-drop-lg").click(function () {
         count += 1;
         $(this).addClass("rotate");
         $(".level-two").show();
@@ -55,35 +68,49 @@ $(document).ready(function () {
     });
 
 
-    $(".arrow-drop-sm").click(function () {
+    //Third level expand
 
-            count += 1;
-            var dropdownSmall = $(".arrow-drop-sm");
+        
+      var triggerDrop = $(".arrow-drop-sm");
+      var eachDestination = $(".level-three");
+
+        $(triggerDrop).click(function(el) {
+        count += 1;  
+    
+
+      if(el.target == triggerDrop[0]) {
+        $(triggerDrop[0]).addClass("rotate");
+        $(eachDestination[0]).show();
+
+            if (count % 2 == 0) {
+            $(this).removeClass("rotate");
+            $(eachDestination[0]).hide();
+        }
+        
+      
+    }   else if (el.target == triggerDrop[1]) {
+           $(triggerDrop[1]).addClass("rotate");
+        $(eachDestination[1]).show();
+
+            if (count % 2 == 0) {
+            $(this).removeClass("rotate");
+            $(eachDestination[1]).hide();
+        }
+      }  else if (el.target == triggerDrop[2]) {
+           $(triggerDrop[2]).addClass("rotate");
+        $(eachDestination[2]).show();
+
+            if (count % 2 == 0) {
+            $(this).removeClass("rotate");
+            $(eachDestination[2]).hide();
+        }
+      }
+    
  
-            if(dropdownSmall[0] && count == 1) {
-
-                $(".level-three").show();
-            }
-
-
-
+    
 });
 
 });
-
-
-
-    // 
-    //     
-    //     $(this).addClass("rotate");
-    //     $(".level-three").show();
-    //     if (count % 2 == 0) {
-    //         $(this).removeClass("rotate");
-    //         $(".level-three").hide();
-
-    //     }
-
-    // 
 
 
 
