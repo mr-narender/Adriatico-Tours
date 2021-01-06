@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+
 html,
 body {
   overflow-x: hidden;
@@ -38,12 +40,7 @@ $bright-red: #EA3F28;
 $vivid-yellow: #EFCA08;
 $dark-grey: #555555;
 
-// Font Awsome Skeleton
 
-%font-awsome {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
 
 // Buttons
 
@@ -56,7 +53,14 @@ $dark-grey: #555555;
     font-weight: 500;
 }
 
-// Transitions 
+/**************** Font Awsome Skeleton *********/
+
+%font-awsome {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/****************** Transitions ***/
 
 %fast-transition {
     transition: all 0.1s ease-in;
@@ -83,7 +87,7 @@ $dark-grey: #555555;
         vertical-align: middle;
         line-height: 35px;
         margin-right: 8px;
-         color: #ffffff;
+        color: #ffffff;
 
          & span {
              padding-left: 3px;
@@ -94,6 +98,15 @@ $dark-grey: #555555;
         color: #ffffff;
     }
 }
+
+
+/********************* Navigation  **/
+
+#nav-wrapper {
+    position: relative;
+}
+
+
 
 #menu {
     width: 80%;
@@ -133,19 +146,7 @@ $dark-grey: #555555;
         }
 }
 
-#mobile-menu {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
 
-    i {
-        color: $dark-grey;
-    }
-}
-
-/********************* Navigation  **/
 
 .logo {
     width: 200px;
@@ -196,16 +197,19 @@ $dark-grey: #555555;
 .menu-cta {
     @include primary-button;
        margin: 0 0 12px 2%;
+       transition: 0.1s ease-in;
 
     &:hover {
         color: #ffffff;
         background: lighten($dark-cyan, 3%);
+        transform: scale(1.06);
+        font-weight: 600;
     }
 }
 
 /********************* Dropwdown Expand ***/
 
-.dropdown {
+.expand-lg {
     cursor: pointer;
 }
 
@@ -283,6 +287,102 @@ $dark-grey: #555555;
 
 
 
+/*************************** Mobile Menu ****/
+
+#mobile-menu {
+    clear: both;
+}
+
+.mobile_menu-content {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+
+  
+}
+
+.menu-open{
+    width: 50px;
+    height: auto;
+    min-width: 30px;
+}
+
+ .search-expand {
+     width: 40px;
+    height: auto;
+    min-width: 25px;
+ }
+
+.menu-exit {
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px 50px 0 0;
+    font-size: 40px;
+    color: white;
+}
+
+.mobile_menu-expand {
+    max-width: 550px;
+    display: none;
+    height: 100vh;
+    background: $dark-cyan;
+    opacity: 0.90;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+
+}
+
+.level-one {
+    padding: 5% 5% 0 15%;
+    font-size: 30px;
+        margin-top: 150px;
+}
+
+.mobile_menu-expand-link {
+   padding: 15px 0;
+
+ 
+        a {
+            color: #ffffff;
+        }
+
+        i {
+            color: #ffffff;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+}
+
+.rotate {
+    transform: rotate(90deg);
+    padding-left: 0 !important;
+    margin-left: 20px;
+
+}
+
+.level-two {
+    margin: 0 0 0 2%;
+    font-size: 25px;
+    display: none;
+
+}
+
+.level-three {
+    margin: 0 0 0 4%;
+    font-size: 22px;
+    display: none;
+    
+}
+
+
+
+
+
 /***********************Media Query ***/
 
 @media only screen and (max-width: 1050px) {
@@ -300,12 +400,16 @@ $dark-grey: #555555;
 @media only screen and (max-width: 990px) {
 
 
-    #menu {
+    #menu, .destination_expand {
         display: none;
     }
 
-    #mobile-menu{
+    .mobile_menu-content{
         display: flex;
+    }
+
+    .mobile_menu-expand {
+        display: block;
     }
 
     .menu-utilities {
@@ -337,6 +441,10 @@ $dark-grey: #555555;
         }
     }
 
+    nav {
+        clear: both;
+    }
+
 
 
 }
@@ -351,4 +459,12 @@ $dark-grey: #555555;
     #menu li:nth-child(4) {
         margin-left: 0;
     }
+}
+
+@media only screen and (max-width: 560px) {
+
+    .menu-utilities ul:nth-child(2) {
+            display: none;
+        }
+
 }
