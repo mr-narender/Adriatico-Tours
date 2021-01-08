@@ -96,11 +96,17 @@ li {
   border: 1px solid #cacaca;
   outline: #ffffff; }
 
+.input-wrapper-lg {
+  position: relative;
+  width: 100%; }
+  .input-wrapper-lg button {
+    position: absolute;
+    line-height: 44.5px; }
+
 .search-btn {
   position: absolute;
   right: 0;
   outline: #ffffff;
-  line-height: 44.5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom: none;
@@ -130,21 +136,24 @@ li {
     transform: scale(1.06);
     font-weight: 600; }
 
-/********************* Dropwdown Expand ***/
+/********************* Destination Dropdown Expand ***/
 .expand-lg {
   cursor: pointer; }
 
 .destination_expand {
   width: 64%;
+  background: #ffffff;
   min-width: 800px;
   margin: 10px auto 0 auto;
-  display: flex;
-  visibility: hidden;
-  justify-content: center; }
+  display: none;
+  justify-content: center;
+  z-index: 10;
+  position: absolute;
+  left: 20%; }
 
 .destination_expand-section {
   border: 1px solid #cacaca;
-  width: 33%; }
+  width: 33.3%; }
   .destination_expand-section h2 {
     font-size: 1.2em;
     margin: 8px;
@@ -190,7 +199,7 @@ li {
   align-items: center;
   width: 90%;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 100;
   position: relative; }
 
 .menu-open {
@@ -216,10 +225,13 @@ li {
   height: 100vh;
   background: #00AB99;
   opacity: 0.90;
-  z-index: 5;
+  z-index: 100;
   position: absolute;
   top: 0;
   border-right: 1px solid #00AB99; }
+
+.arrow-drop-sm, .arrow-drop-lg {
+  cursor: pointer; }
 
 .level-one {
   padding: 5% 0;
@@ -272,12 +284,49 @@ li {
     position: relative;
     top: 10px; }
 
-.input-wrapper {
+.input-wrapper-sm {
   position: relative;
   width: 100%; }
-  .input-wrapper button {
+  .input-wrapper-sm button {
     position: absolute;
-    line-height: 56px; }
+    line-height: 56.6px; }
+
+/***************************** Hero Section **/
+#hero-section {
+  margin-top: 25px;
+  z-index: 5;
+  background: url("/assets/images/hero-banner.png") no-repeat center;
+  background-size: cover;
+  height: 700px;
+  position: relative; }
+
+.hero-section_intro-wrapper {
+  width: 65%; }
+
+.hero-section_intro-wrapper {
+  width: 65%;
+  margin: 0 auto;
+  padding-top: 300px; }
+
+.hero-section_intro {
+  color: #ffffff;
+  font-size: 235%;
+  font-weight: 600;
+  text-align: center; }
+
+.hero-section_social {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  font-size: 30px; }
+  .hero-section_social li:nth-child(1), .hero-section_social li:nth-child(2) {
+    border-bottom: 1px solid #e2e2e2; }
+  .hero-section_social a {
+    padding: 10px; }
+  .hero-section_social i {
+    color: #EA3F28;
+    padding-bottom: 15px; }
 
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
@@ -287,6 +336,7 @@ li {
     margin-left: 2px; } }
 
 @media only screen and (max-width: 990px) {
+  /********** Navigation **/
   #menu, .destination_expand {
     display: none; }
   .mobile_menu-content {
@@ -313,7 +363,10 @@ li {
         .menu-utilities ul:nth-child(2) i {
           font-size: 22px; }
   nav {
-    clear: both; } }
+    clear: both; }
+  /********** Hero Section **/
+  .hero-section_intro-wrapper {
+    padding-top: 250px; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
