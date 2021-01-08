@@ -307,9 +307,6 @@ $dark-grey: #555555;
 
 /*************************** Mobile Menu ****/
 
-#mobile-menu {
-    clear: both;
-}
 
 .mobile_menu-content {
     display: none;
@@ -510,6 +507,11 @@ $dark-grey: #555555;
       i {
         color: $bright-red;
         padding-bottom: 15px;
+        @extend %fast-transition;
+
+        &:hover {
+            color: $dark-cyan;
+        }
     }
 
 
@@ -517,10 +519,6 @@ $dark-grey: #555555;
 
 
 }
-
-
-
-
 
 
 
@@ -567,41 +565,26 @@ $dark-grey: #555555;
             text-align: left;
             padding-right: 0;
             padding-left: 15px;
-            font-size: 0.95em;
+            font-size: 1em;
 
             li {
                 margin-right: 5px;
             }
 
-        &:nth-child(1) {
-            float: left;
-        }
-
-        &:nth-child(2) {
-            float: right;
-            padding-right: 15px;
-          
-
-            i {
-                font-size: 22px;
-            }
-        }
-
         }
     }
-
-    nav {
-        clear: both;
-    }
-
 
 
     /********** Hero Section **/
 
 .hero-section_intro-wrapper {
     padding-top: 250px;
+
 }
 
+.hero-section_intro {
+    font-size: 215%;
+}
 
   
 
@@ -665,4 +648,95 @@ $dark-grey: #555555;
       }
 
 
+/******************** Hero Section **/
+
+.hero-section_intro-wrapper {
+    width: 90%;
+}
+
+
+.hero-section_intro {
+    font-size: 200%;
+}
+
+.hero-section_social {
+    font-size: 25px;
+}
+
+
+}
+
+
+
+/******************** About Section **/
+
+#about-section {
+    margin: 150px auto 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.about-section_img {
+
+     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img:nth-child(1) {
+        width: 350px;
+        border-radius: 10px;
+    
+    }
+
+      img:nth-child(2) {
+        width: 250px;
+        height: auto;
+        position: relative;
+        right: 180px;
+        border-radius: 10px;
+    }
+
+}
+
+.about-section_content {
+
+    margin-left: 2%;
+
+    h3 {
+        font-size: 1.35em;
+        color: $dark-cyan;
+        font-weight: 700;
+    
+    }
+
+    h1 {
+        color: $dark-grey;
+        padding: 30px 0;
+    }
+
+    p {
+        padding-bottom: 15px;
+    }
+
+    a {
+        color: $bright-red;
+        font-weight: 700;
+        line-height: 40px;
+        font-size: 1.35em;
+
+        &::after {
+            
+            content: "\2192";
+            padding-left: 20px;
+            font-size: 40px;
+    
+            
+            
+        }
+    }
+    
 }

@@ -156,6 +156,8 @@ $(".search-hide").click(function () {
 
 // Typing Effect 
 
+// Refrence W3Schools (https://www.w3schools.com/howto/howto_js_typewriter.asp)
+
 
 $("document").ready(function() {
 
