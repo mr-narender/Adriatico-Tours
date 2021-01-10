@@ -792,6 +792,99 @@ $dark-grey: #555555;
 }
 
 
+/***************************** Testimonials Section **/
+
+
+#user-testimonials {
+    width: 85%;
+    margin: 150px auto;
+    position: relative;
+}
+
+
+.user-testimonials_title h1 {
+    font-size: 35px;
+    
+    &::before {
+        @extend %font-awsome;
+        content: "\f10d";
+        color: $dark-cyan;
+        opacity: 0.5;
+        font-size: 65px;
+        padding-right: 10px;
+        display: block;
+        margin-left: -25px;
+
+    }
+
+}
+
+.carousel-item_content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 100px;
+
+}
+
+.carousel-item_individual {
+
+    h4 {
+        font-size: 22px;
+        padding-bottom: 5px;
+
+    }
+
+    p {
+        font-size: 15px;
+        padding-right: 10%;
+    }
+
+}
+
+.seperate {
+    border-right: 1px solid #ececec;
+}
+
+.reviewer-info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+
+    img {
+        width: 100px;
+        border-radius: 50%;
+        margin-top: 25px;
+
+    }
+
+    h5 {
+        position: relative;
+        top: 15px;
+        font-size: 16px;
+    }
+}
+
+
+.carousel-control-next, .carousel-control-prev {
+    position: static;
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 35px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-image: none;
+    color: $dark-grey;
+}
+
+
+.carousel-controls {
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
 
 
 /***********************Media Query ***/
@@ -1042,6 +1135,29 @@ $dark-grey: #555555;
          height: 350px;
      }
 
+
+
+     
+
+/*************************** Testemonials Section **/
+
+.carousel-item_content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.seperate {
+    border: none;
+}
+
+.reviewer-info img {
+
+    width: 75px;
+
+}
+
+
+
     
     
     }
@@ -1113,6 +1229,7 @@ $dark-grey: #555555;
         }
     }
 }
+
 
 
 

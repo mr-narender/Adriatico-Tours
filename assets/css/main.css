@@ -24,7 +24,7 @@ li {
   list-style: none; }
 
 /**************** Font Awsome Skeleton *********/
-#menu li:nth-child(1)::after, .destination_expand-section h2::before, .popular-destinations_box a::after, .popular-destinations_box h4::before {
+#menu li:nth-child(1)::after, .destination_expand-section h2::before, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -495,6 +495,69 @@ li {
     width: 175px;
     height: 175px; }
 
+/***************************** Testimonials Section **/
+#user-testimonials {
+  width: 85%;
+  margin: 150px auto;
+  position: relative; }
+
+.user-testimonials_title h1 {
+  font-size: 35px; }
+  .user-testimonials_title h1::before {
+    content: "\f10d";
+    color: #00AB99;
+    opacity: 0.5;
+    font-size: 65px;
+    padding-right: 10px;
+    display: block;
+    margin-left: -25px; }
+
+.carousel-item_content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 100px; }
+
+.carousel-item_individual h4 {
+  font-size: 22px;
+  padding-bottom: 5px; }
+
+.carousel-item_individual p {
+  font-size: 15px;
+  padding-right: 10%; }
+
+.seperate {
+  border-right: 1px solid #ececec; }
+
+.reviewer-info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center; }
+  .reviewer-info img {
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 25px; }
+  .reviewer-info h5 {
+    position: relative;
+    top: 15px;
+    font-size: 16px; }
+
+.carousel-control-next, .carousel-control-prev {
+  position: static;
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 35px; }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-image: none;
+  color: #555555; }
+
+.carousel-controls {
+  position: absolute;
+  right: 10px;
+  top: 0; }
+
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
   #menu {
@@ -601,7 +664,15 @@ li {
   /******************** Most Popular Destinations Section **/
   .popular-destinations_box {
     width: 225px;
-    height: 350px; } }
+    height: 350px; }
+  /*************************** Testemonials Section **/
+  .carousel-item_content {
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .seperate {
+    border: none; }
+  .reviewer-info img {
+    width: 75px; } }
 
 @media only screen and (max-width: 490px) {
   /****************** Navigation ***/
