@@ -24,7 +24,7 @@ li {
   list-style: none; }
 
 /**************** Font Awsome Skeleton *********/
-#menu li:nth-child(1)::after, .destination_expand-section h2::before, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before {
+#menu li:nth-child(1)::after, .destination_expand-section h2::before, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .footer-navigation li::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -41,6 +41,13 @@ li {
   opacity: 1; }
   .hr-small:not([size]) {
     height: 10px; }
+
+.hr-large {
+  width: 25%;
+  background: #fff0a0;
+  opacity: 1; }
+  .hr-large:not([size]) {
+    height: 5px; }
 
 /****************** Menu Utilities **/
 .menu-utilities {
@@ -586,6 +593,61 @@ li {
     height: 40px;
     border: none; }
 
+/************************ Footer Section **/
+#footer-section {
+  background: #555555; }
+
+.footer-section_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 5%;
+  color: #ffffff;
+  gap: 25px; }
+
+.about-intro {
+  width: 40%;
+  align-self: flex-start; }
+  .about-intro img {
+    width: 225px; }
+
+.footer-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 60%; }
+  .footer-navigation li {
+    padding: 5px 0 7px 0;
+    border-bottom: 1px dotted #ffffff;
+    position: relative; }
+    .footer-navigation li::after {
+      content: "\f054";
+      position: absolute;
+      right: 0; }
+  .footer-navigation a {
+    color: #ffffff; }
+
+.footer-navigation_section_one, .footer-two {
+  width: 50%; }
+
+.footer-section_contact-links {
+  text-align: right;
+  padding-right: 5%; }
+  .footer-section_contact-links li {
+    display: inline-block;
+    color: #ffffff;
+    padding-right: 5px;
+    font-size: 15px; }
+    .footer-section_contact-links li i {
+      background: #00AB99;
+      padding: 8px;
+      border-radius: 50%;
+      border: 1px double white;
+      color: #ffffff;
+      margin-right: 10px; }
+    .footer-section_contact-links li a {
+      color: #ffffff; }
+
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
   #menu {
@@ -672,7 +734,25 @@ li {
   .why-us_reasons {
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 35px; } }
+    gap: 35px; }
+  /*********************** Footer Section **/
+  .footer-section_wrapper {
+    flex-wrap: wrap; }
+  .about-intro {
+    width: 100%;
+    margin-bottom: 25px; }
+  .footer-navigation {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 25px; }
+    .footer-navigation li {
+      width: 260px; }
+  .footer-section_contact-links {
+    margin-top: 15px;
+    text-align: left;
+    padding: 0 5px; }
+    .footer-section_contact-links li {
+      margin-top: 10px; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/
@@ -717,7 +797,14 @@ li {
     .newsletter-section_content button {
       padding: 5px 12px;
       height: 30px;
-      font-size: 14px; } }
+      font-size: 14px; }
+  /*********************** Footer Section **/
+  .footer-navigation {
+    flex-wrap: wrap; }
+    .footer-navigation li {
+      width: 285px; }
+  .footer-navigation_section_one, .footer-navigation_section_two {
+    width: 100%; } }
 
 @media only screen and (max-width: 490px) {
   /****************** Navigation ***/

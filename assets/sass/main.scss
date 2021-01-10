@@ -80,6 +80,16 @@ $dark-grey: #555555;
     }
 }
 
+.hr-large {
+    width: 25%;
+    background: #fff0a0;
+    opacity: 1;
+
+    &:not([size]) {
+        height: 5px;
+    }
+}
+
 
 /****************** Menu Utilities **/
 
@@ -929,6 +939,87 @@ $dark-grey: #555555;
 
 
 
+/************************ Footer Section **/
+
+#footer-section {
+    background: $dark-grey;
+}
+
+.footer-section_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 5%;
+    color: #ffffff;
+    gap: 25px;
+
+}
+
+.about-intro {
+    width: 40%;
+    align-self: flex-start;
+
+    img {
+        width: 225px;
+    }
+    
+}
+
+
+.footer-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 60%;
+
+    li {
+        padding: 5px 0 7px 0;
+        border-bottom: 1px dotted #ffffff;
+        position: relative;
+
+            &::after {
+            @extend %font-awsome;
+            content: "\f054";
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    a {
+        color: #ffffff;
+    }
+}
+
+.footer-navigation_section_one, .footer-two {
+    width: 50%;
+}
+
+.footer-section_contact-links {
+
+text-align: right;
+padding-right: 5%;
+
+    li {
+        display: inline-block;
+        color: #ffffff;
+        padding-right: 5px;
+        font-size: 15px;
+
+        i {
+            background: $dark-cyan;
+            padding: 8px;
+            border-radius: 50%;
+            border: 1px double white;
+            color: #ffffff;
+            margin-right: 10px;
+        }
+
+        a {
+            color: #ffffff;
+        }
+    }
+}
+
 /***********************Media Query ***/
 
 @media only screen and (max-width: 1050px) {
@@ -1064,9 +1155,6 @@ $dark-grey: #555555;
     }
 
 
-
-    
-
 /************ About Section **/
 
 
@@ -1101,13 +1189,12 @@ $dark-grey: #555555;
     }
 
 
-    /********************** Most Popular Destinations Section ***/
+/********************** Most Popular Destinations Section ***/
 
     
 .popular-destinations_selection {
     flex-wrap: wrap;
 }
-
 
 
 
@@ -1118,6 +1205,39 @@ $dark-grey: #555555;
     justify-content: flex-start;
     gap: 35px;
 }
+
+/*********************** Footer Section **/
+
+    .footer-section_wrapper {
+        flex-wrap: wrap;
+    }
+
+    .about-intro {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .footer-navigation {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 25px;
+
+        li {
+            width: 260px;
+        }
+    }
+
+    .footer-section_contact-links {
+        
+        margin-top: 15px;
+        text-align: left;
+        padding: 0 5px;
+
+        li {
+            margin-top: 10px;
+        }
+    
+    }
 
 
 
@@ -1233,6 +1353,20 @@ $dark-grey: #555555;
 }
 
 
+/*********************** Footer Section **/
+
+
+.footer-navigation {
+    flex-wrap: wrap;
+
+    li {
+        width: 285px;
+    }
+}
+
+.footer-navigation_section_one, .footer-navigation_section_two {
+    width: 100%;
+}
 
 
     
