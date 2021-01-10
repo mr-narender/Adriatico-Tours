@@ -447,6 +447,12 @@ li {
     background: url("/assets/images/pula-popular-hover.png") no-repeat center; }
 
 /************************ Why Us Section **/
+.section-background_wrapper {
+  background: #fbfbfb;
+  padding: 1px;
+  width: 95%;
+  border-radius: 25px; }
+
 #why-us {
   width: 85%;
   margin: 150px auto; }
@@ -458,11 +464,11 @@ li {
   display: flex;
   justify-content: space-evenly;
   gap: 35px;
-  margin: 75px 0; }
+  margin: 75px 0 100px 0; }
   .why-us_reasons h4 {
     font-size: 22px; }
   .why-us_reasons img {
-    width: 50px;
+    width: 45px;
     margin-bottom: 25px; }
   .why-us_reasons p {
     padding: 5px 20px 5px 0;
@@ -472,6 +478,22 @@ li {
   width: 75%; }
   .partners_title p {
     margin-top: 35px; }
+
+.why-us_box {
+  width: 33%; }
+
+.partners-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  margin-top: 75px; }
+
+.partents-box {
+  border: 1px solid #fbfbfb;
+  box-shadow: 5px 5px 10px #eaeaea; }
+  .partents-box img {
+    width: 175px;
+    height: 175px; }
 
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
@@ -521,7 +543,13 @@ li {
     width: 90%; }
   .popular-destinations_box {
     width: 250px;
-    height: 375px; } }
+    height: 375px; }
+  /************************** Why Us Section **/
+  .why-us_reasons p {
+    padding-right: 15px;
+    font-size: 15px; }
+  .partners-wrapper {
+    flex-wrap: wrap; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
@@ -548,7 +576,17 @@ li {
     margin-left: 0; }
   /********************** Most Popular Destinations Section ***/
   .popular-destinations_selection {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  /************************** Why Us Section **/
+  .why-us_reasons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 35px; } }
+
+@media only screen and (max-width: 685px) {
+  /************************** Why Us Section **/
+  .why-us_box {
+    width: auto; } }
 
 @media only screen and (max-width: 585px) {
   /****************** Navigation ***/
