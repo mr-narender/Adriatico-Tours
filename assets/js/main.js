@@ -61,8 +61,8 @@ function expandLevelTwo() {
     $(".arrow-drop-lg").addClass("rotate");
     $(".level-two").show();
     if (countTwo % 2 == 0) {
-        $(".arrow-drop-lg").removeClass("rotate");
-        $(".level-two").hide();
+        $(".arrow-drop-lg,.arrow-drop-sm").removeClass("rotate");
+        $(".level-two,.level-three").hide();
     }
 
 };

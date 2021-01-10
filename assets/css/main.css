@@ -24,13 +24,22 @@ li {
   list-style: none; }
 
 /**************** Font Awsome Skeleton *********/
-#menu li:nth-child(1)::after, .destination_expand-section h2::before {
+#menu li:nth-child(1)::after, .destination_expand-section h2::before, .popular-destinations_box a::after, .popular-destinations_box h4::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
 /****************** Transitions ***/
 .destination_expand-link, .hero-section_social i, .about-section_content a:hover {
   transition: all 0.1s ease-in; }
+
+/********************* Horizontal rules **/
+.hr-small {
+  width: 10%;
+  height: 5px;
+  background: #EFCA08;
+  margin-top: 20px; }
+  .hr-small:not([size]) {
+    height: 10px; }
 
 /****************** Menu Utilities **/
 .menu-utilities {
@@ -344,7 +353,7 @@ li {
   .about-section_img img:nth-child(2) {
     display: none; }
   .about-section_img img:nth-child(3) {
-    width: 225px;
+    width: 200px;
     height: auto;
     position: relative;
     right: 140px;
@@ -371,9 +380,98 @@ li {
       padding-left: 20px;
       font-size: 40px; }
     .about-section_content a:hover {
-      border: 3px solid #00AB99;
+      border: 3px solid;
       padding: 15px;
       border-radius: 50px; }
+
+/************************ Most Popular Destinations Section **/
+#popular-destainations {
+  width: 85%;
+  margin: 150px auto; }
+
+.popular-destinations_intro {
+  width: 70%; }
+  .popular-destinations_intro h1 {
+    font-size: 35px; }
+  .popular-destinations_intro p {
+    margin-top: 35px; }
+
+.popular-destinations_selection {
+  display: flex;
+  justify-content: left;
+  gap: 25px; }
+
+.popular-destinations_box {
+  width: 275px;
+  color: #ffffff;
+  height: 425px;
+  position: relative;
+  margin-top: 50px; }
+  .popular-destinations_box a {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #ffffff; }
+    .popular-destinations_box a::after {
+      content: "\f35a";
+      padding-left: 10px; }
+  .popular-destinations_box h4 {
+    font-weight: 500;
+    font-size: 1em;
+    padding-top: 5px; }
+    .popular-destinations_box h4::before {
+      content: "\f3c5";
+      font-size: 1em;
+      padding-right: 5px; }
+  .popular-destinations_box:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.07); }
+
+.popular-destinations_box-content {
+  position: absolute;
+  bottom: 0;
+  padding: 0 20px 20px; }
+
+.destination-one {
+  background: url("/assets/images/dubrovnik-popular.png") no-repeat center; }
+  .destination-one:hover {
+    background: url("/assets/images/dubrovnik-popular-hover.png") no-repeat center; }
+
+.destination-two {
+  background: url("/assets/images/zagreb-popular.png") no-repeat center; }
+  .destination-two:hover {
+    background: url("/assets/images/zagreb-popular-hover.png") no-repeat center; }
+
+.destination-three {
+  background: url("/assets/images/pula-popular.png") no-repeat center; }
+  .destination-three:hover {
+    background: url("/assets/images/pula-popular-hover.png") no-repeat center; }
+
+/************************ Why Us Section **/
+#why-us {
+  width: 85%;
+  margin: 150px auto; }
+
+.why-us_title h1, .partners_title h1 {
+  font-size: 35px; }
+
+.why-us_reasons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 35px;
+  margin: 75px 0; }
+  .why-us_reasons h4 {
+    font-size: 22px; }
+  .why-us_reasons img {
+    width: 50px;
+    margin-bottom: 25px; }
+  .why-us_reasons p {
+    padding: 5px 20px 5px 0;
+    font-size: 16px; }
+
+.partners_title {
+  width: 75%; }
+  .partners_title p {
+    margin-top: 35px; }
 
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
@@ -406,7 +504,7 @@ li {
   #hero-section {
     height: 600px; }
   .hero-section_intro-wrapper {
-    padding-top: 250px; }
+    padding-top: 200px; }
   .hero-section_intro {
     font-size: 215%; }
   /************ About Section **/
@@ -417,7 +515,13 @@ li {
     .about-section_img img:nth-child(1), .about-section_img img:nth-child(3) {
       overflow: hidden; }
     .about-section_img img:nth-child(3) {
-      display: block; } }
+      display: block; }
+  /************************ Most Popular Destinations Section **/
+  .popular-destinations_intro {
+    width: 90%; }
+  .popular-destinations_box {
+    width: 250px;
+    height: 375px; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
@@ -441,15 +545,25 @@ li {
       width: 100%;
       overflow: hidden; }
   .about-section_content {
-    margin-left: 0; } }
+    margin-left: 0; }
+  /********************** Most Popular Destinations Section ***/
+  .popular-destinations_selection {
+    flex-wrap: wrap; } }
 
 @media only screen and (max-width: 585px) {
   /****************** Navigation ***/
   .menu-utilities ul:nth-child(2) {
     display: none; }
+  /**************************** Hero Section **/
+  .hero-section_intro-wrapper {
+    padding-top: 150px; }
   /********************** About Section **/
   .hero-section_social {
-    font-size: 25px; } }
+    font-size: 25px; }
+  /******************** Most Popular Destinations Section **/
+  .popular-destinations_box {
+    width: 225px;
+    height: 350px; } }
 
 @media only screen and (max-width: 490px) {
   /****************** Navigation ***/
