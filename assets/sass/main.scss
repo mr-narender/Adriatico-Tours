@@ -71,8 +71,9 @@ $dark-grey: #555555;
 .hr-small {
     width: 10%;
     height: 5px;
-    background: $vivid-yellow;
+    background: #fff0a0;
     margin-top: 20px;
+    opacity: 1;
 
     &:not([size]) {
         height: 10px;
@@ -887,6 +888,47 @@ $dark-grey: #555555;
 }
 
 
+
+/********************** Newsletter Section ***/
+
+#newsletter-section {
+    width: 80%;
+    border-radius: 15px;
+    background: #fff09f;
+    margin: 125px auto;
+    text-align: center;
+    padding: 10%;
+}
+
+.newsletter-section_content {
+    color: $dark-grey;
+
+    input {
+        width: 70%;
+        height: 40px;
+        margin-top: 5px;
+        padding: 10px;
+        border: none;
+
+        &:focus {
+            border: 1px solid $dark-cyan;
+        }
+
+    
+    }
+
+    button {
+        background: $dark-cyan;
+        font-size: 15px;
+        padding: 5px 25px;
+        color: #ffffff;
+        height: 40px;
+        border: none;
+    }
+}
+
+
+
 /***********************Media Query ***/
 
 @media only screen and (max-width: 1050px) {
@@ -1094,6 +1136,16 @@ $dark-grey: #555555;
 }
 
 
+/************************** Newsletter Section **/
+
+#newsletter-section {
+    padding: 10% 5%;
+}
+
+.newsletter-section_content input {
+    width: 65%;
+}
+
 
 }
 
@@ -1155,6 +1207,31 @@ $dark-grey: #555555;
     width: 75px;
 
 }
+
+
+/**************************** Newsletter Section **/
+
+#newsletter-section {
+    width: 90%;
+}
+
+
+.newsletter-section_content {
+
+    font-size: 14px;
+    
+    input {
+        height: 30px;
+        width: 60%;
+    }
+
+    button {
+        padding: 5px 12px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
 
 
 
