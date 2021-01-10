@@ -609,7 +609,9 @@ li {
   width: 40%;
   align-self: flex-start; }
   .about-intro img {
-    width: 225px; }
+    width: 225px;
+    position: relative;
+    right: 60px; }
 
 .footer-navigation {
   display: flex;
@@ -632,7 +634,8 @@ li {
 
 .footer-section_contact-links {
   text-align: right;
-  padding-right: 5%; }
+  padding-right: 5%;
+  padding-bottom: 35px; }
   .footer-section_contact-links li {
     display: inline-block;
     color: #ffffff;
@@ -647,6 +650,27 @@ li {
       margin-right: 10px; }
     .footer-section_contact-links li a {
       color: #ffffff; }
+
+/********************* Copyright Bar **/
+#copyright-bar {
+  background: #00AB99;
+  padding: 10px;
+  position: relative; }
+  #copyright-bar h4 {
+    font-size: 16px;
+    color: #ffffff;
+    display: inline-block;
+    padding-left: 10px; }
+  #copyright-bar ul {
+    display: inline-block;
+    position: absolute;
+    right: 15px; }
+  #copyright-bar li {
+    display: inline-block; }
+    #copyright-bar li i {
+      color: #ffffff;
+      font-size: 22px;
+      padding: 0 5px; }
 
 /***********************Media Query ***/
 @media only screen and (max-width: 1050px) {
@@ -750,14 +774,22 @@ li {
   .footer-section_contact-links {
     margin-top: 15px;
     text-align: left;
-    padding: 0 5px; }
+    padding: 0 0 35px 5%; }
     .footer-section_contact-links li {
-      margin-top: 10px; } }
+      margin-top: 10px; }
+  /************ Copyright Bar **/
+  #copyright-bar ul {
+    display: block;
+    padding-left: 5px;
+    position: static; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/
   .why-us_box {
     width: auto; }
+  /***************************** Testemonials Section **/
+  .user-testimonials_title h1::before {
+    margin-left: -10px; }
   /************************** Newsletter Section **/
   #newsletter-section {
     padding: 10% 5%; }
