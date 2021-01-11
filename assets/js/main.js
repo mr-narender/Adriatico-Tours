@@ -4,6 +4,7 @@ let count = 0;
 let countTwo = 0;
 let countThree = 0;
 
+
 // Expand destinations link 
 
 $(".expand-lg").click(function () {
@@ -28,11 +29,26 @@ $(".menu-open").click(function () {
     $(".mobile_menu-content").css("margin-right", "auto");
 
     $(".level-one").show();
-    $(mobileMenu).show().animate({
-        'width': '70%'
+
+    if($(window).width() < 490) {
+          $(mobileMenu).show().animate({
+        'width': '100%'
+        
 
     }, 175);
+
+    } else {
+        $(mobileMenu).show().animate({
+        'width': '70%'
+        
+
+    }, 175);
+    }
+    
 })
+
+    // Extend Width Of Menu To 100% When On Screen Size (< 480px)
+
 
 
 // Close Menu    
@@ -77,53 +93,79 @@ $(".arrow-drop-lg").click(function () {
 
 
 //Third Level Expand
-var triggerDrop = $(".arrow-drop-sm");
-var eachDestination = $(".level-three");
 
 
 
-$(triggerDrop).click(function (el) {
+$(".trigger-one").click(function() {
+
     countThree += 1;
+    
 
-    if (el.target == triggerDrop[0]) {
-        $(eachDestination[0]).show();
-        $(triggerDrop[0]).addClass("rotate");
-        $(eachDestination[1], eachDestination[2]).hide();
-        $(triggerDrop[1], triggerDrop[2]).removeClass("rotate");
-
-        if (countThree % 2 == 0) {
-            $(this).removeClass("rotate");
-            $(eachDestination[0]).hide();
-        }
-
-
-    } else if (el.target == triggerDrop[1]) {
-        $(eachDestination[1]).show();
-        $(triggerDrop[1]).addClass("rotate");
-        $(eachDestination[0], eachDestination[2]).hide();
-        $(triggerDrop[0], triggerDrop[2]).removeClass("rotate");
+       
+        $(".trigger-one").addClass("rotate");
+        $(".second,.third").hide();
+         $(".first").show();
+        $(".trigger-two,.trigger-three").removeClass("rotate");
 
 
         if (countThree % 2 == 0) {
-            $(this).removeClass("rotate");
-            $(eachDestination[1]).hide();
+            $(".trigger-one").removeClass("rotate");
+            $(".first").hide();
+           
+           
         }
-    } else if (el.target == triggerDrop[2]) {
-        $(eachDestination[2]).show();
-        $(triggerDrop[2]).addClass("rotate");
-        $(eachDestination[0], eachDestination[1]).hide();
-        $(triggerDrop[0], triggerDrop[1]).removeClass("rotate");
 
-        if (countThree % 2 == 0) {
-            $(this).removeClass("rotate");
-            $(eachDestination[2]).hide();
-        }
-    }
+         countThree = 0;
+
 
 });
 
+$(".trigger-two").click(function() {
+
+    countThree += 1;
+
+        
+        $(".trigger-two").addClass("rotate");
+        $(".first,.third").hide();
+        $(".second").show();
+        $(".trigger-one,.trigger-three").removeClass("rotate");
+    
+
+        if (countThree % 2 == 0) {
+            $(".trigger-two").removeClass("rotate");
+            $(".second").hide();
+          
+           
+        }
+
+          countThree = 0;
 
 
+});
+
+$(".trigger-three").click(function() {
+
+    countThree += 1;
+
+   
+        $(".trigger-three").addClass("rotate");
+        $(".first,.second").hide();
+             $(".third").show();
+        $(".trigger-one,.trigger-two").removeClass("rotate");
+    
+
+        if (countThree % 2 == 0) {
+            $(".trigger-three").removeClass("rotate");
+            $(".third").hide();
+
+           
+        }
+
+        
+             countThree = 0;
+
+
+});
 
 
 // Expand Search Mobile
