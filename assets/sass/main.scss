@@ -90,6 +90,17 @@ $dark-grey: #555555;
     }
 }
 
+.no-result-found {
+    width: 80%;
+    background: #fff6c8;
+    height: 50px;
+    display: none;
+    padding: 10px;
+    margin: 50px auto 0 auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
 
 /****************** Menu Utilities **/
 
@@ -461,16 +472,34 @@ $dark-grey: #555555;
 .input-wrapper-sm {
     position: relative;
     width: 100%;
-   
-
 
     button {
         position: absolute;
         line-height: 56.6px;
     }
 
+}
 
+/********************* Bread Crumbs **/
 
+.bread-crumbs {
+    width: 100%;
+    background: #ececec;
+    margin-top: 50px;
+    padding: 10px 0 10px 35px;
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        color: #000000;
+    }
+}
+
+.divider::before {
+    content: "/";
+    padding-right: .5rem;
 }
 
 
@@ -733,20 +762,26 @@ $dark-grey: #555555;
 
 .section-background_wrapper {
     
-    background: #fbfbfb;
+    background: $dark-cyan;
     padding: 1px;
     width: 95%;
-    border-radius: 25px;
+    border-radius: 0 15px 15px 0;
 }
 
 
 #why-us {
     width: 85%;
     margin: 150px auto;
+    color: #ffffff;
+    text-align: center;
 }
 
 .why-us_title h1, .partners_title h1{
     font-size: 35px;
+}
+
+.center-align {
+   margin: 20px auto 0 auto;
 }
 
 .why-us_reasons {
@@ -757,6 +792,8 @@ $dark-grey: #555555;
 
     h4 {
         font-size: 22px;
+            font-weight: 600;
+
     }
 
     img {
@@ -770,6 +807,16 @@ $dark-grey: #555555;
     }
     
 }
+
+
+/**********************Partners Section **/
+
+
+#partners {
+    width: 85%;
+    margin: 150px auto;
+}
+
 
 
 .partners_title {
@@ -948,7 +995,7 @@ $dark-grey: #555555;
 .footer-section_wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding: 5%;
     color: #ffffff;
     gap: 25px;
@@ -963,6 +1010,12 @@ $dark-grey: #555555;
         width: 225px;
         position: relative;
         right: 60px;
+        bottom: 15px;
+    }
+
+    p {
+        position: relative;
+         bottom: 65px;
     }
     
 }
@@ -1251,7 +1304,15 @@ padding-bottom: 35px;
 
     .about-intro {
         width: 100%;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
+
+        p {
+            position: static;
+        }
+
+        img {
+            bottom: 0;
+        }
     }
 
     .footer-navigation {

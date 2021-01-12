@@ -49,6 +49,16 @@ li {
   .hr-large:not([size]) {
     height: 5px; }
 
+.no-result-found {
+  width: 80%;
+  background: #fff6c8;
+  height: 50px;
+  display: none;
+  padding: 10px;
+  margin: 50px auto 0 auto;
+  border-radius: 5px;
+  text-align: center; }
+
 /****************** Menu Utilities **/
 .menu-utilities {
   background: #555555;
@@ -305,6 +315,21 @@ li {
     position: absolute;
     line-height: 56.6px; }
 
+/********************* Bread Crumbs **/
+.bread-crumbs {
+  width: 100%;
+  background: #ececec;
+  margin-top: 50px;
+  padding: 10px 0 10px 35px; }
+  .bread-crumbs li {
+    display: inline-block; }
+  .bread-crumbs a {
+    color: #000000; }
+
+.divider::before {
+  content: "/";
+  padding-right: .5rem; }
+
 /***************************** Hero Section **/
 #hero-section {
   margin-top: 25px;
@@ -456,17 +481,22 @@ li {
 
 /************************ Why Us Section **/
 .section-background_wrapper {
-  background: #fbfbfb;
+  background: #00AB99;
   padding: 1px;
   width: 95%;
-  border-radius: 25px; }
+  border-radius: 0 15px 15px 0; }
 
 #why-us {
   width: 85%;
-  margin: 150px auto; }
+  margin: 150px auto;
+  color: #ffffff;
+  text-align: center; }
 
 .why-us_title h1, .partners_title h1 {
   font-size: 35px; }
+
+.center-align {
+  margin: 20px auto 0 auto; }
 
 .why-us_reasons {
   display: flex;
@@ -474,13 +504,19 @@ li {
   gap: 35px;
   margin: 75px 0 100px 0; }
   .why-us_reasons h4 {
-    font-size: 22px; }
+    font-size: 22px;
+    font-weight: 600; }
   .why-us_reasons img {
     width: 45px;
     margin-bottom: 25px; }
   .why-us_reasons p {
     padding: 5px 20px 5px 0;
     font-size: 16px; }
+
+/**********************Partners Section **/
+#partners {
+  width: 85%;
+  margin: 150px auto; }
 
 .partners_title {
   width: 75%; }
@@ -600,7 +636,7 @@ li {
 .footer-section_wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   padding: 5%;
   color: #ffffff;
   gap: 25px; }
@@ -611,7 +647,11 @@ li {
   .about-intro img {
     width: 225px;
     position: relative;
-    right: 60px; }
+    right: 60px;
+    bottom: 15px; }
+  .about-intro p {
+    position: relative;
+    bottom: 65px; }
 
 .footer-navigation {
   display: flex;
@@ -764,7 +804,11 @@ li {
     flex-wrap: wrap; }
   .about-intro {
     width: 100%;
-    margin-bottom: 25px; }
+    margin-bottom: 10px; }
+    .about-intro p {
+      position: static; }
+    .about-intro img {
+      bottom: 0; }
   .footer-navigation {
     width: 100%;
     justify-content: flex-start;
