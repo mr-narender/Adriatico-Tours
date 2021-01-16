@@ -90,16 +90,7 @@ $dark-grey: #555555;
     }
 }
 
-.no-result-found {
-    width: 80%;
-    background: #fff6c8;
-    height: 50px;
-    display: none;
-    padding: 10px;
-    margin: 50px auto 0 auto;
-    border-radius: 5px;
-    text-align: center;
-}
+
 
 
 /****************** Menu Utilities **/
@@ -455,7 +446,9 @@ $dark-grey: #555555;
     input {
         padding: 1em;
         border-radius: 5px;
-        border: 1px solid $dark-cyan;
+            border: 1px solid #a5a5a5;
+
+    
     }
 
     i:nth-child(2) {
@@ -501,6 +494,135 @@ $dark-grey: #555555;
     content: "/";
     padding-right: .5rem;
 }
+
+
+/************************ Footer Section **/
+
+#footer-section {
+    background: $dark-grey;
+}
+
+.footer-section_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    color: #ffffff;
+    gap: 25px;
+
+}
+
+.about-intro {
+    width: 40%;
+    align-self: flex-start;
+
+    img {
+        width: 225px;
+        position: relative;
+        right: 60px;
+        bottom: 15px;
+    }
+
+    p {
+        position: relative;
+         bottom: 65px;
+    }
+    
+}
+
+
+.footer-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    width: 60%;
+
+    li {
+        padding: 5px 0 7px 0;
+        border-bottom: 1px dotted #ffffff;
+        position: relative;
+
+            &::after {
+            @extend %font-awsome;
+            content: "\f054";
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    a {
+        color: #ffffff;
+    }
+}
+
+.footer-navigation_section_one, .footer-two {
+    width: 50%;
+}
+
+.footer-section_contact-links {
+
+text-align: right;
+padding-right: 5%;
+padding-bottom: 35px;
+
+    li {
+        display: inline-block;
+        color: #ffffff;
+        padding-right: 5px;
+        font-size: 15px;
+
+        i {
+            background: $dark-cyan;
+            padding: 8px;
+            border-radius: 50%;
+            border: 1px double white;
+            color: #ffffff;
+            margin-right: 10px;
+        }
+
+        a {
+            color: #ffffff;
+        }
+    }
+}
+
+
+/********************* Copyright Bar **/
+
+
+#copyright-bar {
+    background: $dark-cyan;
+    padding: 10px;
+    position: relative;
+    line-height: 30px;
+   
+
+    h4 {
+        font-size: 16px;
+        color: #ffffff;
+        display: inline-block;
+        padding-left: 10px;
+    }
+
+    ul {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+    }
+
+    li {
+        display: inline-block;
+
+        i {
+            color: #ffffff;
+            font-size: 22px;
+            padding: 0 5px;
+        }
+    }
+}
+
+
+/*********************************************** Homepage **/
 
 
 
@@ -732,7 +854,7 @@ $dark-grey: #555555;
     padding: 0 20px 20px;
 }
 
-.destination-one {
+.destination-one, .recommendation-1 {
     background: url("/assets/images/dubrovnik-popular.png") no-repeat center;
     &:hover {
           background: url("/assets/images/dubrovnik-popular-hover.png") no-repeat center;
@@ -740,7 +862,7 @@ $dark-grey: #555555;
     }
 }
 
-.destination-two {
+.destination-two, .recommendation-2 {
     background: url("/assets/images/zagreb-popular.png") no-repeat center;
      &:hover {
           background: url("/assets/images/zagreb-popular-hover.png") no-repeat center;
@@ -748,7 +870,7 @@ $dark-grey: #555555;
     }
 }
 
-.destination-three {
+.destination-three, .recommendation-3 {
     background: url("/assets/images/pula-popular.png") no-repeat center;
      &:hover {
           background: url("/assets/images/pula-popular-hover.png") no-repeat center;
@@ -955,6 +1077,8 @@ $dark-grey: #555555;
     margin: 125px auto;
     text-align: center;
     padding: 10%;
+    max-width: 1500px;
+    max-height: 650px;
 }
 
 .newsletter-section_content {
@@ -986,131 +1110,156 @@ $dark-grey: #555555;
 
 
 
-/************************ Footer Section **/
 
-#footer-section {
-    background: $dark-grey;
+
+
+
+/********************************************** Search Results Page **/
+
+#search-result-wrapper {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.footer-section_wrapper {
+.search-result_title {
+    margin-top: 50px;
+}
+
+
+.no-result-found-strip {
+    background: #fff6c8;
+    height: 50px;
+    display: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    margin: 100px 0;
+}
+
+.search-result {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5%;
-    color: #ffffff;
-    gap: 25px;
-
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px 0;
 }
 
-.about-intro {
-    width: 40%;
-    align-self: flex-start;
+.search-result_item {
 
+    width: 300px;
+    box-shadow: 5px 5px 10px #eaeaea;
+
+    h1 {
+        font-size: 25px;
+        padding: 10px 0;
+        border-bottom: 1px solid #e9e9e9;
+    }
     img {
-        width: 225px;
-        position: relative;
-        right: 60px;
-        bottom: 15px;
+        width: 300px;
+        height: 150px;
     }
 
-    p {
-        position: relative;
-         bottom: 65px;
+    &:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.05);
     }
+}
+
+
+/******** Recommendations Section **/
+
+.recommendations-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+
+.recommendations-box {
+    width: 250px;
+    height: 325px;
+    position: relative;
+
+    &:hover {
+        transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    }
+}
+
+.recommendations-box-content {
+    position: absolute;
+    bottom: 0;
+    padding: 0 20px 20px;
+
+    
+    a {
+
+        font-weight: 600;
+        font-size: 1.25em;
+        color: #ffffff;
+        &::after {
+            @extend %font-awsome;
+            content: "\f35a";
+            padding-left: 10px;
+            
+
+        } 
+    }
+
+    h4 {
+    font-weight: 500;
+    font-size: 1em;
+    padding-top: 5px;
+    color: #ffffff;
+
+    &::before {
+        @extend %font-awsome;
+        content: "\f3c5";
+        font-size: 1em;
+        padding-right: 5px;
+    }
+    }
+
     
 }
 
+.recommendation-4 {
+      background: url("/assets/images/split-popular.png") no-repeat center;
+     &:hover {
+          background: url("/assets/images/split-popular-hover.png") no-repeat center;
 
-.footer-navigation {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    width: 60%;
-
-    li {
-        padding: 5px 0 7px 0;
-        border-bottom: 1px dotted #ffffff;
-        position: relative;
-
-            &::after {
-            @extend %font-awsome;
-            content: "\f054";
-            position: absolute;
-            right: 0;
-        }
-    }
-
-    a {
-        color: #ffffff;
     }
 }
 
-.footer-navigation_section_one, .footer-two {
-    width: 50%;
-}
-
-.footer-section_contact-links {
-
-text-align: right;
-padding-right: 5%;
-padding-bottom: 35px;
-
-    li {
-        display: inline-block;
-        color: #ffffff;
-        padding-right: 5px;
-        font-size: 15px;
-
-        i {
-            background: $dark-cyan;
-            padding: 8px;
-            border-radius: 50%;
-            border: 1px double white;
-            color: #ffffff;
-            margin-right: 10px;
-        }
-
-        a {
-            color: #ffffff;
-        }
-    }
-}
-
-
-/********************* Copyright Bar **/
-
-
-#copyright-bar {
-    background: $dark-cyan;
-    padding: 10px;
-    position: relative;
-   
-
-    h4 {
-        font-size: 16px;
-        color: #ffffff;
-        display: inline-block;
-        padding-left: 10px;
-    }
-
-    ul {
-        display: inline-block;
-        position: absolute;
-        right: 15px;
-    }
-
-    li {
-        display: inline-block;
-
-        i {
-            color: #ffffff;
-            font-size: 22px;
-            padding: 0 5px;
-        }
-    }
-}
 
 /***********************Media Query ***/
+
+
+@media only screen and (min-width: 1800px) {
+
+   .footer-section_wrapper {
+       width: 85%;
+       margin: 0 auto;
+       font-size: 120%;
+   }
+
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+   .search-result {
+       justify-content: space-around;
+   }
+
+}
+
+
+
+
 
 @media only screen and (max-width: 1050px) {
 

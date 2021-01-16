@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
+
 <body>
 
-     <!--Menu Utilities-->
+    <!--Menu Utilities-->
 
 
     <div class="menu-utilities">
@@ -50,11 +52,11 @@
             <div class="menu_content">
 
 
-                <form id="sForm" role="search" action="/search.html" autocomplete="off" method="get" onsubmit="searchloader(event)">
+                <form role="search" action="search.html" autocomplete="off" method="get">
                     <fieldset class="input-wrapper-lg">
                         <label for="search-result"></label>
                         <input class="menu_content-search" type="search" id="search-result" name="search-result"
-                            placeholder="Try Food, Places to stay...">
+                            placeholder="Try Food, Places to visit or Music... ">
                         <button type="submit" class="search-btn"><i class="fas fa-search"
                                 aria-hidden="true"></i></button>
                     </fieldset>
@@ -187,11 +189,11 @@
             </div>
 
 
-            <form class="mobile-search" role="search" action="/" method="get">
+            <form class="mobile-search" role="search" action="search.html" method="get">
                 <fieldset class="input-wrapper-sm">
                     <label for="search-header-mobile"></label>
-                    <input class="menu_content-search" type="search"  id="search-header-mobile"
-                        name="search-header-mobile" placeholder="Try Food, Places to stay...">
+                    <input class="menu_content-search" type="search" id="search-header-mobile"
+                        name="search-header-mobile" placeholder="Try Food, Places to visit or music...">
                     <button type="submit" class="search-btn"><i class="fas fa-search" aria-hidden="true"></i></button>
                 </fieldset>
                 <i class="far fa-times-circle search-hide" aria-hidden="true"></i>
@@ -218,37 +220,83 @@
     </div>
 
 
-    <!--Recommendations & Result not found-->
-
-
-
-    <div class="no-result-found">
-    
-        <p>No records found for your search.</p>
-
-    
-    </div>
-
-
-    <div class="recommendations">
-
+    <main id="search-result-wrapper">
 
         
 
 
 
-    </div>
+        <!--Result not found strip-->
+
+        <div class="no-result-found-strip">
+            <p>No records found for your search.</p>
+        </div>
+
+        <h1 class="search-result_title"></h1>
+        <hr class="hide">
+
+        <div class="search-result">
+
+         
+
+        </div>
 
 
 
+        <!--Recommendations section-->
+        
+
+            <h2>Top Trending Destinations</h2>
+            <hr class=>
+        <div class="recommendations-wrapper">
+
+
+            <div class="recommendations-box recommendation-1">
+
+                <div class="recommendations-box-content">
+                    <a href="city.html">Dubrovnik</a>
+                    <h4>Dubrovnik, Croatia</h4>
+
+                </div>
+
+            </div>
+
+            <div class="recommendations-box recommendation-2">
+
+                <div class="recommendations-box-content">
+                    <a href="city.html">Zagreb</a>
+                    <h4>Zagreb, Croatia</h4>
+
+                </div>
+
+            </div>
+
+            <div class="recommendations-box  recommendation-3">
+
+                <div class="recommendations-box-content">
+                    <a href="city.html">Pula</a>
+                    <h4>Pula, Croatia</h4>
+
+                </div>
+
+            </div>
+
+            <div class="recommendations-box recommendation-4">
+
+                <div class="recommendations-box-content ">
+                    <a href="city.html">Split</a>
+                    <h4>Pula, Croatia</h4>
+
+                </div>
+
+            </div>
+
+
+        </div>
 
 
 
-
-
-
-
-
+    </main>
 
 
 
@@ -373,6 +421,7 @@
     <script src="assets/js/main.js" type="text/javascript"></script>
     <!--Search Result Script-->
     <script src="assets/js/search-result.js" type="text/javascript"></script>
-    
+
 </body>
+
 </html>
