@@ -1,28 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
-html,
-body {
-  overflow-x: hidden; }
-
-body {
-  font-family: "Open Sans", "san-serif"; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", "san-serif"; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-ul, ol {
-  padding: 0;
-  margin: 0; }
-
-a {
-  text-decoration: none; }
-
-li {
-  list-style: none; }
-
 /**************** Font Awsome Skeleton *********/
 #menu li:nth-child(1)::after, .destination_expand-section h2::before, .footer-navigation li::after, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .recommendations-box-content a::after, .recommendations-box-content h4::before {
   font-family: "Font Awesome 5 Free";
@@ -48,6 +24,31 @@ li {
   opacity: 1; }
   .hr-large:not([size]) {
     height: 5px; }
+
+html,
+body {
+  overflow-x: hidden; }
+
+body {
+  font-family: "Open Sans", "san-serif"; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", "san-serif";
+  color: #555555; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+ul, ol {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
 
 /****************** Menu Utilities **/
 .menu-utilities {
@@ -360,7 +361,7 @@ li {
   .footer-navigation a {
     color: #ffffff; }
 
-.footer-navigation_section_one, .footer-two {
+.footer-navigation_section_one, .footer-navigation_section_two {
   width: 50%; }
 
 .footer-section_contact-links {
@@ -381,6 +382,9 @@ li {
       margin-right: 10px; }
     .footer-section_contact-links li a {
       color: #ffffff; }
+
+.footer-navigation_title {
+  color: #ffffff; }
 
 /********************* Copyright Bar **/
 #copyright-bar {
@@ -538,6 +542,8 @@ li {
   position: absolute;
   bottom: 0;
   padding: 0 20px 20px; }
+  .popular-destinations_box-content h4 {
+    color: #ffffff; }
 
 .destination-one, .recommendation-1 {
   background: url("/assets/images/dubrovnik-popular.png") no-repeat center; }
@@ -562,10 +568,13 @@ li {
   border-radius: 0 15px 15px 0; }
 
 #why-us {
-  width: 85%;
+  width: 90%;
   margin: 150px auto;
   color: #ffffff;
   text-align: center; }
+
+.why-us_title h1 {
+  color: #ffffff; }
 
 .why-us_title h1, .partners_title h1 {
   font-size: 35px; }
@@ -580,7 +589,8 @@ li {
   margin: 75px 0 100px 0; }
   .why-us_reasons h4 {
     font-size: 22px;
-    font-weight: 600; }
+    font-weight: 600;
+    color: #ffffff; }
   .why-us_reasons img {
     width: 45px;
     margin-bottom: 25px; }
@@ -607,10 +617,10 @@ li {
   gap: 25px;
   margin-top: 75px; }
 
-.partents-box {
+.partners-box {
   border: 1px solid #fbfbfb;
   box-shadow: 5px 5px 10px #eaeaea; }
-  .partents-box img {
+  .partners-box img {
     width: 175px;
     height: 175px; }
 
@@ -706,7 +716,7 @@ li {
     height: 40px;
     border: none; }
 
-/********************************************** Search Results Page **/
+/******************************************************************* Search Results Page **/
 #search-result-wrapper {
   width: 80%;
   margin: 0 auto; }
@@ -787,6 +797,49 @@ li {
   .recommendation-4:hover {
     background: url("/assets/images/split-popular-hover.png") no-repeat center; }
 
+/******************************************************************* About Us Page **/
+#about-hero {
+  background: url("/assets/images/about-hero-img.png") no-repeat center;
+  background-size: cover;
+  height: 750px;
+  margin-bottom: 100px; }
+
+.who-we-are {
+  background: white;
+  opacity: 0.85;
+  width: 85%;
+  padding: 7%;
+  border-radius: 10px;
+  position: relative;
+  top: 100px;
+  margin-left: 20px;
+  max-width: 1600px; }
+
+#how-it-works {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 125px; }
+
+.box-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 80px; }
+
+.how-box {
+  padding: 20px;
+  max-width: 550px; }
+  .how-box img {
+    margin-bottom: 15px;
+    width: 60px; }
+  .how-box h3 {
+    font-size: 1.60em; }
+  .how-box p {
+    font-size: 0.95em; }
+
+.shadow {
+  box-shadow: 5px 5px 10px #eaeaea; }
+
 /***********************Media Query ***/
 @media only screen and (min-width: 1800px) {
   .footer-section_wrapper {
@@ -831,7 +884,7 @@ li {
     padding-top: 200px; }
   .hero-section_intro {
     font-size: 215%; }
-  /************ About Section **/
+  /************ About Section - HOMEPAGE **/
   .about-section_content {
     font-size: 95%; }
   .about-section_img {
@@ -851,7 +904,12 @@ li {
     padding-right: 15px;
     font-size: 15px; }
   .partners-wrapper {
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  /*********************** How It Works Section - About Us Page**/
+  .box-container {
+    flex-wrap: wrap; }
+  .how-box img {
+    width: 50px; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
@@ -882,7 +940,7 @@ li {
   /************************** Why Us Section **/
   .why-us_reasons {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     gap: 35px; }
   /*********************** Footer Section **/
   .footer-section_wrapper {
@@ -965,7 +1023,14 @@ li {
     .footer-navigation li {
       width: 285px; }
   .footer-navigation_section_one, .footer-navigation_section_two {
-    width: 100%; } }
+    width: 100%; }
+  /***************************** Who We Are - About Us Page**/
+  .who-we-are {
+    width: 95%;
+    padding: 5%;
+    margin-left: 0; }
+    .who-we-are p {
+      font-size: 15px; } }
 
 @media only screen and (max-width: 490px) {
   /****************** Navigation ***/

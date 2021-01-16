@@ -27,7 +27,7 @@ function displaySearchResultTerm() {
 if (searchResult === "food") {
     displaySearchResultTerm();
 
-    // Display Food Results
+    // Display Food Result
 
     $(".search-result_title").text("Most Popular Food In Croatia")
     
@@ -39,6 +39,8 @@ if (searchResult === "food") {
              ["Fritule", "assets/images/search-result-images/food-img-5.png", "Commonly found on the Adriatic coast, these donut-like fried pastries vary from region to region – egg yolks, raisins, grated lemon or orange rinds, and even rakija or rum can go into the mixture. Traditionally served during the holidays, these are popular and highly addictive, so you can usually find them year round."], 
              ["Peka", "assets/images/search-result-images/food-img-6.png", "Popular throughout Croatia, this tender meat & vegetable dish is also called ispod čripnje (under the bell) – literally food that is cooked under a terracotta or iron lid over burning embers. Peka can include octopus, lamb, veal or chicken, and is often accompanied by potatoes."]]
         }
+
+        
 
 
 
@@ -54,8 +56,20 @@ food.choices.forEach(function(item) {
 
 
 
-} else if (searchResult === "places to stay") {
+} else if (searchResult === "places to visit") {
     displaySearchResultTerm();
+
+
+    // Display Places to visit Result
+
+} else if(searchResult === "music") {
+ displaySearchResultTerm();
+
+
+    // Display Music Result
+
+    
+
 
 } else {
 
@@ -64,11 +78,5 @@ food.choices.forEach(function(item) {
     $(".hide").css("display", "none");
 
 }
-
-
-// Display Food Information
-
-
-
 
 

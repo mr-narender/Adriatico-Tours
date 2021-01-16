@@ -113,11 +113,14 @@ Poppins is the selected font for all the headings with sans-serif as a fallback.
 All wireframes are created in Adobe XD. Each individual page contains desktop & mobile view. Homepage specifically has a mobile menu design & destination link dropdown.
 Wireframes are saved in PDF file type and can be accessed here (include a link to wireframes file).
 
+# **Testing & Deployment**
 
 
 
+## **Fixed Bugs**
 
-  
+**Dropdown menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
+To fix this I implemented the funcionality to always enable only one to be open and close another ones dynamically. 
 
 
 
