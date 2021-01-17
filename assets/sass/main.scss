@@ -1304,11 +1304,12 @@ padding-bottom: 35px;
 
     img {
         margin-bottom: 15px;
-        width: 60px;
+        width: 50px;
     }
 
     h3 {
         font-size: 1.60em;
+        padding-bottom: 10px;
     }
 
     p {
@@ -1316,12 +1317,62 @@ padding-bottom: 35px;
     }
 }
 
-.shadow {
+.box-shadow {
     box-shadow: 5px 5px 10px #eaeaea;
 }
 
 
+#faq-section {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
 
+.section-wrapper {
+    margin-top: 80px;
+    width: 90%;
+    background: #fcfcfc;
+    border-radius: 0 10px 10px 0;
+    padding: 20px 0;
+}
+
+.quesitons-wrapper {
+    margin: 80px 0;
+}
+
+.question-dropdown {
+    position: relative;
+    width: 70%;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #c7c7c7;
+
+    h3 {
+
+        
+        padding-bottom: 10px;
+        font-size: 1.5em;
+        display: inline-block;
+
+    }
+
+    i {
+
+            position: absolute;
+            right: 0;
+            color: $bright-red;
+            transition: 0.5s all ease-in-out;
+            font-size: 30px;
+             display: inline-block;
+    }
+
+
+
+    p {
+        font-size: 0.95em;
+        display: none;
+    }
+
+}
 
 
 
@@ -1475,7 +1526,7 @@ padding-bottom: 35px;
 }
 
 .how-box img {
-    width: 50px;
+    width: 45px;
 }
 
 
@@ -1736,7 +1787,7 @@ padding-bottom: 35px;
     width: 100%;
 }
 
-/***************************** Who We Are - About Us Page**/
+/***************************** About Us Page**/
 
     .who-we-are {
 
@@ -1752,6 +1803,9 @@ padding-bottom: 35px;
     }
 
 }
+
+
+
     
         }   
 

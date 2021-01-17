@@ -831,14 +831,50 @@ li {
   max-width: 550px; }
   .how-box img {
     margin-bottom: 15px;
-    width: 60px; }
+    width: 50px; }
   .how-box h3 {
-    font-size: 1.60em; }
+    font-size: 1.60em;
+    padding-bottom: 10px; }
   .how-box p {
     font-size: 0.95em; }
 
-.shadow {
+.box-shadow {
   box-shadow: 5px 5px 10px #eaeaea; }
+
+#faq-section {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 80px; }
+
+.section-wrapper {
+  margin-top: 80px;
+  width: 90%;
+  background: #fcfcfc;
+  border-radius: 0 10px 10px 0;
+  padding: 20px 0; }
+
+.quesitons-wrapper {
+  margin: 80px 0; }
+
+.question-dropdown {
+  position: relative;
+  width: 70%;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #c7c7c7; }
+  .question-dropdown h3 {
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    display: inline-block; }
+  .question-dropdown i {
+    position: absolute;
+    right: 0;
+    color: #EA3F28;
+    transition: 0.5s all ease-in-out;
+    font-size: 30px;
+    display: inline-block; }
+  .question-dropdown p {
+    font-size: 0.95em;
+    display: none; }
 
 /***********************Media Query ***/
 @media only screen and (min-width: 1800px) {
@@ -909,7 +945,7 @@ li {
   .box-container {
     flex-wrap: wrap; }
   .how-box img {
-    width: 50px; } }
+    width: 45px; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
@@ -1024,7 +1060,7 @@ li {
       width: 285px; }
   .footer-navigation_section_one, .footer-navigation_section_two {
     width: 100%; }
-  /***************************** Who We Are - About Us Page**/
+  /***************************** About Us Page**/
   .who-we-are {
     width: 95%;
     padding: 5%;
