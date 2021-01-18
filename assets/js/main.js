@@ -284,7 +284,20 @@ if (readURL === "Pula") {
     $(".city-title").text("Pula");
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
 
+    //load map 
 
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById("city-map"), {
+
+            zoom: 15,
+            center: {
+                lat: 44.866623,
+                lng: 13.849579
+            }
+
+
+        });
+    }
     
 } else if (readURL === "Rovinj") {
 
@@ -297,6 +310,22 @@ if (readURL === "Pula") {
 
     $(".city-title").text("Rovinj");
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+
+
+      //load map 
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById("city-map"), {
+
+            zoom: 15,
+            center: {
+                lat: 45.081165,
+                lng: 13.638707
+            }
+
+
+        });
+    }
 
 }
 

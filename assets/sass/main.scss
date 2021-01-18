@@ -1375,6 +1375,12 @@ padding-bottom: 35px;
 }
 
 
+#city-map {
+    margin-top: 50px;
+    width: 80%;
+    height: 500px;
+}
+
 
 /******************************************************************* City Destination Page **/
 
@@ -1720,6 +1726,13 @@ padding-bottom: 35px;
 .newsletter-section_content input {
     width: 65%;
 }
+
+
+/*************************** About Page **/
+
+    #city-map {
+        width: 100% !important;
+    }
 
 
 }

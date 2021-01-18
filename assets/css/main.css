@@ -876,6 +876,11 @@ li {
     font-size: 0.95em;
     display: none; }
 
+#city-map {
+  margin-top: 50px;
+  width: 80%;
+  height: 500px; }
+
 /******************************************************************* City Destination Page **/
 .city-img img {
   height: 650px; }
@@ -1042,7 +1047,10 @@ li {
   #newsletter-section {
     padding: 10% 5%; }
   .newsletter-section_content input {
-    width: 65%; } }
+    width: 65%; }
+  /*************************** About Page **/
+  #city-map {
+    width: 100% !important; } }
 
 @media only screen and (max-width: 585px) {
   /****************** Navigation ***/
