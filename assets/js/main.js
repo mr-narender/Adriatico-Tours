@@ -234,7 +234,7 @@ $(dropdownTrigger).click(function () {
 
     let paragraphState = $(this).prev().parent().children("p").css("display");
 
-    if ( paragraphState === "none") {
+    if (paragraphState === "none") {
 
         $(this).css("transform", "rotate(-135deg)")
         $(this).prev().parent().children("p").show();
@@ -248,3 +248,57 @@ $(dropdownTrigger).click(function () {
 
 
 })
+
+
+
+// Display Selected City Content
+
+
+
+// Retrive City Name From URL
+
+var readURL = location.toString();
+readURL = readURL.substring(readURL.indexOf("?"));
+readURL = readURL.split("?").pop();
+readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
+
+
+// Populate bread crumbs link with city name  
+
+$(".city-name").text(readURL);
+
+
+// Check which city was selected - change content based on selection
+
+let imageArray = document.querySelectorAll(".city-img img");
+
+if (readURL === "Pula") {
+
+    //load images
+    imageArray[0].src = "assets/images/pula-slide-1.png";
+    imageArray[1].src = "assets/images/pula-slide-2.png";
+    imageArray[2].src = "assets/images/pula-slide-3.png";
+
+    //change title and about info
+
+    $(".city-title").text("Pula");
+    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+
+
+    
+} else if (readURL === "Rovinj") {
+
+    //load images
+    imageArray[0].src = "assets/images/rovinj-slide-1.png";
+    imageArray[1].src = "assets/images/rovinj-slide-2.png";
+    imageArray[2].src = "assets/images/rovinj-slide-3.png";
+
+    //change title and about info
+
+    $(".city-title").text("Rovinj");
+    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+
+}
+
+
+

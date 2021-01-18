@@ -119,7 +119,7 @@ Wireframes are saved in PDF file type and can be accessed here (include a link t
 
 ## **Fixed Bugs**
 
-**Dropdown menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
+**Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
 To fix this I implemented the funcionality to always enable only one to be open and close another ones dynamically. 
 
 

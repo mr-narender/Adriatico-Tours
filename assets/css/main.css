@@ -858,7 +858,7 @@ li {
 
 .question-dropdown {
   position: relative;
-  width: 70%;
+  width: 85%;
   margin-bottom: 20px;
   border-bottom: 1px dashed #c7c7c7; }
   .question-dropdown h3 {
@@ -875,6 +875,31 @@ li {
   .question-dropdown p {
     font-size: 0.95em;
     display: none; }
+
+/******************************************************************* City Destination Page **/
+.city-img img {
+  height: 650px; }
+
+.place-middle {
+  position: absolute;
+  top: 45%;
+  background-image: inherit; }
+
+.left-icon {
+  background: url("/assets/images/arrow-left-icon.png") no-repeat center;
+  border: 1px solid #ffffff;
+  padding: 25px;
+  border-radius: 5px; }
+
+.right-icon {
+  background: url("/assets/images/arrow-right-icon.png") no-repeat center;
+  border: 1px solid #ffffff;
+  padding: 25px;
+  border-radius: 5px; }
+
+#city-info {
+  width: 85%;
+  margin: 80px auto 0 auto; }
 
 /***********************Media Query ***/
 @media only screen and (min-width: 1800px) {
