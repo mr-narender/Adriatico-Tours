@@ -48,7 +48,7 @@ $dark-grey: #555555;
 }
 
 .hr-large {
-    width: 25%;
+    width: 20%;
     background: #fff0a0;
     opacity: 1;
 
@@ -1381,7 +1381,13 @@ padding-bottom: 35px;
 }
 
 
-#city-map {
+
+/******************************************************************* City Destination Page **/
+
+
+
+
+#city-map{
     margin-top: 50px;
     width: 80%;
     height: 500px;
@@ -1392,6 +1398,8 @@ padding-bottom: 35px;
     width: 85%;
     margin: 0 auto;
     margin-top: 80px;
+    position: relative;
+    z-index: 5;
 }
 
 .filters {
@@ -1441,7 +1449,7 @@ padding-bottom: 35px;
         }
     }
 }
-/******************************************************************* City Destination Page **/
+
 
 .city-img img {
     height: 650px;
@@ -1561,12 +1569,21 @@ img {
     text-decoration: none !important;
     font-size: 15px;
     border-radius: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover {
+        @extend %fast-transition;
+        transform: scale(1.05);
+    }
+
 
 
 }
 
 .cta-see-more {
-    border: 1px solid $dark-cyan;
+    border: 2px solid $dark-cyan;
     color: $dark-grey;
 
     &:hover {
@@ -1580,7 +1597,7 @@ img {
     background: $dark-cyan;
     color: #ffffff;
     margin-left: 15px;
-    padding: 6px 25px;
+    padding: 7px 25px;
 
         &:hover {
             color: #ffffff
@@ -1589,9 +1606,81 @@ img {
 }
 
 
+.hotel-offering_popup {
+    background: white;
+    position: absolute;
+    border: 1px solid;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    z-index: 15;
+
+    img {
+        height: 450px;
+        width: 100%;
+    }
+}
 
 
-/***********************Media Query ***/
+.hotel-content {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.hotel-content_box-one {
+
+h2 {
+    padding-top: 20px;
+}
+
+}
+
+#city-map-hotel  {
+    height: 400px;
+   
+}
+
+
+.hotel-content_box-one, .hotel-content_box-two {
+    width: 45%;
+    margin-bottom: 35px;
+
+    i {
+        color: $dark-cyan;
+    }
+
+    h5 {
+        padding: 10px 0;
+        font-size: 1.15em;
+
+    }
+}
+
+.about-hotel, .hotel-facilities {
+    border: 1px solid #cacaca;
+
+    h3 {
+        background: lighten($vivid-yellow, 20%);
+        padding: 2%;
+        font-size: 1.25em;
+
+    }
+
+    p {
+        padding: 2%;
+        font-size: 0.95em;
+    }
+}
+
+.hotel-facilities  {
+    margin-top: 30px;
+}
+
+/********************************************************************Media Query ***/
 
 
 @media only screen and (min-width: 1800px) {
@@ -1902,7 +1991,7 @@ img {
 
 /*************************** About Page **/
 
-    #city-map {
+    #city-map{
         width: 100% !important;
     }
 

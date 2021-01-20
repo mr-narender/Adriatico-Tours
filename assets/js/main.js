@@ -297,6 +297,17 @@ if (readURL === "Pula") {
 
 
         });
+
+            var mapHotel = new google.maps.Map(document.getElementById("city-map-hotel"), {
+
+            zoom: 15,
+            center: {
+                lat: 44.866623,
+                lng: 13.849579
+            }
+
+
+        });
     }
 
 
