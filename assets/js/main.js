@@ -298,7 +298,98 @@ if (readURL === "Pula") {
 
         });
     }
-    
+
+
+    // Show Relevant Hotels
+
+
+let hotelOne = $(".hotel-box:eq(0)")
+ let hotelTwo = $(".hotel-box:eq(1)")
+ let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+ // Filtering System
+
+ $(".filter-options li:eq(0)").click(function(listHotels) {
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+ });
+
+ $(".filter-options li:eq(1)").click(function(listHotels) {
+      $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+ });
+
+ $(".filter-options li:eq(2)").click(function(listHotels) {
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+ });
+
+
+  function listHotels() {
+
+    $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/pula-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Resort del Mar <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 5 km from centre</li>
+                            <li><span>&#9899;</span> Beach nearby</li>
+                        </ul>
+                        <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€80 pp / per night</h4>
+                        </div>
+                </div>
+`);
+    $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/pula-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Splendid Resort <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 2.5 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Set just steps away from the beach in the area of Zlatne Stijene, Splendid Resort offers self-catering accommodation and free WiFi access in public areas.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€40 pp / per night</h4>
+                        </div>
+                </div>
+`);
+    $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/pula-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Modo <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 2.7 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Located in Pula and surrounded with 3 beaches Valovine Beach, Stoja Beach and Zelenika Beach, Hotel Modo provides bright-coloured styled rooms with sea view.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€65 pp / per night</h4>
+                        </div>
+                </div>
+`);
+
+  
+
+  }
+
 } else if (readURL === "Rovinj") {
 
     //load images
@@ -312,7 +403,7 @@ if (readURL === "Pula") {
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
 
 
-      //load map 
+    //load map 
 
     function initMap() {
         var map = new google.maps.Map(document.getElementById("city-map"), {
@@ -327,7 +418,105 @@ if (readURL === "Pula") {
         });
     }
 
-}
 
 
 
+  // Show Relevant Hotels
+
+ let hotelOne = $(".hotel-box:eq(0)")
+ let hotelTwo = $(".hotel-box:eq(1)")
+ let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+ // Filtering System
+
+ $(".filter-options li:eq(0)").click(function(listHotels) {
+$("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+ });
+
+  $(".filter-options li:eq(1)").click(function(listHotels) {
+     $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+ });
+
+   $(".filter-options li:eq(2)").click(function(listHotels) {
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+ });
+
+
+
+
+// Display Hotel Information 
+
+ function listHotels() {
+    
+    $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/rovinj-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Lone <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 1.1 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€80 pp / per night</h4>
+                    </div>
+                </div>
+`);
+   $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/rovinj-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Mobile Homes Polari <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 3.8 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Set just steps away from the beach in the area of Zlatne Stijene, Splendid Resort offers self-catering accommodation and free WiFi access in public areas.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€35 pp / per night</h4>
+                    </div>
+                </div>
+`);
+  $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/rovinj-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2> Family Hotel Amarin <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span> 2.4 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Located in Pula and surrounded with 3 beaches Valovine Beach, Stoja Beach and Zelenika Beach, Hotel Modo provides bright-coloured styled rooms with sea view.</p>
+
+                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <h4>€55 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+ }
+
+
+
+  }
+
+
+
+
+ 

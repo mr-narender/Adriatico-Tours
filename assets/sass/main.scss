@@ -1423,6 +1423,7 @@ padding-bottom: 35px;
     li {
         padding: .25em .5em;
         border-bottom: 1px dotted #cacaca;
+        cursor: pointer;
 
         &:nth-child(3) {
             border: none;
@@ -1479,6 +1480,7 @@ padding-bottom: 35px;
     border-radius: 5px;
     padding: 2%;
     margin-bottom: 20px;
+    max-width: 1200px;
 
 }
 
@@ -1490,13 +1492,15 @@ padding-bottom: 35px;
 
 img {
     width: 225px;
-    height: 235px;
     border-radius: 5px;
 }
 
 }
 
 .hotel-box_description {
+
+    position: relative;
+    width: 100%;
 
     h2 {
         font-size: 1.75em;
@@ -1514,8 +1518,8 @@ img {
   li {
       display: inline-block;
       padding: 0 5px;
-      list-style-position: inside;
-      list-style: circle;
+   
+    
 
       span {
           font-size: 5px;
@@ -1534,6 +1538,16 @@ img {
       font-size: 15px;
     
   }
+
+  h4 {
+    color: $bright-red;
+    font-weight: 500;
+    float: right;
+    font-size: 17px;
+    padding-top: 2px
+    
+  }
+
 }
 
 .cta-see-more, .book-now {
