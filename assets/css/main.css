@@ -220,7 +220,8 @@ li {
 .menu-open {
   width: 50px;
   height: auto;
-  min-width: 30px; }
+  min-width: 30px;
+  cursor: pointer; }
 
 .search-expand {
   width: 40px;
@@ -274,7 +275,9 @@ li {
   font-size: 25px;
   display: none; }
   .level-two li {
-    padding: 15px 0 15px 15%; }
+    padding: 15px 0 15px 15%;
+    color: #ffffff;
+    cursor: pointer; }
 
 .level-two ul {
   font-size: 22px;

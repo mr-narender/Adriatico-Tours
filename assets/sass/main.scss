@@ -353,6 +353,7 @@ li {
     width: 50px;
     height: auto;
     min-width: 30px;
+    cursor: pointer;
 }
 
  .search-expand {
@@ -421,10 +422,13 @@ li {
 .level-two {
     font-size: 25px;
     display: none;
+    
 
     li {
        
         padding: 15px 0 15px 15%;
+             color: #ffffff;
+    cursor: pointer;
     }
 }
 
@@ -432,9 +436,11 @@ li {
     
     font-size: 22px;
     display: none;
+  
 
     li {
     padding: 15px 0 15px 20%;
+ 
     }
     
 }
@@ -2067,6 +2073,7 @@ img {
 
     .menu-open {
         width: 40px;
+        
     }
 
     .logo {

@@ -315,14 +315,17 @@ let hotelOne = $(".hotel-box:eq(0)")
  // Filtering System
 
  $(".filter-options li:eq(0)").click(function(listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
     $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
  });
 
  $(".filter-options li:eq(1)").click(function(listHotels) {
+     $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
       $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
  });
 
  $(".filter-options li:eq(2)").click(function(listHotels) {
+     $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
     $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
  });
 
