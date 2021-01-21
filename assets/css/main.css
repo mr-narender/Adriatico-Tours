@@ -883,7 +883,8 @@ li {
 #city-map {
   margin-top: 50px;
   width: 80%;
-  height: 500px; }
+  height: 500px;
+  max-width: 1000px; }
 
 #hotel-offering {
   width: 85%;
@@ -1008,7 +1009,8 @@ li {
 
 .cta-see-more {
   border: 2px solid #00AB99;
-  color: #555555; }
+  color: #555555;
+  background: #fff; }
   .cta-see-more:hover {
     color: #555555; }
 
@@ -1016,28 +1018,44 @@ li {
   background: #00AB99;
   color: #ffffff;
   margin-left: 15px;
-  padding: 7px 25px; }
+  padding: 7px 25px;
+  border: none; }
   .book-now:hover {
     color: #ffffff; }
 
 .hotel-offering_popup {
+  display: none;
   background: white;
   position: absolute;
   border: 1px solid;
   width: 100%;
   margin: 0 auto;
   top: 0;
-  z-index: 15; }
+  z-index: 15;
+  max-width: 1200px; }
   .hotel-offering_popup img {
     height: 450px;
     width: 100%; }
+
+.hero-section-popup {
+  position: relative; }
+
+.popup-exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  z-index: 20;
+  font-size: 40px;
+  cursor: pointer; }
 
 .hotel-content {
   width: 95%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end; }
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 25px; }
 
 .hotel-content_box-one h2 {
   padding-top: 20px; }
@@ -1046,26 +1064,48 @@ li {
   height: 400px; }
 
 .hotel-content_box-one, .hotel-content_box-two {
-  width: 45%;
-  margin-bottom: 35px; }
+  width: 50%;
+  margin-bottom: 35px;
+  max-width: 500px; }
   .hotel-content_box-one i, .hotel-content_box-two i {
     color: #00AB99; }
   .hotel-content_box-one h5, .hotel-content_box-two h5 {
     padding: 10px 0;
     font-size: 1.15em; }
 
-.about-hotel, .hotel-facilities {
-  border: 1px solid #cacaca; }
-  .about-hotel h3, .hotel-facilities h3 {
-    background: #fae263;
-    padding: 2%;
-    font-size: 1.25em; }
-  .about-hotel p, .hotel-facilities p {
-    padding: 2%;
-    font-size: 0.95em; }
+.hotel-content_box-two h3 {
+  background: #fae263;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 3% 2%; }
 
-.hotel-facilities {
-  margin-top: 30px; }
+.about-hotel {
+  border-right: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  border-left: 1px solid #cacaca;
+  padding: 2%; }
+  .about-hotel p {
+    font-size: 0.85em; }
+  .about-hotel h4 {
+    font-size: 1.15em;
+    padding: 15px 0; }
+  .about-hotel ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; }
+    .about-hotel ul li {
+      font-size: 0.95em; }
+    .about-hotel ul i {
+      font-size: 19px;
+      vertical-align: middle;
+      border-radius: 50%;
+      background: white;
+      padding: 8px;
+      border: 1px solid #cccccc; }
+  .about-hotel a {
+    margin: 30px 0 5px 0;
+    padding: 5px 30px;
+    background: #EA3F28; }
 
 /********************************************************************Media Query ***/
 @media only screen and (min-width: 1800px) {
@@ -1195,7 +1235,12 @@ li {
   #copyright-bar ul {
     display: block;
     padding-left: 5px;
-    position: static; } }
+    position: static; }
+  /************************************************ Hotel Pop-Up - city.html**/
+  .hotel-content {
+    flex-wrap: wrap; }
+  .hotel-content_box-one, .hotel-content_box-two {
+    width: 100%; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/

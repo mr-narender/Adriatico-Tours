@@ -1391,6 +1391,7 @@ padding-bottom: 35px;
     margin-top: 50px;
     width: 80%;
     height: 500px;
+    max-width: 1000px;
 }
 
 
@@ -1585,6 +1586,7 @@ img {
 .cta-see-more {
     border: 2px solid $dark-cyan;
     color: $dark-grey;
+    background: #fff;
 
     &:hover {
         color: $dark-grey;
@@ -1598,6 +1600,7 @@ img {
     color: #ffffff;
     margin-left: 15px;
     padding: 7px 25px;
+    border: none;
 
         &:hover {
             color: #ffffff
@@ -1607,6 +1610,7 @@ img {
 
 
 .hotel-offering_popup {
+    display: none;
     background: white;
     position: absolute;
     border: 1px solid;
@@ -1614,6 +1618,7 @@ img {
     margin: 0 auto;
     top: 0;
     z-index: 15;
+    max-width: 1200px;
 
     img {
         height: 450px;
@@ -1621,13 +1626,28 @@ img {
     }
 }
 
+.hero-section-popup {
+    position: relative;
+}
+
+
+.popup-exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    z-index: 20;
+    font-size: 40px;
+    cursor: pointer;
+}
 
 .hotel-content {
     width: 95%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
+    gap: 25px;
 }
 
 
@@ -1646,8 +1666,9 @@ h2 {
 
 
 .hotel-content_box-one, .hotel-content_box-two {
-    width: 45%;
+    width: 50%;
     margin-bottom: 35px;
+    max-width: 500px;
 
     i {
         color: $dark-cyan;
@@ -1656,29 +1677,64 @@ h2 {
     h5 {
         padding: 10px 0;
         font-size: 1.15em;
+       
 
     }
 }
 
-.about-hotel, .hotel-facilities {
-    border: 1px solid #cacaca;
+.hotel-content_box-two h3 {
+    background: lighten($vivid-yellow, 20%);
+    font-size: 1.25em;
+     margin: 0;
+     padding: 3% 2%;
+}
 
-    h3 {
-        background: lighten($vivid-yellow, 20%);
-        padding: 2%;
-        font-size: 1.25em;
+.about-hotel {
+    border-right: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+    border-left: 1px solid #cacaca;
+    padding: 2%;
+   
 
-    }
 
     p {
-        padding: 2%;
-        font-size: 0.95em;
+    
+        font-size: 0.85em;
+    }
+
+    h4 {
+        font-size: 1.15em;
+        padding: 15px 0;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        li {
+            font-size: 0.95em;
+        }
+
+        i {
+           font-size: 19px;
+        vertical-align: middle;
+        border-radius: 50%;
+        background: white;
+        padding: 8px;
+        border: 1px solid #cccccc;
+        }
+    }
+
+    a {
+        margin: 30px 0 5px 0;
+        padding: 5px 30px;
+        background: $bright-red;
+
+
     }
 }
 
-.hotel-facilities  {
-    margin-top: 30px;
-}
 
 /********************************************************************Media Query ***/
 
@@ -1759,7 +1815,9 @@ h2 {
 
 #hero-section {
     height: 600px;
+    
 }
+
 
 
 .hero-section_intro-wrapper {
@@ -1954,6 +2012,16 @@ h2 {
         position: static;
     }
 
+    /************************************************ Hotel Pop-Up - city.html**/
+
+    .hotel-content {
+        flex-wrap: wrap;
+    }
+
+
+    .hotel-content_box-one, .hotel-content_box-two {
+        width: 100%;
+    }
 
 
 }

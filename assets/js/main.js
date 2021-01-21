@@ -341,6 +341,18 @@ let hotelOne = $(".hotel-box:eq(0)")
  });
 
 
+ 
+ //Launch Pop-Up
+
+$(".hotel-box:eq(0) .cta-see-more").click(function() {
+    $(".hotel-offering_popup").fadeIn(200);
+});
+
+$(".popup-exit").click(function() {
+    $(".hotel-offering_popup").fadeOut(200);
+});
+
+
   function listHotels() {
 
     $(".hotel-box:eq(0)").html(`
@@ -351,13 +363,13 @@ let hotelOne = $(".hotel-box:eq(0)")
                         <h2>Resort del Mar <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span><a href="#">Show on map</a></li>
                             <li><span>&#9899;</span> 5 km from centre</li>
                             <li><span>&#9899;</span> Beach nearby</li>
                         </ul>
                         <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
 
-                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now" href="#">Book Now</button>
                         <h4>€80 pp / per night</h4>
                         </div>
                 </div>
@@ -369,7 +381,7 @@ let hotelOne = $(".hotel-box:eq(0)")
                         <h2>Splendid Resort <i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span><a href="#">Show on map</a></li>
                             <li><span>&#9899;</span> 2.5 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
@@ -462,7 +474,6 @@ $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
 
 
 
-
 // Display Hotel Information 
 
  function listHotels() {
@@ -475,13 +486,13 @@ $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
                         <h2>Hotel Lone <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span><a href="#">Show on map</a></li>
                             <li><span>&#9899;</span> 1.1 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
                         <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
 
-                        <a class="cta-see-more" href="#">See More</a><a class="book-now" href="#">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€80 pp / per night</h4>
                     </div>
                 </div>
@@ -493,7 +504,7 @@ $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
                         <h2>Mobile Homes Polari <i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span><a href="#">Show on map</a></li>
                             <li><span>&#9899;</span> 3.8 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
@@ -512,7 +523,7 @@ $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
                         <h2> Family Hotel Amarin <i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
+                            <li><span>&#9899;</span><a href="#">Show on map</a></li>
                             <li><span>&#9899;</span> 2.4 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
