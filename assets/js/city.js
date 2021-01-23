@@ -13,6 +13,30 @@ readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
 $(".city-name").text(readURL);
 
 
+
+
+
+       
+//Launch/Close Hotel Pop-Up when click See More
+
+        function launchPopup() {
+            $(".hotel-offering_popup").fadeIn(200);
+
+        };
+
+
+        function closePopup() {
+            $(".popup-exit").click(function () {
+                $(".hotel-offering_popup").fadeOut(200);
+                $(".hotel-content_box-two").remove();
+                $(".hotel-intro, .loadImages").html("");
+
+            })
+
+
+        };
+
+
 // Check which city was selected - change content based on selection
 
 let imageArray = document.querySelectorAll(".city-img img");
@@ -24,33 +48,39 @@ if (readURL === "Pula") {
     imageArray[1].src = "assets/images/pula-slide-2.png";
     imageArray[2].src = "assets/images/pula-slide-3.png";
 
-    //change title and about info
+   // Load Map for city and hotel
 
-    $(".city-title").text("Pula");
-    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
-
-    //load map 
 
     function initMap(hotelPosition) {
-        var map = new google.maps.Map(document.getElementById("city-map"), {
-
-            zoom: 15,
-            center: {
+        const cityPosition = {
                 lat: 44.866623,
                 lng: 13.849579
             }
+        var map = new google.maps.Map(document.getElementById("city-map"), {
+
+            zoom: 15,
+            center: cityPosition
         });
 
         var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
 
             zoom: 17,
-            center: hotelPosition,
+            center: hotelPosition
         });
         new google.maps.Marker({
             position: hotelPosition,
-            map,
+            map
         });
     }
+
+
+
+    //change title and about info
+
+    $(".city-title").text("Pula");
+    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+
+
 
     // Show Relevant Hotels
 
@@ -138,29 +168,7 @@ if (readURL === "Pula") {
                 </div>
 `);
 
-
-
-
-
-        //Launch/Close Pop-Up
-
-        function launchPopup() {
-            $(".hotel-offering_popup").fadeIn(200);
-
-        };
-
-
-        function closePopup() {
-            $(".popup-exit").click(function () {
-                $(".hotel-offering_popup").fadeOut(200);
-                $(".hotel-content_box-two").remove();
-                $(".hotel-intro, .loadImages").html("");
-
-            })
-
-
-        };
-
+ }
 
 
 
@@ -171,8 +179,8 @@ if (readURL === "Pula") {
         $(".hotel-box:eq(0) .cta-see-more").click(function () {
 
 
-            // Show Hotel On Google Maps
-            initMap({ lat: 44.82183, lng: 13.86544 });
+            // Show Hotel On Map
+            initMap({lat: 44.82175,lng: 13.86542});
             launchPopup();
 
             // Load Slideshow Hotel Images
@@ -237,7 +245,7 @@ if (readURL === "Pula") {
 
         });
 
-    }
+   
 
 } else if (readURL === "Rovinj") {
 
@@ -251,20 +259,31 @@ if (readURL === "Pula") {
     $(".city-title").text("Rovinj");
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
 
-    //load map 
+  
+   // Load Map for city and hotel
 
-    function initMap() {
-        var map = new google.maps.Map(document.getElementById("city-map"), {
-
-            zoom: 15,
-            center: {
+    function initMap(hotelPosition) {
+        const cityPosition = {
                 lat: 45.081165,
                 lng: 13.638707
             }
+        var map = new google.maps.Map(document.getElementById("city-map"), {
 
+            zoom: 15,
+            center: cityPosition
+        });
 
+        var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
+
+            zoom: 17,
+            center: hotelPosition
+        });
+        new google.maps.Marker({
+            position: hotelPosition,
+            map
         });
     }
+
 
     // Show Relevant Hotels
 
@@ -351,6 +370,94 @@ if (readURL === "Pula") {
 `);
 
     }
+
+
+
+
+
+       // Change Pop-Up content based on selected hotel
+
+        // First Hotel Selection
+
+        $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+            // Show Hotel On Map
+            initMap({lat: 45.07312,lng: 13.63927});
+            launchPopup();
+
+            // Load Slideshow Hotel Images
+            $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+            //Show Main Hotel Info
+
+            $(".hotel-intro").append(`
+        <h2>Hotel Lone</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€80 / pp per night</h5>
+                <a class="book-now" href="book.html">Book Now</a>
+    `)
+
+            // Show Hotel About Info
+
+            $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Set within the Golden Cape Natural Park, Hotel Lone offers a 
+                        terrace and a wellness area. 
+                        The hotel is 200 m away from the sea and a 15-minute stroll from Rovinj's centre.
+                        <br>
+                        Built in 2011, all modern design rooms at Hotel Lone have free Wi-Fi and a private balcony. 
+                        They are equipped with all modern facilities, 
+                        including flat-screen satellite TV and laptop safety box. Every room has air conditioning.
+                        <br>
+                        <br>
+                        There is a wellness area with a spa pool, steam bath, sauna and massage room. 
+                        The outdoor pool is shared with another hotel. 
+                        It is surrounded by a spacious sunbathing area, and guests can also relax in a large indoor pool, which looks out to the lush garden.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+            closePopup();
+
+        });
+
+
+
+
+
+
+
+
+
+
 
 
 
