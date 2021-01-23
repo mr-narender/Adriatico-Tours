@@ -1458,9 +1458,11 @@ padding-bottom: 35px;
 }
 
 
-.city-img img {
-    height: 650px;
-    background-size: contain;
+.city-img  {
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .place-middle {

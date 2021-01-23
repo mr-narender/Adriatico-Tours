@@ -925,9 +925,10 @@ li {
       background: #555555;
       color: #ffffff; }
 
-.city-img img {
-  height: 650px;
-  background-size: contain; }
+.city-img {
+  height: 700px;
+  background-size: cover;
+  background-position: center; }
 
 .place-middle {
   position: absolute;

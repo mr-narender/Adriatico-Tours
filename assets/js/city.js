@@ -11,11 +11,6 @@ readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
 // Populate bread crumbs link with city name  
 
 $(".city-name").text(readURL);
-
-
-
-
-
        
 //Launch/Close Hotel Pop-Up when click See More
 
@@ -39,14 +34,14 @@ $(".city-name").text(readURL);
 
 // Check which city was selected - change content based on selection
 
-let imageArray = document.querySelectorAll(".city-img img");
+let imageArray = document.querySelectorAll(".city-img");
 
 if (readURL === "Pula") {
 
     //load images
-    imageArray[0].src = "assets/images/pula-slide-1.png";
-    imageArray[1].src = "assets/images/pula-slide-2.png";
-    imageArray[2].src = "assets/images/pula-slide-3.png";
+    imageArray[0].style.backgroundImage = "url('assets/images/pula-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/pula-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/pula-slide-3.png')";
 
    // Load Map for city and hotel
 
@@ -156,7 +151,6 @@ if (readURL === "Pula") {
                         <h2>Hotel Modo <i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span><a href="#"> Show on map</a></li>
                             <li><span>&#9899;</span> 2.7 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
@@ -219,6 +213,7 @@ if (readURL === "Pula") {
                         <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 
                         4 km from Pula. It offers bright, air-conditioned apartments with SAT TV,
                          as well as a gym, ice-cream bar, 2 restaurants and grocery shop.
+                         <br>
                         <br>
                         Linen is changed weekly, while towels are changed every 4 days. The final cleaning is included in the rate.
                          Resort del Mar has a spacious lobby and outdoor terrace.
@@ -245,14 +240,164 @@ if (readURL === "Pula") {
 
         });
 
+
+    // Second Hotel Selection
+
+        $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+            // Show Hotel On Map
+            initMap({lat: 44.84622,lng: 13.83566});
+            launchPopup();
+
+            // Load Slideshow Hotel Images
+            $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/pula-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/pula-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/pula-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+            //Show Main Hotel Info
+
+            $(".hotel-intro").append(`
+        <h2>Splendid Resort</h2>
+
+                <hr class="hr-large">
+               <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€40 / pp per night</h5>
+                <a class="book-now" href="book.html">Book Now</a>
+    `)
+
+            // Show Hotel About Info
+
+            $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Set just steps away from the beach in the area of Zlatne Stijene, Splendid Resort offers 
+                        self-catering accommodation and free WiFi access in public areas. 
+                        The resort offers an outdoor pool, a restaurant, table tennis facilities and a supermarket. The centre of Pula is 3 km away.
+                        <br>
+                        <br>
+                        All apartments comes with a balcony, satellite TV, an equipped kitchenette and a dining table. 
+                        Featuring a shower, 
+                        the bathrooms also come with a hairdryer and towels. Some apartments have a sea view.
+                        <br>
+                        <br>
+                        Lungomare Promenade is 300 m away, while the famous Roman Amphitheatre is about 4 km away. 
+                        Several points of interest can be found in the town centre, such as the Arch of the Sergii, 
+                        the Archaeological Museum of Istria and the Temple of Augustus.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+            closePopup();
+
+        });
+
+
+
+        // Third Hotel Selection
+
+        $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+            // Show Hotel On Map
+            initMap({lat: 44.86078,lng: 13.81487});
+            launchPopup();
+
+            // Load Slideshow Hotel Images
+            $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/pula-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/pula-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/pula-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+            //Show Main Hotel Info
+
+            $(".hotel-intro").append(`
+        <h2>Hotel Modo</h2>
+
+                <hr class="hr-large">
+               <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€40 / pp per night</h5>
+                <a class="book-now" href="book.html">Book Now</a>
+    `)
+
+            // Show Hotel About Info
+
+            $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Located in Pula and surrounded with 3 beaches Valovine Beach, Stoja Beach and Zelenika Beach, 
+                        Hotel Modo provides bright-coloured styled rooms with sea view. Featuring a restaurant, 
+                        a lounge bar and a terrace, guests can unwind with a selection of fine dishes and refreshing drinks.
+                        <br>
+                        <br>
+                        Guest rooms at the hotel are equipped with a seating area, a flat-screen satellite TV, a desk and a private bathroom including a bath, 
+                        a hairdryer and a bidet. All guest rooms have free WiFi.
+                        <br>
+                        <br>
+                        Hotel Modo offers a buffet breakfast. Speaking English and Croatian at the 24-hour front desk, 
+                        staff will be happy to provide guests with practical guidance on the area.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                            <li><i class="fas fa-smoking-ban"></i> Non-Smoking Rooms</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+            closePopup();
+
+        });
+     
+     
+
    
 
 } else if (readURL === "Rovinj") {
 
     //load images
-    imageArray[0].src = "assets/images/rovinj-slide-1.png";
-    imageArray[1].src = "assets/images/rovinj-slide-2.png";
-    imageArray[2].src = "assets/images/rovinj-slide-3.png";
+    imageArray[0].style.backgroundImage = "url('assets/images/rovinj-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/rovinj-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/rovinj-slide-3.png')";
 
     //change title and about info
 
@@ -296,20 +441,22 @@ if (readURL === "Pula") {
     $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
 
-    // Filtering System
+// Filtering System
 
     $(".filter-options li:eq(0)").click(function (listHotels) {
-        ("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
     });
 
     $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
         $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
     });
 
     $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
         $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
     });
-
 
     // Display Hotel Information 
 
@@ -422,6 +569,7 @@ if (readURL === "Pula") {
                         <p>Set within the Golden Cape Natural Park, Hotel Lone offers a 
                         terrace and a wellness area. 
                         The hotel is 200 m away from the sea and a 15-minute stroll from Rovinj's centre.
+                         <br>
                         <br>
                         Built in 2011, all modern design rooms at Hotel Lone have free Wi-Fi and a private balcony. 
                         They are equipped with all modern facilities, 
@@ -451,12 +599,158 @@ if (readURL === "Pula") {
 
 
 
+            // Second Hotel Selection
+
+        $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+            // Show Hotel On Map
+            initMap({lat: 45.06132,lng: 13.67496});
+            launchPopup();
+
+            // Load Slideshow Hotel Images
+            $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+            //Show Main Hotel Info
+
+            $(".hotel-intro").append(`
+        <h2>Mobile Homes Polari</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€35 / pp per night</h5>
+                <a class="book-now" href="book.html">Book Now</a>
+    `)
+
+            // Show Hotel About Info
+
+            $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Mobile Homes Polari is set in a picturesque cove, 3 km south of Rovinj. 
+                        It offers 2 km of beaches filled with all kinds of recreational facilities for an active holiday.
+                        All mobile homes feature air conditioning, a furnished terrace, deck chairs and a flat-screen satellite TV. 
+                        It offers a fully equipped kitchen with a dining area and 2 bathrooms.
+                         <br>
+                        <br>
+                        Facilities consist of a large swimming pool and a children’s pool, restaurants, bars and a beach awarded with a Blue Flag. 
+                        Other activities include tennis, beach volleyball, basketball, 
+                        handball and table tennis. Polari also offers a children’s playground, mini club and rich entertainment program.
+                        <br>
+                        <br>
+                        The ancient city of Pula is 35 km away. It is known for its amphitheatre which is 
+                        one of the six largest surviving Roman arenas in the world.
+                         Pula International Airport is 38 km from the Polari Mobile Homes.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+            closePopup();
+
+        });
 
 
 
+          // Third Hotel Selection
+
+        $(".hotel-box:eq(2) .cta-see-more").click(function () {
 
 
+            // Show Hotel On Map
+            initMap({lat: 45.10244,lng: 13.62451});
+            launchPopup();
 
+            // Load Slideshow Hotel Images
+            $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/rovinj-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+            //Show Main Hotel Info
+
+            $(".hotel-intro").append(`
+        <h2>Family Hotel Amarin</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€55 / pp per night</h5>
+                <a class="book-now" href="book.html">Book Now</a>
+    `)
+
+            // Show Hotel About Info
+
+            $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Located on a green peninsula, only 50 m from the sea, Amarin Hotel features a Wellness and Spa zone. 
+                        There are 4 restaurants with special menus for children. The outdoor swimming 
+                        complex comprises 4 swimming pools for parents, children and babies. Rovinj Old Town can be reached in only 4 km.
+                         <br>
+                        <br>
+                        The rooms and suites with clear lines and comfortable design feature air conditioning and a 
+                        flat-screen TV with satellite channels. All rooms are fitted
+                         with a private bathroom. For your comfort, you will find bath robes, slippers and free toiletries.
+                        <br>
+                        <br>
+                        Guests can enjoy the culinary 
+                        delights of the Marsea Restaurant 
+                        and find some refreshment in the nearby Snack bar with a variety of products that will delight the young ones.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+            closePopup();
+
+        });
+
+ 
 
 
 
