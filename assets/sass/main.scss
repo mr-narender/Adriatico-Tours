@@ -1564,7 +1564,7 @@ img {
 
   h4 {
     color: $bright-red;
-    font-weight: 500;
+    font-weight: 600;
     float: right;
     font-size: 17px;
     padding-top: 2px
@@ -1632,8 +1632,9 @@ img {
     max-width: 1200px;
 
     img {
-        height: 550px;
+        
         width: 100%;
+        max-height: 500px;
     }
 }
 
@@ -1789,6 +1790,19 @@ h2 {
 
    .search-result {
        justify-content: space-around;
+   }
+
+
+   
+    #hotel-offering {
+    position: relative;
+   } 
+
+   .hotel-offering_popup {
+       position: absolute;
+       top: 0;
+       left: 0;
+       transform: none;
    }
 
 }
@@ -2075,7 +2089,6 @@ h2 {
 
 
 
-
 }
 
 
@@ -2343,6 +2356,18 @@ h2 {
 }
 
 
+
+/***************************** Hotel Pop-Up City.html ***/
+
+
+
+#city-map-hotel {
+    height: 300px;
+}
+
+.hotel-content_box-one, .hotel-content_box-two {
+    margin-bottom: 10px;
+}
 
 
 }

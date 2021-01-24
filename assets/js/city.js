@@ -15,21 +15,66 @@ $(".city-name").text(readURL);
 //Launch/Close Hotel Pop-Up when click See More
 
         function launchPopup() {
+            if($(window).width() < 1200) {
+            $("#hotel-listing").css("visibility", "hidden");
+            $("#hotel-offering").css("width", "95%");
+            }
             $(".hotel-offering_popup").fadeIn(200);
-
         };
 
 
         function closePopup() {
             $(".popup-exit").click(function () {
+                $("#hotel-offering").css("width", "85%");
                 $(".hotel-offering_popup").fadeOut(200);
                 $(".hotel-content_box-two").remove();
                 $(".hotel-intro, .loadImages").html("");
+                 $("#hotel-listing").css("visibility", "visible");
 
             })
 
 
         };
+
+// Set Class to handle default location
+ class deaultLocation {
+    constructor(cityPosition, hotelPosition) {
+      if (cityPosition == null) {
+        cityPosition = {
+          lat: 44.866623,
+          lng: 13.849579,
+        };
+      }
+      if (hotelPosition == null) {
+        hotelPosition = {
+          lat: 44.866623,
+          lng: 13.846579,
+        };
+      }
+      this.cityPosition = cityPosition;
+      this.hotelPosition = hotelPosition;
+    }
+  }
+
+
+
+     function initMap(cityPosition, hotelPosition) {
+    deault_location = new deaultLocation();
+    var map = new google.maps.Map(document.getElementById("city-map"), {
+      zoom: 15,
+      center: cityPosition,
+      
+    });
+
+    var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
+      zoom: 17,
+      center: hotelPosition,
+    });
+    new google.maps.Marker({
+      position: hotelPosition,
+      map
+    });
+  }
 
 
 // Check which city was selected - change content based on selection
@@ -43,32 +88,11 @@ if (readURL === "Pula") {
     imageArray[1].style.backgroundImage = "url('assets/images/pula-slide-2.png')";
     imageArray[2].style.backgroundImage = "url('assets/images/pula-slide-3.png')";
 
-   // Load Map for city and hotel
-
-
-    function initMap(hotelPosition) {
-        const cityPosition = {
-                lat: 44.866623,
-                lng: 13.849579
-            }
-        var map = new google.maps.Map(document.getElementById("city-map"), {
-
-            zoom: 15,
-            center: cityPosition
+    //Show City On The Map
+   initMap(cityPosition = {
+          lat: 44.866623,
+          lng: 13.849579,
         });
-
-        var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
-
-            zoom: 17,
-            center: hotelPosition
-        });
-        new google.maps.Marker({
-            position: hotelPosition,
-            map
-        });
-    }
-
-
 
     //change title and about info
 
@@ -165,17 +189,16 @@ if (readURL === "Pula") {
  }
 
 
+// Change Pop-Up content based on selected hotel
 
-        // Change Pop-Up content based on selected hotel
 
         // First Hotel Selection
-
         $(".hotel-box:eq(0) .cta-see-more").click(function () {
 
 
-            // Show Hotel On Map
-            initMap({lat: 44.82175,lng: 13.86542});
-            launchPopup();
+        // Show Hotel On Map
+        initMap(cityPosition, hotelPosition = {lat: 44.82175, lng: 13.86542});
+        launchPopup();
 
             // Load Slideshow Hotel Images
             $(".loadImages").append(`
@@ -247,7 +270,7 @@ if (readURL === "Pula") {
 
 
             // Show Hotel On Map
-            initMap({lat: 44.84622,lng: 13.83566});
+            initMap(cityPosition, hotelPosition = {lat: 44.84622,lng: 13.83566});
             launchPopup();
 
             // Load Slideshow Hotel Images
@@ -322,7 +345,7 @@ if (readURL === "Pula") {
 
 
             // Show Hotel On Map
-            initMap({lat: 44.86078,lng: 13.81487});
+            initMap(cityPosition, hotelPosition = {lat: 44.86078,lng: 13.81487});
             launchPopup();
 
             // Load Slideshow Hotel Images
@@ -405,29 +428,11 @@ if (readURL === "Pula") {
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
 
   
-   // Load Map for city and hotel
-
-    function initMap(hotelPosition) {
-        const cityPosition = {
-                lat: 45.081165,
-                lng: 13.638707
-            }
-        var map = new google.maps.Map(document.getElementById("city-map"), {
-
-            zoom: 15,
-            center: cityPosition
+        //Show City On The Map
+   initMap(cityPosition = {
+          lat: 45.08102,
+          lng: 13.64014,
         });
-
-        var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
-
-            zoom: 17,
-            center: hotelPosition
-        });
-        new google.maps.Marker({
-            position: hotelPosition,
-            map
-        });
-    }
 
 
     // Show Relevant Hotels
@@ -530,7 +535,7 @@ if (readURL === "Pula") {
 
 
             // Show Hotel On Map
-            initMap({lat: 45.07312,lng: 13.63927});
+            initMap(cityPosition, {lat: 45.07312,lng: 13.63927});
             launchPopup();
 
             // Load Slideshow Hotel Images
@@ -605,7 +610,7 @@ if (readURL === "Pula") {
 
 
             // Show Hotel On Map
-            initMap({lat: 45.06132,lng: 13.67496});
+            initMap(cityPosition, {lat: 45.06132,lng: 13.67496});
             launchPopup();
 
             // Load Slideshow Hotel Images
@@ -682,7 +687,7 @@ if (readURL === "Pula") {
 
 
             // Show Hotel On Map
-            initMap({lat: 45.10244,lng: 13.62451});
+            initMap(cityPosition, {lat: 45.10244,lng: 13.62451});
             launchPopup();
 
             // Load Slideshow Hotel Images
