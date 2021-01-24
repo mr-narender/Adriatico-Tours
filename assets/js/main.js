@@ -189,8 +189,8 @@ $("document").ready(function () {
         }
     }
 
-    
     typeEffect();
+    
 
 });
 
