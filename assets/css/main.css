@@ -1161,9 +1161,11 @@ li {
   background: white;
   opacity: 0.8;
   box-shadow: 5px 5px 10px grey;
-  width: 33%;
+  width: 33.33%;
   position: relative;
-  right: 35px; }
+  right: 25px;
+  max-height: 200px;
+  border-radius: 5px; }
   .fact-item:nth-child(2), .fact-item:nth-child(4) {
     align-self: flex-end; }
   .fact-item hr {
@@ -1319,7 +1321,13 @@ li {
     margin-top: 10px; }
   .hotel-intro a {
     padding: 6px 25px;
-    margin-left: 0; } }
+    margin-left: 0; }
+  .facts-section {
+    justify-content: flex-start; }
+  .fact-item {
+    width: auto; }
+    .fact-item:nth-child(2), .fact-item:nth-child(4) {
+      align-self: center; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/
@@ -1440,4 +1448,9 @@ li {
   #city-map-hotel {
     height: 300px; }
   .hotel-content_box-one, .hotel-content_box-two {
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  /***************************************** Facts Section - why.html **/
+  .fact-item {
+    width: 65%;
+    left: 20px;
+    padding: 3%; } }

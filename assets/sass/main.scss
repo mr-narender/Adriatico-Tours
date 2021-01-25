@@ -1814,9 +1814,11 @@ h2 {
         background: white;
         opacity: 0.8;
         box-shadow: 5px 5px 10px grey;
-        width: 33%;
+        width: 33.33%;
         position: relative;
-        right: 35px;
+        right: 25px;
+        max-height: 200px;
+        border-radius: 5px;
         
         &:nth-child(2), &:nth-child(4) {
             align-self: flex-end;
@@ -2147,6 +2149,22 @@ h2 {
 
 
 
+    .facts-section {
+        justify-content: flex-start;
+
+
+    }
+
+    .fact-item {
+        width: auto;
+
+          &:nth-child(2), &:nth-child(4) {
+            align-self: center;
+        }
+
+    }
+
+
 }
 
 
@@ -2425,6 +2443,15 @@ h2 {
 
 .hotel-content_box-one, .hotel-content_box-two {
     margin-bottom: 10px;
+}
+
+
+/***************************************** Facts Section - why.html **/
+
+.fact-item {
+    width: 65%;
+    left: 20px;
+    padding: 3%;
 }
 
 
