@@ -571,7 +571,7 @@ li {
   background: #00AB99;
   padding: 1px;
   width: 95%;
-  border-radius: 0 15px 15px 0; }
+  border-radius: 0 20px 20px 0; }
 
 #why-us {
   width: 90%;
@@ -1130,6 +1130,48 @@ li {
       color: #00AB99; }
 
 /********************************************** Why Croatia Page ***/
+.hero-wrapper {
+  background: url("/assets/images/why-hero-img.png") no-repeat center;
+  background-size: cover;
+  height: 600px; }
+
+#about-croatia {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 80px; }
+  #about-croatia p {
+    margin-top: 35px; }
+
+.facts-section {
+  background: url("/assets/images/facts-section-img.png") no-repeat center;
+  background-size: cover;
+  margin-top: 80px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 850px;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid #e8e8e8;
+  max-width: 1400px; }
+
+.fact-item {
+  padding: 4%;
+  background: white;
+  opacity: 0.8;
+  box-shadow: 5px 5px 10px grey;
+  width: 33%;
+  position: relative;
+  right: 35px; }
+  .fact-item:nth-child(2), .fact-item:nth-child(4) {
+    align-self: flex-end; }
+  .fact-item hr {
+    width: 15%;
+    height: 5px;
+    background: #EA3F28;
+    opacity: 1; }
+
 /********************************************************************Media Query ***/
 @media only screen and (min-width: 1800px) {
   .footer-section_wrapper {
