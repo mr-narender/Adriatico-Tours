@@ -1174,6 +1174,9 @@ li {
     background: #EA3F28;
     opacity: 1; }
 
+#carouselExampleIndicatorsMobile {
+  display: none; }
+
 .top-things-carousel {
   width: 80%;
   margin: 125px auto 0 auto;
@@ -1200,12 +1203,13 @@ li {
   margin-top: 50px;
   gap: 35px; }
 
-.carousel-item_box {
+.carousel-item_box, .carousel-item_box-mobile {
   width: 40%;
   border: 1px solid  #e4e4e4;
   padding: 3%;
   background: #ffffff;
-  opacity: .9; }
+  opacity: .9;
+  max-width: 450px; }
 
 .top-info {
   width: 90%;
@@ -1376,7 +1380,16 @@ li {
   .fact-item {
     width: auto; }
     .fact-item:nth-child(2), .fact-item:nth-child(4) {
-      align-self: center; } }
+      align-self: center; }
+  /*****************************Top Things Carousel - why.html **/
+  #carouselExampleIndicatorsMobile {
+    display: block; }
+  .carousel-item_box-mobile {
+    width: 100%;
+    margin: 25px auto;
+    max-width: 350px; }
+  .top-things-carousel {
+    display: none; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/
@@ -1502,4 +1515,10 @@ li {
   .fact-item {
     width: 65%;
     left: 20px;
-    padding: 3%; } }
+    padding: 3%; }
+  /******************************************** Top Things Carousel - why.html**/
+  .top-things-carousel {
+    width: 90%; }
+  .top-info {
+    width: 100%;
+    font-size: .85em; } }

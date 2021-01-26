@@ -1830,6 +1830,10 @@ h2 {
         }
     }
 
+    #carouselExampleIndicatorsMobile {
+        display: none;
+    }
+
     .top-things-carousel {
         width: 80%;
         margin: 125px auto 0 auto;
@@ -1863,13 +1867,14 @@ h2 {
        
     }
 
-    .carousel-item_box {
+    .carousel-item_box, .carousel-item_box-mobile {
         width: 40%;
         border: 1px solid 
         #e4e4e4;
         padding: 3%;
          background: #ffffff;
         opacity: .9;
+        max-width: 450px;
     }
 
     .top-info {
@@ -2229,6 +2234,29 @@ h2 {
     }
 
 
+
+/*****************************Top Things Carousel - why.html **/
+
+#carouselExampleIndicatorsMobile {
+    display: block;
+
+   
+}
+
+.carousel-item_box-mobile {
+    width: 100%;
+
+    margin: 25px auto;
+     max-width: 350px;
+
+}
+
+.top-things-carousel {
+    display: none;
+}
+
+
+
 }
 
 
@@ -2516,6 +2544,19 @@ h2 {
     width: 65%;
     left: 20px;
     padding: 3%;
+}
+
+
+/******************************************** Top Things Carousel - why.html**/
+
+
+.top-things-carousel {
+    width: 90%;
+}
+
+.top-info {
+    width: 100%;
+    font-size: .85em;
 }
 
 
