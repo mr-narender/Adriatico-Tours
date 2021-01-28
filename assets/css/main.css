@@ -1304,7 +1304,8 @@ li {
     width: 40%;
     border: none;
     height: 50px;
-    font-size: 30px; }
+    font-size: 27px;
+    padding: 1%; }
     .currency-converter-result input[type=text]:focus {
       outline-color: #00AB99;
       border: none; }

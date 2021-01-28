@@ -30,7 +30,7 @@ $(".menu-open").click(function () {
 
     $(".level-one").show();
 
-// Extend Width Of Menu To 100% When On Screen Size (< 480px)
+    // Extend Width Of Menu To 100% When On Screen Size (< 480px)
 
     if ($(window).width() < 490) {
         $(mobileMenu).show().animate({
@@ -190,7 +190,7 @@ $("document").ready(function () {
     }
 
     typeEffect();
-    
+
 
 });
 
@@ -218,21 +218,54 @@ $(dropdownTrigger).click(function () {
 });
 
 
-// curency converter 
+// curency converter - API Taken From RAPID APIIn
 
-const data = null;
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// Make the API request
 
-xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
+
+
+
+
+
+function retriveData(cb) {
+
+    let data = null;
+    const mainURL = "https://currency-converter13.p.rapidapi.com/convert?";
+    
+
+
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.open("GET", mainURL + `from=EUR&to=HRK&amount=1`);
+    xhr.setRequestHeader("x-rapidapi-key", "870f5e7b10msh733fa0ef06d059ap150e1bjsnb7f9d01379ca");
+    xhr.setRequestHeader("x-rapidapi-host", "currency-converter13.p.rapidapi.com");
+
+     xhr.send(data);
+
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            cb(JSON.parse(this.responseText));
+        }
+    });
+
+    
+}
+
+
+retriveData(function(data) {
+   
+    $(".convert-button").click(function() {
+        let amountInput = $(".amount-input").val();
+        let convertedResult = data.amount * amountInput
+        console.log(amountInput);
+        $("#converted-amount").val(convertedResult.toFixed(5))
+    });
+
 });
 
-xhr.open("GET", "https://currency-converter13.p.rapidapi.com/convert?from=USD&to=HRK");
-xhr.setRequestHeader("x-rapidapi-key", "870f5e7b10msh733fa0ef06d059ap150e1bjsnb7f9d01379ca");
-xhr.setRequestHeader("x-rapidapi-host", "currency-converter13.p.rapidapi.com");
+// Converting Funcionality 
 
-xhr.send(data);
+
