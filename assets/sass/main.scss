@@ -238,18 +238,6 @@ li {
     }
 }
 
-.menu-cta {
-    @include primary-button;
-       margin: 0 0 12px 2%;
-       transition: 0.1s ease-in;
-
-    &:hover {
-        color: #ffffff;
-        background: lighten($dark-cyan, 3%);
-        transform: scale(1.06);
-        font-weight: 600;
-    }
-}
 
 /********************* Destination Dropdown Expand ***/
 
@@ -1787,6 +1775,7 @@ h2 {
 
         p {
             margin-top: 35px;
+            font-size: 1.15em;
         }
     }
 
@@ -2011,12 +2000,15 @@ h2 {
    .currency-converter-result {
        margin-top: 35px;
     
+       
        input {
            width: 40%;
            border: none;
            height: 50px;
            font-size: 27px;
            padding: 1%;
+           background: #ffffff !important;
+           color: $dark-grey !important;
 
 
            &[type=text]:focus {
@@ -2025,7 +2017,80 @@ h2 {
     }
        }
    }
+
+   .amount-input {
+       background: #ffffff !important;
+       color: $dark-grey !important;
+
+       &:hover {
+           transform: scale(1) !important;
+       }
+   }
    
+/********************************************************************Contact Us Page ***/
+
+
+#hero-wrapper {
+    display: flex;
+}
+
+
+.hero-img {
+    background: url("/assets/images/contact-hero-img.png");
+    background-size: cover;
+    height: 650px;
+    width: 50%;
+}
+
+.form-wrapper {
+    width: 50%;
+    padding: 3%;
+}
+
+
+label {
+  display: block;
+}
+
+input {
+  padding: 12px;
+  width: 45%;
+}
+
+textarea {
+  width: 90%;
+  max-height: 300px;
+}
+
+
+input:nth-child(8),
+input:nth-child(6) {
+  width: 90%;
+}
+
+input:last-child {
+  display: block;
+  margin-top: 2%;
+  background: $bright-red;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+input:last-child:hover {
+  transform: scale(1.05);
+}
+
+.contact-us--section input:focus, .contact-us--section textarea:focus {
+    outline-color: #a95c26;
+}
+
+
+
+
 
 /********************************************************************Media Query ***/
 
@@ -2456,6 +2521,23 @@ h2 {
 
     .book-now {
         margin-left: 5px;
+    }
+
+
+    /***************************Contact Us Section**/
+
+    #hero-wrapper {
+        display: block;
+    }
+
+    .hero-img {
+        width: 100%;
+
+    }
+
+    .form-wrapper {
+          width: 100%;
+          margin-top: 50px;
     }
 
 }
