@@ -218,26 +218,21 @@ $(dropdownTrigger).click(function () {
 });
 
 
+// curency converter 
 
-// Currency Converter
+const data = null;
 
-endpoint = 'live'
-access_key = '4a7335813869248c5349a15441119602';
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-// get the most recent exchange rates via the "live" endpoint:
-$.ajax({
-    url: 'https://api.currencylayer.com/' + endpoint + '?access_key=' + access_key,   
-    dataType: 'jsonp',
-    success: function(json) {
-
-        // exchange rata data is stored in json.quotes
-        alert(json.quotes.USDGBP);
-        
-        // source currency is stored in json.source
-        alert(json.source);
-        
-        // timestamp can be accessed in json.timestamp
-        alert(json.timestamp);
-        
-    }
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
 });
+
+xhr.open("GET", "https://currency-converter13.p.rapidapi.com/convert?from=USD&to=HRK");
+xhr.setRequestHeader("x-rapidapi-key", "870f5e7b10msh733fa0ef06d059ap150e1bjsnb7f9d01379ca");
+xhr.setRequestHeader("x-rapidapi-host", "currency-converter13.p.rapidapi.com");
+
+xhr.send(data);

@@ -1108,9 +1108,9 @@ padding-bottom: 35px;
     background: #fff09f;
     margin: 125px auto;
     text-align: center;
-    padding: 10%;
+    padding: 8%;
     max-width: 1500px;
-    max-height: 650px;
+    max-height: 550px;
 }
 
 .newsletter-section_content {
@@ -1898,8 +1898,130 @@ h2 {
 
     .icon-next {
         float: left;
-        
+    
     }
+
+
+    /*****************************************Currency Converter **/
+
+
+    #currency-converter {
+        width: 80%;
+        margin: 80px auto;
+    }
+
+
+    .currency-converter_box {
+        background: #f7f7f7;
+        padding: 5% 3%;
+        border-radius: 15px;
+
+        h2 {
+           font-weight: 600; 
+        }
+    }
+
+    .currency-converter_options {
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+
+        i {
+            color: $bright-red;
+        }
+    }
+
+   .currency-converter-option-from, .currency-converter-option-to, .currency-converter-amount {
+    background: #ffffff;
+    width: 25%;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 10px;
+
+    img {
+        width: 45px;
+    }
+
+    button {
+        text-align: left;
+        border: none;
+        background: transparent;
+        color: $dark-cyan;
+        font-weight: 700;
+        font-size: 1.65em;
+        margin-left: 10px;
+        vertical-align: middle;
+        width: 50%;
+        span {
+        display: block;
+        color: $dark-grey;
+        font-weight: 500;
+        font-size: 15px;
+        position: relative;
+        bottom: 5px;
+        }   
+    }
+
+   }
+
+   .currency-converter-amount {
+    
+   &:hover {
+       border: 2px solid $dark-cyan;
+   }
+   input {
+    height: 60px;
+    width: 100%;
+    font-size: 30px;
+    border: none;
+
+    &[type=number]:focus {
+        outline-color:white;
+        border: none;
+    }
+}
+
+   }
+
+   .convert-button {
+    background: transparent;
+    border: none;
+      
+
+       &:hover {
+           transition: all 0.35s ease-in-out;
+           position: relative;
+           left: 5px;
+       }
+
+       &:focus {
+           outline: none;
+       }
+       i {
+           color: $vivid-yellow;
+       }
+   }
+
+
+   .currency-converter-result {
+       margin-top: 35px;
+    
+       input {
+           width: 40%;
+           border: none;
+           height: 50px;
+           font-size: 30px;
+
+
+           &[type=text]:focus {
+            outline-color:$dark-cyan;
+            border: none;
+    }
+       }
+   }
+   
 
 /********************************************************************Media Query ***/
 
@@ -2282,7 +2404,7 @@ h2 {
 /************************** Newsletter Section **/
 
 #newsletter-section {
-    padding: 10% 5%;
+    padding: 8% 5%;
 }
 
 .newsletter-section_content input {

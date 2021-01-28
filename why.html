@@ -470,9 +470,63 @@
 
     </div>
 
-    
+    <!--Currency Converter-->
 
-      <!--Popular Destination Section -->
+
+    <section id="currency-converter">
+
+        <div class="currency-converter_box">
+
+            <h2>Currency Converter</h2>
+            <hr>
+            <div class="currency-converter_options">
+
+                <div class="currency-converter-option-from">
+                    <h5>From</h5>
+                    <img src="assets/images/european-union-icon.png">
+                    <button> EUR
+                        <span>Euro</span>
+                    </button>
+                </div>
+
+                <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+
+                <div class="currency-converter-option-to">
+                    <h5>To</h5>
+
+                    <img src="assets/images/croatia-flag-icon.png">
+                    <button> HRK
+                        <span>Croatian Kuna</span>
+                    </button>
+                </div>
+
+                <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+
+                <div class="currency-converter-amount">
+                    <h5>Amount</h5>
+                    <form onsubmit="return false">
+                        <label for="amount" class="sr-only">Amount To Convert</label>
+                        <input type="number" id="amount" name="amount" min="1" max="10000" value="1" required>
+                    </form>
+                </div>
+                <button class="convert-button"><i class="fas fa-chevron-right fa-3x"></i></button>
+            </div>
+
+
+            <div class="currency-converter-result">
+                <h5>Conversion Result</h5>
+                <label for="converted-amount" class="sr-only">Converted Amount</label>
+                <input readonly="readonly" type="text" id="converted-amount" name="converted-amount" value="">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--Popular Destination Section -->
 
 
     <section id="popular-destainations">
