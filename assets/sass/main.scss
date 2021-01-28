@@ -1803,7 +1803,7 @@ h2 {
         align-items: center;
         border-radius: 30px;
         border: 1px solid #e8e8e8;   
-        max-width: 1400px;
+        
       
     }
 
@@ -1834,13 +1834,15 @@ h2 {
         display: none;
     }
 
-    .top-things-carousel {
-        width: 80%;
+    #top-things-carousel {
+        width: 85%;
         margin: 125px auto 0 auto;
+    }
+
+    .top-things-carousel {
         text-align: center;
         background: lighten($vivid-yellow, 40%);
         padding: 50px 15px;
-        max-width: 1400px;
         position: relative;
 
         img {
@@ -1906,8 +1908,7 @@ h2 {
 
 
     #currency-converter {
-        width: 80%;
-        margin: 80px auto;
+        margin: 120px 0;
     }
 
 
@@ -1915,6 +1916,8 @@ h2 {
         background: #f7f7f7;
         padding: 5% 3%;
         border-radius: 15px;
+        max-width: 1250px;
+        margin: 0 auto;
 
         h2 {
            font-weight: 600; 
@@ -2373,6 +2376,8 @@ h2 {
      max-width: 350px;
 
 }
+
+
 
 .top-things-carousel {
     display: none;

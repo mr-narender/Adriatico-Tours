@@ -1153,8 +1153,7 @@ li {
   height: 850px;
   align-items: center;
   border-radius: 30px;
-  border: 1px solid #e8e8e8;
-  max-width: 1400px; }
+  border: 1px solid #e8e8e8; }
 
 .fact-item {
   padding: 4%;
@@ -1177,13 +1176,14 @@ li {
 #carouselExampleIndicatorsMobile {
   display: none; }
 
+#top-things-carousel {
+  width: 85%;
+  margin: 125px auto 0 auto; }
+
 .top-things-carousel {
-  width: 80%;
-  margin: 125px auto 0 auto;
   text-align: center;
   background: #fdf4c6;
   padding: 50px 15px;
-  max-width: 1400px;
   position: relative; }
   .top-things-carousel img {
     position: absolute;
@@ -1229,13 +1229,14 @@ li {
 
 /*****************************************Currency Converter **/
 #currency-converter {
-  width: 80%;
-  margin: 80px auto; }
+  margin: 120px 0; }
 
 .currency-converter_box {
   background: #f7f7f7;
   padding: 5% 3%;
-  border-radius: 15px; }
+  border-radius: 15px;
+  max-width: 1250px;
+  margin: 0 auto; }
   .currency-converter_box h2 {
     font-weight: 600; }
 
