@@ -1,3 +1,6 @@
+
+
+
 // Navigation
 
 let count = 0;
@@ -232,7 +235,7 @@ function retriveData(cb) {
 
     let data = null;
     const mainURL = "https://currency-converter13.p.rapidapi.com/convert?";
-    
+
 
 
     const xhr = new XMLHttpRequest();
@@ -242,7 +245,7 @@ function retriveData(cb) {
     xhr.setRequestHeader("x-rapidapi-key", "870f5e7b10msh733fa0ef06d059ap150e1bjsnb7f9d01379ca");
     xhr.setRequestHeader("x-rapidapi-host", "currency-converter13.p.rapidapi.com");
 
-     xhr.send(data);
+    xhr.send(data);
 
 
     xhr.addEventListener("readystatechange", function () {
@@ -251,13 +254,13 @@ function retriveData(cb) {
         }
     });
 
-    
+
 }
 
 
-retriveData(function(data) {
-   
-    $(".convert-button").click(function() {
+retriveData(function (data) {
+
+    $(".convert-button").click(function () {
         let amountInput = $(".amount-input").val();
         let convertedResult = data.amount * amountInput
         console.log(amountInput);
@@ -266,6 +269,36 @@ retriveData(function(data) {
 
 });
 
-// Converting Funcionality 
 
 
+// Send Email - Email.js
+
+
+function sendMail(contactForm) {
+    emailjs.send("service_z13soh8", "contact_form",{
+            
+            "from_fName": contactForm.fName.value,
+            "from_lName": contactForm.lName.value,
+            "from_email": contactForm.emailaddress.value,
+            "message": contactForm.message.value,
+            "phone_number": contactForm.phoneNumber.value
+
+        })
+        .then(function(response) {
+       console.log('SUCCESS!', response);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+    return false;
+}
+
+
+
+// Inform User the message was sent
+
+
+$(".submit-form").click(function() {
+    $(".message-sent").fadeIn(100).delay(3200).fadeOut(300);
+
+});

@@ -1351,6 +1351,15 @@ input:last-child:hover {
 .contact-us--section input:focus, .contact-us--section textarea:focus {
   outline-color: #a95c26; }
 
+.message-sent {
+  background: #0080005e;
+  margin-top: 30px;
+  text-align: center;
+  display: none; }
+  .message-sent h5 {
+    padding: 5px;
+    font-weight: 600; }
+
 /********************************************************************Media Query ***/
 @media only screen and (min-width: 1800px) {
   .footer-section_wrapper {

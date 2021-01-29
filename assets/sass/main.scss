@@ -2088,7 +2088,17 @@ input:last-child:hover {
     outline-color: #a95c26;
 }
 
+.message-sent {
+    background: #0080005e;
+    margin-top: 30px;
+    text-align: center;
+display: none;
 
+    h5 {
+        padding: 5px;
+        font-weight: 600;
+    }
+}
 
 
 
