@@ -1328,7 +1328,8 @@ input {
 
 textarea {
   width: 90%;
-  max-height: 300px; }
+  max-height: 300px;
+  padding: 2%; }
 
 input:nth-child(8),
 input:nth-child(6) {
@@ -1374,6 +1375,17 @@ input:last-child:hover {
     font-size: 120%; } }
 
 @media only screen and (max-width: 1200px) {
+  .search-result {
+    justify-content: space-around; }
+  #hotel-offering {
+    position: relative; }
+  .hotel-offering_popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: none; } }
+
+@media only screen and (max-height: 1120px) {
   .search-result {
     justify-content: space-around; }
   #hotel-offering {

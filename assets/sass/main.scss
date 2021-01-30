@@ -153,6 +153,7 @@ li {
             display: inline-block;
             margin: 0 8px;
 
+
         &:nth-child(1) {
             margin-left: 0;
         }
@@ -1605,6 +1606,7 @@ img {
 }
 
 
+
 .hotel-offering_popup {
     display: none;
     background: white;
@@ -2060,6 +2062,7 @@ input {
 textarea {
   width: 90%;
   max-height: 300px;
+  padding: 2%;
 }
 
 
@@ -2144,6 +2147,24 @@ display: none;
 }
 
 
+@media only screen and (max-height: 1120px) {
+       .search-result {
+       justify-content: space-around;
+   }
+
+
+   
+    #hotel-offering {
+    position: relative;
+   } 
+
+   .hotel-offering_popup {
+       position: absolute;
+       top: 0;
+       left: 0;
+       transform: none;
+   }
+}
 
 
 
@@ -2398,6 +2419,7 @@ display: none;
     }
 
     /************************************************ Hotel Pop-Up - city.html**/
+
 
     .hotel-content {
         flex-wrap: wrap;
