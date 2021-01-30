@@ -302,3 +302,19 @@ $(".submit-form").click(function() {
     $(".message-sent").fadeIn(100).delay(3200).fadeOut(300);
 
 });
+
+
+//Show Company Location On Google Maps
+
+  let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("company-location"), {
+    center: { lat: 53.37572, lng: -6.29603 },
+    zoom: 16,
+  });
+   new google.maps.Marker({
+      position: { lat: 53.37572, lng: -6.29603 },
+      map,
+    });
+}
