@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
 /**************** Font Awsome Skeleton *********/
-#menu li:nth-child(1)::after, .destination_expand-section h2::before, .footer-navigation li::after, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .recommendations-box-content a::after, .recommendations-box-content h4::before {
+#menu li:nth-child(1)::after, .destination_expand-section h2::before, .footer-navigation li::after, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .recommendations-box-content a::after, .recommendations-box-content h4::before, .hotel-name::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -1011,6 +1011,77 @@ li {
   .book-now:hover {
     color: #ffffff; }
 
+.booking-popup_content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px; }
+  .booking-popup_content h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px; }
+
+.booking-info, .booking-summary {
+  width: 50%; }
+
+.passanger-selection {
+  display: flex;
+  justify-content: flex-start;
+  gap: 35px;
+  background: #ececec;
+  padding: 20px;
+  width: 90%;
+  margin: 10px 0 20px 0; }
+  .passanger-selection select {
+    width: 200px;
+    height: 50px;
+    padding: 2%;
+    border: none; }
+
+.card-details {
+  display: flex;
+  border: 1px solid black;
+  width: 90%;
+  justify-content: center;
+  gap: 15px;
+  padding: 2%;
+  border: 1px solid #cacaca;
+  line-height: 35px; }
+  .card-details input {
+    width: 100% !important;
+    border: 1px solid #cacaca;
+    border-radius: 5px; }
+
+.card-number, .card-epiry-ccv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px; }
+
+.book-form {
+  height: 40px; }
+
+.card-number {
+  width: 60%; }
+
+.card-epiry-ccv {
+  width: 40%; }
+
+.booking-summary_content {
+  padding-top: 25px; }
+  .booking-summary_content i {
+    color: #00AB99;
+    padding-right: 10px; }
+  .booking-summary_content hr {
+    width: 80%; }
+
+.bottom-space {
+  margin-bottom: 50px; }
+
+.hotel-name::before {
+  content: "\f594";
+  font-size: 20px;
+  color: #00AB99;
+  padding-right: 10px; }
+
 .hotel-offering_popup, .booking-popup {
   display: none;
   background: white;
@@ -1029,7 +1100,8 @@ li {
     max-height: 500px; }
 
 .booking-popup {
-  display: block; }
+  display: block;
+  padding: 2%; }
 
 .hero-section-popup {
   position: relative; }
@@ -1327,19 +1399,20 @@ label {
 
 .contact-input {
   padding: 12px;
-  width: 45%;
-  margin-bottom: 5px; }
+  width: 90%;
+  margin-bottom: 5px;
+  border: 1px solid #cacaca; }
 
 textarea {
   width: 90%;
   max-height: 300px;
   padding: 2%; }
 
-.contact-input:nth-child(8),
-.contact-input:nth-child(6) {
-  width: 90%; }
+.contact-input:nth-child(2),
+.contact-input:nth-child(4) {
+  width: 45%; }
 
-.contact-input:last-child {
+.submit-form, .book-form {
   display: block;
   margin-top: 2%;
   background: #EA3F28;
@@ -1348,9 +1421,10 @@ textarea {
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out; }
+  -o-transition: all 0.3s ease-in-out;
+  width: 35%; }
 
-.contact-input:last-child:hover {
+.submit-form:hover, .book-form {
   transform: scale(1.05); }
 
 .contact-us--section .contact-input:focus, .contact-us--section textarea:focus {

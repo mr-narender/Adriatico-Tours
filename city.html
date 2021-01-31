@@ -358,80 +358,105 @@
 
         <div class="booking-popup">
 
+            <i class="far fa-times-circle popup-exit" aria-hidden="true"></i>
+
             <h2>Trip Overview</h2>
             <hr>
 
-            <div class="booking-info">
+            <div class="booking-popup_content">
 
-               
+                <div class="booking-info">
+                    <h3>Passengers</h3>
+                    <div class="passanger-selection">
 
-                <div class="passanger-selection">
-                    <h5>Passengers</h5>
-                    <div class="passanger-adult">
-                        <label for="adult" class="sr-only ">Choose Number Of Adults</label>
-                        <select name="adult" id="adult">
-                            <option value="one-adult">1 adult</option>
-                            <option value="two-adult">2 adults</option>
-                            <option value="three-adult">3 adults</option>
-                            <option value="four-adult">4 adults</option>
-                            <option value="five-adult">5 adults</option>
-                        </select>
+                        <div class="passanger-selection_adult">
+                            <label for="adult" class="sr-only ">Choose Number Of Adults</label>
+                            <select name="adult" id="adult">
+                                <option value="one-adult">1 adult</option>
+                                <option value="two-adult">2 adults</option>
+                                <option value="three-adult">3 adults</option>
+                                <option value="four-adult">4 adults</option>
+                                <option value="five-adult">5 adults</option>
+                            </select>
+                        </div>
+
+                        <div class="passanger-selection_child">
+                            <label for="child" class="sr-only">Choose Number Of Children</label>
+                            <select name="child" id="child">
+                                <option value="zero-children">0 children</option>
+                                <option value="one-child">1 child</option>
+                                <option value="two-children">2 children</option>
+                                <option value="three-children">3 children</option>
+                                <option value="four-children">4 children</option>
+                            </select>
+                        </div>
+
+
                     </div>
 
-                    <div class="passanger-selection_child">
-                        <label for="child" class="sr-only">Choose Number Of Children</label>
-                        <select name="child" id="child">
-                            <option value="zero-children">0 children</option>
-                            <option value="one-child">1 child</option>
-                            <option value="two-children">2 children</option>
-                            <option value="three-children">3 children</option>
-                            <option value="four-children">4 children</option>
-                        </select>
+                    <form onsubmit="return sendBooking(this);">
+
+                        <label for="fName">Name *</label>
+                        <input class="contact-input" type="text" name="fName" id="fName" placeholder="First Name"
+                            required />
+                        <label for="lName" class="sr-only">Last Name</label>
+                        <input class="contact-input" type="text" name="lName" id="lName" placeholder="Last Name"
+                            required />
+                        <label for="emailaddress">Email Address *</label>
+                        <input class="contact-input" type="email" id="emailaddress" name="emailaddress" required
+                            placeholder="john@gmail.com" />
+                        <label for="phoneNumber">Phone Number</label>
+                        <input class="contact-input" type="text" id="phoneNumber" name="phoneNumber"
+                            placeholder="Your Phone Number" required />
+                        <label for="namecard">Name On Card *</label>
+                        <input class="contact-input" type="text" id="namecard" name="namecard" placeholder="John Doe"
+                            required />
+                        <h4 style="font-size: 1rem; font-weight: 400;">Card Details *</h4>
+                        <div class="card-details">
+                            <div class="card-number">
+                                <label for="card-details" class="sr-only">Card Number </label>
+                                <input class="contact-input" type="tel" pattern="[0-9\s]{13,19}" maxlength="19"
+                                    placeholder="xxxx xxxx xxxx xxxx" required>
+                            </div>
+                            <div class="card-epiry-ccv">
+                                <label for="card-expiry" class="sr-only">Card Number </label>
+                                <input class="contact-input" type="text" id="card-expiry" name="card-expiry"
+                                    placeholder="mm / yy" required />
+                                <label for="card-ccv" class="sr-only">Card Number </label>
+                                <input class="contact-input" type="text" id="card-ccv" name="card-ccv" placeholder="CCV"
+                                    required />
+                            </div>
+                        </div>
+                        <label for="submit" class="sr-only">Submit Details</label>
+                        <input class="book-form" type="submit" id="submit" value="SUBMIT" />
+                    </form>
+
+                </div>
+
+                <div class="booking-summary">
+
+                    <h3>Booking Summary</h3>
+
+                    <div class="booking-summary_content">
+
+                    <h4>Hotel</h4>
+                     <hr>
+                    <h5 class="bottom-space hotel-name">Resort Del Mar - Pula, Croatia</h5>
+                    <h4><i class="far fa-user"></i>Passangers</h4>
+                    <hr>
+                    <h5>Adults<span class="no-adults"> 2</span></h5>
+                    <h5 class="bottom-space">Children<span class="no-children"> 1</span></h5>
+                    <hr>
+                    <h4>Total<span class="default-value"> €90</span></h4>
+
+
+
                     </div>
 
 
                 </div>
 
-                <form onsubmit="return sendBooking(this);">
-
-                    <label for="fName">Name *</label>
-                    <input class="contact-input" type="text" name="fName" id="fName" placeholder="First Name"
-                        required />
-                    <label for="lName" class="sr-only">Last Name</label>
-                    <input class="contact-input" type="text" name="lName" id="lName" placeholder="Last Name" required />
-                    <label for="emailaddress">Email Address *</label>
-                    <input class="contact-input" type="email" id="emailaddress" name="emailaddress" required
-                        placeholder="john@gmail.com" />
-                    <label for="phoneNumber">Phone Number *</label>
-                    <input class="contact-input" type="text" id="phoneNumber" name="phoneNumber"
-                        placeholder="Your Phone Number" required />
-                    <label for="submit" class="sr-only">Submit Details</label>
-                    <input class="submit-form contact-input" type="submit" id="submit" value="SUBMIT" />
-
-                </form>
-
             </div>
-
-            <div class="booking-summary">
-
-                <h5>Booking Summary</h5>
-                <hr class="hr-large">
-
-
-
-                 <h4><i class="fas fa-hotel"></i>Hotel</h4>
-                 <hr>
-                 <h5>Resort Del Mar - Pula, Croatia</h5>
-
-                  <h4><i class="far fa-user"></i>Passangers</h4>
-                 <hr>
-                 <h5>Adults<span class="no-adults">2</span></h5>
-                 <h5>Children<span class="no-children">1</span></h5>
-                 <hr>
-                 <h4>Total<span>€90</span></h4>
-
-            </div>
-
 
         </div>
 
