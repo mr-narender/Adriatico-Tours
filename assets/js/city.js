@@ -43,8 +43,8 @@ function launchBookingPopup() {
     $(".booking-popup").fadeIn(300);
     $("#adult").val(1);
     $("#child").val(0);
-      $(".no-adults").html(`(1)`);
-            $(".no-children").html(`(0)`);
+    $(".no-adults").html(`(1)`);
+    $(".no-children").html(`(0)`);
 }
 
 function closeBookingPopup() {
