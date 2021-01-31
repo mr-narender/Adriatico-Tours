@@ -226,11 +226,6 @@ $(dropdownTrigger).click(function () {
 
 // Make the API request
 
-
-
-
-
-
 function retriveData(cb) {
 
     let data = null;
@@ -263,7 +258,6 @@ retriveData(function (data) {
     $(".convert-button").click(function () {
         let amountInput = $(".amount-input").val();
         let convertedResult = data.amount * amountInput
-        console.log(amountInput);
         $("#converted-amount").val(convertedResult.toFixed(5))
     });
 
@@ -273,32 +267,29 @@ retriveData(function (data) {
 
 // Send Email - Email.js
 
-
 function sendMail(contactForm) {
-    emailjs.send("service_z13soh8", "contact_form",{
-            
-            "from_fName": contactForm.fName.value,
-            "from_lName": contactForm.lName.value,
-            "from_email": contactForm.emailaddress.value,
-            "message": contactForm.message.value,
-            "phone_number": contactForm.phoneNumber.value
+    emailjs.send("service_z13soh8", "contact_form", {
 
-        })
-        .then(function(response) {
-       console.log('SUCCESS!', response);
-    }, function(error) {
-       console.log('FAILED...', error);
-    });
+        "from_fName": contactForm.fName.value,
+        "from_lName": contactForm.lName.value,
+        "from_email": contactForm.emailaddress.value,
+        "message": contactForm.message.value,
+        "phone_number": contactForm.phoneNumber.value
+
+    })
+        .then(function (response) {
+            console.log('SUCCESS!', response);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
 
     return false;
 }
 
 
-
 // Inform User the message was sent
 
-
-$(".submit-form").click(function() {
+$(".submit-form").click(function () {
     $(".message-sent").fadeIn(100).delay(3200).fadeOut(300);
 
 });
@@ -306,15 +297,15 @@ $(".submit-form").click(function() {
 
 //Show Company Location On Google Maps
 
-  let map;
+let map;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("company-location"), {
-    center: { lat: 53.37572, lng: -6.29603 },
-    zoom: 16,
-  });
-   new google.maps.Marker({
-      position: { lat: 53.37572, lng: -6.29603 },
-      map,
+    map = new google.maps.Map(document.getElementById("company-location"), {
+        center: { lat: 53.37572, lng: -6.29603 },
+        zoom: 16,
+    });
+    new google.maps.Marker({
+        position: { lat: 53.37572, lng: -6.29603 },
+        map,
     });
 }

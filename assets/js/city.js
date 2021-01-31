@@ -11,70 +11,70 @@ readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
 // Populate bread crumbs link with city name  
 
 $(".city-name").text(readURL);
-       
+
 //Launch/Close Hotel Pop-Up when click See More
 
-        function launchPopup() {
-            if($(window).width() < 1200) {
-            $("#hotel-listing").css("visibility", "hidden");
-            $("#hotel-offering").css("width", "95%");
-            }
-            $(".hotel-offering_popup").fadeIn(200);
-        };
+function launchHotelpopup() {
+    if ($(window).width() < 1200) {
+        $("#hotel-listing").css("visibility", "hidden");
+        $("#hotel-offering").css("width", "95%");
+    }
+    $(".hotel-offering_popup").fadeIn(200);
+};
 
 
-        function closePopup() {
-            $(".popup-exit").click(function () {
-                $("#hotel-offering").css("width", "85%");
-                $(".hotel-offering_popup").fadeOut(200);
-                $(".hotel-content_box-two").remove();
-                $(".hotel-intro, .loadImages").html("");
-                 $("#hotel-listing").css("visibility", "visible");
+function closeHotelPopup() {
+    $(".popup-exit").click(function () {
+        $("#hotel-offering").css("width", "85%");
+        $(".hotel-offering_popup").fadeOut(200);
+        $(".hotel-content_box-two").remove();
+        $(".hotel-intro, .loadImages").html("");
+        $("#hotel-listing").css("visibility", "visible");
 
-            })
+    })
 
 
-        };
+};
 
 // Set Class to handle default location
- class deaultLocation {
+class deaultLocation {
     constructor(cityPosition, hotelPosition) {
-      if (cityPosition == null) {
-        cityPosition = {
-          lat: 44.866623,
-          lng: 13.849579,
-        };
-      }
-      if (hotelPosition == null) {
-        hotelPosition = {
-          lat: 44.866623,
-          lng: 13.846579,
-        };
-      }
-      this.cityPosition = cityPosition;
-      this.hotelPosition = hotelPosition;
+        if (cityPosition == null) {
+            cityPosition = {
+                lat: 44.866623,
+                lng: 13.849579,
+            };
+        }
+        if (hotelPosition == null) {
+            hotelPosition = {
+                lat: 44.866623,
+                lng: 13.846579,
+            };
+        }
+        this.cityPosition = cityPosition;
+        this.hotelPosition = hotelPosition;
     }
-  }
+}
 
 
 
-     function initMap(cityPosition, hotelPosition) {
+function initMap(cityPosition, hotelPosition) {
     deault_location = new deaultLocation();
     var map = new google.maps.Map(document.getElementById("city-map"), {
-      zoom: 15,
-      center: cityPosition,
-      
+        zoom: 15,
+        center: cityPosition,
+
     });
 
     var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
-      zoom: 17,
-      center: hotelPosition,
+        zoom: 17,
+        center: hotelPosition,
     });
     new google.maps.Marker({
-      position: hotelPosition,
-      map
+        position: hotelPosition,
+        map
     });
-  }
+}
 
 
 // Check which city was selected - change content based on selection
@@ -89,10 +89,10 @@ if (readURL === "Pula") {
     imageArray[2].style.backgroundImage = "url('assets/images/pula-slide-3.png')";
 
     //Show City On The Map
-   initMap(cityPosition = {
-          lat: 44.866623,
-          lng: 13.849579,
-        });
+    initMap(cityPosition = {
+        lat: 44.866623,
+        lng: 13.849579,
+    });
 
     //change title and about info
 
@@ -145,7 +145,7 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" href="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€80 pp / per night</h4>
                         </div>
                 </div>
@@ -162,7 +162,7 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Set just steps away from the beach in the area of Zlatne Stijene, Splendid Resort offers self-catering accommodation and free WiFi access in public areas.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" href="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€40 pp / per night</h4>
                         </div>
                 </div>
@@ -180,28 +180,28 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Located in Pula and surrounded with 3 beaches Valovine Beach, Stoja Beach and Zelenika Beach, Hotel Modo provides bright-coloured styled rooms with sea view.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" href="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€65 pp / per night</h4>
                         </div>
                 </div>
 `);
 
- }
+    }
 
 
-// Change Pop-Up content based on selected hotel
+    // Change Pop-Up content based on selected hotel
 
 
-        // First Hotel Selection
-        $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // First Hotel Selection
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
 
 
         // Show Hotel On Map
-        initMap(cityPosition, hotelPosition = {lat: 44.82175, lng: 13.86542});
-        launchPopup();
+        initMap(cityPosition, hotelPosition = { lat: 44.82175, lng: 13.86542 });
+        launchHotelpopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-1-1.png" alt="...">
                         </div>
@@ -213,21 +213,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Resort del Mar</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -259,22 +259,22 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
+    });
 
 
     // Second Hotel Selection
 
-        $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
 
 
-            // Show Hotel On Map
-            initMap(cityPosition, hotelPosition = {lat: 44.84622,lng: 13.83566});
-            launchPopup();
+        // Show Hotel On Map
+        initMap(cityPosition, hotelPosition = { lat: 44.84622, lng: 13.83566 });
+        launchHotelpopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-2-1.png" alt="...">
                         </div>
@@ -286,21 +286,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Splendid Resort</h2>
 
                 <hr class="hr-large">
                <i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -333,23 +333,23 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
-
-
-
-        // Third Hotel Selection
-
-        $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    });
 
 
-            // Show Hotel On Map
-            initMap(cityPosition, hotelPosition = {lat: 44.86078,lng: 13.81487});
-            launchPopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, hotelPosition = { lat: 44.86078, lng: 13.81487 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-3-1.png" alt="...">
                         </div>
@@ -361,21 +361,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Hotel Modo</h2>
 
                 <hr class="hr-large">
                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -407,13 +407,27 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
-     
-     
+    });
 
-   
+
+
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelBookingInfo = {
+        name: ["Resort del Mar", "Splendid Resort", "Hotel Modo"],
+        price: ["80", "40", "65"]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+        $(".booking-popup h2").html(hotelBookingInfo.name[0]);
+    });
+
 
 } else if (readURL === "Rovinj") {
 
@@ -427,12 +441,12 @@ if (readURL === "Pula") {
     $(".city-title").text("Rovinj");
     $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
 
-  
-        //Show City On The Map
-   initMap(cityPosition = {
-          lat: 45.08102,
-          lng: 13.64014,
-        });
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 45.08102,
+        lng: 13.64014,
+    });
 
 
     // Show Relevant Hotels
@@ -446,7 +460,7 @@ if (readURL === "Pula") {
     $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
 
-// Filtering System
+    // Filtering System
 
     $(".filter-options li:eq(0)").click(function (listHotels) {
         $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
@@ -480,7 +494,7 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Built in 2011, Resort del Mar is located on the seafront in Banjole, 4 km from Pula.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" href="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€80 pp / per night</h4>
                     </div>
                 </div>
@@ -497,7 +511,7 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Set just steps away from the beach in the area of Zlatne Stijene, Splendid Resort offers self-catering accommodation and free WiFi access in public areas.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" class="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€35 pp / per night</h4>
                     </div>
                 </div>
@@ -515,7 +529,7 @@ if (readURL === "Pula") {
                         </ul>
                         <p>Located in Pula and surrounded with 3 beaches Valovine Beach, Stoja Beach and Zelenika Beach, Hotel Modo provides bright-coloured styled rooms with sea view.</p>
 
-                        <button class="cta-see-more">See More</button><a class="book-now" href="book.html">Book Now</a>
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
                         <h4>€55 pp / per night</h4>                   
                         </div>
                 </div>
@@ -527,19 +541,19 @@ if (readURL === "Pula") {
 
 
 
-       // Change Pop-Up content based on selected hotel
+    // Change Pop-Up content based on selected hotel
 
-        // First Hotel Selection
+    // First Hotel Selection
 
-        $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
 
 
-            // Show Hotel On Map
-            initMap(cityPosition, {lat: 45.07312,lng: 13.63927});
-            launchPopup();
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.07312, lng: 13.63927 });
+        launchHotelpopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
                         </div>
@@ -551,21 +565,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Hotel Lone</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -598,23 +612,23 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
-
-
-
-            // Second Hotel Selection
-
-        $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    });
 
 
-            // Show Hotel On Map
-            initMap(cityPosition, {lat: 45.06132,lng: 13.67496});
-            launchPopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.06132, lng: 13.67496 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
                         </div>
@@ -626,21 +640,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Mobile Homes Polari</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -675,23 +689,23 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
-
-
-
-          // Third Hotel Selection
-
-        $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    });
 
 
-            // Show Hotel On Map
-            initMap(cityPosition, {lat: 45.10244,lng: 13.62451});
-            launchPopup();
 
-            // Load Slideshow Hotel Images
-            $(".loadImages").append(`
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.10244, lng: 13.62451 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
                         </div>
@@ -703,21 +717,21 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-            //Show Main Hotel Info
+        //Show Main Hotel Info
 
-            $(".hotel-intro").append(`
+        $(".hotel-intro").append(`
         <h2>Family Hotel Amarin</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€55 / pp per night</h5>
-                <a class="book-now" href="book.html">Book Now</a>
+                <button class="book-now">Book Now</button>
     `)
 
-            // Show Hotel About Info
+        // Show Hotel About Info
 
-            $(".hotel-content").append(`
+        $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -751,11 +765,11 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-            closePopup();
+        closeHotelPopup();
 
-        });
+    });
 
- 
+
 
 
 

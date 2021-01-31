@@ -1011,7 +1011,7 @@ li {
   .book-now:hover {
     color: #ffffff; }
 
-.hotel-offering_popup {
+.hotel-offering_popup, .booking-popup {
   display: none;
   background: white;
   position: fixed;
@@ -1024,7 +1024,7 @@ li {
   transform: translate(-50%, -50%);
   z-index: 15;
   max-width: 1200px; }
-  .hotel-offering_popup img {
+  .hotel-offering_popup img, .booking-popup img {
     width: 100%;
     max-height: 500px; }
 
@@ -1293,17 +1293,17 @@ li {
     height: 50px;
     font-size: 27px;
     padding: 1%;
-    background: #ffffff !important;
-    color: #555555 !important; }
+    background: #ffffff;
+    color: #555555; }
     .currency-converter-result input[type=text]:focus {
       outline-color: #00AB99;
       border: none; }
 
 .amount-input {
-  background: #ffffff !important;
-  color: #555555 !important; }
+  background: #ffffff;
+  color: #555555; }
   .amount-input:hover {
-    transform: scale(1) !important; }
+    transform: scale(1); }
 
 /********************************************************************Contact Us Page ***/
 #hero-wrapper {
@@ -1322,20 +1322,21 @@ li {
 label {
   display: block; }
 
-input {
+.contact-input {
   padding: 12px;
-  width: 45%; }
+  width: 45%;
+  margin-bottom: 5px; }
 
 textarea {
   width: 90%;
   max-height: 300px;
   padding: 2%; }
 
-input:nth-child(8),
-input:nth-child(6) {
+.contact-input:nth-child(8),
+.contact-input:nth-child(6) {
   width: 90%; }
 
-input:last-child {
+.contact-input:last-child {
   display: block;
   margin-top: 2%;
   background: #EA3F28;
@@ -1346,10 +1347,10 @@ input:last-child {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out; }
 
-input:last-child:hover {
+.contact-input:last-child:hover {
   transform: scale(1.05); }
 
-.contact-us--section input:focus, .contact-us--section textarea:focus {
+.contact-us--section .contact-input:focus, .contact-us--section textarea:focus {
   outline-color: #a95c26; }
 
 .message-sent {
@@ -1379,7 +1380,7 @@ input:last-child:hover {
     justify-content: space-around; }
   #hotel-offering {
     position: relative; }
-  .hotel-offering_popup {
+  .hotel-offering_popup, .booking-popup {
     position: absolute;
     top: 0;
     left: 0;
@@ -1390,7 +1391,7 @@ input:last-child:hover {
     justify-content: space-around; }
   #hotel-offering {
     position: relative; }
-  .hotel-offering_popup {
+  .hotel-offering_popup, .booking-popup {
     position: absolute;
     top: 0;
     left: 0;

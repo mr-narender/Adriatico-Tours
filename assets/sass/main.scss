@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
 
+
 //Colors Used On Website
 
 $dark-cyan: #00AB99;
@@ -1607,7 +1608,7 @@ img {
 
 
 
-.hotel-offering_popup {
+.hotel-offering_popup, .booking-popup {
     display: none;
     background: white;
     position: fixed;
@@ -2009,8 +2010,8 @@ h2 {
            height: 50px;
            font-size: 27px;
            padding: 1%;
-           background: #ffffff !important;
-           color: $dark-grey !important;
+           background: #ffffff;
+           color: $dark-grey;
 
 
            &[type=text]:focus {
@@ -2021,11 +2022,11 @@ h2 {
    }
 
    .amount-input {
-       background: #ffffff !important;
-       color: $dark-grey !important;
+       background: #ffffff;
+       color: $dark-grey;
 
        &:hover {
-           transform: scale(1) !important;
+           transform: scale(1);
        }
    }
    
@@ -2054,9 +2055,10 @@ label {
   display: block;
 }
 
-input {
+.contact-input {
   padding: 12px;
   width: 45%;
+  margin-bottom: 5px;
 }
 
 textarea {
@@ -2066,12 +2068,12 @@ textarea {
 }
 
 
-input:nth-child(8),
-input:nth-child(6) {
+.contact-input:nth-child(8),
+.contact-input:nth-child(6) {
   width: 90%;
 }
 
-input:last-child {
+.contact-input:last-child {
   display: block;
   margin-top: 2%;
   background: $bright-red;
@@ -2083,11 +2085,11 @@ input:last-child {
   -o-transition: all 0.3s ease-in-out;
 }
 
-input:last-child:hover {
+.contact-input:last-child:hover {
   transform: scale(1.05);
 }
 
-.contact-us--section input:focus, .contact-us--section textarea:focus {
+.contact-us--section .contact-input:focus, .contact-us--section textarea:focus {
     outline-color: #a95c26;
 }
 
@@ -2137,7 +2139,7 @@ display: none;
     position: relative;
    } 
 
-   .hotel-offering_popup {
+   .hotel-offering_popup, .booking-popup {
        position: absolute;
        top: 0;
        left: 0;
@@ -2158,7 +2160,7 @@ display: none;
     position: relative;
    } 
 
-   .hotel-offering_popup {
+   .hotel-offering_popup, .booking-popup {
        position: absolute;
        top: 0;
        left: 0;
