@@ -42,7 +42,6 @@ if (searchResult === "food") {
 
 
     food.choices.forEach(function (item) {
-        console.log(item);
         searchItemBox.append(`<div class="search-result_item">
     <img src="${item[1]}" />
      <h1>${item[0]}</h1>
@@ -53,15 +52,42 @@ if (searchResult === "food") {
 
 
 
-} else if (searchResult === "pula") {
+} else if (searchResult === "culture") {
+    displaySearchResultTerm();
+
+    // Display Croatian Cultural Objects
+
+    $(".search-result_title").text("Croatian Culture")
+
+    var statutes = {
+        choices: [["Pula Arena", "assets/images/search-result-images/pula-arena.png", "This famous monument in Croatia also being among the six largest surviving Roman arenas in the World. Bloodshed with spectacular gladiator fighting being one of the most famous purposes of the amphitheater."],
+        ["Ban Jelačić Square", "assets/images/search-result-images/ban-square.png", "Named after ban Josip Jelačić and being the central square of Zagreb. This best monument in Croatia is located below Zagreb’s old city cores Gradec and Kaptol. The square features a large statue of Josip Jelačić. With his sword out riding a horse that adds a certain charm to the square in general."],
+        ["Trakoscan Castle" , "assets/images/search-result-images/castle.png", "This historic beauty of this Trakoscan Castle looks like something from a fairy tale. Being built in the 13th century, the castle is located in the northern region of Croatia. Between from Ptuj to Bednja, it was meant as an observation fortress to monitor the valley." ],
+        ["Dubrovnik’s City Walls", "assets/images/search-result-images/walls.png", "After the city gained its full independence from Venetian suzerainty, the present shape of the walls was defined in the 14th century but the peak of its construction lasted from the beginning of the 15th century until the latter half of the 16th century."]
+
+        ]
+
+    }
+
+
+    statutes.choices.forEach(function (item) {
+        searchItemBox.append(`<div class="search-result_item">
+    <img src="${item[1]}" />
+     <h1>${item[0]}</h1>
+    <p>${item[2]}</p>
+    </div>`);
+
+    });
+
+
+
+}
+
+else if (searchResult === "pula") {
     window.location.replace("/city.html?pula");
 
 } else if (searchResult === "rovinj") {
     window.location.replace("/city.html?rovinj");
-
-  
-} else if (searchResult === "culture") {
-
 
 
 } else {
