@@ -181,7 +181,7 @@ $(".search-hide").click(function () {
 $("document").ready(function () {
 
     var i = 0;
-    var heroTxt = 'Welcome to Adriatico Tours! Explore the best of Croatian tradition and culture';
+    var heroTxt = 'Welcome to Adriatico Tours! Explore the best of Croatian tradition and culture with us';
     var speed = 45;
 
     function typeEffect() {
