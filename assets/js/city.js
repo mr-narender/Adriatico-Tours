@@ -241,7 +241,7 @@ if (readURL === "Pula") {
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+               
     `)
 
         // Show Hotel About Info
@@ -314,7 +314,7 @@ if (readURL === "Pula") {
                <i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+               
     `)
 
         // Show Hotel About Info
@@ -384,12 +384,11 @@ if (readURL === "Pula") {
 
         $(".hotel-intro").append(`
         <h2>Hotel Modo</h2>
-
                 <hr class="hr-large">
                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+              
     `)
 
         // Show Hotel About Info
@@ -668,7 +667,7 @@ if (readURL === "Pula") {
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+              
     `)
 
         // Show Hotel About Info
@@ -743,7 +742,7 @@ if (readURL === "Pula") {
                 <i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+             
     `)
 
         // Show Hotel About Info
@@ -820,7 +819,7 @@ if (readURL === "Pula") {
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€55 / pp per night</h5>
-                <button class="book-now-a">Book Now</button>
+              
     `)
 
         // Show Hotel About Info
@@ -861,6 +860,97 @@ if (readURL === "Pula") {
 
         closeHotelPopup();
 
+    });
+
+
+
+    
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Hotel Lone", "Mobile Homes Polari", "Family Hotel Amarin"],
+        price: [80, 35, 55]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+     $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+        $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
     });
 
 

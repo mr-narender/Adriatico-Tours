@@ -1593,7 +1593,7 @@ img {
    
 }
 
-.book-now, .book-now-a {
+.book-now {
     background: $dark-cyan;
     color: #ffffff;
     margin-left: 15px;
@@ -1607,12 +1607,6 @@ img {
 
 }
 
-.book-now-a {
-    position: absolute;
-    right: 0;
-    bottom: 5px;
-    background: $bright-red;
-}
 
 .booking-popup_content {
     display: flex;

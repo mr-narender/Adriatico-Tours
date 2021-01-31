@@ -1002,20 +1002,14 @@ li {
   .cta-see-more:hover {
     color: #555555; }
 
-.book-now, .book-now-a {
+.book-now {
   background: #00AB99;
   color: #ffffff;
   margin-left: 15px;
   padding: 7px 25px;
   border: none; }
-  .book-now:hover, .book-now-a:hover {
+  .book-now:hover {
     color: #ffffff; }
-
-.book-now-a {
-  position: absolute;
-  right: 0;
-  bottom: 5px;
-  background: #EA3F28; }
 
 .booking-popup_content {
   display: flex;
