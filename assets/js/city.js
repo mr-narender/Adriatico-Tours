@@ -425,6 +425,7 @@ if (readURL === "Pula") {
     //Add event listener to each hotel booking button
 
     $(".hotel-box:eq(0) .book-now").click(function () {
+      
         $(".booking-popup h2").html(hotelBookingInfo.name[0]);
     });
 
