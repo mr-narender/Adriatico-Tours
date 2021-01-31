@@ -1593,17 +1593,25 @@ img {
    
 }
 
-.book-now {
+.book-now, .book-now-a {
     background: $dark-cyan;
     color: #ffffff;
     margin-left: 15px;
     padding: 7px 25px;
     border: none;
+    
 
         &:hover {
             color: #ffffff
         }
 
+}
+
+.book-now-a {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    background: $bright-red;
 }
 
 .booking-popup_content {
@@ -2188,7 +2196,7 @@ textarea {
   width: 35%;  
 }
 
-.submit-form:hover, .book-form {
+.submit-form:hover, .book-form:hover {
   transform: scale(1.05);
 }
 
@@ -2664,6 +2672,7 @@ display: none;
 
     .book-now {
         margin-left: 5px;
+      
     }
 
 
