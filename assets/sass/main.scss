@@ -1700,18 +1700,6 @@ img {
 }
 
 
-.hotel-name {
-
-&::before {
-    @extend %font-awsome;
-    content: "\f594";
-    font-size: 20px;
-    color: $dark-cyan;
-    padding-right: 10px;
-}
-
-}
-
 
 .hotel-offering_popup, .booking-popup {
     display: none;
@@ -1735,7 +1723,6 @@ img {
 }
 
 .booking-popup {
-    display: block;
     padding: 2%;
 }
 
@@ -1745,7 +1732,7 @@ img {
 }
 
 
-.popup-exit {
+.popup-exit, .popup-exit-black {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -1755,6 +1742,9 @@ img {
     cursor: pointer;
 }
 
+.popup-exit-black {
+    color: $dark-grey;
+}
 
 .hotel-intro {
     width: 95%;

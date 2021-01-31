@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
 /**************** Font Awsome Skeleton *********/
-#menu li:nth-child(1)::after, .destination_expand-section h2::before, .footer-navigation li::after, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .recommendations-box-content a::after, .recommendations-box-content h4::before, .hotel-name::before {
+#menu li:nth-child(1)::after, .destination_expand-section h2::before, .footer-navigation li::after, .popular-destinations_box a::after, .popular-destinations_box h4::before, .user-testimonials_title h1::before, .recommendations-box-content a::after, .recommendations-box-content h4::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900; }
 
@@ -1076,12 +1076,6 @@ li {
 .bottom-space {
   margin-bottom: 50px; }
 
-.hotel-name::before {
-  content: "\f594";
-  font-size: 20px;
-  color: #00AB99;
-  padding-right: 10px; }
-
 .hotel-offering_popup, .booking-popup {
   display: none;
   background: white;
@@ -1100,13 +1094,12 @@ li {
     max-height: 500px; }
 
 .booking-popup {
-  display: block;
   padding: 2%; }
 
 .hero-section-popup {
   position: relative; }
 
-.popup-exit {
+.popup-exit, .popup-exit-black {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1114,6 +1107,9 @@ li {
   z-index: 20;
   font-size: 40px;
   cursor: pointer; }
+
+.popup-exit-black {
+  color: #555555; }
 
 .hotel-intro {
   width: 95%;

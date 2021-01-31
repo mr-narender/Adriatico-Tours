@@ -36,6 +36,25 @@ function closeHotelPopup() {
 
 };
 
+
+//Launch Close Booking Pop-Up
+
+function launchBookingPopup() {
+    $(".booking-popup").fadeIn(200);
+    $("#adult").val(1);
+    $("#child").val(0);
+    $(".no-adults").html("1");
+    $(".no-children").html("0");
+}
+
+function closeBookingPopup() {
+    $(".popup-exit-black").click(function () {
+        $(".booking-popup").fadeOut(200);
+    })
+
+}
+
+
 // Set Class to handle default location
 class deaultLocation {
     constructor(cityPosition, hotelPosition) {
@@ -417,17 +436,38 @@ if (readURL === "Pula") {
 
     //Store Hotel names and prices
 
-    let hotelBookingInfo = {
+    let hotelInfo = {
         name: ["Resort del Mar", "Splendid Resort", "Hotel Modo"],
-        price: ["80", "40", "65"]
+        price: [80, 40, 65]
     }
 
     //Add event listener to each hotel booking button
 
     $(".hotel-box:eq(0) .book-now").click(function () {
-      
-        $(".booking-popup h2").html(hotelBookingInfo.name[0]);
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(adultPassangers);
+            $(".no-children").html(childPassangers);
+
+        });
+
+        closeBookingPopup()
     });
+
 
 
 } else if (readURL === "Rovinj") {

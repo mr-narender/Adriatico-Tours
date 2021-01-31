@@ -358,7 +358,7 @@
 
         <div class="booking-popup">
 
-            <i class="far fa-times-circle popup-exit" aria-hidden="true"></i>
+            <i class="far fa-times-circle popup-exit-black" aria-hidden="true"></i>
 
             <h2>Trip Overview</h2>
             <hr>
@@ -371,23 +371,23 @@
 
                         <div class="passanger-selection_adult">
                             <label for="adult" class="sr-only ">Choose Number Of Adults</label>
-                            <select name="adult" id="adult">
-                                <option value="one-adult">1 adult</option>
-                                <option value="two-adult">2 adults</option>
-                                <option value="three-adult">3 adults</option>
-                                <option value="four-adult">4 adults</option>
-                                <option value="five-adult">5 adults</option>
+                            <select name="adult" id="adult" class="selection">
+                                <option value="1">1 adult</option>
+                                <option value="2">2 adults</option>
+                                <option value="3">3 adults</option>
+                                <option value="4">4 adults</option>
+                                <option value="5">5 adults</option>
                             </select>
                         </div>
 
                         <div class="passanger-selection_child">
                             <label for="child" class="sr-only">Choose Number Of Children</label>
-                            <select name="child" id="child">
-                                <option value="zero-children">0 children</option>
-                                <option value="one-child">1 child</option>
-                                <option value="two-children">2 children</option>
-                                <option value="three-children">3 children</option>
-                                <option value="four-children">4 children</option>
+                            <select name="child" id="child" class="selection">
+                                <option value="0">0 children</option>
+                                <option value="1">1 child</option>
+                                <option value="2">2 children</option>
+                                <option value="3">3 children</option>
+                                <option value="4">4 children</option>
                             </select>
                         </div>
 
@@ -439,20 +439,16 @@
 
                     <div class="booking-summary_content">
 
-                    <h4>Hotel</h4>
+                    <h4><i class="fas fa-hotel"></i> Hotel</h4>
                      <hr>
-                    <h5 class="bottom-space hotel-name">Resort Del Mar - Pula, Croatia</h5>
+                    <h5 class="bottom-space hotel-name"></h5>
                     <h4><i class="far fa-user"></i>Passangers</h4>
                     <hr>
-                    <h5>Adults<span class="no-adults"> 2</span></h5>
-                    <h5 class="bottom-space">Children<span class="no-children"> 1</span></h5>
+                    <h5>Adults - <span class="no-adults"> </span></h5>
+                    <h5 class="bottom-space">Children - <span class="no-children"> </span></h5>
                     <hr>
-                    <h4>Total<span class="default-value"> €90</span></h4>
-
-
-
+                    <h4 class="total-amount">Total<span class="calcValue"></span></h4>
                     </div>
-
 
                 </div>
 
