@@ -1732,6 +1732,7 @@ img {
 
 .booking-popup {
     padding: 2%;
+    width: 90%;
 }
 
 
@@ -2193,7 +2194,7 @@ textarea {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  width: 35%;  
+  width: 45%;  
 }
 
 .submit-form:hover, .book-form:hover {
@@ -2245,6 +2246,8 @@ display: none;
    }
 
 
+
+   /**************************** city.html Page **/
    
     #hotel-offering {
     position: relative;
@@ -2256,6 +2259,44 @@ display: none;
        left: 0;
        transform: none;
    }
+
+   
+
+
+   .booking-popup {
+       width: 100%;
+   }
+
+
+   .booking-popup_content {
+       flex-wrap: wrap;
+   }
+
+.booking-info, .booking-summary {
+    width: 100%;
+}
+
+.booking-summary {
+    margin-top: 25px;
+}
+
+.booking-popup_content {
+    position: relative;
+}
+
+.book-form {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.total-amount {
+    margin-top: 30px;
+}
+
+.popup-exit-black {
+    top: auto;
+}
 
 }
 
@@ -2692,6 +2733,28 @@ display: none;
           margin-top: 50px;
     }
 
+
+/*****************************Booking Popup - city.html page **/
+
+    .passanger-selection {
+        gap: 10px;
+
+        select {
+            width: 100%;
+        }
+    }
+
+    .card-details {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .card-number, .card-epiry-ccv {
+        width: 100%;
+    }
+
+    
 }
 
 
