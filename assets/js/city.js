@@ -12,14 +12,30 @@ readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
 
 $(".city-name").text(readURL);
 
+
+function addBlur() {
+      $("body").children().addClass("blur");
+    $("#hotel-offering").removeClass("blur");
+    $("#hotel-offering").children().addClass("blur");
+    $(".hotel-offering_popup, .booking-popup").removeClass("blur");
+}
+
+function removeBlur() {
+     $("body").find("*").removeClass("blur");
+}
+
 //Launch/Close Hotel Pop-Up when click See More
 
+
 function launchHotelpopup() {
+
+    addBlur();
     if ($(window).width() < 1200) {
         $("#hotel-listing").css("visibility", "hidden");
         $("#hotel-offering").css("width", "95%");
     }
     $(".hotel-offering_popup").fadeIn(300);
+
 };
 
 
@@ -31,8 +47,9 @@ function closeHotelPopup() {
         $(".hotel-intro, .loadImages").html("");
         $("#hotel-listing").css("visibility", "visible");
 
-    })
+        removeBlur();
 
+    });
 
 };
 
@@ -40,6 +57,9 @@ function closeHotelPopup() {
 //Launch Close Booking Pop-Up
 
 function launchBookingPopup() {
+
+    addBlur();
+
     $(".booking-popup").fadeIn(300);
     $("#adult").val(1);
     $("#child").val(0);
@@ -49,6 +69,7 @@ function launchBookingPopup() {
 
 function closeBookingPopup() {
     $(".popup-exit-black").click(function () {
+          removeBlur();
         $(".booking-popup").fadeOut(300);
     })
 
@@ -214,8 +235,7 @@ if (readURL === "Pula") {
 
 
     // First Hotel Selection
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
+    $(".hotel-box:eq(0) .cta-see-more").click(function() {
 
         // Show Hotel On Map
         initMap(cityPosition, hotelPosition = { lat: 44.82175, lng: 13.86542 });
@@ -280,9 +300,11 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-        closeHotelPopup();
+  closeHotelPopup();
 
     });
+
+  
 
 
     // Second Hotel Selection
@@ -725,13 +747,13 @@ if (readURL === "Pula") {
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">
-                            <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-2-1.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/rovinj-hotel-1-2.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-2-2.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/rovinj-hotel-1-3.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-2-3.png" alt="...">
                         </div>
 `);
 
@@ -802,13 +824,13 @@ if (readURL === "Pula") {
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">
-                            <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-3-1.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/rovinj-hotel-1-2.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-3-2.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/rovinj-hotel-1-3.png" alt="...">
+                            <img src="assets/images/hotels/rovinj-hotel-3-3.png" alt="...">
                         </div>
 `);
 
@@ -1842,7 +1864,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
 
-    
+
 }
 
 
