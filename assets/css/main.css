@@ -283,9 +283,7 @@ li {
   .mobile-search i:nth-child(2) {
     font-size: 28px;
     color: #555555;
-    padding-left: 10px;
-    position: relative;
-    top: 10px; }
+    padding-left: 10px; }
 
 .input-wrapper-sm {
   position: relative;
@@ -1640,7 +1638,9 @@ textarea {
     margin: 25px auto;
     max-width: 350px; }
   .top-things-carousel {
-    display: none; } }
+    display: none; }
+  .hotel-box_description h4 {
+    padding-top: 15px; } }
 
 @media only screen and (max-width: 685px) {
   /************************** Why Us Section **/
@@ -1793,4 +1793,7 @@ textarea {
     width: 90%; }
   .top-info {
     width: 100%;
-    font-size: .85em; } }
+    font-size: .85em; }
+  .cta-see-more, .book-now {
+    padding: 5px 15px;
+    font-size: 14px; } }

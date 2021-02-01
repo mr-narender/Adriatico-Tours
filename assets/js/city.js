@@ -14,14 +14,14 @@ $(".city-name").text(readURL);
 
 
 function addBlur() {
-      $("body").children().addClass("blur");
+    $("body").children().addClass("blur");
     $("#hotel-offering").removeClass("blur");
     $("#hotel-offering").children().addClass("blur");
     $(".hotel-offering_popup, .booking-popup").removeClass("blur");
 }
 
 function removeBlur() {
-     $("body").find("*").removeClass("blur");
+    $("body").find("*").removeClass("blur");
 }
 
 //Launch/Close Hotel Pop-Up when click See More
@@ -69,7 +69,7 @@ function launchBookingPopup() {
 
 function closeBookingPopup() {
     $(".popup-exit-black").click(function () {
-          removeBlur();
+        removeBlur();
         $(".booking-popup").fadeOut(300);
     })
 
@@ -235,7 +235,7 @@ if (readURL === "Pula") {
 
 
     // First Hotel Selection
-    $(".hotel-box:eq(0) .cta-see-more").click(function() {
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
 
         // Show Hotel On Map
         initMap(cityPosition, hotelPosition = { lat: 44.82175, lng: 13.86542 });
@@ -300,11 +300,11 @@ if (readURL === "Pula") {
                 </div>
     `)
 
-  closeHotelPopup();
+        closeHotelPopup();
 
     });
 
-  
+
 
 
     // Second Hotel Selection
@@ -1620,7 +1620,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat:  42.66215120783241, lng: 18.065358841551028 });
+        initMap(cityPosition, { lat: 42.66215120783241, lng: 18.065358841551028 });
         launchHotelpopup();
 
 
@@ -1860,7 +1860,436 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 } else if (readURL === "Split") {
 
 
+    //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/split-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/split-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/split-slide-3.png')";
 
+    //change title and about info
+
+    $(".city-title").text("Split");
+    $(".about-city").html(`<p>
+    Croatia's second-largest city, Split (Spalato in Italian) is a great 
+    place to see Dalmatian life as it’s really lived. Always buzzing, this exuberant city has just the right balance between tradition and modernity. Step inside Diocletian’s Palace (a Unesco World Heritage Site and one of the world’s most impressive Roman monuments) and you’ll see dozens of bars, restaurants and shops thriving amid the atmospheric old walls where Split
+     has been humming along for thousands of years.</p>`);
+
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 43.512089793434356,
+        lng: 16.44339587592428,
+    });
+
+
+
+
+
+    // Show Relevant Hotels
+
+    let hotelOne = $(".hotel-box:eq(0)")
+    let hotelTwo = $(".hotel-box:eq(1)")
+    let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+    // Filtering System
+
+    $(".filter-options li:eq(0)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
+        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+    });
+
+    $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    // Display Hotel Information 
+
+    function listHotels() {
+
+        $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/split-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Radisson Blu Resort & Spa <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 2.5 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Offering a beach area and an indoor pool, Radisson Blu Resort is 2.5 km from Split's UNESCO-protected Diocletian's Palace.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€85 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/split-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Pax <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 2 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Located in Split, 2.3 km from Duilovo Dog Beach, Hotel Pax provides accommodation with a restaurant, free private parking, a bar and a shared lounge.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€35 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/split-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Plaza Varos Split  <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 550 m from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Plaza Varos Split features a restaurant, bar, a shared lounge and garden in Split.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€55 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+    }
+
+
+
+
+
+    // Change Hotel Pop-Up content based on selected hotel
+
+
+    // First Hotel Selection
+
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
+        launchHotelpopup();
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/split-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/split-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/split-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Radisson Blu Resort & Spa</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€85 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Most rooms include a balcony with views overlooking the islands of Brač and Šolta.
+                         All rooms are fitted with air conditioning, flat-screen TVs and offer en-suite bathrooms with free toiletries. Room service is available.
+                         <br>
+                        <br>
+                        The beach can be accessed via a flight of 100 stairs while the 
+                        lavish hotel's spa offers various amenities such as saunas, massages and steam bath and Finnish sauna. There is also a gym at guests' 
+                        disposal. Conference rooms are available and concierge service is offered at the Radisson Blu.                       
+                        <br>
+                        <br>
+                        This is our guests' favourite part of Split, according to independent reviews.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/split-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/split-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/split-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Pax</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€35 / pp per night</h5>
+             
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>With a garden, the 3-star hotel has air-conditioned rooms with free WiFi, each with a private bathroom. 
+                        The accommodation offers a 24-hour front desk, a concierge service and organising tours for guests.
+                         <br>
+                        <br>
+                        At the hotel, each room is fitted with a desk and a flat-screen TV. Guest rooms at Hotel Pax are equipped with a seating area.
+
+                        Guests at the accommodation can enjoy a continental breakfast.                    
+                        <br>
+                        <br>
+                        Diocletian's Palace is 2.4 km from the hotel, while Mladezi Park Stadium is 3.6 km away. 
+                        The nearest airport is Split, 14 km 
+                        from Hotel Pax, and the property offers a paid airport shuttle service.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                         <li><i class="fas fa-cocktail"></i> Bar</li>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
+        launchHotelpopup();
+
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Plaza Varos Split</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€55 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Featuring family rooms, this property also provides guests with a terrace. The accommodation 
+                        provides a 24-hour front desk, airport transfers, room service and free WiFi throughout the property.
+                         <br>
+                        <br>
+                        All units are equipped with air conditioning, a flat-screen TV with satellite channels,
+                         a fridge, a kettle, a shower, a hairdryer and a desk. At the hotel each room 
+                         includes a wardrobe and a private bathroom.
+                        <br>
+                        <br>
+                        
+                        Popular points of interest near the accommodation include Diocletian's Palace, Mladezi 
+                        Park Stadium and Jezinac Beach. The nearest airport is Split Airport, 11 km from Plaza Varos Split.                        
+                        </p>
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Radisson Blu Resort & Spa", "Plaza Varos Split", "Hotel Pax"],
+        price: [85, 55, 35]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
 
 
 

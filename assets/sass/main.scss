@@ -455,8 +455,8 @@ li {
         font-size: 28px;
         color: #555555;
         padding-left: 10px;
-        position: relative;
-        top: 10px;
+    
+        
     }
    
 
@@ -2634,10 +2634,13 @@ display: none;
 
 }
 
-
-
 .top-things-carousel {
     display: none;
+}
+
+
+.hotel-box_description h4 {
+    padding-top: 15px;
 }
 
 
@@ -2986,6 +2989,12 @@ display: none;
 .top-info {
     width: 100%;
     font-size: .85em;
+}
+
+
+.cta-see-more, .book-now {
+        padding: 5px 15px;
+        font-size: 14px;
 }
 
 
