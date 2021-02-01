@@ -868,6 +868,9 @@ li {
     display: none; }
 
 /******************************************************************* City Destination Page **/
+.about-city {
+  width: 80%; }
+
 #city-map {
   margin-top: 50px;
   width: 80%;
@@ -1739,6 +1742,8 @@ textarea {
       font-size: 1.15em; }
       .about-section_content a::after {
         font-size: 30px; }
+  .about-city {
+    width: 95%; }
   /***************************** Hotel Pop-Up City.html ***/
   #city-map-hotel {
     height: 300px; }

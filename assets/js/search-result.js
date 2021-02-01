@@ -91,9 +91,11 @@ else if (searchResult === "pula") {
 
 }  else if (searchResult === "porec") {
     window.location.replace("/city.html?porec");
-} 
 
-else {
+}  else if (searchResult === "dubrovnik") {
+    window.location.replace("/city.html?dubrovnik");
+
+} else {
 
     displaySearchResultTerm();
     $(".no-result-found-strip").css("display", "block");

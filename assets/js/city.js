@@ -55,7 +55,7 @@ function closeBookingPopup() {
 }
 
 
-// Set Class to handle default location
+// Set Class to handle default location (google maps)
 class deaultLocation {
     constructor(cityPosition, hotelPosition) {
         if (cityPosition == null) {
@@ -76,6 +76,7 @@ class deaultLocation {
 }
 
 
+// Declare maps function
 
 function initMap(cityPosition, hotelPosition) {
     deault_location = new deaultLocation();
@@ -94,6 +95,7 @@ function initMap(cityPosition, hotelPosition) {
         map
     });
 }
+
 
 
 // Check which city was selected - change content based on selection
@@ -450,15 +452,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[0]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[0]);
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -468,7 +470,7 @@ if (readURL === "Pula") {
     });
 
 
-     $(".hotel-box:eq(1) .book-now").click(function () {
+    $(".hotel-box:eq(1) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -476,15 +478,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[1]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[1]);
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -494,7 +496,7 @@ if (readURL === "Pula") {
     });
 
 
-        $(".hotel-box:eq(2) .book-now").click(function () {
+    $(".hotel-box:eq(2) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -502,15 +504,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[2]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[2]);
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -864,7 +866,7 @@ if (readURL === "Pula") {
 
 
 
-    
+
     // Show Booking Pop-up based on selected hotel
 
     //Store Hotel names and prices
@@ -884,15 +886,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[0]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[0]);
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -902,7 +904,7 @@ if (readURL === "Pula") {
     });
 
 
-     $(".hotel-box:eq(1) .book-now").click(function () {
+    $(".hotel-box:eq(1) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -910,15 +912,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[1]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[1]);
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -928,7 +930,7 @@ if (readURL === "Pula") {
     });
 
 
-        $(".hotel-box:eq(2) .book-now").click(function () {
+    $(".hotel-box:eq(2) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -936,15 +938,15 @@ if (readURL === "Pula") {
         $(".hotel-name").text(hotelInfo.name[2]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[2]);
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -961,7 +963,7 @@ if (readURL === "Pula") {
 } else if (readURL === "Porec") {
 
 
-   //load images
+    //load images
     imageArray[0].style.backgroundImage = "url('assets/images/porec-slide-1.png')";
     imageArray[1].style.backgroundImage = "url('assets/images/porec-slide-2.png')";
     imageArray[2].style.backgroundImage = "url('assets/images/porec-slide-3.png')";
@@ -982,7 +984,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         lng: 13.597270771129068,
     });
 
-    
+
 
     // Show Relevant Hotels
 
@@ -1157,7 +1159,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat:  45.22467787961315, lng: 13.596946653316655});
+        initMap(cityPosition, { lat: 45.22467787961315, lng: 13.596946653316655 });
         launchHotelpopup();
 
         // Load Slideshow Hotel Images
@@ -1233,10 +1235,10 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.21392, lng: 13.599272});
+        initMap(cityPosition, { lat: 45.21392, lng: 13.599272 });
         launchHotelpopup();
 
-       
+
 
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
@@ -1302,7 +1304,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
 
-    
+
     // Show Booking Pop-up based on selected hotel
 
     //Store Hotel names and prices
@@ -1322,15 +1324,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[0]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[0]);
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1340,7 +1342,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
-     $(".hotel-box:eq(1) .book-now").click(function () {
+    $(".hotel-box:eq(1) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -1348,15 +1350,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[1]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[1]);
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1366,7 +1368,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
-        $(".hotel-box:eq(2) .book-now").click(function () {
+    $(".hotel-box:eq(2) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -1374,15 +1376,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[2]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[2]);
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1392,32 +1394,33 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
- 
-}  else if (readURL === "dubrovnik") {
+
+} else if (readURL === "Dubrovnik") {
 
 
-   //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/porec-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/porec-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/porec-slide-3.png')";
+    //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/dubrovnik-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/dubrovnik-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/dubrovnik-slide-3.png')";
 
     //change title and about info
 
-    $(".city-title").text("Porec");
-    $(".about-city").text(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
-
-The main tourist areas are two bays south of the town, called Zelena (Green) and Plava (Blue) Laguna (lagoon). They are almost like small towns, with several hotels in each, as well as camping facilities, a marina and shopping and entertainment areas. Most visitors stay in one of the two.
-
-If you’re in the main part of town and fancy a bit of swimming and sunbathing, head to nearby Sveti Nikola island which you can reach by a regular boat (the journey is only a few minutes).`);
+    $(".city-title").text("Dubrovnik");
+    $(".about-city").html(`<p>George Bernard Shaw was enchanted by this beautiful city, about which he said “those who seek paradise on Earth should come to Dubrovnik”, as well as, famously, describing it as “the pearl of the Adriatic”. It really is a stunning city with an amazing Old Town, which became a UNESCO World Heritage site in 1979. 
+    <br>
+    <br>
+    Dubrovnik, in the extreme south of Croatia, is known as the Pearl of the Adriatic.
+     A rich and powerful city state until 1806, the proud city once known as Ragusa has a population 
+     of over 120,000. Structural damage suffered during the siege of 1991 and 1992, at the hands of the Yugoslav People's Army, has been repaired and visitors once again flock to this tranquil city, nestled between the Adriatic and Dinaric Alps. A wealth of sites lies within the walls of the pedestrian-only Old Town.</p>`);
 
 
     //Show City On The Map
     initMap(cityPosition = {
-        lat: 45.226643971952846,
-        lng: 13.597270771129068,
+        lat: 42.64979626041334,
+        lng: 18.09344635310566,
     });
 
-    
+
 
     // Show Relevant Hotels
 
@@ -1454,53 +1457,53 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
-                    <img src="assets/images/hotels/porec-hotel-1.png" alt="hotel image">
+                    <img src="assets/images/hotels/dubrovnik-hotel-1.png" alt="hotel image">
                     <div class="hotel-box_description">
-                        <h2>Hotel Parentium Plava Laguna <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        <h2>Hotel Dubrovnik Palace <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span> 2.8 km from centre</li>
+                            <li><span>&#9899;</span> 4.1 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
-                        <p>Built in 2014, Hotel Parentium Plava Laguna  is located on the seafront in Porec, 3 km from city centre.</p>
+                        <p>Situated in the Lapad Peninsula, Hotel Dubrovnik Palace offers a beach and a scuba diving centre.</p>
 
                         <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
-                        <h4>€70 pp / per night</h4>
+                        <h4>€95 pp / per night</h4>
                     </div>
                 </div>
 `);
         $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
-                    <img src="assets/images/hotels/porec-hotel-2.png" alt="hotel image">
+                    <img src="assets/images/hotels/dubrovnik-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
-                        <h2>Hotel Porec <i
+                        <h2>Valamar Club Dubrovnik <i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span> 600m from centre</li>
+                            <li><span>&#9899;</span> 4.2 from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
-                        <p>Set just steps away from the beach in the centre of Porec.</p>
+                        <p>The family-friendly Valamar Club Dubrovnik Hotel on the lush Babin Kuk peninsula offers an easy access to the Old Town of Dubrovnik.</p>
 
                         <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
-                        <h4>€30 pp / per night</h4>
+                        <h4>€40 pp / per night</h4>
                     </div>
                 </div>
 `);
         $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
-                    <img src="assets/images/hotels/porec-hotel-3.png" alt="hotel image">
+                    <img src="assets/images/hotels/dubrovnik-hotel-3.png" alt="hotel image">
                     <div class="hotel-box_description">
-                        <h2> Hotel Valamar Diamant  <i class="fas fa-star"></i><i
+                        <h2>Royal Neptun Hotel  <i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
                         <ul>
-                            <li><span>&#9899;</span> 1.6 km from centre</li>
+                            <li><span>&#9899;</span> 4.6 km from centre</li>
                             <li><span>&#9899;</span> Beachfront</li>
                         </ul>
-                        <p>This hotel is only a 5-minute walk away from the beach and features indoor and outdoor pools and lots of sports facilities.</p>
+                        <p>Renovated in 2015, Royal Neptun Hotel Dubrovnik is a peaceful beach-front property on the Lapad Peninsula.</p>
 
                         <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
-                        <h4>€50 pp / per night</h4>                   
+                        <h4>€60 pp / per night</h4>                   
                         </div>
                 </div>
 `);
@@ -1520,19 +1523,19 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.20390270475934, lng: 13.588455798818856 });
+        initMap(cityPosition, { lat: 42.65130, lng: 18.06103 });
         launchHotelpopup();
 
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">
-                            <img src="assets/images/hotels/porec-hotel-1-1.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-1-1.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-1-2.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-1-2.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-1-3.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-1-3.png" alt="...">
                         </div>
 `);
 
@@ -1556,25 +1559,28 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     <h3>About Hotel</h3>
                     <div class="about-hotel">
 
-                        <p>Featuring a Spa Centre with 6 hot tubs, an indoor and 2 outdoor pools,
-                        Hotel Laguna Parentium is set only 50 m from the beach in Poreč. 
-                        The hotel offers 3 restaurants, along with a pool bar and a lounge bar. 
-                        Free Wi-Fi is provided.
+                        <p>All rooms now with sleek design and earthy 
+                        colours, have a balcony and offer views of the Elaphite Islands
                          <br>
                         <br>
-                        All rooms feature floor-to-ceiling windows and a balcony with 
-                        seating area overlooking the park. They also feature an LCD 
-                        satellite TV, minibar and a safe.                        
+                        Free Wi-Fi, air conditioning and luxury toiletries are standard at the Dubrovnik Palace rooms. All are fitted with a flat-screen satellite TV and minibar.
+
+                        There are 4 different restaurants, including a beach restaurant. 
+                        Drinks and light snacks are served at the pool bar.                        
                         <br>
                         <br>
-                        The Old Town of Poreč is located 5 km away. Pula Airport is at a distance of 60 km.
-                        A secure parking is provided at an additional cost.                        </p>
+                        There is a local bus line to the Old Town every 20 minutes. The stop is opposite the hotel and the ride takes about 20 minutes.
+                        Spa facilities include an indoor pool, hot tub and steam bath. There is also a fitness 
+                        studio and a number of jogging paths can be found in the vicinity.
+                        </p>
+
                         <h4>Hotel Facilities</h4>
                         <ul>
                             <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
                             <li><i class="fas fa-parking"></i> Free Parking</li>
                             <li><i class="fas fa-wifi"></i> Free WI-FI</li>
                             <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
                         </ul>
                     </div>
                 </div>
@@ -1592,31 +1598,32 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat:  45.22467787961315, lng: 13.596946653316655});
+        initMap(cityPosition, { lat:  42.66215120783241, lng: 18.065358841551028 });
         launchHotelpopup();
+
 
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">
-                            <img src="assets/images/hotels/porec-hotel-2-1.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-2-1.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-2-2.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-2-2.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-2-3.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-2-3.png" alt="...">
                         </div>
 `);
 
         //Show Main Hotel Info
 
         $(".hotel-intro").append(`
-        <h2>Hotel Porec</h2>
+        <h2>Valamar Club Dubrovnik</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
-                <h5>€30 / pp per night</h5>
+                <h5>€40 / pp per night</h5>
              
     `)
 
@@ -1628,29 +1635,28 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     <h3>About Hotel</h3>
                     <div class="about-hotel">
 
-                        <p>Perfectly situated only 600 m from the beach with a marina and the 
-                        historical old town, Hotel Porec offers the most comfortable
-                         stay with a host of sports facilities. Free Wi-Fi is avaialble throughout.
+                        <p>The whole property is air-conditioned and the rooms offer all modern amenities. 
+                        Free WiFi is available throughout the property.
                          <br>
                         <br>
-                        Founded in Roman times, the city has many private palaces that house museums and 
-                        galleries, and streets that were built almost 2.000 years ago. Some towers are still 
-                        preserved, with a restaurant in the Pentagonal Tower and a pub in the Round Tower.                        <br>
+                        Free Wi-Fi, air conditioning and luxury toiletries are standard at the Dubrovnik Palace rooms. All are fitted with a flat-screen satellite TV and minibar.
+
+                        The large swimming pool, the multitude of sports courts, aquatic sports nearby at the beach and organised entertainment programmes 
+                        for your kids provide for a pleasant vacation.                      
                         <br>
-                        Founded in Roman times, the city has many private 
-                        palaces that house museums and galleries, and streets that were built 
-                        almost 2.000 years ago. Some towers are still preserved, 
-                        with a restaurant in the Pentagonal Tower and a pub in the Round Tower.
+                        <br>
+                        Because of its position on the Babin Kuk peninsula, the Valamar 
+                        Club hotel is surrounded on 3 sides by the sea and beautiful 
+                        pebbled and rocky beaches, including the famous Copacabana
                         </p>
 
                         <h4>Hotel Facilities</h4>
 
                         <ul>
+                         <li><i class="fas fa-cocktail"></i> Bar</li>
                             <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
                             <li><i class="fas fa-parking"></i> Free Parking</li>
                             <li><i class="fas fa-wifi"></i> Free WI-FI</li>
-                            
-                            
                         </ul>
                     </div>
                 </div>
@@ -1668,33 +1674,34 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.21392, lng: 13.599272});
+        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
         launchHotelpopup();
 
-       
+
+
 
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">
-                            <img src="assets/images/hotels/porec-hotel-3-1.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-1.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-3-2.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-2.png" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="assets/images/hotels/porec-hotel-3-3.png" alt="...">
+                            <img src="assets/images/hotels/dubrovnik-hotel-3-3.png" alt="...">
                         </div>
 `);
 
         //Show Main Hotel Info
 
         $(".hotel-intro").append(`
-        <h2>Family Hotel Amarin</h2>
+        <h2>Royal Neptun Hotel</h2>
 
                 <hr class="hr-large">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
-                <h5>€50 / pp per night</h5>
+                <h5>€60 / pp per night</h5>
               
     `)
 
@@ -1706,17 +1713,18 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     <h3>About Hotel</h3>
                     <div class="about-hotel">
 
-                        <p>You can explore the historical centre of Poreč, which is 1 km away, or stroll along the landscaped walking path by 
-                        the Adriatic Sea. The hinterland of the Istrian peninsula features numerous historic towns.
+                        <p>Surrounded by fragrant pine trees, it boasts magnificent panoramic sea views. Most of the 
+                        rooms feature a balcony and free WiFi access is available throughout the property.
                          <br>
                         <br>
-                        Sports facilities include outdoor and covered tennis courts, a basketball hall,
-                         an adventure and activity park as well as a water sports
-                         centre. The numerous Spa and Wellness facilities can be enjoyed for an additional cost.
+                        Guests can enjoy the splendid outdoor swimming pools (a cliff-top pool and a 
+                        pool for children) or simply jump into the sparkling Adriatic Sea.
                         <br>
+                        All rooms at the Royal Neptun Hotel Dubrovnik are air-conditioned and feature a flat-screen TV with satellite channels. The modern, 
+                        private bathrooms are all equipped with bathrobes, slippers and toiletries.
                         <br>
-                        The air conditioned, bright rooms boast panoramic views of the sea or the forest
-                        and feature a flat-screen satellite TV.                        
+                        Spa treatments and rejuvenating massages are offered on site. Guests can relax in the sauna or choose to work out in the fitness centre.
+                        Royal Neptun Hotel is a 10-minute drive away from Dubrovnik’s Old Town. A bus stop can be found at the hotel.                        
                         </p>
                         <h4>Hotel Facilities</h4>
 
@@ -1724,7 +1732,6 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                             <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
                             <li><i class="fas fa-parking"></i> Free Parking</li>
                             <li><i class="fas fa-wifi"></i> Free WI-FI</li>
-                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
                             <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
                         </ul>
                     </div>
@@ -1737,14 +1744,14 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
 
-    
+
     // Show Booking Pop-up based on selected hotel
 
     //Store Hotel names and prices
 
     let hotelInfo = {
-        name: ["Hotel Parentium Plava Laguna", "Hotel Porec", "Hotel Valamar Diamant"],
-        price: [70, 30, 50]
+        name: ["Hotel Dubrovnik Palace", "Valamar Club Dubrovnik", "Royal Neptun Hotel"],
+        price: [95, 40, 60]
     }
 
     //Add event listener to each hotel booking button
@@ -1757,15 +1764,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[0]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[0]);
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1775,7 +1782,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
-     $(".hotel-box:eq(1) .book-now").click(function () {
+    $(".hotel-box:eq(1) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -1783,15 +1790,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[1]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[1]);
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1801,7 +1808,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
-        $(".hotel-box:eq(2) .book-now").click(function () {
+    $(".hotel-box:eq(2) .book-now").click(function () {
 
         launchBookingPopup();
 
@@ -1809,15 +1816,15 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
         $(".hotel-name").text(hotelInfo.name[2]);
 
         //Calculate total based on selected passangers
-        $(".calcValue").text( " €" + hotelInfo.price[2]);
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
 
         $(".selection").click(function () {
             let adultPassangers = parseInt($("#adult").val());
             let childPassangers = parseInt($("#child").val());
 
-            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-            
-        // Show Number of adults and children selected
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
             $(".no-adults").html(`(${adultPassangers})`);
             $(".no-children").html(`(${childPassangers})`);
 
@@ -1828,6 +1835,14 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
 
+} else if (readURL === "Split") {
+
+
+
+
+
+
+    
 }
 
 
