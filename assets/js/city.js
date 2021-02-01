@@ -1392,6 +1392,441 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
     });
 
 
+ 
+}  else if (readURL === "dubrovnik") {
+
+
+   //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/porec-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/porec-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/porec-slide-3.png')";
+
+    //change title and about info
+
+    $(".city-title").text("Porec");
+    $(".about-city").text(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
+
+The main tourist areas are two bays south of the town, called Zelena (Green) and Plava (Blue) Laguna (lagoon). They are almost like small towns, with several hotels in each, as well as camping facilities, a marina and shopping and entertainment areas. Most visitors stay in one of the two.
+
+If you’re in the main part of town and fancy a bit of swimming and sunbathing, head to nearby Sveti Nikola island which you can reach by a regular boat (the journey is only a few minutes).`);
+
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 45.226643971952846,
+        lng: 13.597270771129068,
+    });
+
+    
+
+    // Show Relevant Hotels
+
+    let hotelOne = $(".hotel-box:eq(0)")
+    let hotelTwo = $(".hotel-box:eq(1)")
+    let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+    // Filtering System
+
+    $(".filter-options li:eq(0)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
+        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+    });
+
+    $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    // Display Hotel Information 
+
+    function listHotels() {
+
+        $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/porec-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Parentium Plava Laguna <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 2.8 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Built in 2014, Hotel Parentium Plava Laguna  is located on the seafront in Porec, 3 km from city centre.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€70 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/porec-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Porec <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 600m from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Set just steps away from the beach in the centre of Porec.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€30 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/porec-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2> Hotel Valamar Diamant  <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 1.6 km from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>This hotel is only a 5-minute walk away from the beach and features indoor and outdoor pools and lots of sports facilities.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€50 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+    }
+
+
+
+
+
+    // Change Hotel Pop-Up content based on selected hotel
+
+
+    // First Hotel Selection
+
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.20390270475934, lng: 13.588455798818856 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/porec-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Parentium Plava Laguna</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€70 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Featuring a Spa Centre with 6 hot tubs, an indoor and 2 outdoor pools,
+                        Hotel Laguna Parentium is set only 50 m from the beach in Poreč. 
+                        The hotel offers 3 restaurants, along with a pool bar and a lounge bar. 
+                        Free Wi-Fi is provided.
+                         <br>
+                        <br>
+                        All rooms feature floor-to-ceiling windows and a balcony with 
+                        seating area overlooking the park. They also feature an LCD 
+                        satellite TV, minibar and a safe.                        
+                        <br>
+                        <br>
+                        The Old Town of Poreč is located 5 km away. Pula Airport is at a distance of 60 km.
+                        A secure parking is provided at an additional cost.                        </p>
+                        <h4>Hotel Facilities</h4>
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat:  45.22467787961315, lng: 13.596946653316655});
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/porec-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Porec</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€30 / pp per night</h5>
+             
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Perfectly situated only 600 m from the beach with a marina and the 
+                        historical old town, Hotel Porec offers the most comfortable
+                         stay with a host of sports facilities. Free Wi-Fi is avaialble throughout.
+                         <br>
+                        <br>
+                        Founded in Roman times, the city has many private palaces that house museums and 
+                        galleries, and streets that were built almost 2.000 years ago. Some towers are still 
+                        preserved, with a restaurant in the Pentagonal Tower and a pub in the Round Tower.                        <br>
+                        <br>
+                        Founded in Roman times, the city has many private 
+                        palaces that house museums and galleries, and streets that were built 
+                        almost 2.000 years ago. Some towers are still preserved, 
+                        with a restaurant in the Pentagonal Tower and a pub in the Round Tower.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.21392, lng: 13.599272});
+        launchHotelpopup();
+
+       
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/porec-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/porec-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Family Hotel Amarin</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€50 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>You can explore the historical centre of Poreč, which is 1 km away, or stroll along the landscaped walking path by 
+                        the Adriatic Sea. The hinterland of the Istrian peninsula features numerous historic towns.
+                         <br>
+                        <br>
+                        Sports facilities include outdoor and covered tennis courts, a basketball hall,
+                         an adventure and activity park as well as a water sports
+                         centre. The numerous Spa and Wellness facilities can be enjoyed for an additional cost.
+                        <br>
+                        <br>
+                        The air conditioned, bright rooms boast panoramic views of the sea or the forest
+                        and feature a flat-screen satellite TV.                        
+                        </p>
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Hotel Parentium Plava Laguna", "Hotel Porec", "Hotel Valamar Diamant"],
+        price: [70, 30, 50]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+     $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+        $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text( " €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text( ` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+            
+        // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
 
 }
 

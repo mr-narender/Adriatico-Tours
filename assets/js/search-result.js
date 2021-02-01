@@ -89,8 +89,11 @@ else if (searchResult === "pula") {
 } else if (searchResult === "rovinj") {
     window.location.replace("/city.html?rovinj");
 
+}  else if (searchResult === "porec") {
+    window.location.replace("/city.html?porec");
+} 
 
-} else {
+else {
 
     displaySearchResultTerm();
     $(".no-result-found-strip").css("display", "block");
