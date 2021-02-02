@@ -139,7 +139,11 @@ if (readURL === "Pula") {
     //change title and about info
 
     $(".city-title").text("Pula");
-    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+    $(".about-city").html(`Pula, Italian Pola, major port and industrial centre in western Croatia. It lies at the southern tip of Istria (peninsula) at the head of the Bay of Pula and has a large, almost landlocked harbour in which there is a naval base and the Uljanik shipyards.
+    The town’s outstanding monument is the elliptical Roman amphitheatre completed about 80 CE and seating 23,000.
+    <br><br>
+     A temple of Augustus and a Byzantine basilica were extensively restored after the destructive conflict between Genoa and Venice. The Kaštel, on the hill at the centre of the old town, is a museum and was previously a fortress.
+    `);
 
 
 
@@ -555,7 +559,11 @@ if (readURL === "Pula") {
     //change title and about info
 
     $(".city-title").text("Rovinj");
-    $(".about-city").text("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, in sed veniam delectus veritatis consequuntur quam itaque, doloremque accusantium quidem dicta aliquid mollitia tenetur omnis deleniti, alias voluptates dolor consectetur.Ut officiis assumenda natus sint, obcaecati adipisci dolor, laborum eveniet rerum in eius possimus voluptates repellendus eos!");
+    $(".about-city").html(`Situated on the west coast of Istria, Rovinj is one of the most popular and most developed tourist resorts in Croatia. The old town is built on the island, which was only connected with the mainland in the 18th century. Known as one of the most picturesque and romantic towns on Mediterranean, over the last few decades 
+    Rovinj attracts a large number of tourists, most of them faithfully returning year after year.
+    <br>
+    <br>
+    Rovinj manages to combine, in a very interesting way, its rich tradition with the modern times. As it is also an active fishing port, you can experience the atmosphere of a small fishing village, especially during the popular fishermen’s festivities or at one of the traditional taverns called Spacio (in the past, very popular among fishermen).`);
 
 
     //Show City On The Map
@@ -993,9 +1001,12 @@ if (readURL === "Pula") {
     //change title and about info
 
     $(".city-title").text("Porec");
-    $(".about-city").text(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
+    $(".about-city").html(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
 
-The main tourist areas are two bays south of the town, called Zelena (Green) and Plava (Blue) Laguna (lagoon). They are almost like small towns, with several hotels in each, as well as camping facilities, a marina and shopping and entertainment areas. Most visitors stay in one of the two.
+The main tourist areas are two bays south of the town, called Zelena (Green) and Plava (Blue) Laguna (lagoon).
+<br>
+<br>
+They are almost like small towns, with several hotels in each, as well as camping facilities, a marina and shopping and entertainment areas. Most visitors stay in one of the two.
 
 If you’re in the main part of town and fancy a bit of swimming and sunbathing, head to nearby Sveti Nikola island which you can reach by a regular boat (the journey is only a few minutes).`);
 
@@ -2741,13 +2752,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
 
     $(".city-title").text("Zagreb");
     $(".about-city").html(`<p>
-  Zadar is a city monument, surrounded by historical ramparts, a treasury of 
-  the archaeological and monumental riches of ancient and medieval times, 
-  Renaissance and many contemporary architectural achievements such as the first Sea Organ in the world.
-The city of Zadar is an easily reached destination by land, sea and air. 
-It has a good traffic infrastructure through which it is directly connected to other bigger 
-cities of the Republic of Croatia and Europe, with extraordinary accommodation and contemporary service of numerous marinas. 
-Whichever way you want to reach Zadar, the natural beauty of the landscape will not leave you equanimous.</p>`);
+  Zagreb is made for strolling. Wander through 
+  the Upper Town's red-roof and cobblestone glory, peppered with church spires.
+   Crane your neck to see the domes and ornate upper-floor frippery of the Lower Town's mash-up 
+   of secessionist, neo-baroque and art deco buildings. Search out the grittier pockets of town where ugly-bland concrete walls 
+  have been transformed into colourful murals by local street artists. This city rewards those on foot.</p>`);
 
 
     //Show City On The Map
@@ -3158,7 +3167,7 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
         closeBookingPopup()
     });
 
-}else if (readURL === "Karlovac") {
+} else if (readURL === "Karlovac") {
 
     //load images
     imageArray[0].style.backgroundImage = "url('assets/images/karlovac-slide-1.png')";
@@ -3287,10 +3296,10 @@ the Karlovac border military fort built for the purpose of defence against the
 
 
         // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.51212411909474, lng: 15.546807727743541});
+        initMap(cityPosition, { lat: 45.51212411909474, lng: 15.546807727743541 });
         launchHotelpopup();
 
-         
+
         // Load Slideshow Hotel Images
         $(".loadImages").append(`
     <div class="carousel-item active">

@@ -2212,14 +2212,16 @@ textarea {
 }
 
 .message-sent {
-    background: #0080005e;
+    background: $dark-cyan;
     margin-top: 30px;
     text-align: center;
 display: none;
 
     h5 {
         padding: 5px;
-        font-weight: 600;
+        font-weight: 500;
+        color: #ffffff;
+
     }
 }
 
