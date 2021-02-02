@@ -535,7 +535,7 @@ li {
     display: flex;
     justify-content: center;
     gap: 50px;
-    width: 60%;
+    width: 100%;
 
     li {
         padding: 5px 0 7px 0;
@@ -1303,6 +1303,7 @@ padding-bottom: 35px;
 .how-box {
     padding: 20px;
       max-width: 550px;
+      width: 33%;
 
     img {
         margin-bottom: 15px;
