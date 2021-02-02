@@ -104,6 +104,9 @@ else if (searchResult === "pula") {
 } else if (searchResult === "zagreb") {
     window.location.replace("/city.html?zagreb");
 
+}  else if (searchResult === "karlovac") {
+    window.location.replace("/city.html?karlovac");
+
 } else {
     displaySearchResultTerm();
     $(".no-result-found-strip").css("display", "block");

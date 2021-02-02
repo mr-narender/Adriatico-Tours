@@ -3158,6 +3158,425 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
         closeBookingPopup()
     });
 
+}else if (readURL === "Karlovac") {
+
+    //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/karlovac-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/karlovac-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/karlovac-slide-3.png')";
+
+    //change title and about info
+
+    $(".city-title").text("Karlovac");
+    $(".about-city").html(`<p>
+  Located in central Croatia at the meeting point between the Croatian lowlands, Croatian highlands,  Pokupje and Kordun. Karlovac is framed by four rivers - Kupa, Korana, Dobra and Mrežnica. Since it is located at the narrowest part of Croatia, it is only 50 kilometres away from Slovenia and from Bosnia and Herzegovina. As a city, Karlovac has an important traffic and economic significance.
+ 
+The city of Karlovac is one of rare cities that know the exact date of their creation. 
+For Karlovac it is July 13, 1579, when it was founded and named by its founder, 
+archduke Karl von Habsburg. 
+<br>
+<br>
+It was marked by the beginning of construction of 
+the Karlovac border military fort built for the purpose of defence against the
+ Turks. Every year on July 13, the city of Karlovac celebrates its birthday,
+  which is celebrated by the birthday ball on Trg bana Josipa Jelačića square, and with the celebration session of the City council and awarding of public recognition awards.</p>`);
+
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 45.4883978545671,
+        lng: 15.54822572933611,
+    });
+
+
+    // Show Relevant Hotels
+
+    let hotelOne = $(".hotel-box:eq(0)")
+    let hotelTwo = $(".hotel-box:eq(1)")
+    let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+    // Filtering System
+
+    $(".filter-options li:eq(0)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
+        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+    });
+
+    $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    // Display Hotel Information 
+
+    function listHotels() {
+
+        $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/karlovac-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Europa <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 1.7 km from centre</li>
+                        </ul>
+                        <p>Hotel Europa is situated next to the motorway in Karlovac a 30-minute drive to Zagreb.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€60 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/karlovac-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Motel Kod Bakija <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 5 km from centre</li>
+                        </ul>
+                        <p>Conveniently situated next to the main tourist road D1 in Jelasi, 5 km from Karlovac.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€20 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/karlovac-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Apartmani Nova <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 1.6 km from centre</li>
+                        </ul>
+                        <p>Apartmani Nova is located in Karlovac. Featuring family rooms, this property also provides guests with a terrace.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€35 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+    }
+
+
+
+
+
+    // Change Hotel Pop-Up content based on selected hotel
+
+
+    // First Hotel Selection
+
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.51212411909474, lng: 15.546807727743541});
+        launchHotelpopup();
+
+         
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/karlovac-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Europa</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€60 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>It offers modern rooms with air conditioning and access to the sauna, available at a surcharge.
+
+                    The hotel's restaurant serves international cuisine. Guests get a complimentary fruit basket and a 
+                        bottle of water in their room.
+                        <br>
+                        <br>
+                        Hotel Europa is a great starting point to go hunting or rafting. Parking is available in front of the property.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
+        launchHotelpopup();
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/karlovac-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Motel Kod Bakija </h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€20 / pp per night</h5>
+             
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Motel Kod Bakija offers a restaurant serving local and international dishes as well as Bosnian specialities.
+
+                        The area is perfect for cycling, walking and enjoying the lush nature. There are 4 rivers in 
+                        the vicinity, so you can go swimming in pure water, rowing, rafting as well as fishing.
+                         <br>
+                        <br>
+                        Venture out and explore castles and other cultural and historical monuments - only a few minutes from the property there is an open air War Museum.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                         <li><i class="fas fa-cocktail"></i> Bar</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.476397879836384, lng: 15.557906625581811 });
+        launchHotelpopup();
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/karlovac-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/karlovac-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Apartmani Nova</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€35 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>There is a barbecue and guests can make use of free WiFi and free private parking.
+
+                        Guest rooms are equipped with air conditioning, a flat-screen TV with satellite channels, a fridge, a kettle, a shower, a hairdryer and a desk. 
+                         <br>
+                        <br>
+                        Apartmani Nova offers 4-star accommodation with a hot tub. Guests at the accommodation will be able to enjoy activities in and around Karlovac, like cycling and fishing.                        
+                        </p>
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Hotel Europa", "Motel Kod Bakija", "Apartmani Nova"],
+        price: [60, 20, 35]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
 }
 
 
