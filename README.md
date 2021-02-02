@@ -106,12 +106,33 @@ to get to the end. - view here (include a link to here text and link to flow cha
 Colour pallet was determined by conducting competitor analysis and investigating the most commonly used colours for the selected business.
 Poppins is the selected font for all the headings with sans-serif as a fallback. For the paragraphs and the rest of body text Open sans is the used font.
 
-![colour pallet and fonts](assets/images/documentation/colour-pallet-and-fonts.jpg)
+![colour pallet and fonts](assets/documentation/colour-pallet-and-fonts.jpg)
 
 ## **Wireframes**
 
 All wireframes are created in Adobe XD. Each individual page contains desktop & mobile view. Homepage specifically has a mobile menu design & destination link dropdown.
-Wireframes are saved in PDF file type and can be accessed here (include a link to wireframes file).
+Wireframes are saved in PDF file type and can be accessed [here](assets/documentation/wireframes)
+
+# **Features & Layout**
+
+The website consist of 6 unique pages.
+
+- Homepage 
+- About Us 
+- Contact Us
+- City Page
+- Why Croatia Page
+- Search Result Page
+
+
+<ins>*Navigation*</ins>
+
+The desktop version of navigation is relatively easy to use with clean and effective design in mind. The top bar servers as a contact details section and the main navigation consist of the company logo, functional search bar & navigation links.
+
+**Search Bar Funcionality** - users can search for two terms "food" & "culture" which is initially a part of the placeholder to instruct the user what to search for.
+Additionally, users can also search for individual destinations(current offering) which will redirect them to a relevant city page. If the user inputs the search term which is not stored in the js file the page will return no result found.
+
+The navigation's mobile version consists of contact details, a top bar, a hamburger menu, logo & search icon. The menu expands from left to right and consist of all navigation links. The search bar has the same functionality, but it expands and closes based on a users preference.
 
 # **Testing & Deployment**
 
@@ -120,7 +141,7 @@ Wireframes are saved in PDF file type and can be accessed here (include a link t
 ## **Fixed Bugs**
 
 **Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
-To fix this I implemented the funcionality to always enable only one to be open and close another ones dynamically. 
+To fix this I implemented the funcionality to always enable only one dropdown to expand and close anothers dynamically. 
 
 
 
