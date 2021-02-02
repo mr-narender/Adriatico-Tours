@@ -2730,6 +2730,434 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
         closeBookingPopup()
     });
 
+} else if (readURL === "Zagreb") {
+
+    //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/zagreb-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/zagreb-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/zagreb-slide-3.png')";
+
+    //change title and about info
+
+    $(".city-title").text("Zagreb");
+    $(".about-city").html(`<p>
+  Zadar is a city monument, surrounded by historical ramparts, a treasury of 
+  the archaeological and monumental riches of ancient and medieval times, 
+  Renaissance and many contemporary architectural achievements such as the first Sea Organ in the world.
+The city of Zadar is an easily reached destination by land, sea and air. 
+It has a good traffic infrastructure through which it is directly connected to other bigger 
+cities of the Republic of Croatia and Europe, with extraordinary accommodation and contemporary service of numerous marinas. 
+Whichever way you want to reach Zadar, the natural beauty of the landscape will not leave you equanimous.</p>`);
+
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 45.81300065757794,
+        lng: 15.976429755309525,
+    });
+
+
+
+
+
+    // Show Relevant Hotels
+
+    let hotelOne = $(".hotel-box:eq(0)")
+    let hotelTwo = $(".hotel-box:eq(1)")
+    let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+    // Filtering System
+
+    $(".filter-options li:eq(0)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
+        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+    });
+
+    $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    // Display Hotel Information 
+
+    function listHotels() {
+
+        $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/zagreb-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Esplanade Zagreb Hotel <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 900 m from centre</li>
+                        </ul>
+                        <p>Situated in Zagreb city centre, right next to the Zagreb Main Railway Station, 5-star Esplanade Zagreb Hotel offers a fitness centre and sauna.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€100 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/zagreb-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel Jägerhorn <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 300 m from centre</li>
+                        </ul>
+                        <p>Situated between the main pedestrian street and Zagreb's old town close to Ban Jelacic Square.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€45 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/zagreb-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Hotel International <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 1.6 km from centre</li>
+                        </ul>
+                        <p>Boasting a prime location in Zagreb’s business centre, Hotel International is within walking distance to the old town.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€70 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+    }
+
+
+
+
+
+    // Change Hotel Pop-Up content based on selected hotel
+
+
+    // First Hotel Selection
+
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.80541681420194, lng: 15.976019469068206 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zagreb-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Esplanade Zagreb Hotel</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€100 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Hotel offers a fitness centre and sauna. Free WiFi access is featured 
+                        throughout the hotel. Guests can enjoy a meal at the hotel 
+                        restaurant's terrace or have a drink served by the award-winning cocktail bartenders.
+                        <br>
+                        <br>
+                        Opened in 1925, Esplanade Hotel boasts one of the most prominent buildings in city. Its art-noveau style rooms offer satellite TV and a
+                         minibar, while the marble bathrooms include a bathtub and shower and complimentary L’Occitane cosmetics.                       
+                        <br>
+                        <br>
+                        Zagreb Airport is 15 km away. Car hire can be arranged by the hotel.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
+        launchHotelpopup();
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zagreb-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Jägerhorn </h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€45 / pp per night</h5>
+             
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>This hotel was refurbished in 2011. Founded in 1827, Hotel Jagerhorn is the city's oldest standing hotel.
+
+                        The elegantly equipped rooms provide free Wi-Fi internet access. Free secure parking is located nearby.
+                         <br>
+                        <br>
+                        Guests can enjoy a quiet drink by the fountain, or enjoy the town view from the summer terrace. Ban Jelačić Square is just a 3-minute walk away.
+
+                        This is our guests' favourite part of Zagreb, according to independent reviews.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                         <li><i class="fas fa-cocktail"></i> Bar</li>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 45.799147300406254, lng: 15.974055696096023 });
+        launchHotelpopup();
+
+
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zagreb-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zagreb-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel International</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€70 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>The hotel features several modern conference and banquet area. Free use of the fitness centre and the sauna is available to guests as well as free WiFi.
+
+                        The spacious air-conditioned rooms come with a flat-screen satellite TV and a minibar.
+                         <br>
+                        <br>
+                        Some units include a tea and coffee maker. The private bathroom is equipped with a bath and comes with a hairdryer and free toiletries.
+
+                        Guest can enjoy the modern lounge bar, taste delicious local and international specialities in the restaurant and relax after a long day of work or sight-seeing.                        
+                        </p>
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Esplanade Zagreb Hotel", "Hotel Jägerhorn", "Hotel International"],
+        price: [100, 45, 70]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
 }
 
 
