@@ -98,6 +98,9 @@ else if (searchResult === "pula") {
 }   else if (searchResult === "split") {
     window.location.replace("/city.html?split");
 
+}  else if (searchResult === "zadar") {
+    window.location.replace("/city.html?zadar");
+
 } else {
     displaySearchResultTerm();
     $(".no-result-found-strip").css("display", "block");

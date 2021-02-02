@@ -2294,6 +2294,442 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
 
 
 
+} else if (readURL === "Zadar") {
+
+    //load images
+    imageArray[0].style.backgroundImage = "url('assets/images/zadar-slide-1.png')";
+    imageArray[1].style.backgroundImage = "url('assets/images/zadar-slide-2.png')";
+    imageArray[2].style.backgroundImage = "url('assets/images/zadar-slide-3.png')";
+
+    //change title and about info
+
+    $(".city-title").text("Zadar");
+    $(".about-city").html(`<p>
+  Zadar is a city monument, surrounded by historical ramparts, a treasury of 
+  the archaeological and monumental riches of ancient and medieval times, 
+  Renaissance and many contemporary architectural achievements such as the first Sea Organ in the world.
+The city of Zadar is an easily reached destination by land, sea and air. 
+It has a good traffic infrastructure through which it is directly connected to other bigger 
+cities of the Republic of Croatia and Europe, with extraordinary accommodation and contemporary service of numerous marinas. 
+Whichever way you want to reach Zadar, the natural beauty of the landscape will not leave you equanimous.</p>`);
+
+
+    //Show City On The Map
+    initMap(cityPosition = {
+        lat: 44.10645302043896,
+        lng: 15.241479484019788,
+    });
+
+
+
+
+    // Show Relevant Hotels
+
+    let hotelOne = $(".hotel-box:eq(0)")
+    let hotelTwo = $(".hotel-box:eq(1)")
+    let hotelThree = $(".hotel-box:eq(2)")
+
+
+    listHotels();
+    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+
+
+    // Filtering System
+
+    $(".filter-options li:eq(0)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    $(".filter-options li:eq(1)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
+        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+    });
+
+    $(".filter-options li:eq(2)").click(function (listHotels) {
+        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
+        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+    });
+
+    // Display Hotel Information 
+
+    function listHotels() {
+
+        $(".hotel-box:eq(0)").html(`
+
+ <div class="hotel-box_content">
+                    <img src="assets/images/hotels/zadar-hotel-1.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Idassa Atrium  <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 150 m from centre</li>
+                            <li><span>&#9899;</span> 950 m to beach</li>
+                        </ul>
+                        <p>Located in Zadar and with Kolovare Beach reachable within less than 1 km.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€95 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(1)").html(`
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/zadar-hotel-2.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2> Apartments Benic <i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 6.5 km from centre</li>
+                            <li><span>&#9899;</span> 350 m from beach</li>
+                        </ul>
+                        <p>Enjoying a quiet location 500 m from the beach, Apartments Benic is set 1.8 km from the historic centre of Zadar.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€30 pp / per night</h4>
+                    </div>
+                </div>
+`);
+        $(".hotel-box:eq(2)").html(`
+
+<div class="hotel-box_content">
+                    <img src="assets/images/hotels/zadar-hotel-3.png" alt="hotel image">
+                    <div class="hotel-box_description">
+                        <h2>Falkensteiner Family Hotel Diadora <i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h2>
+                        <ul>
+                            <li><span>&#9899;</span> 550 m from centre</li>
+                            <li><span>&#9899;</span> Beachfront</li>
+                        </ul>
+                        <p>Situated on Punta Skala peninsula in Petrčane, Falkensteiner Family Hotel Diadora boasts a seasonal outdoor swimming pool and a children's water world with an indoor pool.</p>
+
+                        <button class="cta-see-more">See More</button><button class="book-now">Book Now</button>
+                        <h4>€55 pp / per night</h4>                   
+                        </div>
+                </div>
+`);
+
+    }
+
+
+
+
+
+    // Change Hotel Pop-Up content based on selected hotel
+
+
+    // First Hotel Selection
+
+    $(".hotel-box:eq(0) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
+        launchHotelpopup();
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zadar-hotel-1-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-1-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-1-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Radisson Blu Resort & Spa</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€85 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Most rooms include a balcony with views overlooking the islands of Brač and Šolta.
+                         All rooms are fitted with air conditioning, flat-screen TVs and offer en-suite bathrooms with free toiletries. Room service is available.
+                         <br>
+                        <br>
+                        The beach can be accessed via a flight of 100 stairs while the 
+                        lavish hotel's spa offers various amenities such as saunas, massages and steam bath and Finnish sauna. There is also a gym at guests' 
+                        disposal. Conference rooms are available and concierge service is offered at the Radisson Blu.                       
+                        <br>
+                        <br>
+                        This is our guests' favourite part of Split, according to independent reviews.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-paw"></i> Pets Allowed</li>
+                            <li><i class="fas fa-cocktail"></i> Bar</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Second Hotel Selection
+
+    $(".hotel-box:eq(1) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
+        launchHotelpopup();
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zadar-hotel-2-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-2-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-2-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Hotel Pax</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€35 / pp per night</h5>
+             
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>With a garden, the 3-star hotel has air-conditioned rooms with free WiFi, each with a private bathroom. 
+                        The accommodation offers a 24-hour front desk, a concierge service and organising tours for guests.
+                         <br>
+                        <br>
+                        At the hotel, each room is fitted with a desk and a flat-screen TV. Guest rooms at Hotel Pax are equipped with a seating area.
+
+                        Guests at the accommodation can enjoy a continental breakfast.                    
+                        <br>
+                        <br>
+                        Diocletian's Palace is 2.4 km from the hotel, while Mladezi Park Stadium is 3.6 km away. 
+                        The nearest airport is Split, 14 km 
+                        from Hotel Pax, and the property offers a paid airport shuttle service.
+                        </p>
+
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                         <li><i class="fas fa-cocktail"></i> Bar</li>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+    // Third Hotel Selection
+
+    $(".hotel-box:eq(2) .cta-see-more").click(function () {
+
+
+        // Show Hotel On Map
+        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
+        launchHotelpopup();
+
+
+
+
+        // Load Slideshow Hotel Images
+        $(".loadImages").append(`
+    <div class="carousel-item active">
+                            <img src="assets/images/hotels/zadar-hotel-3-1.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-3-2.png" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/hotels/zadar-hotel-3-3.png" alt="...">
+                        </div>
+`);
+
+        //Show Main Hotel Info
+
+        $(".hotel-intro").append(`
+        <h2>Plaza Varos Split</h2>
+
+                <hr class="hr-large">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                <h5>€55 / pp per night</h5>
+              
+    `)
+
+        // Show Hotel About Info
+
+        $(".hotel-content").append(`
+    
+                <div class="hotel-content_box-two">
+                    <h3>About Hotel</h3>
+                    <div class="about-hotel">
+
+                        <p>Featuring family rooms, this property also provides guests with a terrace. The accommodation 
+                        provides a 24-hour front desk, airport transfers, room service and free WiFi throughout the property.
+                         <br>
+                        <br>
+                        All units are equipped with air conditioning, a flat-screen TV with satellite channels,
+                         a fridge, a kettle, a shower, a hairdryer and a desk. At the hotel each room 
+                         includes a wardrobe and a private bathroom.
+                        <br>
+                        <br>
+                        
+                        Popular points of interest near the accommodation include Diocletian's Palace, Mladezi 
+                        Park Stadium and Jezinac Beach. The nearest airport is Split Airport, 11 km from Plaza Varos Split.                        
+                        </p>
+                        <h4>Hotel Facilities</h4>
+
+                        <ul>
+                            <li><i class="fas fa-swimming-pool"></i> Swimming Pool</li>
+                            <li><i class="fas fa-parking"></i> Free Parking</li>
+                            <li><i class="fas fa-wifi"></i> Free WI-FI</li>
+                            <li><i class="fas fa-spa"></i> Spa & Welness Centre</li>
+                        </ul>
+                    </div>
+                </div>
+    `)
+
+        closeHotelPopup();
+
+    });
+
+
+
+
+    // Show Booking Pop-up based on selected hotel
+
+    //Store Hotel names and prices
+
+    let hotelInfo = {
+        name: ["Idassa Atrium", "Apartments Benic", "Falkensteiner Family Hotel Diadora"],
+        price: [95, 30, 55]
+    }
+
+    //Add event listener to each hotel booking button
+
+    $(".hotel-box:eq(0) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[0]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(1) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[1]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[1]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
+
+    $(".hotel-box:eq(2) .book-now").click(function () {
+
+        launchBookingPopup();
+
+        //Show hotel name
+        $(".hotel-name").text(hotelInfo.name[2]);
+
+        //Calculate total based on selected passangers
+        $(".calcValue").text(" €" + hotelInfo.price[2]);
+
+        $(".selection").click(function () {
+            let adultPassangers = parseInt($("#adult").val());
+            let childPassangers = parseInt($("#child").val());
+
+            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
+
+            // Show Number of adults and children selected
+            $(".no-adults").html(`(${adultPassangers})`);
+            $(".no-children").html(`(${childPassangers})`);
+
+        });
+
+        closeBookingPopup()
+    });
+
 }
 
 
