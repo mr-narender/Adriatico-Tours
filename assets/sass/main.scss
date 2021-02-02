@@ -2012,8 +2012,12 @@ h2 {
 
     #currency-converter {
         margin: 120px 0;
+    
     }
 
+    .convert-button-mobile {
+        display: none;
+    }
 
     .currency-converter_box {
         background: #f7f7f7;
@@ -2021,6 +2025,7 @@ h2 {
         border-radius: 15px;
         max-width: 1250px;
         margin: 0 auto;
+        width: 95%;
 
         h2 {
            font-weight: 600; 
@@ -2644,6 +2649,36 @@ display: none;
     padding-top: 15px;
 }
 
+/******************* Currency Converter **/
+
+.currency-converter_options {
+    flex-wrap: wrap;
+
+     & > i {
+         display: none;
+     }
+
+ 
+}
+
+.convert-button {
+    display: none;
+}
+
+.convert-button-mobile {
+      @include primary-button;
+      display: block;
+}
+
+
+.currency-converter-option-from, .currency-converter-option-to, .currency-converter-amount {
+    width: 100%;
+}
+
+.currency-converter-result input {
+    width: 75%;
+}
+
 
 
 }
@@ -2985,6 +3020,7 @@ display: none;
 
 .top-things-carousel {
     width: 90%;
+    margin: 0 auto;
 }
 
 .top-info {
