@@ -1,426 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adriatico Tours</title>
 
     <!--Bootstrap stylesheet-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
     <!--Font Awsome-->
-    <script src="https://kit.fontawesome.com/88ddfd17d7.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/88ddfd17d7.js"
+      crossorigin="anonymous"
+    ></script>
     <!--Main Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!--Menu Utilities-->
 
-
     <div class="menu-utilities">
-
-        <ul>
-            <li><a href="tel:01 405 2033">+353 1-405-2033</a></li>
-            <li>Can we help you? <span>|</span></li>
-            <li><a href="mailto:support@adriaticotours.com">support@adriaticotours.com</a></li>
-
-        </ul>
-
-
+      <ul>
+        <li><a href="tel:01 405 2033">+353 1-405-2033</a></li>
+        <li>Can we help you? <span>|</span></li>
+        <li>
+          <a href="mailto:support@adriaticotours.com"
+            >support@adriaticotours.com</a
+          >
+        </li>
+      </ul>
     </div>
-
-
 
     <!--Navigation -->
 
     <nav>
+      <!--Large Menu-->
 
-        <!--Large Menu-->
+      <div id="menu">
+        <a href="index.html">
+          <img
+            class="logo"
+            src="assets/images/logo-transparent.png"
+            alt="logo"
+          />
+        </a>
 
-        <div id="menu">
+        <div class="menu_content">
+          <form
+            role="search"
+            action="search.html"
+            autocomplete="off"
+            method="get"
+          >
+            <fieldset class="input-wrapper-lg">
+              <label for="search-result"></label>
+              <input
+                class="menu_content-search"
+                type="search"
+                id="search-result"
+                name="search-result"
+                placeholder="Try Food, Culture or Desired city.. "
+              />
+              <button type="submit" class="search-btn">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </button>
+            </fieldset>
+          </form>
 
-            <a href="index.html">
+          <ul>
+            <li class="expand-lg"><a href="#">Destinations</a></li>
+            <li><a href="about.html">Our Company</a></li>
+            <li><a href="why.html">Why Croatia</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
 
-                <img class="logo" src="assets/images/logo-transparent.png" alt="logo">
+      <div class="destination_expand">
+        <div class="destination_expand-section">
+          <h2>ISTRIA</h2>
+          <img
+            class="destination_expand-img"
+            src="assets/images/istria-expand.png"
+            alt="look from the coast on croatian town"
+          />
+          <ul>
+            <li class="destination_expand-link">
+              <a href="city.html?pula">Pula</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li class="destination_expand-link">
+              <a href="city.html?rovinj">Rovinj</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li class="destination_expand-link">
+              <a href="city.html?porec">Porec</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="destination_expand-section">
+          <h2>DALMATIAN COAST</h2>
+          <img
+            class="destination_expand-img"
+            src="assets/images/dalmatian-expand.png"
+            alt="look from the coast on croatian town"
+          />
+          <ul>
+            <li class="destination_expand-link">
+              <a href="city.html?dubrovnik">Dubrovnik</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li class="destination_expand-link">
+              <a href="city.html?split">Split</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li class="destination_expand-link">
+              <a href="city.html?zadar">Zadar</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="destination_expand-section">
+          <h2>CENTRAL CROATIA</h2>
+          <img
+            class="destination_expand-img"
+            src="assets/images/central-expand.png"
+            alt="look from the coast on croatian town"
+          />
+          <ul>
+            <li class="destination_expand-link">
+              <a href="city.html?zagreb">Zagreb</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+            <li class="destination_expand-link">
+              <a href="city.html?karlovac">Karlovac</a
+              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-            </a>
+      <!--Mobile Menu-->
 
-            <div class="menu_content">
+      <div id="mobile-menu">
+        <div class="mobile_menu-content">
+          <img
+            class="menu-open"
+            src="assets/images/ham-menu.png"
+            alt="mobile-menu-button"
+          />
 
+          <a href="index.html">
+            <img
+              class="logo"
+              src="assets/images/logo-transparent.png"
+              alt="logo"
+            />
+          </a>
 
-                <form role="search" action="search.html" autocomplete="off" method="get">
-                    <fieldset class="input-wrapper-lg">
-                        <label for="search-result"></label>
-                        <input class="menu_content-search" type="search" id="search-result" name="search-result"
-                            placeholder="Try Food, Culture or Desired city.. ">
-                        <button type="submit" class="search-btn"><i class="fas fa-search"
-                                aria-hidden="true"></i></button>
-                    </fieldset>
-
-                </form>
-
-                <ul>
-                    <li class="expand-lg"><a href="#">Destinations</a></li>
-                    <li><a href="about.html">Our Company</a></li>
-                    <li><a href="why.html">Why Croatia</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-
+          <img
+            class="search-expand"
+            src="assets/images/search-icon-mobile.png"
+            alt="search-button"
+          />
         </div>
 
+        <div class="mobile_menu-expand">
+          <i class="far fa-times-circle menu-exit" aria-hidden="true"></i>
 
-        <div class="destination_expand">
+          <ul class="level-one">
+            <li class="mobile_menu-expand-link">
+              <a href="#">Destinations</a
+              ><i class="fas fa-chevron-right arrow-drop-lg"></i>
+            </li>
 
-            <div class="destination_expand-section">
-                <h2>ISTRIA</h2>
-                <img class="destination_expand-img" src="assets/images/istria-expand.png"
-                    alt="look from the coast on croatian town">
-                <ul>
-                    <li class="destination_expand-link"><a href="city.html?pula">Pula</a><i class="fas fa-chevron-right"
-                            aria-hidden="true"></i></li>
-                    <li class="destination_expand-link"><a href="city.html?rovinj">Rovinj</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i></li>
-                    <li class="destination_expand-link"><a href="city.html?porec">Porec</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i></li>
-                </ul>
-            </div>
-            <div class="destination_expand-section">
-                <h2>DALMATIAN COAST</h2>
-                <img class="destination_expand-img" src="assets/images/dalmatian-expand.png"
-                    alt="look from the coast on croatian town">
-                <ul>
-                    <li class="destination_expand-link"><a href="city.html?dubrovnik">Dubrovnik</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i>
-                    </li>
-                    <li class="destination_expand-link"><a href="city.html?split">Split</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i></li>
-                    <li class="destination_expand-link"><a href="city.html?zadar">Zadar</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i></li>
-                </ul>
-            </div>
-            <div class="destination_expand-section">
-                <h2>CENTRAL CROATIA</h2>
-                <img class="destination_expand-img" src="assets/images/central-expand.png"
-                    alt="look from the coast on croatian town">
-                <ul>
-                    <li class="destination_expand-link"><a href="city.html?zagreb">Zagreb</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i></li>
-                    <li class="destination_expand-link"><a href="city.html?karlovac">Karlovac</a><i
-                            class="fas fa-chevron-right" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
+            <ul class="level-two">
+              <li class="mobile_menu-expand-link expand">
+                Istria<i
+                  class="fas fa-chevron-right arrow-drop-sm trigger-one"
+                ></i>
+              </li>
 
+              <ul class="level-three first">
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?pula">Pula</a>
+                </li>
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?rovinj">Rovinj</a>
+                </li>
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?porec">Porec</a>
+                </li>
+              </ul>
+              <li class="mobile_menu-expand-link expand">
+                Dalmatian Coast<i
+                  class="fas fa-chevron-right arrow-drop-sm trigger-two"
+                ></i>
+              </li>
+
+              <ul class="level-three second">
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?dubrovnik">Dubrovnik</a>
+                </li>
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?split">Split</a>
+                </li>
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?zadar">Zadar</a>
+                </li>
+              </ul>
+              <li class="mobile_menu-expand-link expand">
+                Central Croatia<i
+                  class="fas fa-chevron-right arrow-drop-sm trigger-three"
+                ></i>
+              </li>
+
+              <ul class="level-three third">
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?zagreb">Zagreb</a>
+                </li>
+                <li class="mobile_menu-expand-link">
+                  <a href="city.html?karlovac">Karlovac</a>
+                </li>
+              </ul>
+            </ul>
+
+            <li class="mobile_menu-expand-link">
+              <a href="about.html">Our Company</a>
+            </li>
+            <li class="mobile_menu-expand-link">
+              <a href="why.html">Why Croatia</a>
+            </li>
+            <li class="mobile_menu-expand-link">
+              <a href="contact.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
 
-        <!--Mobile Menu-->
-
-
-
-        <div id="mobile-menu">
-
-            <div class="mobile_menu-content">
-
-                <img class="menu-open" src="assets/images/ham-menu.png" alt="mobile-menu-button" />
-
-                <a href="index.html">
-
-                    <img class="logo" src="assets/images/logo-transparent.png" alt="logo">
-                </a>
-
-                <img class="search-expand" src="assets/images/search-icon-mobile.png" alt="search-button" />
-
-            </div>
-
-            <div class="mobile_menu-expand">
-
-                <i class="far fa-times-circle menu-exit" aria-hidden="true"></i>
-
-                <ul class="level-one">
-                    <li class="mobile_menu-expand-link"><a href="#">Destinations</a><i
-                            class="fas fa-chevron-right arrow-drop-lg"></i></li>
-
-                    <ul class="level-two">
-
-                        <li class="mobile_menu-expand-link expand">Istria<i
-                                class="fas fa-chevron-right arrow-drop-sm trigger-one"></i></li>
-
-                        <ul class="level-three first">
-                            <li class="mobile_menu-expand-link"><a href="city.html?pula">Pula</a></li>
-                            <li class="mobile_menu-expand-link"><a href="city.html?rovinj">Rovinj</a></li>
-                            <li class="mobile_menu-expand-link"><a href="city.html?porec">Porec</a></li>
-
-                        </ul>
-                        <li class="mobile_menu-expand-link expand">Dalmatian Coast<i
-                                class="fas fa-chevron-right arrow-drop-sm trigger-two"></i></li>
-
-                        <ul class="level-three second">
-                            <li class="mobile_menu-expand-link"><a href="city.html?dubrovnik">Dubrovnik</a></li>
-                            <li class="mobile_menu-expand-link"><a href="city.html?split">Split</a></li>
-                            <li class="mobile_menu-expand-link"><a href="city.html?zadar">Zadar</a></li>
-
-                        </ul>
-                        <li class="mobile_menu-expand-link expand">Central Croatia<i
-                                class="fas fa-chevron-right arrow-drop-sm trigger-three"></i></li>
-
-                        <ul class="level-three third">
-                            <li class="mobile_menu-expand-link"><a href="city.html?zagreb">Zagreb</a></li>
-                            <li class="mobile_menu-expand-link"><a href="city.html?karlovac">Karlovac</a></li>
-                        </ul>
-
-
-                    </ul>
-
-                    <li class="mobile_menu-expand-link"><a href="about.html">Our Company</a></li>
-                    <li class="mobile_menu-expand-link"><a href="why.html">Why Croatia</a></li>
-                    <li class="mobile_menu-expand-link"><a href="contact.html">Contact Us</a></li>
-                </ul>
-
-
-            </div>
-
-
-            <form class="mobile-search" role="search" action="search.html" method="get">
-                <fieldset class="input-wrapper-sm">
-                    <label for="search-header-mobile"></label>
-                    <input class="menu_content-search" type="search" id="search-header-mobile"
-                        name="search-header-mobile" placeholder="Try Food, Culture or Desired city.">
-                    <button type="submit" class="search-btn"><i class="fas fa-search" aria-hidden="true"></i></button>
-                </fieldset>
-                <i class="far fa-times-circle search-hide" aria-hidden="true"></i>
-
-            </form>
-
-        </div>
-
+        <form
+          class="mobile-search"
+          role="search"
+          action="search.html"
+          method="get"
+        >
+          <fieldset class="input-wrapper-sm">
+            <label for="search-header-mobile"></label>
+            <input
+              class="menu_content-search"
+              type="search"
+              id="search-header-mobile"
+              name="search-header-mobile"
+              placeholder="Try Food, Culture or Desired city."
+            />
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </fieldset>
+          <i class="far fa-times-circle search-hide" aria-hidden="true"></i>
+        </form>
+      </div>
     </nav>
-
 
     <!--Bread Crumbs Strip-->
 
     <div class="bread-crumbs" aria-label="breadcrumb">
-
-        <ol>
-
-            <li><a href="index.html">Home</a></li>
-            <li class="divider">Search result <span class="result"></span></li>
-
-        </ol>
-
-
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li class="divider">Search result <span class="result"></span></li>
+      </ol>
     </div>
 
-
     <main id="search-result-wrapper">
+      <!--Result not found strip-->
 
+      <div class="no-result-found-strip">
+        <p>No records found for your search.</p>
+      </div>
 
+      <h2 class="search-result_title"></h2>
+      <hr class="hide" />
 
+      <div class="search-result"></div>
 
+      <!--Recommendations section-->
 
-        <!--Result not found strip-->
-
-        <div class="no-result-found-strip">
-            <p>No records found for your search.</p>
+      <h2>Top Trending Destinations</h2>
+      <hr class=>
+      <div class="recommendations-wrapper">
+        <div class="recommendations-box recommendation-1">
+          <div class="recommendations-box-content">
+            <a href="city.html">Dubrovnik</a>
+            <h4>Dubrovnik, Croatia</h4>
+          </div>
         </div>
 
-        <h2 class="search-result_title"></h2>
-        <hr class="hide">
-
-        <div class="search-result">
-
-
-
+        <div class="recommendations-box recommendation-2">
+          <div class="recommendations-box-content">
+            <a href="city.html">Zagreb</a>
+            <h4>Zagreb, Croatia</h4>
+          </div>
         </div>
 
-
-
-        <!--Recommendations section-->
-
-
-        <h2>Top Trending Destinations</h2>
-        <hr class=>
-        <div class="recommendations-wrapper">
-
-
-            <div class="recommendations-box recommendation-1">
-
-                <div class="recommendations-box-content">
-                    <a href="city.html">Dubrovnik</a>
-                    <h4>Dubrovnik, Croatia</h4>
-
-                </div>
-
-            </div>
-
-            <div class="recommendations-box recommendation-2">
-
-                <div class="recommendations-box-content">
-                    <a href="city.html">Zagreb</a>
-                    <h4>Zagreb, Croatia</h4>
-
-                </div>
-
-            </div>
-
-            <div class="recommendations-box  recommendation-3">
-
-                <div class="recommendations-box-content">
-                    <a href="city.html">Pula</a>
-                    <h4>Pula, Croatia</h4>
-
-                </div>
-
-            </div>
-
-            <div class="recommendations-box recommendation-4">
-
-                <div class="recommendations-box-content ">
-                    <a href="city.html">Split</a>
-                    <h4>Pula, Croatia</h4>
-
-                </div>
-
-            </div>
-
-
+        <div class="recommendations-box recommendation-3">
+          <div class="recommendations-box-content">
+            <a href="city.html">Pula</a>
+            <h4>Pula, Croatia</h4>
+          </div>
         </div>
 
-
-
+        <div class="recommendations-box recommendation-4">
+          <div class="recommendations-box-content">
+            <a href="city.html">Split</a>
+            <h4>Pula, Croatia</h4>
+          </div>
+        </div>
+      </div>
     </main>
-
-
-
-
 
     <!--Newsletter Section-->
 
     <section id="newsletter-section">
+      <div class="newsletter-section_content">
+        <h2>Be In The Know</h2>
+        <p>
+          Stay up to date! Make sure you never missing our lates offers and
+          promotions. Subscribe now and claim a 10% off discount off your next
+          booking.
+        </p>
 
-        <div class="newsletter-section_content">
-
-            <h2>Be In The Know</h2>
-            <p>Stay up to date! Make sure you never missing our lates offers and promotions.
-                Subscribe now and claim a 10% off discount off your next booking.
-            </p>
-
-            <form action="mailto:support@adriaticotours.com" method="post">
-                <label for="email" class="sr-only">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="Type your email" />
-                <button type="submit">SUBSCRIBE</button>
-            </form>
-
-        </div>
-
+        <form action="mailto:support@adriaticotours.com" method="post">
+          <label for="email" class="sr-only">Email Address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Type your email"
+          />
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+      </div>
     </section>
-
-
 
     <!--Footer Section-->
 
     <section id="footer-section">
-
-        <div class="footer-section_wrapper">
-
-            <div class="about-intro">
-
-                <img src="assets/images/logo-white-transaprent.png" alt="company logo">
-                <p>With over 15 years of experience in the travelling industry, we are proud to be called Croatian
-                    specialists. We are here to ensure you are living the dream whilst enjoying beautiful Croatian
-                    culture & food.</p>
-
-            </div>
-
-            <div class="footer-navigation">
-
-                <div class="footer-navigation_section_one">
-
-                    <h4 class="footer-navigation_title">Useful Links</h4>
-                    <hr class="hr-large">
-
-                    <ul>
-                        <li class="footer-navigation_links"><a href="about.html">Our Company</a></li>
-                        <li class="footer-navigation_links"><a href="about.html#faq-section">FAQ'S</a></li>
-                        <li class="footer-navigation_links"><a href="contact.html">Contact Us</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="footer-navigation_section_two">
-
-                    <h4 class="footer-navigation_title">Search By Popular Cities</h4>
-                    <hr class="hr-large">
-
-                    <ul>
-                        <li class="footer-navigation_links"><a href="city.html?split">Split</a></li>
-                        <li class="footer-navigation_links"><a href="city.html?dubrovnik"> Dubrovnik</a></li>
-                        <li class="footer-navigation_links"><a href="city.html?zagreb">Zagreb</a></li>
-                    </ul>
-
-                </div>
-
-            </div>
-
+      <div class="footer-section_wrapper">
+        <div class="about-intro">
+          <img
+            src="assets/images/logo-white-transaprent.png"
+            alt="company logo"
+          />
+          <p>
+            With over 15 years of experience in the travelling industry, we are
+            proud to be called Croatian specialists. We are here to ensure you
+            are living the dream whilst enjoying beautiful Croatian culture &
+            food.
+          </p>
         </div>
 
-        <div class="footer-section_contact-links">
+        <div class="footer-navigation">
+          <div class="footer-navigation_section_one">
+            <h4 class="footer-navigation_title">Useful Links</h4>
+            <hr class="hr-large" />
 
             <ul>
-                <li><i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:01 405 2033">+353 1-405-2033</a>
-                </li>
-                <li><i class="fas fa-envelope" aria-hidden="true"></i><a
-                        href="mailto:support@adriaticotours.com">support@adriaticotours.com</a></li>
-                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i>89e Lagan Road, Glasnevin, Dublin, Ireland
-                </li>
+              <li class="footer-navigation_links">
+                <a href="about.html">Our Company</a>
+              </li>
+              <li class="footer-navigation_links">
+                <a href="about.html#faq-section">FAQ'S</a>
+              </li>
+              <li class="footer-navigation_links">
+                <a href="contact.html">Contact Us</a>
+              </li>
             </ul>
+          </div>
 
+          <div class="footer-navigation_section_two">
+            <h4 class="footer-navigation_title">Search By Popular Cities</h4>
+            <hr class="hr-large" />
+
+            <ul>
+              <li class="footer-navigation_links">
+                <a href="city.html?split">Split</a>
+              </li>
+              <li class="footer-navigation_links">
+                <a href="city.html?dubrovnik"> Dubrovnik</a>
+              </li>
+              <li class="footer-navigation_links">
+                <a href="city.html?zagreb">Zagreb</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
 
+      <div class="footer-section_contact-links">
+        <ul>
+          <li>
+            <i class="fas fa-phone-alt" aria-hidden="true"></i
+            ><a href="tel:01 405 2033">+353 1-405-2033</a>
+          </li>
+          <li>
+            <i class="fas fa-envelope" aria-hidden="true"></i
+            ><a href="mailto:support@adriaticotours.com"
+              >support@adriaticotours.com</a
+            >
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>89e Lagan
+            Road, Glasnevin, Dublin, Ireland
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!--Copyright Bar-->
 
     <section id="copyright-bar">
-
-        <h4>© COPYRIGHT 2021 <span>|</span> Designed & Developed By Boris Gersic</h4>
-        <ul>
-            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"
-                        aria-hidden="true"></i></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"
-                        aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            </li>
-        </ul>
-
-
+      <h4>
+        © COPYRIGHT 2021 <span>|</span> Designed & Developed By Boris Gersic
+      </h4>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fab fa-facebook" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fab fa-instagram" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/" target="_blank"
+            ><i class="fab fa-twitter" aria-hidden="true"></i
+          ></a>
+        </li>
+      </ul>
     </section>
-
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Bootstrap scripts-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
     <!--Main Script-->
     <script src="assets/js/main.js" type="text/javascript"></script>
     <!--City Page Funcionality Script-->
     <script src="assets/js/city.js" type="text/javascript"></script>
     <!--Search Result Script-->
     <script src="assets/js/search-result.js" type="text/javascript"></script>
-
-</body>
-
+  </body>
 </html>

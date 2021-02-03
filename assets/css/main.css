@@ -5,7 +5,8 @@
   font-weight: 900; }
 
 /****************** Transitions ***/
-.destination_expand-link, .footer-navigation li:hover, .hero-section_social i, .about-section_content a:hover, .cta-see-more:hover, .book-now:hover {
+.destination_expand-link, .footer-navigation li:hover, .hero-section_social i, .about-section_content a:hover, .cta-see-more:hover,
+.book-now:hover {
   transition: all 0.1s ease-in; }
 
 /********************* Horizontal rules **/
@@ -32,7 +33,12 @@ body {
 body {
   font-family: "Open Sans", "san-serif"; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Poppins", "san-serif";
   color: #555555; }
 
@@ -40,7 +46,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0; }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
   margin: 0; }
 
@@ -160,7 +167,7 @@ li {
   .destination_expand-section h2 {
     font-size: 1.2em;
     margin: 8px;
-    color: #00AB99; }
+    color: #00ab99; }
     .destination_expand-section h2::before {
       content: "\f35a";
       font-size: 16px;
@@ -188,7 +195,7 @@ li {
     bottom: 10px;
     font-size: 13px;
     padding-top: 10px;
-    color: #00AB99; }
+    color: #00ab99; }
   .destination_expand-link:hover {
     background: #555555; }
 
@@ -224,14 +231,15 @@ li {
   max-width: 550px;
   display: none;
   height: 100vh;
-  background: #00AB99;
-  opacity: 0.90;
+  background: #00ab99;
+  opacity: 0.9;
   z-index: 100;
   position: fixed;
   top: 0;
-  border-right: 1px solid #00AB99; }
+  border-right: 1px solid #00ab99; }
 
-.arrow-drop-sm, .arrow-drop-lg {
+.arrow-drop-sm,
+.arrow-drop-lg {
   cursor: pointer; }
 
 .level-one {
@@ -305,7 +313,7 @@ li {
 
 .divider::before {
   content: "/";
-  padding-right: .5rem; }
+  padding-right: 0.5rem; }
 
 /************************ Footer Section **/
 #footer-section {
@@ -350,7 +358,8 @@ li {
   .footer-navigation a {
     color: #ffffff; }
 
-.footer-navigation_section_one, .footer-navigation_section_two {
+.footer-navigation_section_one,
+.footer-navigation_section_two {
   width: 50%; }
 
 .footer-section_contact-links {
@@ -363,7 +372,7 @@ li {
     padding-right: 5px;
     font-size: 15px; }
     .footer-section_contact-links li i {
-      background: #00AB99;
+      background: #00ab99;
       padding: 8px;
       border-radius: 50%;
       border: 1px double white;
@@ -377,7 +386,7 @@ li {
 
 /********************* Copyright Bar **/
 #copyright-bar {
-  background: #00AB99;
+  background: #00ab99;
   padding: 10px;
   position: relative;
   line-height: 30px; }
@@ -427,15 +436,16 @@ li {
   right: 0;
   background: white;
   font-size: 30px; }
-  .hero-section_social li:nth-child(1), .hero-section_social li:nth-child(2) {
+  .hero-section_social li:nth-child(1),
+  .hero-section_social li:nth-child(2) {
     border-bottom: 1px solid #e2e2e2; }
   .hero-section_social a {
     padding: 10px; }
   .hero-section_social i {
-    color: #EA3F28;
+    color: #ea3f28;
     padding-bottom: 15px; }
     .hero-section_social i:hover {
-      color: #00AB99; }
+      color: #00ab99; }
 
 /******************** About Section **/
 #about-section {
@@ -464,7 +474,7 @@ li {
   margin-left: 2%; }
   .about-section_content h3 {
     font-size: 1.35em;
-    color: #00AB99;
+    color: #00ab99;
     font-weight: 700; }
   .about-section_content h1 {
     color: #555555;
@@ -472,7 +482,7 @@ li {
   .about-section_content p {
     padding-bottom: 15px; }
   .about-section_content a {
-    color: #EA3F28;
+    color: #ea3f28;
     font-weight: 700;
     line-height: 40px;
     font-size: 1.35em; }
@@ -534,24 +544,30 @@ li {
   .popular-destinations_box-content h4 {
     color: #ffffff; }
 
-.destination-one, .recommendation-1 {
+.destination-one,
+.recommendation-1 {
   background: url("/assets/images/dubrovnik-popular.png") no-repeat center; }
-  .destination-one:hover, .recommendation-1:hover {
+  .destination-one:hover,
+  .recommendation-1:hover {
     background: url("/assets/images/dubrovnik-popular-hover.png") no-repeat center; }
 
-.destination-two, .recommendation-2 {
+.destination-two,
+.recommendation-2 {
   background: url("/assets/images/zagreb-popular.png") no-repeat center; }
-  .destination-two:hover, .recommendation-2:hover {
+  .destination-two:hover,
+  .recommendation-2:hover {
     background: url("/assets/images/zagreb-popular-hover.png") no-repeat center; }
 
-.destination-three, .recommendation-3 {
+.destination-three,
+.recommendation-3 {
   background: url("/assets/images/pula-popular.png") no-repeat center; }
-  .destination-three:hover, .recommendation-3:hover {
+  .destination-three:hover,
+  .recommendation-3:hover {
     background: url("/assets/images/pula-popular-hover.png") no-repeat center; }
 
 /************************ Why Us Section **/
 .section-background_wrapper {
-  background: #00AB99;
+  background: #00ab99;
   padding: 1px;
   width: 95%;
   border-radius: 0 20px 20px 0; }
@@ -565,7 +581,8 @@ li {
 .why-us_title h1 {
   color: #ffffff; }
 
-.why-us_title h1, .partners_title h1 {
+.why-us_title h1,
+.partners_title h1 {
   font-size: 35px; }
 
 .center-align {
@@ -623,7 +640,7 @@ li {
   font-size: 35px; }
   .user-testimonials_title h1::before {
     content: "\f10d";
-    color: #00AB99;
+    color: #00ab99;
     opacity: 0.5;
     font-size: 65px;
     padding-right: 10px;
@@ -661,13 +678,15 @@ li {
     top: 15px;
     font-size: 16px; }
 
-.carousel-control-next, .carousel-control-prev {
+.carousel-control-next,
+.carousel-control-prev {
   position: static;
   display: inline-block;
   padding: 0 20px;
   font-size: 35px; }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   background-image: none;
   color: #555555; }
 
@@ -696,9 +715,9 @@ li {
     padding: 10px;
     border: none; }
     .newsletter-section_content input:focus {
-      border: 1px solid #00AB99; }
+      border: 1px solid #00ab99; }
   .newsletter-section_content button {
-    background: #00AB99;
+    background: #00ab99;
     font-size: 15px;
     padding: 5px 25px;
     color: #ffffff;
@@ -823,7 +842,7 @@ li {
     margin-bottom: 15px;
     width: 50px; }
   .how-box h3 {
-    font-size: 1.60em;
+    font-size: 1.6em;
     padding-bottom: 10px; }
   .how-box p {
     font-size: 0.95em; }
@@ -858,7 +877,7 @@ li {
   .question-dropdown i {
     position: absolute;
     right: 0;
-    color: #EA3F28;
+    color: #ea3f28;
     transition: 0.5s all ease-in-out;
     font-size: 30px;
     display: inline-block; }
@@ -898,7 +917,7 @@ li {
   .dropdown-toggle::after {
     margin-left: 50px; }
   .dropdown-toggle:hover {
-    background: #00AB99;
+    background: #00ab99;
     color: #ffffff; }
 
 .filter-options {
@@ -906,7 +925,7 @@ li {
   padding: 0;
   width: 200px; }
   .filter-options li {
-    padding: .25em .5em;
+    padding: 0.25em 0.5em;
     border-bottom: 1px dotted #cacaca;
     cursor: pointer; }
     .filter-options li:nth-child(3) {
@@ -968,7 +987,7 @@ li {
   .hotel-box_description i {
     font-size: 13px;
     vertical-align: middle;
-    color: #EFCA08;
+    color: #efca08;
     padding-bottom: 3px; }
   .hotel-box_description li {
     display: inline-block;
@@ -983,13 +1002,14 @@ li {
     margin: 30px 0;
     font-size: 15px; }
   .hotel-box_description h4 {
-    color: #EA3F28;
+    color: #ea3f28;
     font-weight: 600;
     float: right;
     font-size: 17px;
     padding-top: 2px; }
 
-.cta-see-more, .book-now {
+.cta-see-more,
+.book-now {
   padding: 5px 25px;
   text-decoration: none !important;
   font-size: 15px;
@@ -997,18 +1017,19 @@ li {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 600; }
-  .cta-see-more:hover, .book-now:hover {
+  .cta-see-more:hover,
+  .book-now:hover {
     transform: scale(1.05); }
 
 .cta-see-more {
-  border: 2px solid #00AB99;
+  border: 2px solid #00ab99;
   color: #555555;
   background: #fff; }
   .cta-see-more:hover {
     color: #555555; }
 
 .book-now {
-  background: #00AB99;
+  background: #00ab99;
   color: #ffffff;
   margin-left: 15px;
   padding: 7px 25px;
@@ -1024,7 +1045,8 @@ li {
     font-size: 1.5em;
     margin-bottom: 15px; }
 
-.booking-info, .booking-summary {
+.booking-info,
+.booking-summary {
   width: 50%; }
 
 .passanger-selection {
@@ -1055,7 +1077,8 @@ li {
     border: 1px solid #cacaca;
     border-radius: 5px; }
 
-.card-number, .card-epiry-ccv {
+.card-number,
+.card-epiry-ccv {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1073,7 +1096,7 @@ li {
 .booking-summary_content {
   padding-top: 25px; }
   .booking-summary_content i {
-    color: #00AB99;
+    color: #00ab99;
     padding-right: 10px; }
   .booking-summary_content hr {
     width: 80%; }
@@ -1081,7 +1104,8 @@ li {
 .bottom-space {
   margin-bottom: 50px; }
 
-.hotel-offering_popup, .booking-popup {
+.hotel-offering_popup,
+.booking-popup {
   display: none;
   background: white;
   position: fixed;
@@ -1094,7 +1118,8 @@ li {
   transform: translate(-50%, -50%);
   z-index: 15;
   max-width: 1200px; }
-  .hotel-offering_popup img, .booking-popup img {
+  .hotel-offering_popup img,
+  .booking-popup img {
     width: 100%;
     max-height: 500px; }
 
@@ -1105,7 +1130,8 @@ li {
 .hero-section-popup {
   position: relative; }
 
-.popup-exit, .popup-exit-black {
+.popup-exit,
+.popup-exit-black {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1128,10 +1154,10 @@ li {
     font-weight: 600;
     font-size: 1.35em; }
   .hotel-intro i {
-    color: #EFCA08; }
+    color: #efca08; }
   .hotel-intro a {
     padding: 8px 45px;
-    background: #EA3F28;
+    background: #ea3f28;
     position: absolute;
     right: 0;
     bottom: 0; }
@@ -1149,11 +1175,13 @@ li {
 #city-map-hotel {
   height: 400px; }
 
-.hotel-content_box-one, .hotel-content_box-two {
+.hotel-content_box-one,
+.hotel-content_box-two {
   width: 50%;
   margin-bottom: 35px;
   max-width: 600px; }
-  .hotel-content_box-one h5, .hotel-content_box-two h5 {
+  .hotel-content_box-one h5,
+  .hotel-content_box-two h5 {
     padding: 10px 0;
     font-size: 1.15em; }
 
@@ -1189,7 +1217,7 @@ li {
       background: white;
       padding: 8px;
       border: 1px solid #cccccc;
-      color: #00AB99; }
+      color: #00ab99; }
 
 /********************************************** Why Croatia Page ***/
 .hero-wrapper {
@@ -1233,7 +1261,7 @@ li {
   .fact-item hr {
     width: 15%;
     height: 5px;
-    background: #EA3F28;
+    background: #ea3f28;
     opacity: 1; }
 
 #carouselExampleIndicatorsMobile {
@@ -1266,12 +1294,13 @@ li {
   margin-top: 50px;
   gap: 35px; }
 
-.carousel-item_box, .carousel-item_box-mobile {
+.carousel-item_box,
+.carousel-item_box-mobile {
   width: 40%;
-  border: 1px solid  #e4e4e4;
+  border: 1px solid #e4e4e4;
   padding: 3%;
   background: #ffffff;
-  opacity: .9;
+  opacity: 0.9;
   max-width: 450px; }
 
 .top-info {
@@ -1314,27 +1343,35 @@ li {
   align-items: center;
   gap: 25px; }
   .currency-converter_options i {
-    color: #EA3F28; }
+    color: #ea3f28; }
 
-.currency-converter-option-from, .currency-converter-option-to, .currency-converter-amount {
+.currency-converter-option-from,
+.currency-converter-option-to,
+.currency-converter-amount {
   background: #ffffff;
   width: 25%;
   border-radius: 15px;
   padding: 15px;
   margin-top: 10px; }
-  .currency-converter-option-from img, .currency-converter-option-to img, .currency-converter-amount img {
+  .currency-converter-option-from img,
+  .currency-converter-option-to img,
+  .currency-converter-amount img {
     width: 45px; }
-  .currency-converter-option-from button, .currency-converter-option-to button, .currency-converter-amount button {
+  .currency-converter-option-from button,
+  .currency-converter-option-to button,
+  .currency-converter-amount button {
     text-align: left;
     border: none;
     background: transparent;
-    color: #00AB99;
+    color: #00ab99;
     font-weight: 700;
     font-size: 1.65em;
     margin-left: 10px;
     vertical-align: middle;
     width: 50%; }
-    .currency-converter-option-from button span, .currency-converter-option-to button span, .currency-converter-amount button span {
+    .currency-converter-option-from button span,
+    .currency-converter-option-to button span,
+    .currency-converter-amount button span {
       display: block;
       color: #555555;
       font-weight: 500;
@@ -1343,14 +1380,14 @@ li {
       bottom: 5px; }
 
 .currency-converter-amount:hover {
-  border: 2px solid #00AB99; }
+  border: 2px solid #00ab99; }
 
 .currency-converter-amount input {
   height: 60px;
   width: 100%;
   font-size: 30px;
   border: none; }
-  .currency-converter-amount input[type=number]:focus {
+  .currency-converter-amount input[type="number"]:focus {
     outline-color: white;
     border: none; }
 
@@ -1364,7 +1401,7 @@ li {
   .convert-button:focus {
     outline: none; }
   .convert-button i {
-    color: #EFCA08; }
+    color: #efca08; }
 
 .currency-converter-result {
   margin-top: 35px; }
@@ -1376,8 +1413,8 @@ li {
     padding: 1%;
     background: #ffffff;
     color: #555555; }
-    .currency-converter-result input[type=text]:focus {
-      outline-color: #00AB99;
+    .currency-converter-result input[type="text"]:focus {
+      outline-color: #00ab99;
       border: none; }
 
 .amount-input {
@@ -1418,10 +1455,11 @@ textarea {
 .contact-input:nth-child(4) {
   width: 45%; }
 
-.submit-form, .book-form {
+.submit-form,
+.book-form {
   display: block;
   margin-top: 2%;
-  background: #EA3F28;
+  background: #ea3f28;
   border: none;
   color: #fff;
   transition: all 0.3s ease-in-out;
@@ -1430,14 +1468,16 @@ textarea {
   -o-transition: all 0.3s ease-in-out;
   width: 45%; }
 
-.submit-form:hover, .book-form:hover {
+.submit-form:hover,
+.book-form:hover {
   transform: scale(1.05); }
 
-.contact-us--section .contact-input:focus, .contact-us--section textarea:focus {
+.contact-us--section .contact-input:focus,
+.contact-us--section textarea:focus {
   outline-color: #a95c26; }
 
 .message-sent {
-  background: #00AB99;
+  background: #00ab99;
   margin-top: 30px;
   text-align: center;
   display: none; }
@@ -1465,7 +1505,8 @@ textarea {
   /**************************** city.html Page **/
   #hotel-offering {
     position: relative; }
-  .hotel-offering_popup, .booking-popup {
+  .hotel-offering_popup,
+  .booking-popup {
     position: absolute;
     top: 0;
     left: 0;
@@ -1474,7 +1515,8 @@ textarea {
     width: 100%; }
   .booking-popup_content {
     flex-wrap: wrap; }
-  .booking-info, .booking-summary {
+  .booking-info,
+  .booking-summary {
     width: 100%; }
   .booking-summary {
     margin-top: 25px; }
@@ -1494,7 +1536,8 @@ textarea {
     justify-content: space-around; }
   #hotel-offering {
     position: relative; }
-  .hotel-offering_popup, .booking-popup {
+  .hotel-offering_popup,
+  .booking-popup {
     position: absolute;
     top: 0;
     left: 0;
@@ -1508,7 +1551,8 @@ textarea {
 
 @media only screen and (max-width: 990px) {
   /********** Navigation **/
-  #menu, .destination_expand {
+  #menu,
+  .destination_expand {
     display: none; }
   .mobile_menu-content {
     display: flex; }
@@ -1526,35 +1570,32 @@ textarea {
       font-size: 1em; }
       .menu-utilities ul li {
         margin-right: 5px; }
-  /********** Hero Section **/
+  /********** Hero Section - Homepage **/
   #hero-section {
     height: 600px; }
   .hero-section_intro-wrapper {
     padding-top: 200px; }
   .hero-section_intro {
     font-size: 215%; }
-  /************ About Section - HOMEPAGE **/
   .about-section_content {
     font-size: 95%; }
   .about-section_img {
     width: 60%; }
-    .about-section_img img:nth-child(1), .about-section_img img:nth-child(3) {
+    .about-section_img img:nth-child(1),
+    .about-section_img img:nth-child(3) {
       overflow: hidden; }
     .about-section_img img:nth-child(3) {
       display: block; }
-  /************************ Most Popular Destinations Section **/
   .popular-destinations_intro {
     width: 90%; }
   .popular-destinations_box {
     width: 250px;
     height: 375px; }
-  /************************** Why Us Section **/
   .why-us_reasons p {
     padding-right: 15px;
     font-size: 15px; }
   .partners-wrapper {
     flex-wrap: wrap; }
-  /*********************** How It Works Section - About Us Page**/
   .box-container {
     flex-wrap: wrap; }
   .how-box img {
@@ -1573,7 +1614,8 @@ textarea {
   .about-section_img {
     display: block;
     width: 100%; }
-    .about-section_img img:nth-child(1), .about-section_img img:nth-child(3) {
+    .about-section_img img:nth-child(1),
+    .about-section_img img:nth-child(3) {
       display: none; }
     .about-section_img img:nth-child(2) {
       display: block;
@@ -1583,15 +1625,12 @@ textarea {
       overflow: hidden; }
   .about-section_content {
     margin-left: 0; }
-  /********************** Most Popular Destinations Section ***/
   .popular-destinations_selection {
     flex-wrap: wrap; }
-  /************************** Why Us Section **/
   .why-us_reasons {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 35px; }
-  /*********************** Footer Section **/
   .footer-section_wrapper {
     flex-wrap: wrap; }
   .about-intro {
@@ -1613,7 +1652,6 @@ textarea {
     padding: 0 0 35px 5%; }
     .footer-section_contact-links li {
       margin-top: 10px; }
-  /************ Copyright Bar **/
   #copyright-bar ul {
     display: block;
     padding-left: 5px;
@@ -1621,10 +1659,12 @@ textarea {
   /************************************************ Hotel Pop-Up - city.html**/
   .hotel-content {
     flex-wrap: wrap; }
-  .hotel-content_box-one, .hotel-content_box-two {
+  .hotel-content_box-one,
+  .hotel-content_box-two {
     width: 100%;
     max-width: none; }
-  .hotel-intro h5, .hotel-intro a {
+  .hotel-intro h5,
+  .hotel-intro a {
     position: relative;
     margin-top: 10px; }
   .hotel-intro a {
@@ -1655,31 +1695,29 @@ textarea {
   .convert-button {
     display: none; }
   .convert-button-mobile {
-    background: #00AB99;
+    background: #00ab99;
     color: #ffffff;
     font-size: 15px;
     padding: 9px 30px;
     border: none;
     font-weight: 500;
     display: block; }
-  .currency-converter-option-from, .currency-converter-option-to, .currency-converter-amount {
+  .currency-converter-option-from,
+  .currency-converter-option-to,
+  .currency-converter-amount {
     width: 100%; }
   .currency-converter-result input {
     width: 75%; } }
 
 @media only screen and (max-width: 685px) {
-  /************************** Why Us Section **/
   .why-us_box {
     width: auto; }
-  /***************************** Testemonials Section **/
   .user-testimonials_title h1::before {
     margin-left: -10px; }
-  /************************** Newsletter Section **/
   #newsletter-section {
     padding: 8% 5%; }
   .newsletter-section_content input {
     width: 65%; }
-  /*************************** About Page **/
   #city-map {
     width: 100% !important; }
   .hotel-box_content {
@@ -1692,14 +1730,14 @@ textarea {
       font-size: 0.95em; }
     .hotel-box_content p {
       margin: 10px 0 20px 0; }
-  .cta-see-more, .book-now {
+  .cta-see-more,
+  .book-now {
     display: inline-block; }
   .hotel-box_content img {
     width: 100%;
     height: auto; }
   .book-now {
     margin-left: 5px; }
-  /***************************Contact Us Section**/
   #hero-wrapper {
     display: block; }
   .hero-img {
@@ -1707,7 +1745,6 @@ textarea {
   .form-wrapper {
     width: 100%;
     margin-top: 50px; }
-  /*****************************Booking Popup - city.html page **/
   .passanger-selection {
     gap: 10px; }
     .passanger-selection select {
@@ -1716,24 +1753,20 @@ textarea {
     gap: 5px;
     flex-wrap: wrap;
     justify-content: flex-start; }
-  .card-number, .card-epiry-ccv {
+  .card-number,
+  .card-epiry-ccv {
     width: 100%; } }
 
 @media only screen and (max-width: 585px) {
-  /****************** Navigation ***/
   .menu-utilities ul:nth-child(2) {
     display: none; }
-  /**************************** Hero Section **/
   .hero-section_intro-wrapper {
     padding-top: 150px; }
-  /********************** About Section **/
   .hero-section_social {
     font-size: 25px; }
-  /******************** Most Popular Destinations Section **/
   .popular-destinations_box {
     width: 225px;
     height: 350px; }
-  /*************************** Testemonials Section **/
   .carousel-item_content {
     flex-wrap: wrap;
     justify-content: space-between; }
@@ -1741,7 +1774,6 @@ textarea {
     border: none; }
   .reviewer-info img {
     width: 75px; }
-  /**************************** Newsletter Section **/
   #newsletter-section {
     width: 90%; }
   .newsletter-section_content {
@@ -1753,14 +1785,13 @@ textarea {
       padding: 5px 12px;
       height: 30px;
       font-size: 14px; }
-  /*********************** Footer Section **/
   .footer-navigation {
     flex-wrap: wrap; }
     .footer-navigation li {
       width: 285px; }
-  .footer-navigation_section_one, .footer-navigation_section_two {
+  .footer-navigation_section_one,
+  .footer-navigation_section_two {
     width: 100%; }
-  /***************************** About Us Page**/
   .who-we-are {
     width: 95%;
     padding: 5%;
@@ -1769,8 +1800,8 @@ textarea {
       font-size: 15px; } }
 
 @media only screen and (max-width: 490px) {
-  /****************** Navigation ***/
-  .menu-utilities li:nth-child(3), .menu-utilities li:nth-child(2) span {
+  .menu-utilities li:nth-child(3),
+  .menu-utilities li:nth-child(2) span {
     display: none; }
   .menu-open {
     width: 40px; }
@@ -1785,14 +1816,12 @@ textarea {
     font-size: 18px; }
   .level-three {
     font-size: 15px !important; }
-  /******************** Hero Section **/
   .hero-section_intro-wrapper {
     width: 90%; }
   .hero-section_intro {
     font-size: 200%; }
   .hero-section_social {
     font-size: 25px; }
-  /********************** About Section **/
   #about-section {
     width: 90%; }
   .about-section_content {
@@ -1803,23 +1832,22 @@ textarea {
         font-size: 30px; }
   .about-city {
     width: 95%; }
-  /***************************** Hotel Pop-Up City.html ***/
   #city-map-hotel {
     height: 300px; }
-  .hotel-content_box-one, .hotel-content_box-two {
+  .hotel-content_box-one,
+  .hotel-content_box-two {
     margin-bottom: 10px; }
-  /***************************************** Facts Section - why.html **/
   .fact-item {
     width: 65%;
     left: 20px;
     padding: 3%; }
-  /******************************************** Top Things Carousel - why.html**/
   .top-things-carousel {
     width: 90%;
     margin: 0 auto; }
   .top-info {
     width: 100%;
-    font-size: .85em; }
-  .cta-see-more, .book-now {
+    font-size: 0.85em; }
+  .cta-see-more,
+  .book-now {
     padding: 5px 15px;
     font-size: 14px; } }

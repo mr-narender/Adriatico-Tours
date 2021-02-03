@@ -7,178 +7,164 @@ readURL = readURL.substring(readURL.indexOf("?"));
 readURL = readURL.split("?").pop();
 readURL = readURL.charAt(0).toUpperCase() + readURL.slice(1);
 
-
-// Populate bread crumbs link with city name  
+// Populate bread crumbs link with city name
 
 $(".city-name").text(readURL);
 
-
 function addBlur() {
-    $("body").children().addClass("blur");
-    $("#hotel-offering").removeClass("blur");
-    $("#hotel-offering").children().addClass("blur");
-    $(".hotel-offering_popup, .booking-popup").removeClass("blur");
+  $("body").children().addClass("blur");
+  $("#hotel-offering").removeClass("blur");
+  $("#hotel-offering").children().addClass("blur");
+  $(".hotel-offering_popup, .booking-popup").removeClass("blur");
 }
 
 function removeBlur() {
-    $("body").find("*").removeClass("blur");
+  $("body").find("*").removeClass("blur");
 }
 
 //Launch/Close Hotel Pop-Up when click See More
 
-
 function launchHotelpopup() {
-
-    addBlur();
-    if ($(window).width() < 1200) {
-        $("#hotel-listing").css("visibility", "hidden");
-        $("#hotel-offering").css("width", "95%");
-    }
-    $(".hotel-offering_popup").fadeIn(300);
-
-};
-
+  addBlur();
+  if ($(window).width() < 1200) {
+    $("#hotel-listing").css("visibility", "hidden");
+    $("#hotel-offering").css("width", "95%");
+  }
+  $(".hotel-offering_popup").fadeIn(300);
+}
 
 function closeHotelPopup() {
-    $(".popup-exit").click(function () {
-        $("#hotel-offering").css("width", "85%");
-        $(".hotel-offering_popup").fadeOut(300);
-        $(".hotel-content_box-two").remove();
-        $(".hotel-intro, .loadImages").html("");
-        $("#hotel-listing").css("visibility", "visible");
-
-        removeBlur();
-
-    });
-
-};
-
+  $(".popup-exit").click(function () {
+    $("#hotel-offering").css("width", "85%");
+    $(".hotel-offering_popup").fadeOut(300);
+    $(".hotel-content_box-two").remove();
+    $(".hotel-intro, .loadImages").html("");
+    $("#hotel-listing").css("visibility", "visible");
+ 
+    removeBlur();
+  });
+}
 
 //Launch Close Booking Pop-Up
 
 function launchBookingPopup() {
+  addBlur();
 
-    addBlur();
-
-    $(".booking-popup").fadeIn(300);
-    $("#adult").val(1);
-    $("#child").val(0);
-    $(".no-adults").html(`(1)`);
-    $(".no-children").html(`(0)`);
+  $(".booking-popup").fadeIn(300);
+  $("#adult").val(1);
+  $("#child").val(0);
+  $(".no-adults").html(`(1)`);
+  $(".no-children").html(`(0)`);
 }
 
 function closeBookingPopup() {
-    $(".popup-exit-black").click(function () {
-        removeBlur();
-        $(".booking-popup").fadeOut(300);
-    })
-
+  $(".popup-exit-black").click(function () {
+    removeBlur();
+    $(".booking-popup").fadeOut(300);
+  });
 }
-
 
 // Set Class to handle default location (google maps)
 class deaultLocation {
-    constructor(cityPosition, hotelPosition) {
-        if (cityPosition == null) {
-            cityPosition = {
-                lat: 44.866623,
-                lng: 13.849579,
-            };
-        }
-        if (hotelPosition == null) {
-            hotelPosition = {
-                lat: 44.866623,
-                lng: 13.846579,
-            };
-        }
-        this.cityPosition = cityPosition;
-        this.hotelPosition = hotelPosition;
+  constructor(cityPosition, hotelPosition) {
+    if (cityPosition == null) {
+      cityPosition = {
+        lat: 44.866623,
+        lng: 13.849579,
+      };
     }
+    if (hotelPosition == null) {
+      hotelPosition = {
+        lat: 44.866623,
+        lng: 13.846579,
+      };
+    }
+    this.cityPosition = cityPosition;
+    this.hotelPosition = hotelPosition;
+  }
 }
-
 
 // Declare maps function
 
 function initMap(cityPosition, hotelPosition) {
-    deault_location = new deaultLocation();
-    var map = new google.maps.Map(document.getElementById("city-map"), {
-        zoom: 15,
-        center: cityPosition,
+  deault_location = new deaultLocation();
+  var map = new google.maps.Map(document.getElementById("city-map"), {
+    zoom: 15,
+    center: cityPosition,
+  });
 
-    });
-
-    var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
-        zoom: 17,
-        center: hotelPosition,
-    });
-    new google.maps.Marker({
-        position: hotelPosition,
-        map
-    });
+  var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
+    zoom: 17,
+    center: hotelPosition,
+  });
+  new google.maps.Marker({
+    position: hotelPosition,
+    map,
+  });
 }
-
-
 
 // Check which city was selected - change content based on selection
 
 let imageArray = document.querySelectorAll(".city-img");
 
 if (readURL === "Pula") {
+  //load images
+  imageArray[0].style.backgroundImage = "url('assets/images/pula-slide-1.png')";
+  imageArray[1].style.backgroundImage = "url('assets/images/pula-slide-2.png')";
+  imageArray[2].style.backgroundImage = "url('assets/images/pula-slide-3.png')";
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/pula-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/pula-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/pula-slide-3.png')";
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 44.866623,
+      lng: 13.849579,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 44.866623,
-        lng: 13.849579,
-    });
+  //change title and about info
 
-    //change title and about info
-
-    $(".city-title").text("Pula");
-    $(".about-city").html(`Pula, Italian Pola, major port and industrial centre in western Croatia. It lies at the southern tip of Istria (peninsula) at the head of the Bay of Pula and has a large, almost landlocked harbour in which there is a naval base and the Uljanik shipyards.
+  $(".city-title").text("Pula");
+  $(".about-city")
+    .html(`Pula, Italian Pola, major port and industrial centre in western Croatia. It lies at the southern tip of Istria (peninsula) at the head of the Bay of Pula and has a large, almost landlocked harbour in which there is a naval base and the Uljanik shipyards.
     The town’s outstanding monument is the elliptical Roman amphitheatre completed about 80 CE and seating 23,000.
     <br><br>
      A temple of Augustus and a Byzantine basilica were extensively restored after the destructive conflict between Genoa and Venice. The Kaštel, on the hill at the centre of the old town, is a museum and was previously a fortress.
     `);
 
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
-    // Show Relevant Hotels
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  // Filtering System
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    // Filtering System
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
+  // List Hotels Function
 
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-
-    // List Hotels Function
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/pula-hotel-1.png" alt="hotel image">
@@ -196,7 +182,7 @@ if (readURL === "Pula") {
                         </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/pula-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -213,7 +199,7 @@ if (readURL === "Pula") {
                         </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/pula-hotel-3.png" alt="hotel image">
@@ -231,22 +217,18 @@ if (readURL === "Pula") {
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Pop-Up content based on selected hotel
 
+  // First Hotel Selection
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, (hotelPosition = { lat: 44.82175, lng: 13.86542 }));
+    launchHotelpopup();
 
-    // Change Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-        // Show Hotel On Map
-        initMap(cityPosition, hotelPosition = { lat: 44.82175, lng: 13.86542 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-1-1.png" alt="...">
                         </div>
@@ -258,9 +240,9 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Resort del Mar</h2>
 
                 <hr class="hr-large">
@@ -268,11 +250,11 @@ if (readURL === "Pula") {
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
                
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -302,26 +284,20 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, (hotelPosition = { lat: 44.84622, lng: 13.83566 }));
+    launchHotelpopup();
 
-
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, hotelPosition = { lat: 44.84622, lng: 13.83566 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-2-1.png" alt="...">
                         </div>
@@ -333,9 +309,9 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Splendid Resort</h2>
 
                 <hr class="hr-large">
@@ -343,11 +319,11 @@ if (readURL === "Pula") {
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
                
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -378,25 +354,20 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, (hotelPosition = { lat: 44.86078, lng: 13.81487 }));
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, hotelPosition = { lat: 44.86078, lng: 13.81487 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/pula-hotel-3-1.png" alt="...">
                         </div>
@@ -408,20 +379,20 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Modo</h2>
                 <hr class="hr-large">
                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -451,161 +422,157 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: ["Resort del Mar", "Splendid Resort", "Hotel Modo"],
+    price: [80, 40, 65],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
-    // Show Booking Pop-up based on selected hotel
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    //Store Hotel names and prices
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    let hotelInfo = {
-        name: ["Resort del Mar", "Splendid Resort", "Hotel Modo"],
-        price: [80, 40, 65]
-    }
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    //Add event listener to each hotel booking button
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
-
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Rovinj") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/rovinj-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/rovinj-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/rovinj-slide-3.png')";
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/rovinj-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/rovinj-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/rovinj-slide-3.png')";
+  //change title and about info
 
-    //change title and about info
-
-    $(".city-title").text("Rovinj");
-    $(".about-city").html(`Situated on the west coast of Istria, Rovinj is one of the most popular and most developed tourist resorts in Croatia. The old town is built on the island, which was only connected with the mainland in the 18th century. Known as one of the most picturesque and romantic towns on Mediterranean, over the last few decades 
+  $(".city-title").text("Rovinj");
+  $(".about-city")
+    .html(`Situated on the west coast of Istria, Rovinj is one of the most popular and most developed tourist resorts in Croatia. The old town is built on the island, which was only connected with the mainland in the 18th century. Known as one of the most picturesque and romantic towns on Mediterranean, over the last few decades 
     Rovinj attracts a large number of tourists, most of them faithfully returning year after year.
     <br>
     <br>
     Rovinj manages to combine, in a very interesting way, its rich tradition with the modern times. As it is also an active fishing port, you can experience the atmosphere of a small fishing village, especially during the popular fishermen’s festivities or at one of the traditional taverns called Spacio (in the past, very popular among fishermen).`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 45.08102,
+      lng: 13.64014,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 45.08102,
-        lng: 13.64014,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
-    // Show Relevant Hotels
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  // Filtering System
 
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    // Filtering System
+  // Display Hotel Information
 
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/rovinj-hotel-1.png" alt="hotel image">
@@ -623,7 +590,7 @@ if (readURL === "Pula") {
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/rovinj-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -640,7 +607,7 @@ if (readURL === "Pula") {
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/rovinj-hotel-3.png" alt="hotel image">
@@ -658,27 +625,19 @@ if (readURL === "Pula") {
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.07312, lng: 13.63927 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.07312, lng: 13.63927 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-1-1.png" alt="...">
                         </div>
@@ -690,9 +649,9 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Lone</h2>
 
                 <hr class="hr-large">
@@ -700,11 +659,11 @@ if (readURL === "Pula") {
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€80 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -735,25 +694,20 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.06132, lng: 13.67496 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.06132, lng: 13.67496 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-2-1.png" alt="...">
                         </div>
@@ -765,9 +719,9 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Mobile Homes Polari</h2>
 
                 <hr class="hr-large">
@@ -775,11 +729,11 @@ if (readURL === "Pula") {
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -812,25 +766,20 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.10244, lng: 13.62451 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.10244, lng: 13.62451 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/rovinj-hotel-3-1.png" alt="...">
                         </div>
@@ -842,9 +791,9 @@ if (readURL === "Pula") {
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Family Hotel Amarin</h2>
 
                 <hr class="hr-large">
@@ -852,11 +801,11 @@ if (readURL === "Pula") {
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€55 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -888,120 +837,110 @@ if (readURL === "Pula") {
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: ["Hotel Lone", "Mobile Homes Polari", "Family Hotel Amarin"],
+    price: [80, 35, 55],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Hotel Lone", "Mobile Homes Polari", "Family Hotel Amarin"],
-        price: [80, 35, 55]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
-
-
-
-
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Porec") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/porec-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/porec-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/porec-slide-3.png')";
 
+  //change title and about info
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/porec-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/porec-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/porec-slide-3.png')";
-
-    //change title and about info
-
-    $(".city-title").text("Porec");
-    $(".about-city").html(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
+  $(".city-title").text("Porec");
+  $(".about-city")
+    .html(`Porec is the most popular holiday resort in Istria and is frequently named the top resort in Croatia by the Croatian National Tourist Office. There are over 100,000 beds available in the area, but hotels and other facilities are widely spread so the place never feels too crowded.
 
 The main tourist areas are two bays south of the town, called Zelena (Green) and Plava (Blue) Laguna (lagoon).
 <br>
@@ -1010,48 +949,48 @@ They are almost like small towns, with several hotels in each, as well as campin
 
 If you’re in the main part of town and fancy a bit of swimming and sunbathing, head to nearby Sveti Nikola island which you can reach by a regular boat (the journey is only a few minutes).`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 45.226643971952846,
+      lng: 13.597270771129068,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 45.226643971952846,
-        lng: 13.597270771129068,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
-    // Show Relevant Hotels
+  // Filtering System
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  // Display Hotel Information
 
-    // Filtering System
-
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/porec-hotel-1.png" alt="hotel image">
@@ -1069,7 +1008,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/porec-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -1086,7 +1025,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/porec-hotel-3.png" alt="hotel image">
@@ -1104,27 +1043,19 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.20390270475934, lng: 13.588455798818856 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.20390270475934, lng: 13.588455798818856 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/porec-hotel-1-1.png" alt="...">
                         </div>
@@ -1136,9 +1067,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Parentium Plava Laguna</h2>
 
                 <hr class="hr-large">
@@ -1146,11 +1077,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€70 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1178,25 +1109,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.22467787961315, lng: 13.596946653316655 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.22467787961315, lng: 13.596946653316655 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/porec-hotel-2-1.png" alt="...">
                         </div>
@@ -1208,9 +1134,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Porec</h2>
 
                 <hr class="hr-large">
@@ -1218,11 +1144,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€30 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1254,27 +1180,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.21392, lng: 13.599272 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.21392, lng: 13.599272 });
-        launchHotelpopup();
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/porec-hotel-3-1.png" alt="...">
                         </div>
@@ -1286,9 +1205,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Family Hotel Amarin</h2>
 
                 <hr class="hr-large">
@@ -1296,11 +1215,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€50 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1329,165 +1248,162 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: [
+      "Hotel Parentium Plava Laguna",
+      "Hotel Porec",
+      "Hotel Valamar Diamant",
+    ],
+    price: [70, 30, 50],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Hotel Parentium Plava Laguna", "Hotel Porec", "Hotel Valamar Diamant"],
-        price: [70, 30, 50]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
-
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Dubrovnik") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/dubrovnik-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/dubrovnik-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/dubrovnik-slide-3.png')";
 
+  //change title and about info
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/dubrovnik-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/dubrovnik-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/dubrovnik-slide-3.png')";
-
-    //change title and about info
-
-    $(".city-title").text("Dubrovnik");
-    $(".about-city").html(`<p>George Bernard Shaw was enchanted by this beautiful city, about which he said “those who seek paradise on Earth should come to Dubrovnik”, as well as, famously, describing it as “the pearl of the Adriatic”. It really is a stunning city with an amazing Old Town, which became a UNESCO World Heritage site in 1979. 
+  $(".city-title").text("Dubrovnik");
+  $(".about-city")
+    .html(`<p>George Bernard Shaw was enchanted by this beautiful city, about which he said “those who seek paradise on Earth should come to Dubrovnik”, as well as, famously, describing it as “the pearl of the Adriatic”. It really is a stunning city with an amazing Old Town, which became a UNESCO World Heritage site in 1979. 
     <br>
     <br>
     Dubrovnik, in the extreme south of Croatia, is known as the Pearl of the Adriatic.
      A rich and powerful city state until 1806, the proud city once known as Ragusa has a population 
      of over 120,000. Structural damage suffered during the siege of 1991 and 1992, at the hands of the Yugoslav People's Army, has been repaired and visitors once again flock to this tranquil city, nestled between the Adriatic and Dinaric Alps. A wealth of sites lies within the walls of the pedestrian-only Old Town.</p>`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 42.64979626041334,
+      lng: 18.09344635310566,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 42.64979626041334,
-        lng: 18.09344635310566,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
-    // Show Relevant Hotels
+  // Filtering System
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  // Display Hotel Information
 
-    // Filtering System
-
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/dubrovnik-hotel-1.png" alt="hotel image">
@@ -1505,7 +1421,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/dubrovnik-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -1522,7 +1438,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/dubrovnik-hotel-3.png" alt="hotel image">
@@ -1540,27 +1456,19 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 42.6513, lng: 18.06103 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 42.65130, lng: 18.06103 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/dubrovnik-hotel-1-1.png" alt="...">
                         </div>
@@ -1572,9 +1480,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Parentium Plava Laguna</h2>
 
                 <hr class="hr-large">
@@ -1582,11 +1490,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€70 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1617,26 +1525,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 42.66215120783241, lng: 18.065358841551028 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 42.66215120783241, lng: 18.065358841551028 });
-        launchHotelpopup();
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/dubrovnik-hotel-2-1.png" alt="...">
                         </div>
@@ -1648,9 +1550,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Valamar Club Dubrovnik</h2>
 
                 <hr class="hr-large">
@@ -1658,11 +1560,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€40 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1693,28 +1595,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
-        launchHotelpopup();
-
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/dubrovnik-hotel-3-1.png" alt="...">
                         </div>
@@ -1726,9 +1620,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Royal Neptun Hotel</h2>
 
                 <hr class="hr-large">
@@ -1736,11 +1630,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€60 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -1769,165 +1663,159 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: [
+      "Hotel Dubrovnik Palace",
+      "Valamar Club Dubrovnik",
+      "Royal Neptun Hotel",
+    ],
+    price: [95, 40, 60],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Hotel Dubrovnik Palace", "Valamar Club Dubrovnik", "Royal Neptun Hotel"],
-        price: [95, 40, 60]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
-
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Split") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/split-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/split-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/split-slide-3.png')";
 
+  //change title and about info
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/split-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/split-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/split-slide-3.png')";
-
-    //change title and about info
-
-    $(".city-title").text("Split");
-    $(".about-city").html(`<p>
+  $(".city-title").text("Split");
+  $(".about-city").html(`<p>
     Croatia's second-largest city, Split (Spalato in Italian) is a great 
     place to see Dalmatian life as it’s really lived. Always buzzing, this exuberant city has just the right balance between tradition and modernity. Step inside Diocletian’s Palace (a Unesco World Heritage Site and one of the world’s most impressive Roman monuments) and you’ll see dozens of bars, restaurants and shops thriving amid the atmospheric old walls where Split
      has been humming along for thousands of years.</p>`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 43.512089793434356,
+      lng: 16.44339587592428,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 43.512089793434356,
-        lng: 16.44339587592428,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
+  // Filtering System
 
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    // Show Relevant Hotels
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  // Display Hotel Information
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
-
-
-    // Filtering System
-
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/split-hotel-1.png" alt="hotel image">
@@ -1945,7 +1833,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/split-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -1962,7 +1850,7 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/split-hotel-3.png" alt="hotel image">
@@ -1980,28 +1868,19 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
-        launchHotelpopup();
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/split-hotel-1-1.png" alt="...">
                         </div>
@@ -2013,9 +1892,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Radisson Blu Resort & Spa</h2>
 
                 <hr class="hr-large">
@@ -2023,11 +1902,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€85 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2055,25 +1934,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/split-hotel-2-1.png" alt="...">
                         </div>
@@ -2085,9 +1959,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Pax</h2>
 
                 <hr class="hr-large">
@@ -2095,11 +1969,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2129,28 +2003,20 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
-        launchHotelpopup();
-
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/dubrovnik-hotel-3-1.png" alt="...">
                         </div>
@@ -2162,9 +2028,9 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Plaza Varos Split</h2>
 
                 <hr class="hr-large">
@@ -2172,11 +2038,11 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€55 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2205,117 +2071,109 @@ If you’re in the main part of town and fancy a bit of swimming and sunbathing,
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: ["Radisson Blu Resort & Spa", "Plaza Varos Split", "Hotel Pax"],
+    price: [85, 55, 35],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Radisson Blu Resort & Spa", "Plaza Varos Split", "Hotel Pax"],
-        price: [85, 55, 35]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
-
-
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Zadar") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/zadar-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/zadar-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/zadar-slide-3.png')";
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/zadar-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/zadar-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/zadar-slide-3.png')";
+  //change title and about info
 
-    //change title and about info
-
-    $(".city-title").text("Zadar");
-    $(".about-city").html(`<p>
+  $(".city-title").text("Zadar");
+  $(".about-city").html(`<p>
   Zadar is a city monument, surrounded by historical ramparts, a treasury of 
   the archaeological and monumental riches of ancient and medieval times, 
   Renaissance and many contemporary architectural achievements such as the first Sea Organ in the world.
@@ -2324,49 +2182,48 @@ It has a good traffic infrastructure through which it is directly connected to o
 cities of the Republic of Croatia and Europe, with extraordinary accommodation and contemporary service of numerous marinas. 
 Whichever way you want to reach Zadar, the natural beauty of the landscape will not leave you equanimous.</p>`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 44.10645302043896,
+      lng: 15.241479484019788,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 44.10645302043896,
-        lng: 15.241479484019788,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
+  // Filtering System
 
-    // Show Relevant Hotels
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  // Display Hotel Information
 
-
-    // Filtering System
-
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/zadar-hotel-1.png" alt="hotel image">
@@ -2384,7 +2241,7 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/zadar-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -2401,7 +2258,7 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/zadar-hotel-3.png" alt="hotel image">
@@ -2419,28 +2276,19 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 43.50311468785213, lng: 16.470061011765516 });
-        launchHotelpopup();
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zadar-hotel-1-1.png" alt="...">
                         </div>
@@ -2452,9 +2300,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Radisson Blu Resort & Spa</h2>
 
                 <hr class="hr-large">
@@ -2462,11 +2310,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€85 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2494,25 +2342,20 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 43.50345716972375, lng: 16.464232241467553 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zadar-hotel-2-1.png" alt="...">
                         </div>
@@ -2524,9 +2367,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Pax</h2>
 
                 <hr class="hr-large">
@@ -2534,11 +2377,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2568,28 +2411,20 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 42.65980313455148, lng: 18.05827587554569 });
-        launchHotelpopup();
-
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zadar-hotel-3-1.png" alt="...">
                         </div>
@@ -2601,9 +2436,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Plaza Varos Split</h2>
 
                 <hr class="hr-large">
@@ -2611,11 +2446,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€55 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2644,164 +2479,161 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: [
+      "Idassa Atrium",
+      "Apartments Benic",
+      "Falkensteiner Family Hotel Diadora",
+    ],
+    price: [95, 30, 55],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Idassa Atrium", "Apartments Benic", "Falkensteiner Family Hotel Diadora"],
-        price: [95, 30, 55]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Zagreb") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/zagreb-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/zagreb-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/zagreb-slide-3.png')";
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/zagreb-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/zagreb-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/zagreb-slide-3.png')";
+  //change title and about info
 
-    //change title and about info
-
-    $(".city-title").text("Zagreb");
-    $(".about-city").html(`<p>
+  $(".city-title").text("Zagreb");
+  $(".about-city").html(`<p>
   Zagreb is made for strolling. Wander through 
   the Upper Town's red-roof and cobblestone glory, peppered with church spires.
    Crane your neck to see the domes and ornate upper-floor frippery of the Lower Town's mash-up 
    of secessionist, neo-baroque and art deco buildings. Search out the grittier pockets of town where ugly-bland concrete walls 
   have been transformed into colourful murals by local street artists. This city rewards those on foot.</p>`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 45.81300065757794,
+      lng: 15.976429755309525,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 45.81300065757794,
-        lng: 15.976429755309525,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
+  // Filtering System
 
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    // Show Relevant Hotels
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
+  // Display Hotel Information
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
-
-
-    // Filtering System
-
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/zagreb-hotel-2.png" alt="hotel image">
@@ -2818,7 +2650,7 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/zagreb-hotel-1.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -2834,7 +2666,7 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/zagreb-hotel-3.png" alt="hotel image">
@@ -2851,27 +2683,19 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.80541681420194, lng: 15.976019469068206 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.80541681420194, lng: 15.976019469068206 });
-        launchHotelpopup();
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zagreb-hotel-2-1.png" alt="...">
                         </div>
@@ -2883,9 +2707,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Esplanade Zagreb Hotel</h2>
 
                 <hr class="hr-large">
@@ -2893,11 +2717,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€100 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2925,27 +2749,20 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
-        launchHotelpopup();
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zagreb-hotel-1-1.png" alt="...">
                         </div>
@@ -2957,9 +2774,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Jägerhorn </h2>
 
                 <hr class="hr-large">
@@ -2967,11 +2784,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€45 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -2997,29 +2814,20 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.799147300406254, lng: 15.974055696096023 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.799147300406254, lng: 15.974055696096023 });
-        launchHotelpopup();
-
-
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/zagreb-hotel-3-1.png" alt="...">
                         </div>
@@ -3031,9 +2839,9 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel International</h2>
 
                 <hr class="hr-large">
@@ -3041,11 +2849,11 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€70 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -3070,114 +2878,109 @@ Whichever way you want to reach Zadar, the natural beauty of the landscape will 
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: ["Esplanade Zagreb Hotel", "Hotel Jägerhorn", "Hotel International"],
+    price: [100, 45, 70],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Esplanade Zagreb Hotel", "Hotel Jägerhorn", "Hotel International"],
-        price: [100, 45, 70]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
+    closeBookingPopup();
+  });
 } else if (readURL === "Karlovac") {
+  //load images
+  imageArray[0].style.backgroundImage =
+    "url('assets/images/karlovac-slide-1.png')";
+  imageArray[1].style.backgroundImage =
+    "url('assets/images/karlovac-slide-2.png')";
+  imageArray[2].style.backgroundImage =
+    "url('assets/images/karlovac-slide-3.png')";
 
-    //load images
-    imageArray[0].style.backgroundImage = "url('assets/images/karlovac-slide-1.png')";
-    imageArray[1].style.backgroundImage = "url('assets/images/karlovac-slide-2.png')";
-    imageArray[2].style.backgroundImage = "url('assets/images/karlovac-slide-3.png')";
+  //change title and about info
 
-    //change title and about info
-
-    $(".city-title").text("Karlovac");
-    $(".about-city").html(`<p>
+  $(".city-title").text("Karlovac");
+  $(".about-city").html(`<p>
   Located in central Croatia at the meeting point between the Croatian lowlands, Croatian highlands,  Pokupje and Kordun. Karlovac is framed by four rivers - Kupa, Korana, Dobra and Mrežnica. Since it is located at the narrowest part of Croatia, it is only 50 kilometres away from Slovenia and from Bosnia and Herzegovina. As a city, Karlovac has an important traffic and economic significance.
  
 The city of Karlovac is one of rare cities that know the exact date of their creation. 
@@ -3190,47 +2993,48 @@ the Karlovac border military fort built for the purpose of defence against the
  Turks. Every year on July 13, the city of Karlovac celebrates its birthday,
   which is celebrated by the birthday ball on Trg bana Josipa Jelačića square, and with the celebration session of the City council and awarding of public recognition awards.</p>`);
 
+  //Show City On The Map
+  initMap(
+    (cityPosition = {
+      lat: 45.4883978545671,
+      lng: 15.54822572933611,
+    })
+  );
 
-    //Show City On The Map
-    initMap(cityPosition = {
-        lat: 45.4883978545671,
-        lng: 15.54822572933611,
-    });
+  // Show Relevant Hotels
 
+  let hotelOne = $(".hotel-box:eq(0)");
+  let hotelTwo = $(".hotel-box:eq(1)");
+  let hotelThree = $(".hotel-box:eq(2)");
 
-    // Show Relevant Hotels
+  listHotels();
+  $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
 
-    let hotelOne = $(".hotel-box:eq(0)")
-    let hotelTwo = $(".hotel-box:eq(1)")
-    let hotelThree = $(".hotel-box:eq(2)")
+  // Filtering System
 
+  $(".filter-options li:eq(0)").click(function (listHotels) {
+    $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    listHotels();
-    $("#hotel-listing").append(hotelOne, hotelTwo, hotelThree);
+  $(".filter-options li:eq(1)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: Low to High")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
+  });
 
+  $(".filter-options li:eq(2)").click(function (listHotels) {
+    $(".dropdown-toggle")
+      .html("Sort By: Price: High to Low")
+      .css("width", "auto");
+    $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
+  });
 
-    // Filtering System
+  // Display Hotel Information
 
-    $(".filter-options li:eq(0)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Stars").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    $(".filter-options li:eq(1)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: Low to High").css("width", "auto")
-        $("#hotel-listing").append(hotelTwo, hotelThree, hotelOne);
-    });
-
-    $(".filter-options li:eq(2)").click(function (listHotels) {
-        $(".dropdown-toggle").html("Sort By: Price: High to Low").css("width", "auto")
-        $("#hotel-listing").append(hotelOne, hotelThree, hotelTwo);
-    });
-
-    // Display Hotel Information 
-
-    function listHotels() {
-
-        $(".hotel-box:eq(0)").html(`
+  function listHotels() {
+    $(".hotel-box:eq(0)").html(`
 
  <div class="hotel-box_content">
                     <img src="assets/images/hotels/karlovac-hotel-1.png" alt="hotel image">
@@ -3247,7 +3051,7 @@ the Karlovac border military fort built for the purpose of defence against the
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(1)").html(`
+    $(".hotel-box:eq(1)").html(`
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/karlovac-hotel-2.png" alt="hotel image">
                     <div class="hotel-box_description">
@@ -3263,7 +3067,7 @@ the Karlovac border military fort built for the purpose of defence against the
                     </div>
                 </div>
 `);
-        $(".hotel-box:eq(2)").html(`
+    $(".hotel-box:eq(2)").html(`
 
 <div class="hotel-box_content">
                     <img src="assets/images/hotels/karlovac-hotel-3.png" alt="hotel image">
@@ -3280,28 +3084,19 @@ the Karlovac border military fort built for the purpose of defence against the
                         </div>
                 </div>
 `);
+  }
 
-    }
+  // Change Hotel Pop-Up content based on selected hotel
 
+  // First Hotel Selection
 
+  $(".hotel-box:eq(0) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.51212411909474, lng: 15.546807727743541 });
+    launchHotelpopup();
 
-
-
-    // Change Hotel Pop-Up content based on selected hotel
-
-
-    // First Hotel Selection
-
-    $(".hotel-box:eq(0) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.51212411909474, lng: 15.546807727743541 });
-        launchHotelpopup();
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/karlovac-hotel-1-1.png" alt="...">
                         </div>
@@ -3313,9 +3108,9 @@ the Karlovac border military fort built for the purpose of defence against the
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Hotel Europa</h2>
 
                 <hr class="hr-large">
@@ -3323,11 +3118,11 @@ the Karlovac border military fort built for the purpose of defence against the
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€60 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -3351,27 +3146,20 @@ the Karlovac border military fort built for the purpose of defence against the
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Second Hotel Selection
 
+  $(".hotel-box:eq(1) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
+    launchHotelpopup();
 
-
-    // Second Hotel Selection
-
-    $(".hotel-box:eq(1) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.813209486387024, lng: 15.973734472553136 });
-        launchHotelpopup();
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/karlovac-hotel-2-1.png" alt="...">
                         </div>
@@ -3383,9 +3171,9 @@ the Karlovac border military fort built for the purpose of defence against the
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Motel Kod Bakija </h2>
 
                 <hr class="hr-large">
@@ -3393,11 +3181,11 @@ the Karlovac border military fort built for the purpose of defence against the
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€20 / pp per night</h5>
              
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -3421,27 +3209,20 @@ the Karlovac border military fort built for the purpose of defence against the
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
-    });
+  // Third Hotel Selection
 
+  $(".hotel-box:eq(2) .cta-see-more").click(function () {
+    // Show Hotel On Map
+    initMap(cityPosition, { lat: 45.476397879836384, lng: 15.557906625581811 });
+    launchHotelpopup();
 
-
-    // Third Hotel Selection
-
-    $(".hotel-box:eq(2) .cta-see-more").click(function () {
-
-
-        // Show Hotel On Map
-        initMap(cityPosition, { lat: 45.476397879836384, lng: 15.557906625581811 });
-        launchHotelpopup();
-
-
-
-        // Load Slideshow Hotel Images
-        $(".loadImages").append(`
+    // Load Slideshow Hotel Images
+    $(".loadImages").append(`
     <div class="carousel-item active">
                             <img src="assets/images/hotels/karlovac-hotel-3-1.png" alt="...">
                         </div>
@@ -3453,9 +3234,9 @@ the Karlovac border military fort built for the purpose of defence against the
                         </div>
 `);
 
-        //Show Main Hotel Info
+    //Show Main Hotel Info
 
-        $(".hotel-intro").append(`
+    $(".hotel-intro").append(`
         <h2>Apartmani Nova</h2>
 
                 <hr class="hr-large">
@@ -3463,11 +3244,11 @@ the Karlovac border military fort built for the purpose of defence against the
                     class="fas fa-star"></i><i class="fas fa-star"></i>
                 <h5>€35 / pp per night</h5>
               
-    `)
+    `);
 
-        // Show Hotel About Info
+    // Show Hotel About Info
 
-        $(".hotel-content").append(`
+    $(".hotel-content").append(`
     
                 <div class="hotel-content_box-two">
                     <h3>About Hotel</h3>
@@ -3489,105 +3270,94 @@ the Karlovac border military fort built for the purpose of defence against the
                         </ul>
                     </div>
                 </div>
-    `)
+    `);
 
-        closeHotelPopup();
+    closeHotelPopup();
+  });
 
+  // Show Booking Pop-up based on selected hotel
+
+  //Store Hotel names and prices
+
+  let hotelInfo = {
+    name: ["Hotel Europa", "Motel Kod Bakija", "Apartmani Nova"],
+    price: [60, 20, 35],
+  };
+
+  //Add event listener to each hotel booking button
+
+  $(".hotel-box:eq(0) .book-now").click(function () {
+    launchBookingPopup();
+
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[0]);
+
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[0]);
+
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
+
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[0]}`
+      );
+
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
+  $(".hotel-box:eq(1) .book-now").click(function () {
+    launchBookingPopup();
 
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[1]);
 
-    // Show Booking Pop-up based on selected hotel
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[1]);
 
-    //Store Hotel names and prices
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-    let hotelInfo = {
-        name: ["Hotel Europa", "Motel Kod Bakija", "Apartmani Nova"],
-        price: [60, 20, 35]
-    }
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[1]}`
+      );
 
-    //Add event listener to each hotel booking button
-
-    $(".hotel-box:eq(0) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[0]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[0]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[0]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
+    closeBookingPopup();
+  });
 
-    $(".hotel-box:eq(1) .book-now").click(function () {
+  $(".hotel-box:eq(2) .book-now").click(function () {
+    launchBookingPopup();
 
-        launchBookingPopup();
+    //Show hotel name
+    $(".hotel-name").text(hotelInfo.name[2]);
 
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[1]);
+    //Calculate total based on selected passangers
+    $(".calcValue").text(" €" + hotelInfo.price[2]);
 
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[1]);
+    $(".selection").click(function () {
+      let adultPassangers = parseInt($("#adult").val());
+      let childPassangers = parseInt($("#child").val());
 
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
+      $(".calcValue").text(
+        ` €${(adultPassangers + childPassangers / 2) * hotelInfo.price[2]}`
+      );
 
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[1]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
+      // Show Number of adults and children selected
+      $(".no-adults").html(`(${adultPassangers})`);
+      $(".no-children").html(`(${childPassangers})`);
     });
 
-
-    $(".hotel-box:eq(2) .book-now").click(function () {
-
-        launchBookingPopup();
-
-        //Show hotel name
-        $(".hotel-name").text(hotelInfo.name[2]);
-
-        //Calculate total based on selected passangers
-        $(".calcValue").text(" €" + hotelInfo.price[2]);
-
-        $(".selection").click(function () {
-            let adultPassangers = parseInt($("#adult").val());
-            let childPassangers = parseInt($("#child").val());
-
-            $(".calcValue").text(` €${(adultPassangers + (childPassangers / 2)) * hotelInfo.price[2]}`);
-
-            // Show Number of adults and children selected
-            $(".no-adults").html(`(${adultPassangers})`);
-            $(".no-children").html(`(${childPassangers})`);
-
-        });
-
-        closeBookingPopup()
-    });
-
+    closeBookingPopup();
+  });
 }
-
-
-
-
