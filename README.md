@@ -159,6 +159,35 @@ Our Company page is divided into three sections:
 - *Hero Section*: This section inform the users about the company in the greater details and is propped with a cacthy image of Croatian National Park Plitvice.
 - *How it works*: This section is meant to present a seamless process user has to take to make a booking with us and everything that goes into it.
 - *FAQ's*: Lastly, faq's section will consist of some of the most common questions users can ask to avoid them reaching out and potentially saving resources for the company.
+
+<ins>*Contact Us*</ins>
+
+The Contact Us page is divided into 2 sections:
+
+- *Hero image & form section*: the form consist of 5 main fields and opportunity for the users to raise any questions and queries they might have.
+When the form is submitted the "Message Sent" section appears on the screen for three seconds to inform, the user submission was successful. The form is also directly sent to the email address and correctly pulling all the fields user input.
+- *Company location": in case user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
+
+<ins>*Why Croatia page*</ins>
+
+Why Croatia page is divided into six sections:
+
+- *Hero image section*: contains a beautiful image of a small island in Croatia.
+- *Intro text*: Informative text about Croatian country to tell the story to the users and spark the interest.
+- *Facts Section*: contains five facts about Croatia: currency, language used, the capital city and how to say good morning and good evening in Croatian.
+- *Top things carousel*: the six facts are spread out in most of the cities we are offering. They are mostly famous Croatian monument and culture.
+- *Currency Converter*: opportunity to convert Euro to Croatian kuna to better understand currency difference.
+- *Most popular destinations*: This is the same section from the homepage. But, at this stage of the customer journey user should have a clearer understanding of Croatian culture and offering and therfore a good time to make a decision on the holiday options.
+
+<ins>*Search Result Page*</ins>
+
+Search result page contains two sections:
+
+- *Search results*: based on user input it can be either food or culture and based on that search returns relevant content
+- *Most popular destinations*: another possiblity to push a user towards booking a holiday, also if the search returns no result found at least it shows some actions user can take.
+
+
+
 # **Testing & Deployment**
 
 
