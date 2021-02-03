@@ -337,7 +337,8 @@ li {
     bottom: 15px; }
   .about-intro p {
     position: relative;
-    bottom: 65px; }
+    bottom: 65px;
+    width: 80%; }
 
 .footer-navigation {
   display: flex;

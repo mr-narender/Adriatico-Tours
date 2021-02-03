@@ -50,7 +50,7 @@ As a start-up business I wanted to offer rich information about all destinations
 
 - enhancing current offering - destination packages (including flights, holiday programme, hotel & support). 
 Potential users can book the whole trip on one website rather than researching each component individually, better price point guaranteed.
-- improving search functionality - making all destinations and content easily searchable 
+- improving search functionality - making all destinations and content easily searchable.
 - including checkout processability for the user to fully book and pay for the trip instead of submitting a form request.
 - include an online chat to improve the support throughout the user journey
 
@@ -166,7 +166,7 @@ The Contact Us page is divided into 2 sections:
 
 - *Hero image & form section*: the form consist of 5 main fields and opportunity for the users to raise any questions and queries they might have.
 When the form is submitted the "Message Sent" section appears on the screen for three seconds to inform, the user submission was successful. The form is also directly sent to the email address and correctly pulling all the fields user input.
-- *Company location": in case user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
+- *Company location*": in case user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
 
 <ins>*Why Croatia page*</ins>
 
@@ -175,7 +175,7 @@ Why Croatia page is divided into six sections:
 - *Hero image section*: contains a beautiful image of a small island in Croatia.
 - *Intro text*: Informative text about Croatian country to tell the story to the users and spark the interest.
 - *Facts Section*: contains five facts about Croatia: currency, language used, the capital city and how to say good morning and good evening in Croatian.
-- *Top things carousel*: the six facts are spread out in most of the cities we are offering. They are mostly famous Croatian monument and culture.
+- *Top things carousel*: the six facts are spread out in most of the cities we are offering. They are mostly famous Croatian monuments and culture.
 - *Currency Converter*: opportunity to convert Euro to Croatian kuna to better understand currency difference.
 - *Most popular destinations*: This is the same section from the homepage. But, at this stage of the customer journey user should have a clearer understanding of Croatian culture and offering and therfore a good time to make a decision on the holiday options.
 
@@ -186,18 +186,74 @@ Search result page contains two sections:
 - *Search results*: based on user input it can be either food or culture and based on that search returns relevant content
 - *Most popular destinations*: another possiblity to push a user towards booking a holiday, also if the search returns no result found at least it shows some actions user can take.
 
+# **Technologies & Resources Used**
+
+## **Languages Used**
+
+![](assets/documentation/readme-icons/html-5-icon.png) **HTML5**
+
+![](assets/documentation/readme-icons/css-3-icon.png)  **CSS3**
+
+![](assets/documentation/readme-icons/javascript-icon.png)  **JavaScript**
 
 
-# **Testing & Deployment**
+## **Frameworks & Processors**
+
+![](assets/documentation/readme-icons/sass-icon.png)  **SCSS** - scss was used to enable quicker and more efficient coding. I've used the processor on purpose to learn about it and grow as a developer even though it's not a requirement for the project and it won't affect the grade.
+
+![](assets/documentation/readme-icons/jquery-icon.png)  **JQuery** - jQuery was used as a good addition to JavaScript to enable efficent coding and easier solutions to the problem.
+
+![](assets/documentation/readme-icons/bootstrap-icon.png)  **Bootstrap** - Bootstrap framework was used only for small code snippets such as slide shows and showing elements such as form labels to screen readers only. 
+
+
+## **Workspace, version control and Repository storage**
+
+![](assets/documentation/readme-icons/gitpod-icon.png)  **GitPod** - All code is written in gitpod cloud environment, committed and pushed to GitHub
+
+![](assets/documentation/readme-icons/github-icon.png) **Git** - Distributed Version Control tool to store versions of files and track changes.
+
+![](assets/documentation/readme-icons/git-icon.png) **GitHub** - A cloud-based hosting.
+
+
+
+## **Integrations**
+
+- [Google Maps API]("https://developers.google.com/maps/documentation/javascript/overview")
+
+The Google Maps API was mostly used for City page. Each city and hotel is shown on the map, in addition to the marker on the map for each hotel.
+Additionally, I used the maps to show company location on the contact us page.
+
+- [EmailJS]("https://www.emailjs.com/")
+
+EmailJs has been used for both contact us form and booking form. The two templates were created in the software to enable sending correct parameters. Each of the fields is sent through as a parameter and sent directly to my email address. 
+
+
+- [Rapid API]("https://rapidapi.com/apiworker.com/api/currency-converter13")
+
+I have used Currency Converter API from Rapid API marketplace to enable the user to convert from Euro to Croatian Kuna currency on the Why Croatia Page.
+The API is free to use with 500 calls a day as a hard limit.
+
+
+## **Resources & Media**
+
+![](assets/documentation/readme-icons/fontawsome-icon.png) **Font Awsome** - Font awsome was used for the most of the icons on the page enabling usage of after and before pseudo elements with ease. 
+
+![](assets/documentation/readme-icons/googlefonts-icon.png) **Google Fonts** - Google fonts was used for importing desired fonts to the page.
+
+- **Flat Icon** was used to bypass limited access of icons on Font Awsome (I used the paid version to avoid crediting each designer for their icons.)
+- **Canva** was used for all the imagery on the page except the Hotel images.
+- **Adobe XD** - used for creating wireframes. Click [here](assets/documentation/wireframes) to access the wireframes folder.
+- **Stack Overflow** - General resource for code and problem solving
+- **W3 School** - General resource for code and problem solving
+
+
+# **Testing & Deployment** 
 
 
 
 ## **Fixed Bugs**
 
 **Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
-To fix this I implemented the funcionality to always enable only one dropdown to expand and close anothers dynamically. 
+To fix this I implemented the funcionality to always enable  only one dropdown to expand and close anothers dynamically. 
 
-
-
-
-
+ 
