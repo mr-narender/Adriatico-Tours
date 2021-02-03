@@ -118,7 +118,7 @@ Wireframes are saved in PDF file type and can be accessed [here](assets/document
 The website consist of 6 unique pages.
 
 - Homepage 
-- About Us 
+- Our Company
 - Contact Us
 - City Page
 - Why Croatia Page
@@ -132,8 +132,33 @@ The desktop version of navigation is relatively easy to use with clean and effec
 **Search Bar Funcionality** - users can search for two terms "food" & "culture" which is initially a part of the placeholder to instruct the user what to search for.
 Additionally, users can also search for individual destinations(current offering) which will redirect them to a relevant city page. If the user inputs the search term which is not stored in the js file the page will return no result found.
 
-The navigation's mobile version consists of contact details, a top bar, a hamburger menu, logo & search icon. The menu expands from left to right and consist of all navigation links. The search bar has the same functionality, but it expands and closes based on a users preference.
+The mobile version navigation consists of contact details, a top bar, a hamburger menu, logo & search icon. The menu expands from left to right and consist of all navigation links. The search bar has the same functionality, but it expands and closes based on a users preference.
 
+<ins>*Newsletter Section*</ins>
+
+This section is consistent across all the pages and servers to capture customer emails and utilize email marketing by sending special offers, discounts, and new releases.
+<ins>*Footer*</ins>
+
+The top part of footer section consists of company logo, useful company liks such as Our company, FAQ's and Contact us & popular cities links.
+The bottom part has comapny phone no., email and address. The copyright bar consist of credits and social icons.
+
+<ins>*Homepage*</ins>
+
+The homepage is divided into six sections:
+
+- *Hero Section*: Which consist of Croatian sea image, a catchy title and social icons. Each time user visits the website, the text is slowly appearing on the screen mimicking the typing effect.
+- *About Section*: This section is meant to briefly inform the customer about who we are and also convince them to choose to Learn more to potentially explore more about the company and build a certain level of trust.
+- *Most popular destinations*: If the user happens to know preferred holiday destination, this section will serve as an opportunity to make an easy booking.
+- *Why Choose Us*:  Main company facts that will server as trust builder and a section colour that will instantly grab users' attention. The goal here is to get the user to find more about our experience and expertise to assure them they are in safe hands.
+- *Our partners & testimonials sections* - Each of the sections will provide the feeling of trust for new & potential consumers. Including partners, logo could indicate that we are working with prestige companies to ensure the best holidays possible. Testimonials section, however, shows user perspective of the service and experience they received from us, and mostly enables users to empathize with those who left the reviews
+
+<ins>*Our Company*</ins>
+
+Our Company page is divided into three sections:
+
+- *Hero Section*: This section inform the users about the company in the greater details and is propped with a cacthy image of Croatian National Park Plitvice.
+- *How it works*: This section is meant to present a seamless process user has to take to make a booking with us and everything that goes into it.
+- *FAQ's*: Lastly, faq's section will consist of some of the most common questions users can ask to avoid them reaching out and potentially saving resources for the company.
 # **Testing & Deployment**
 
 
@@ -142,6 +167,7 @@ The navigation's mobile version consists of contact details, a top bar, a hambur
 
 **Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
 To fix this I implemented the funcionality to always enable only one dropdown to expand and close anothers dynamically. 
+
 
 
 
