@@ -265,17 +265,21 @@ The API is free to use with 500 calls a day as a hard limit.
 - #### HTML Validation 
 
 I have used W3C Markup validator to check all HTML pages for possible errors.
+The below are highligthed unique issues with each page
 
 
 First Check HTML page:
 
+Validator returned multiple warnings and errors as visible in the image below.
+
 ![](assets/documentation/readme-documentation/testing-images/html-validate-1.png)
 
+After implementing fixes, I managed to address all the issues except one warning which expects heading element in a section where I don't need one, so I consider this not an issue.
 
+![](assets/documentation/readme-documentation/testing-images/html-validate-2.png)
 
-
-
-
+The rest of the pages had same issues as HTML page, altough some of them had unique issues such as missing alt tag, misuse of aria-label in breadcrumbs section & warnings for empty headings(which are populated with JS dynamically)
+The errors are removed from all HTML pages.
 
 
 
