@@ -93,7 +93,7 @@ function initMap(cityPosition, hotelPosition) {
     center: cityPosition,
   });
 
-  var map = new google.maps.Map(document.getElementById("city-map-hotel"), {
+  map = new google.maps.Map(document.getElementById("city-map-hotel"), {
     zoom: 17,
     center: hotelPosition,
   });

@@ -292,6 +292,25 @@ I have used  [W3C CSS Validator]("https://jigsaw.w3.org/css-validator/") to vali
 ![](assets/documentation/readme-documentation/testing-images/css-validate.png)
 
 
+- #### js Validation 
+
+I have used [JSHint]("https://jshint.com/") to validate all scripts.
+
+- main.js - validator returned numeros errors of using let & const varaibles and object short notation. After discussion with my mentor this is not considered the issue.
+
+![](assets/documentation/readme-documentation/testing-images/js-validate.png)
+
+- city.js - validator returned numeros errors of using ES6 syntax which was not considered the issue.
+The only other issue was function declaration inside of if statment which was used to list relevant hotels for each city. Given the time limit I will have to leave the error as is but to resolve the issue I would transfer all HTML code to html files and achieve better control and use of Javascript file.
+
+![](assets/documentation/readme-documentation/testing-images/js-validate-2.png)
+
+- search-result.js - validator returned warnings for use of ES6 syntax withouth extensions.
+
+![](assets/documentation/readme-documentation/testing-images/js-validate-3.png)
+
+
+
 ## **Fixed Bugs**
 
 **Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
