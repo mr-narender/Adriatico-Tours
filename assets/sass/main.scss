@@ -343,9 +343,9 @@ li {
   cursor: pointer;
 }
 
-.level-one {
-  padding: 5% 0;
-  font-size: 30px;
+.level-one{
+  padding: 5% 0 0 0;
+  font-size: 32px;
   margin-top: 100px;
   display: none;
 }
@@ -375,7 +375,7 @@ li {
 }
 
 .level-two {
-  font-size: 25px;
+  font-size: 28px;
   display: none;
 
   li {
@@ -386,12 +386,22 @@ li {
 }
 
 .level-two ul {
-  font-size: 22px;
   display: none;
 
   li {
     padding: 15px 0 15px 20%;
   }
+}
+
+.company-links {
+    display: none;
+    font-size: 32px;
+}
+
+.submenu {
+    display: none;
+    font-size: 25px;
+    padding: 15px 0 15px 20% !important;
 }
 
 .mobile-search {
@@ -2560,7 +2570,7 @@ textarea {
     width: 35px;
   }
 
-  .level-one {
+  .level-one, .company-links {
     font-size: 22px;
     margin-top: 35px;
   }
@@ -2569,9 +2579,6 @@ textarea {
     font-size: 18px;
   }
 
-  .level-three {
-    font-size: 15px !important;
-  }
   .hero-section_intro-wrapper {
     width: 90%;
   }

@@ -1,279 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adriatico Tours</title>
 
     <!--Bootstrap stylesheet-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
     <!--Font Awsome-->
-    <script
-      src="https://kit.fontawesome.com/88ddfd17d7.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/88ddfd17d7.js" crossorigin="anonymous"></script>
     <!--Main Stylesheet -->
     <link rel="stylesheet" href="/assets/css/main.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!--Menu Utilities-->
 
     <div class="menu-utilities">
-      <ul>
-        <li><a href="tel:01 405 2033">+353 1-405-2033</a></li>
-        <li>Can we help you? <span>|</span></li>
-        <li>
-          <a href="mailto:support@adriaticotours.com"
-            >support@adriaticotours.com</a
-          >
-        </li>
-      </ul>
+        <ul>
+            <li><a href="tel:01 405 2033">+353 1-405-2033</a></li>
+            <li>Can we help you? <span>|</span></li>
+            <li>
+                <a href="mailto:support@adriaticotours.com">support@adriaticotours.com</a>
+            </li>
+        </ul>
     </div>
 
     <!--Navigation -->
 
     <nav>
-      <!--Large Menu-->
+        <!--Large Menu-->
 
-      <div id="menu">
-        <a href="index.html">
-          <img
-            class="logo"
-            src="assets/images/logo-transparent.png"
-            alt="logo"
-          />
-        </a>
+        <div id="menu">
+            <a href="index.html">
+                <img class="logo" src="assets/images/logo-transparent.png" alt="logo" />
+            </a>
 
-        <div class="menu_content">
-          <form
-            role="search"
-            action="search.html"
-            autocomplete="off"
-            method="get"
-          >
-            <fieldset class="input-wrapper-lg">
-              <label for="search-result"></label>
-              <input
-                class="menu_content-search"
-                type="search"
-                id="search-result"
-                name="search-result"
-                placeholder="Try Food, Culture or Desired city.. "
-              />
-              <button type="submit" class="search-btn">
-                <i class="fas fa-search" aria-hidden="true"></i>
-              </button>
-            </fieldset>
-          </form>
+            <div class="menu_content">
+                <form role="search" action="search.html" autocomplete="off" method="get">
+                    <fieldset class="input-wrapper-lg">
+                        <label for="search-result"></label>
+                        <input class="menu_content-search" type="search" id="search-result" name="search-result"
+                            placeholder="Try Food, Culture or Desired city.. " />
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </fieldset>
+                </form>
 
-          <ul>
-            <li class="expand-lg"><a href="#">Destinations</a></li>
-            <li><a href="about.html">Our Company</a></li>
-            <li><a href="why.html">Why Croatia</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="destination_expand">
-        <div class="destination_expand-section">
-          <h2>ISTRIA</h2>
-          <img
-            class="destination_expand-img"
-            src="assets/images/istria-expand.png"
-            alt="look from the coast on croatian town"
-          />
-          <ul>
-            <li class="destination_expand-link">
-              <a href="city.html?pula">Pula</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-            <li class="destination_expand-link">
-              <a href="city.html?rovinj">Rovinj</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-            <li class="destination_expand-link">
-              <a href="city.html?porec">Porec</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="destination_expand-section">
-          <h2>DALMATIAN COAST</h2>
-          <img
-            class="destination_expand-img"
-            src="assets/images/dalmatian-expand.png"
-            alt="look from the coast on croatian town"
-          />
-          <ul>
-            <li class="destination_expand-link">
-              <a href="city.html?dubrovnik">Dubrovnik</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-            <li class="destination_expand-link">
-              <a href="city.html?split">Split</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-            <li class="destination_expand-link">
-              <a href="city.html?zadar">Zadar</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-          </ul>
-        </div>
-        <div class="destination_expand-section">
-          <h2>CENTRAL CROATIA</h2>
-          <img
-            class="destination_expand-img"
-            src="assets/images/central-expand.png"
-            alt="look from the coast on croatian town"
-          />
-          <ul>
-            <li class="destination_expand-link">
-              <a href="city.html?zagreb">Zagreb</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-            <li class="destination_expand-link">
-              <a href="city.html?karlovac">Karlovac</a
-              ><i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!--Mobile Menu-->
-
-      <div id="mobile-menu">
-        <div class="mobile_menu-content">
-          <img
-            class="menu-open"
-            src="assets/images/ham-menu.png"
-            alt="mobile-menu-button"
-          />
-
-          <a href="index.html">
-            <img
-              class="logo"
-              src="assets/images/logo-transparent.png"
-              alt="logo"
-            />
-          </a>
-
-          <img
-            class="search-expand"
-            src="assets/images/search-icon-mobile.png"
-            alt="search-button"
-          />
+                <ul>
+                    <li class="expand-lg"><a href="#">Destinations</a></li>
+                    <li><a href="about.html">Our Company</a></li>
+                    <li><a href="why.html">Why Croatia</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="mobile_menu-expand">
-          <i class="far fa-times-circle menu-exit" aria-hidden="true"></i>
-
-          <ul class="level-one">
-            <li class="mobile_menu-expand-link">
-              <a href="#">Destinations</a
-              ><i class="fas fa-chevron-right arrow-drop-lg"></i>
-            </li>
-
-            <ul class="level-two">
-              <li class="mobile_menu-expand-link expand">
-                Istria<i
-                  class="fas fa-chevron-right arrow-drop-sm trigger-one"
-                ></i>
-              </li>
-
-              <ul class="level-three first">
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?pula">Pula</a>
-                </li>
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?rovinj">Rovinj</a>
-                </li>
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?porec">Porec</a>
-                </li>
-              </ul>
-              <li class="mobile_menu-expand-link expand">
-                Dalmatian Coast<i
-                  class="fas fa-chevron-right arrow-drop-sm trigger-two"
-                ></i>
-              </li>
-
-              <ul class="level-three second">
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?dubrovnik">Dubrovnik</a>
-                </li>
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?split">Split</a>
-                </li>
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?zadar">Zadar</a>
-                </li>
-              </ul>
-              <li class="mobile_menu-expand-link expand">
-                Central Croatia<i
-                  class="fas fa-chevron-right arrow-drop-sm trigger-three"
-                ></i>
-              </li>
-
-              <ul class="level-three third">
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?zagreb">Zagreb</a>
-                </li>
-                <li class="mobile_menu-expand-link">
-                  <a href="city.html?karlovac">Karlovac</a>
-                </li>
-              </ul>
-            </ul>
-
-            <li class="mobile_menu-expand-link">
-              <a href="about.html">Our Company</a>
-            </li>
-            <li class="mobile_menu-expand-link">
-              <a href="why.html">Why Croatia</a>
-            </li>
-            <li class="mobile_menu-expand-link">
-              <a href="contact.html">Contact Us</a>
-            </li>
-          </ul>
+        <div class="destination_expand">
+            <div class="destination_expand-section">
+                <h2>ISTRIA</h2>
+                <img class="destination_expand-img" src="assets/images/istria-expand.png"
+                    alt="look from the coast on croatian town" />
+                <ul>
+                    <li class="destination_expand-link">
+                        <a href="city.html?pula">Pula</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                    <li class="destination_expand-link">
+                        <a href="city.html?rovinj">Rovinj</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                    <li class="destination_expand-link">
+                        <a href="city.html?porec">Porec</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="destination_expand-section">
+                <h2>DALMATIAN COAST</h2>
+                <img class="destination_expand-img" src="assets/images/dalmatian-expand.png"
+                    alt="look from the coast on croatian town" />
+                <ul>
+                    <li class="destination_expand-link">
+                        <a href="city.html?dubrovnik">Dubrovnik</a><i class="fas fa-chevron-right"
+                            aria-hidden="true"></i>
+                    </li>
+                    <li class="destination_expand-link">
+                        <a href="city.html?split">Split</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                    <li class="destination_expand-link">
+                        <a href="city.html?zadar">Zadar</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="destination_expand-section">
+                <h2>CENTRAL CROATIA</h2>
+                <img class="destination_expand-img" src="assets/images/central-expand.png"
+                    alt="look from the coast on croatian town" />
+                <ul>
+                    <li class="destination_expand-link">
+                        <a href="city.html?zagreb">Zagreb</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                    <li class="destination_expand-link">
+                        <a href="city.html?karlovac">Karlovac</a><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <form
-          class="mobile-search"
-          role="search"
-          action="search.html"
-          method="get"
-        >
-          <fieldset class="input-wrapper-sm">
-            <label for="search-header-mobile"></label>
-            <input
-              class="menu_content-search"
-              type="search"
-              id="search-header-mobile"
-              name="search-header-mobile"
-              placeholder="Try Food, Culture or Desired city.."
-            />
-            <button type="submit" class="search-btn">
-              <i class="fas fa-search" aria-hidden="true"></i>
-            </button>
-          </fieldset>
-          <i class="far fa-times-circle search-hide" aria-hidden="true"></i>
-        </form>
-      </div>
+        <!--Mobile Menu-->
+
+        <!--Mobile Menu-->
+
+        <div id="mobile-menu">
+            <div class="mobile_menu-content">
+                <img class="menu-open" src="assets/images/ham-menu.png" alt="mobile-menu-button" />
+
+                <a href="index.html">
+                    <img class="logo" src="assets/images/logo-transparent.png" alt="logo" />
+                </a>
+
+                <img class="search-expand" src="assets/images/search-icon-mobile.png" alt="search-button" />
+            </div>
+
+            <div class="mobile_menu-expand">
+                <i class="far fa-times-circle menu-exit" aria-hidden="true"></i>
+
+                <ul class="level-one">
+                    <li class="mobile_menu-expand-link">
+                        <a href="#">Destinations</a><i class="fas fa-chevron-right arrow-drop-lg"></i>
+                    </li>
+                </ul>
+
+                <ul class="level-two first">
+                    <li class="mobile_menu-expand-link expand">
+                        Istria<i class="fas fa-chevron-right arrow-drop-sm trigger-one"></i>
+                    </li>
+
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?pula">Pula</a>
+                    </li>
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?rovinj">Rovinj</a>
+                    </li>
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?porec">Porec</a>
+                    </li>
+
+                </ul>
+
+
+                <ul class="level-two second">
+                    <li class="mobile_menu-expand-link expand">
+                        Dalmatian Coast<i class="fas fa-chevron-right arrow-drop-sm trigger-two"></i>
+                    </li>
+
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?dubrovnik">Dubrovnik</a>
+                    </li>
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?split">Split</a>
+                    </li>
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?zadar">Zadar</a>
+                    </li>
+
+                </ul>
+
+                <ul class="level-two third">
+                    <li class="mobile_menu-expand-link expand">
+                        Central Croatia<i class="fas fa-chevron-right arrow-drop-sm trigger-three"></i>
+                    </li>
+
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?zagreb">Zagreb</a>
+                    </li>
+                    <li class="mobile_menu-expand-link submenu">
+                        <a href="city.html?karlovac">Karlovac</a>
+                    </li>
+
+                </ul>
+                <ul class="company-links">
+
+                    <li class="mobile_menu-expand-link">
+                        <a href="about.html">Our Company</a>
+                    </li>
+                    <li class="mobile_menu-expand-link">
+                        <a href="why.html">Why Croatia</a>
+                    </li>
+                    <li class="mobile_menu-expand-link">
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <form class="mobile-search" role="search" action="search.html" method="get">
+                <fieldset class="input-wrapper-sm">
+                    <label for="search-header-mobile"></label>
+                    <input class="menu_content-search" type="search" id="search-header-mobile"
+                        name="search-header-mobile" placeholder="Try Food, Culture or Desired city.." />
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </fieldset>
+                <i class="far fa-times-circle search-hide" aria-hidden="true"></i>
+            </form>
+        </div>
     </nav>
 
     <!--Bread Crumbs Strip-->
 
     <div class="bread-crumbs" aria-label="breadcrumb">
-      <ol>
-        <li><a href="index.html">Home</a></li>
-        <li class="divider">Why Croatia</li>
-      </ol>
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="divider">Why Croatia</li>
+        </ol>
     </div>
 
     <!--Hero Section-->
@@ -283,552 +225,475 @@
     <!-- Intro & Facts Section-->
 
     <section id="about-croatia">
-      <h1>Croatia At A Glance</h1>
-      <hr class="hr-small" />
-      <p>
-        Croatia is a Central European and Mediterranean country, bordering
-        Slovenia to the west, Hungary to the north, Serbia to the east and
-        Bosnia and Herzegovina to the south; the country also has a long
-        maritime border with Italy in the Adriatic Sea. These borders total
-        2,028 km altogether.
-        <br />
-        <br />
+        <h1>Croatia At A Glance</h1>
+        <hr class="hr-small" />
+        <p>
+            Croatia is a Central European and Mediterranean country, bordering
+            Slovenia to the west, Hungary to the north, Serbia to the east and
+            Bosnia and Herzegovina to the south; the country also has a long
+            maritime border with Italy in the Adriatic Sea. These borders total
+            2,028 km altogether.
+            <br />
+            <br />
 
-        Croatia has an unusual shape (similar to a croissant!) that is unlike
-        any other country in the world. This unusual shape is as a result of
-        five centuries of expansion by the Ottoman (Turkish) empire towards
-        Central Europe. (Although having said this, the Turks never actually
-        conquered the country; they did however control some of Croatia’s
-        neighbours such as Serbia and Bosnia and Hercegovina.)
+            Croatia has an unusual shape (similar to a croissant!) that is unlike
+            any other country in the world. This unusual shape is as a result of
+            five centuries of expansion by the Ottoman (Turkish) empire towards
+            Central Europe. (Although having said this, the Turks never actually
+            conquered the country; they did however control some of Croatia’s
+            neighbours such as Serbia and Bosnia and Hercegovina.)
 
-        <br />
-        <br />
-        The climate is Mediterranean along the Adriatic coast, meaning warm dry
-        summers and mild winters, with 2,600 hours of sunlight on average yearly
-        – it is one of the sunniest coastlines in Europe! The interior of the
-        country has a continental climate with hot summers and cold, snowy
-        winters.
-      </p>
+            <br />
+            <br />
+            The climate is Mediterranean along the Adriatic coast, meaning warm dry
+            summers and mild winters, with 2,600 hours of sunlight on average yearly
+            – it is one of the sunniest coastlines in Europe! The interior of the
+            country has a continental climate with hot summers and cold, snowy
+            winters.
+        </p>
 
-      <div class="facts-section">
-        <div class="fact-item">
-          <h4>Currency</h4>
-          <hr />
-          <h2>Croatian Kuna</h2>
+        <div class="facts-section">
+            <div class="fact-item">
+                <h4>Currency</h4>
+                <hr />
+                <h2>Croatian Kuna</h2>
+            </div>
+            <div class="fact-item">
+                <h4>Good morning</h4>
+                <hr />
+                <h2>Dobro jutro</h2>
+            </div>
+            <div class="fact-item">
+                <h4>Language</h4>
+                <hr />
+                <h2>Croatian</h2>
+            </div>
+            <div class="fact-item">
+                <h4>Good Evening</h4>
+                <hr />
+                <h2>Dobra večer</h2>
+            </div>
+            <div class="fact-item">
+                <h4>Capital City</h4>
+                <hr />
+                <h2>Zagreb</h2>
+            </div>
         </div>
-        <div class="fact-item">
-          <h4>Good morning</h4>
-          <hr />
-          <h2>Dobro jutro</h2>
-        </div>
-        <div class="fact-item">
-          <h4>Language</h4>
-          <hr />
-          <h2>Croatian</h2>
-        </div>
-        <div class="fact-item">
-          <h4>Good Evening</h4>
-          <hr />
-          <h2>Dobra večer</h2>
-        </div>
-        <div class="fact-item">
-          <h4>Capital City</h4>
-          <hr />
-          <h2>Zagreb</h2>
-        </div>
-      </div>
     </section>
 
     <!--Top Things About Croatia Carousel - Reference Bootstrap-->
 
     <section id="top-things-carousel">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide top-things-carousel"
-        data-bs-ride="carousel"
-      >
-        <img
-          src="assets/images/question-mark-icon.png"
-          alt="question mark icon"
-        />
-        <ol class="carousel-indicators">
-          <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="active"
-          ></li>
-          <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-          ></li>
-          <li
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-          ></li>
-        </ol>
-        <div class="carousel-inner">
-          <h2>TOP 6 THINGS TO DO IN CROATIA</h2>
-          <p class="top-info">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            dolorum, iusto praesentium eius cum explicabo ipsam. Cum placeat
-            voluptatem itaque, soluta distinctio natus velit nam autem tempora
-            qui minima officia.Rerum aliquid ullam molestias itaque possimus
-            consectetur ratione deleniti vitae enim laborum velit quidem,
-            commodi ex necessitatibus exercitationem sit aliquam incidunt esse
-            iusto eos. Fugit nostrum officiis debitis eum quia.
-          </p>
+        <div id="carouselExampleIndicators" class="carousel slide top-things-carousel" data-bs-ride="carousel">
+            <img src="assets/images/question-mark-icon.png" alt="question mark icon" />
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <h2>TOP 6 THINGS TO DO IN CROATIA</h2>
+                <p class="top-info">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                    dolorum, iusto praesentium eius cum explicabo ipsam. Cum placeat
+                    voluptatem itaque, soluta distinctio natus velit nam autem tempora
+                    qui minima officia.Rerum aliquid ullam molestias itaque possimus
+                    consectetur ratione deleniti vitae enim laborum velit quidem,
+                    commodi ex necessitatibus exercitationem sit aliquam incidunt esse
+                    iusto eos. Fugit nostrum officiis debitis eum quia.
+                </p>
 
-          <div class="carousel-item active">
-            <div class="box-wrapper">
-              <div class="carousel-item_box">
-                <h5>Walls of Dubrovnik</h5>
-                <p>
-                  Visiting famous walls of Dubrovnik is a must. You can get a
-                  good handle on the extent of the shelling damage in the 1990s
-                  by gazing over the rooftops. The first set of walls to enclose
-                  the city was built in the 9th century.
-                </p>
-              </div>
-              <div class="carousel-item_box">
-                <h5>Diocletian’s Palace</h5>
-                <p>
-                  Taking up a prime harbourside position, this extraordinary
-                  complex is one of the most imposing ancient Roman structures
-                  in existence today, and it's where you’ll spend most of your
-                  time while in Split.
-                </p>
-              </div>
-            </div>
-          </div>
+                <div class="carousel-item active">
+                    <div class="box-wrapper">
+                        <div class="carousel-item_box">
+                            <h5>Walls of Dubrovnik</h5>
+                            <p>
+                                Visiting famous walls of Dubrovnik is a must. You can get a
+                                good handle on the extent of the shelling damage in the 1990s
+                                by gazing over the rooftops. The first set of walls to enclose
+                                the city was built in the 9th century.
+                            </p>
+                        </div>
+                        <div class="carousel-item_box">
+                            <h5>Diocletian’s Palace</h5>
+                            <p>
+                                Taking up a prime harbourside position, this extraordinary
+                                complex is one of the most imposing ancient Roman structures
+                                in existence today, and it's where you’ll spend most of your
+                                time while in Split.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-          <div class="carousel-item">
-            <div class="box-wrapper">
-              <div class="carousel-item_box">
-                <h5>Roman Amphitheatre</h5>
-                <p>
-                  Pula’s most famous and imposing sight is this 1st-century oval
-                  amphitheatre, overlooking the harbour northeast of the old
-                  town. It's a huge and truly magnificent structure, slotted
-                  together entirely from local limestone and known locally as
-                  the Arena.
-                </p>
-              </div>
-              <div class="carousel-item_box">
-                <h5>Euphrasian Basilica</h5>
-                <p>
-                  Top billing in Poreč goes to the 6th-century Euphrasian
-                  Basilica, a World Heritage Site and one of Europe’s finest
-                  intact examples of Byzantine art. Built on the site of a
-                  4th-century oratory, the complex includes a church, an atrium
-                  and a baptistery.
-                </p>
-              </div>
-            </div>
-          </div>
+                <div class="carousel-item">
+                    <div class="box-wrapper">
+                        <div class="carousel-item_box">
+                            <h5>Roman Amphitheatre</h5>
+                            <p>
+                                Pula’s most famous and imposing sight is this 1st-century oval
+                                amphitheatre, overlooking the harbour northeast of the old
+                                town. It's a huge and truly magnificent structure, slotted
+                                together entirely from local limestone and known locally as
+                                the Arena.
+                            </p>
+                        </div>
+                        <div class="carousel-item_box">
+                            <h5>Euphrasian Basilica</h5>
+                            <p>
+                                Top billing in Poreč goes to the 6th-century Euphrasian
+                                Basilica, a World Heritage Site and one of Europe’s finest
+                                intact examples of Byzantine art. Built on the site of a
+                                4th-century oratory, the complex includes a church, an atrium
+                                and a baptistery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-          <div class="carousel-item">
-            <div class="box-wrapper">
-              <div class="carousel-item_box">
-                <h5>Paklenica National Park</h5>
-                <p>
-                  Covering 95 sq km of the Velebit Range that divides
-                  continental Croatia from the Adriatic coast, Paklenica
-                  National Park contains some of the country’s finest mountain
-                  scenery, giving you the opportunity to trek up gorges, climb
-                  walls of stone and meander along shady paths next to rushing
-                  streams.
-                </p>
-              </div>
-              <div class="carousel-item_box">
-                <h5>Cathedral of St Domnius</h5>
-                <p>
-                  Split’s octagonal cathedral is one of the best-preserved
-                  ancient Roman buildings still standing. It was built as a
-                  mausoleum for Diocletian, the last famous persecutor of the
-                  Christians, who was interred here in AD 311.
-                </p>
-              </div>
+                <div class="carousel-item">
+                    <div class="box-wrapper">
+                        <div class="carousel-item_box">
+                            <h5>Paklenica National Park</h5>
+                            <p>
+                                Covering 95 sq km of the Velebit Range that divides
+                                continental Croatia from the Adriatic coast, Paklenica
+                                National Park contains some of the country’s finest mountain
+                                scenery, giving you the opportunity to trek up gorges, climb
+                                walls of stone and meander along shady paths next to rushing
+                                streams.
+                            </p>
+                        </div>
+                        <div class="carousel-item_box">
+                            <h5>Cathedral of St Domnius</h5>
+                            <p>
+                                Split’s octagonal cathedral is one of the best-preserved
+                                ancient Roman buildings still standing. It was built as a
+                                mausoleum for Diocletian, the last famous persecutor of the
+                                Christians, who was interred here in AD 311.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!--Show only on medium and mobile devices < 840px -->
 
-    <div
-      id="carouselExampleIndicatorsMobile"
-      class="carousel slide top-things-carousel"
-      data-bs-ride="carousel"
-    >
-      <img
-        src="assets/images/question-mark-icon.png"
-        alt="question mark icon"
-      />
-      <ol class="carousel-indicators">
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="0"
-          class="active"
-        ></li>
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="1"
-        ></li>
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="2"
-        ></li>
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="3"
-        ></li>
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="4"
-        ></li>
-        <li
-          data-bs-target="#carouselExampleIndicatorsMobile"
-          data-bs-slide-to="5"
-        ></li>
-      </ol>
-      <div class="carousel-inner">
-        <h2>TOP 6 THINGS TO DO IN CROATIA</h2>
-        <p class="top-info">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-          dolorum, iusto praesentium eius cum explicabo ipsam. Cum placeat
-          voluptatem itaque, soluta distinctio natus velit nam autem tempora qui
-          minima officia.Rerum aliquid ullam molestias itaque possimus
-          consectetur ratione deleniti vitae enim laborum velit quidem, commodi
-          ex necessitatibus exercitationem sit aliquam incidunt esse iusto eos.
-          Fugit nostrum officiis debitis eum quia.
-        </p>
-
-        <div class="carousel-item active">
-          <div class="carousel-item_box-mobile">
-            <h5>Walls of Dubrovnik</h5>
-            <p>
-              Visiting famous walls of Dubrovnik is a must. You can get a good
-              handle on the extent of the shelling damage in the 1990s by gazing
-              over the rooftops. The first set of walls to enclose the city was
-              built in the 9th century.
+    <div id="carouselExampleIndicatorsMobile" class="carousel slide top-things-carousel" data-bs-ride="carousel">
+        <img src="assets/images/question-mark-icon.png" alt="question mark icon" />
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="2"></li>
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="3"></li>
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="4"></li>
+            <li data-bs-target="#carouselExampleIndicatorsMobile" data-bs-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <h2>TOP 6 THINGS TO DO IN CROATIA</h2>
+            <p class="top-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                dolorum, iusto praesentium eius cum explicabo ipsam. Cum placeat
+                voluptatem itaque, soluta distinctio natus velit nam autem tempora qui
+                minima officia.Rerum aliquid ullam molestias itaque possimus
+                consectetur ratione deleniti vitae enim laborum velit quidem, commodi
+                ex necessitatibus exercitationem sit aliquam incidunt esse iusto eos.
+                Fugit nostrum officiis debitis eum quia.
             </p>
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item_box-mobile">
-            <h5>Diocletian’s Palace</h5>
-            <p>
-              Taking up a prime harbourside position, this extraordinary complex
-              is one of the most imposing ancient Roman structures in existence
-              today, and it's where you’ll spend most of your time while in
-              Split.
-            </p>
-          </div>
-        </div>
+            <div class="carousel-item active">
+                <div class="carousel-item_box-mobile">
+                    <h5>Walls of Dubrovnik</h5>
+                    <p>
+                        Visiting famous walls of Dubrovnik is a must. You can get a good
+                        handle on the extent of the shelling damage in the 1990s by gazing
+                        over the rooftops. The first set of walls to enclose the city was
+                        built in the 9th century.
+                    </p>
+                </div>
+            </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item_box-mobile">
-            <h5>Roman Amphitheatre</h5>
-            <p>
-              Pula’s most famous and imposing sight is this 1st-century oval
-              amphitheatre, overlooking the harbour northeast of the old town.
-              It's a huge and truly magnificent structure, slotted together
-              entirely from local limestone and known locally as the Arena.
-            </p>
-          </div>
-        </div>
+            <div class="carousel-item">
+                <div class="carousel-item_box-mobile">
+                    <h5>Diocletian’s Palace</h5>
+                    <p>
+                        Taking up a prime harbourside position, this extraordinary complex
+                        is one of the most imposing ancient Roman structures in existence
+                        today, and it's where you’ll spend most of your time while in
+                        Split.
+                    </p>
+                </div>
+            </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item_box-mobile">
-            <h5>Euphrasian Basilica</h5>
-            <p>
-              Top billing in Poreč goes to the 6th-century Euphrasian Basilica,
-              a World Heritage Site and one of Europe’s finest intact examples
-              of Byzantine art. Built on the site of a 4th-century oratory, the
-              complex includes a church, an atrium and a baptistery.
-            </p>
-          </div>
-        </div>
+            <div class="carousel-item">
+                <div class="carousel-item_box-mobile">
+                    <h5>Roman Amphitheatre</h5>
+                    <p>
+                        Pula’s most famous and imposing sight is this 1st-century oval
+                        amphitheatre, overlooking the harbour northeast of the old town.
+                        It's a huge and truly magnificent structure, slotted together
+                        entirely from local limestone and known locally as the Arena.
+                    </p>
+                </div>
+            </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item_box-mobile">
-            <h5>Paklenica National Park</h5>
-            <p>
-              Covering 95 sq km of the Velebit Range that divides continental
-              Croatia from the Adriatic coast, Paklenica National Park contains
-              some of the country’s finest mountain scenery, giving you the
-              opportunity to trek up gorges, climb walls of stone and meander
-              along shady paths next to rushing streams.
-            </p>
-          </div>
-        </div>
+            <div class="carousel-item">
+                <div class="carousel-item_box-mobile">
+                    <h5>Euphrasian Basilica</h5>
+                    <p>
+                        Top billing in Poreč goes to the 6th-century Euphrasian Basilica,
+                        a World Heritage Site and one of Europe’s finest intact examples
+                        of Byzantine art. Built on the site of a 4th-century oratory, the
+                        complex includes a church, an atrium and a baptistery.
+                    </p>
+                </div>
+            </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item_box-mobile">
-            <h5>Cathedral of St Domnius</h5>
-            <p>
-              Split’s octagonal cathedral is one of the best-preserved ancient
-              Roman buildings still standing. It was built as a mausoleum for
-              Diocletian, the last famous persecutor of the Christians, who was
-              interred here in AD 311.
-            </p>
-          </div>
+            <div class="carousel-item">
+                <div class="carousel-item_box-mobile">
+                    <h5>Paklenica National Park</h5>
+                    <p>
+                        Covering 95 sq km of the Velebit Range that divides continental
+                        Croatia from the Adriatic coast, Paklenica National Park contains
+                        some of the country’s finest mountain scenery, giving you the
+                        opportunity to trek up gorges, climb walls of stone and meander
+                        along shady paths next to rushing streams.
+                    </p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="carousel-item_box-mobile">
+                    <h5>Cathedral of St Domnius</h5>
+                    <p>
+                        Split’s octagonal cathedral is one of the best-preserved ancient
+                        Roman buildings still standing. It was built as a mausoleum for
+                        Diocletian, the last famous persecutor of the Christians, who was
+                        interred here in AD 311.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!--Currency Converter-->
 
     <section id="currency-converter">
-      <div class="currency-converter_box">
-        <h2>Currency Converter</h2>
-        <hr />
-        <div class="currency-converter_options">
-          <div class="currency-converter-option-from">
-            <h5>From</h5>
-            <img src="assets/images/european-union-icon.png" />
-            <button>
-              EUR
-              <span>Euro</span>
-            </button>
-          </div>
+        <div class="currency-converter_box">
+            <h2>Currency Converter</h2>
+            <hr />
+            <div class="currency-converter_options">
+                <div class="currency-converter-option-from">
+                    <h5>From</h5>
+                    <img src="assets/images/european-union-icon.png" />
+                    <button>
+                        EUR
+                        <span>Euro</span>
+                    </button>
+                </div>
 
-          <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+                <i class="fas fa-long-arrow-alt-right fa-3x"></i>
 
-          <div class="currency-converter-option-to">
-            <h5>To</h5>
+                <div class="currency-converter-option-to">
+                    <h5>To</h5>
 
-            <img src="assets/images/croatia-flag-icon.png" />
-            <button>
-              HRK
-              <span>Croatian Kuna</span>
-            </button>
-          </div>
+                    <img src="assets/images/croatia-flag-icon.png" />
+                    <button>
+                        HRK
+                        <span>Croatian Kuna</span>
+                    </button>
+                </div>
 
-          <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+                <i class="fas fa-long-arrow-alt-right fa-3x"></i>
 
-          <div class="currency-converter-amount">
-            <h5>Amount</h5>
-            <form onsubmit="return false">
-              <label for="amount" class="sr-only">Amount To Convert</label>
-              <input
-                class="amount-input"
-                type="number"
-                id="amount"
-                name="amount"
-                min="1"
-                max="10000"
-                value="1"
-                required
-              />
-            </form>
-          </div>
-          <button class="convert-button">
-            <i class="fas fa-chevron-right fa-3x"></i>
-          </button>
-          <button class="convert-button-mobile">Exchange</button>
+                <div class="currency-converter-amount">
+                    <h5>Amount</h5>
+                    <form onsubmit="return false">
+                        <label for="amount" class="sr-only">Amount To Convert</label>
+                        <input class="amount-input" type="number" id="amount" name="amount" min="1" max="10000"
+                            value="1" required />
+                    </form>
+                </div>
+                <button class="convert-button">
+                    <i class="fas fa-chevron-right fa-3x"></i>
+                </button>
+                <button class="convert-button-mobile">Exchange</button>
+            </div>
+
+            <div class="currency-converter-result">
+                <h5>Conversion Result</h5>
+                <label for="converted-amount" class="sr-only">Converted Amount</label>
+                <input readonly="readonly" type="text" id="converted-amount" name="converted-amount" value="" />
+            </div>
         </div>
-
-        <div class="currency-converter-result">
-          <h5>Conversion Result</h5>
-          <label for="converted-amount" class="sr-only">Converted Amount</label>
-          <input
-            readonly="readonly"
-            type="text"
-            id="converted-amount"
-            name="converted-amount"
-            value=""
-          />
-        </div>
-      </div>
     </section>
 
     <!--Popular Destination Section -->
 
     <section id="popular-destainations">
-      <div class="popular-destinations_intro">
-        <h1>Most Popular Destination</h1>
-        <hr class="hr-small" />
+        <div class="popular-destinations_intro">
+            <h1>Most Popular Destination</h1>
+            <hr class="hr-small" />
 
-        <p>
-          We highly recommend the below cities. Based on our customer feedback
-          we can guarantee that you won't go wrong if you decide to spend your
-          holidays at any of the below cities.
-        </p>
-      </div>
-
-      <div class="popular-destinations_selection">
-        <div class="popular-destinations_box destination-one">
-          <div class="popular-destinations_box-content">
-            <a href="city.html?dubrovnik">Dubrovnik</a>
-            <h4>Dubrovnik, Croatia</h4>
-          </div>
+            <p>
+                We highly recommend the below cities. Based on our customer feedback
+                we can guarantee that you won't go wrong if you decide to spend your
+                holidays at any of the below cities.
+            </p>
         </div>
 
-        <div class="popular-destinations_box destination-two">
-          <div class="popular-destinations_box-content">
-            <a href="city.html?zagreb">Zagreb</a>
-            <h4>Zagreb, Croatia</h4>
-          </div>
-        </div>
+        <div class="popular-destinations_selection">
+            <div class="popular-destinations_box destination-one">
+                <div class="popular-destinations_box-content">
+                    <a href="city.html?dubrovnik">Dubrovnik</a>
+                    <h4>Dubrovnik, Croatia</h4>
+                </div>
+            </div>
 
-        <div class="popular-destinations_box destination-three">
-          <div class="popular-destinations_box-content">
-            <a href="city.html?pula">Pula</a>
-            <h4>Pula, Croatia</h4>
-          </div>
+            <div class="popular-destinations_box destination-two">
+                <div class="popular-destinations_box-content">
+                    <a href="city.html?zagreb">Zagreb</a>
+                    <h4>Zagreb, Croatia</h4>
+                </div>
+            </div>
+
+            <div class="popular-destinations_box destination-three">
+                <div class="popular-destinations_box-content">
+                    <a href="city.html?pula">Pula</a>
+                    <h4>Pula, Croatia</h4>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!--Newsletter Section-->
 
     <section id="newsletter-section">
-      <div class="newsletter-section_content">
-        <h2>Be In The Know</h2>
-        <p>
-          Stay up to date! Make sure you never missing our lates offers and
-          promotions. Subscribe now and claim a 10% off discount off your next
-          booking.
-        </p>
+        <div class="newsletter-section_content">
+            <h2>Be In The Know</h2>
+            <p>
+                Stay up to date! Make sure you never missing our lates offers and
+                promotions. Subscribe now and claim a 10% off discount off your next
+                booking.
+            </p>
 
-        <form action="mailto:support@adriaticotours.com" method="post">
-          <label for="email" class="sr-only">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Type your email"
-          />
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-      </div>
+            <form action="mailto:support@adriaticotours.com" method="post">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Type your email" />
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
     </section>
 
     <!--Footer Section-->
 
     <section id="footer-section">
-      <div class="footer-section_wrapper">
-        <div class="about-intro">
-          <img
-            src="assets/images/logo-white-transaprent.png"
-            alt="company logo"
-          />
-          <p>
-            With over 15 years of experience in the travelling industry, we are
-            proud to be called Croatian specialists. We are here to ensure you
-            are living the dream whilst enjoying beautiful Croatian culture &
-            food.
-          </p>
+        <div class="footer-section_wrapper">
+            <div class="about-intro">
+                <img src="assets/images/logo-white-transaprent.png" alt="company logo" />
+                <p>
+                    With over 15 years of experience in the travelling industry, we are
+                    proud to be called Croatian specialists. We are here to ensure you
+                    are living the dream whilst enjoying beautiful Croatian culture &
+                    food.
+                </p>
+            </div>
+
+            <div class="footer-navigation">
+                <div class="footer-navigation_section_one">
+                    <h4 class="footer-navigation_title">Useful Links</h4>
+                    <hr class="hr-large" />
+
+                    <ul>
+                        <li class="footer-navigation_links">
+                            <a href="about.html">Our Company</a>
+                        </li>
+                        <li class="footer-navigation_links">
+                            <a href="about.html#faq-section">FAQ'S</a>
+                        </li>
+                        <li class="footer-navigation_links">
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-navigation_section_two">
+                    <h4 class="footer-navigation_title">Search By Popular Cities</h4>
+                    <hr class="hr-large" />
+
+                    <ul>
+                        <li class="footer-navigation_links">
+                            <a href="city.html?split">Split</a>
+                        </li>
+                        <li class="footer-navigation_links">
+                            <a href="city.html?dubrovnik"> Dubrovnik</a>
+                        </li>
+                        <li class="footer-navigation_links">
+                            <a href="city.html?zagreb">Zagreb</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-navigation">
-          <div class="footer-navigation_section_one">
-            <h4 class="footer-navigation_title">Useful Links</h4>
-            <hr class="hr-large" />
-
+        <div class="footer-section_contact-links">
             <ul>
-              <li class="footer-navigation_links">
-                <a href="about.html">Our Company</a>
-              </li>
-              <li class="footer-navigation_links">
-                <a href="about.html#faq-section">FAQ'S</a>
-              </li>
-              <li class="footer-navigation_links">
-                <a href="contact.html">Contact Us</a>
-              </li>
+                <li>
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:01 405 2033">+353 1-405-2033</a>
+                </li>
+                <li>
+                    <i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:support@adriaticotours.com">support@adriaticotours.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>89e Lagan
+                    Road, Glasnevin, Dublin, Ireland
+                </li>
             </ul>
-          </div>
-
-          <div class="footer-navigation_section_two">
-            <h4 class="footer-navigation_title">Search By Popular Cities</h4>
-            <hr class="hr-large" />
-
-            <ul>
-              <li class="footer-navigation_links">
-                <a href="city.html?split">Split</a>
-              </li>
-              <li class="footer-navigation_links">
-                <a href="city.html?dubrovnik"> Dubrovnik</a>
-              </li>
-              <li class="footer-navigation_links">
-                <a href="city.html?zagreb">Zagreb</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
-
-      <div class="footer-section_contact-links">
-        <ul>
-          <li>
-            <i class="fas fa-phone-alt" aria-hidden="true"></i
-            ><a href="tel:01 405 2033">+353 1-405-2033</a>
-          </li>
-          <li>
-            <i class="fas fa-envelope" aria-hidden="true"></i
-            ><a href="mailto:support@adriaticotours.com"
-              >support@adriaticotours.com</a
-            >
-          </li>
-          <li>
-            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>89e Lagan
-            Road, Glasnevin, Dublin, Ireland
-          </li>
-        </ul>
-      </div>
     </section>
 
     <!--Copyright Bar-->
 
     <section id="copyright-bar">
-      <h4>
-        © COPYRIGHT 2021 <span>|</span> Designed & Developed By Boris Gersic
-      </h4>
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/" target="_blank"
-            ><i class="fab fa-facebook" aria-hidden="true"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/" target="_blank"
-            ><i class="fab fa-instagram" aria-hidden="true"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/" target="_blank"
-            ><i class="fab fa-twitter" aria-hidden="true"></i
-          ></a>
-        </li>
-      </ul>
+        <h4>
+            © COPYRIGHT 2021 <span>|</span> Designed & Developed By Boris Gersic
+        </h4>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"
+                        aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"
+                        aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </li>
+        </ul>
     </section>
 
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Bootstrap scripts-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script>
     <!--Main Script-->
     <script src="assets/js/main.js" type="text/javascript"></script>
     <!--City Page Funcionality Script-->
     <script src="assets/js/city.js" type="text/javascript"></script>
     <!--Search Result Script-->
     <script src="assets/js/search-result.js" type="text/javascript"></script>
-  </body>
+</body>
+
 </html>

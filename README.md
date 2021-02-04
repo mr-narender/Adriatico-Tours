@@ -269,7 +269,8 @@ I have used W3C Markup validator to check all HTML pages for possible errors.
 
 First Check HTML page:
 
-![](assets/documentation/readme-icons/html-5-icon.png)
+![](assets/documentation/readme-documentation/testing-images/html-validate-1.png)
+
 
 
 
