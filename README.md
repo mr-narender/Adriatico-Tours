@@ -449,7 +449,7 @@ The variable map was declared twice in city.js. js validation helped me resolve 
  
  Issues fixed during testing:
 
-- how it works section (our-company page) - the boxes were shrinking to 33% each, which resulted in a shrinked box on a small height.
+- how it works section (our-company page) - the boxes were shrinking to 33% each, which resulted in a shrunk box on a small height.
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-6.png) 
 
@@ -457,4 +457,38 @@ Fixed version
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-7.png) 
 
-- slideshow arrows across the page weren't visible on screen widths <490 px, to solve this I implemented position relative and moved them closer to one another.
+- slideshow arrows across the page weren't visible on-screen widths <490 px, to solve this I implemented position relative and moved them closer to one another.
+
+
+## **Deployment**
+
+The site was published using GitPages:
+
+- All the code was written on the IDE Gitpod and was committed and pushed during the development phase.
+- To publish the site, I have selected "Settings" from the navigation and went to "Github pages" section.
+- I have selected 'Master Branch' under Source option and selected "Save".
+- This created the URL which became live after a certain period of time.
+
+![](assets/documentation/readme-documentation/testing-images/deploy-1.png) 
+
+![](assets/documentation/readme-documentation/testing-images/deploy-1.png) 
+
+
+## **Credits**
+
+- All hotel imagery & content was taken from [booking.com](https://www.booking.com/index.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaGmIAQGYAQm4ARfIAQzYAQHoAQGIAgGoAgO4AsX18YAGwAIB0gIkNGIxY2MxYTQtNTc5YS00YTRkLTlmM2QtMmM4MDJhZGMwMTQ02AIF4AIB;keep_landing=1&sb_price_type=total&).
+I have reached out to the company and made sure I'm permitted to take the content for the educational purposes.
+- The city intro text, Croatian culture, food, monuments were taken from the below articles:
+
+    1. [britannica](https://www.britannica.com/place/Pul)
+    2. [lonelyplanet](https://www.lonelyplanet.com/)
+
+- Instructions on how to integrate Google maps API and EmailJS were taken from [Code Institute](https://codeinstitute.net/) lessons
+- Inspired on how to create default google maps location by my mentor Narender Singh.
+
+
+## **Acknowledgements**
+
+- Huge thanks to Narender Singh for the support and guidance I received during this project.
+- Thanks to the community on Slack and excellent tutor support!
+- Lastly, thanks to [Code Institute](https://codeinstitute.net/) for brilliant content & oragnisation so far
