@@ -218,7 +218,8 @@ li {
 .search-expand {
   width: 40px;
   height: auto;
-  min-width: 25px; }
+  min-width: 25px;
+  cursor: pointer; }
 
 .menu-exit {
   display: flex;
@@ -876,7 +877,6 @@ li {
 
 .question-dropdown {
   position: relative;
-  width: 85%;
   margin-bottom: 20px;
   border-bottom: 1px dashed #c7c7c7; }
   .question-dropdown h3 {
@@ -1607,8 +1607,12 @@ textarea {
     flex-wrap: wrap; }
   .box-container {
     flex-wrap: wrap; }
-  .how-box img {
-    width: 45px; } }
+  .how-box {
+    width: auto; }
+    .how-box img {
+      width: 45px; }
+  .question-dropdown i {
+    right: -28px; } }
 
 @media only screen and (max-width: 840px) {
   /****************** Navigation ***/
@@ -1820,7 +1824,7 @@ textarea {
     width: 35px; }
   .mobile_menu-expand {
     position: absolute;
-    height: 1000vh; }
+    height: max-content; }
   .level-one {
     font-size: 25px;
     margin-top: 35px; }
@@ -1864,4 +1868,10 @@ textarea {
   .cta-see-more,
   .book-now {
     padding: 5px 15px;
-    font-size: 14px; } }
+    font-size: 14px; }
+  .left-icon {
+    position: relative;
+    left: 25px; }
+  .right-icon {
+    position: relative;
+    right: 50px; } }

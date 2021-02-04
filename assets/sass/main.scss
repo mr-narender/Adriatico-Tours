@@ -316,6 +316,7 @@ li {
   width: 40px;
   height: auto;
   min-width: 25px;
+  cursor: pointer;
 }
 
 .menu-exit {
@@ -1210,7 +1211,6 @@ li {
 
 .question-dropdown {
   position: relative;
-  width: 85%;
   margin-bottom: 20px;
   border-bottom: 1px dashed #c7c7c7;
 
@@ -2203,9 +2203,17 @@ textarea {
     flex-wrap: wrap;
   }
 
-  .how-box img {
+  .how-box {
+    width: auto;
+  img {
     width: 45px;
   }
+  }
+
+  .question-dropdown i{
+      right: -28px;
+  }
+
 }
 
 @media only screen and (max-width: 840px) {
@@ -2572,7 +2580,7 @@ textarea {
 
   .mobile_menu-expand {
       position: absolute;
-      height: 1000vh;
+      height: max-content;
   }
 
   .level-one {
@@ -2652,6 +2660,18 @@ textarea {
     padding: 5px 15px;
     font-size: 14px;
   }
+
+  .left-icon {
+      position: relative;
+    left: 25px;
+  }
+
+  .right-icon {
+      position: relative;
+    right: 50px;
+  }
+
+
 }
 
 

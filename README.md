@@ -445,4 +445,16 @@ The variable map was declared twice in city.js. js validation helped me resolve 
 ## **Testing responsiveness**
 
 
+ All the pages tested for responsiveness across various screens.
  
+ Issues fixed during testing:
+
+- how it works section (our-company page) - the boxes were shrinking to 33% each, which resulted in a shrinked box on a small height.
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-6.png) 
+
+Fixed version
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-7.png) 
+
+- slideshow arrows across the page weren't visible on screen widths <490 px, to solve this I implemented position relative and moved them closer to one another.
