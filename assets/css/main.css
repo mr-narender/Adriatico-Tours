@@ -421,7 +421,7 @@ li {
 #hero-section {
   margin-top: 25px;
   z-index: 5;
-  background: url("/assets/images/hero-banner.png") no-repeat center;
+  background: url("../images/hero-banner.png") no-repeat center;
   background-size: cover;
   height: 700px;
   position: relative; }
@@ -556,24 +556,24 @@ li {
 
 .destination-one,
 .recommendation-1 {
-  background: url("/assets/images/dubrovnik-popular.png") no-repeat center; }
+  background: url("../images/dubrovnik-popular.png") no-repeat center; }
   .destination-one:hover,
   .recommendation-1:hover {
-    background: url("/assets/images/dubrovnik-popular-hover.png") no-repeat center; }
+    background: url("../images/dubrovnik-popular-hover.png") no-repeat center; }
 
 .destination-two,
 .recommendation-2 {
-  background: url("/assets/images/zagreb-popular.png") no-repeat center; }
+  background: url("../images/zagreb-popular.png") no-repeat center; }
   .destination-two:hover,
   .recommendation-2:hover {
-    background: url("/assets/images/zagreb-popular-hover.png") no-repeat center; }
+    background: url("../images/zagreb-popular-hover.png") no-repeat center; }
 
 .destination-three,
 .recommendation-3 {
-  background: url("/assets/images/pula-popular.png") no-repeat center; }
+  background: url("../images/pula-popular.png") no-repeat center; }
   .destination-three:hover,
   .recommendation-3:hover {
-    background: url("/assets/images/pula-popular-hover.png") no-repeat center; }
+    background: url("../images/pula-popular-hover.png") no-repeat center; }
 
 /************************ Why Us Section **/
 .section-background_wrapper {
@@ -817,7 +817,7 @@ li {
 
 /******************************************************************* About Us Page **/
 #about-hero {
-  background: url("/assets/images/about-hero-img.png") no-repeat center;
+  background: url("../images/about-hero-img.png") no-repeat center;
   background-size: cover;
   height: 750px;
   margin-bottom: 100px; }
@@ -1230,7 +1230,7 @@ li {
 
 /********************************************** Why Croatia Page ***/
 .hero-wrapper {
-  background: url("/assets/images/why-hero-img.png") no-repeat center;
+  background: url("../images/why-hero-img.png") no-repeat center;
   background-size: cover;
   height: 600px; }
 
@@ -1243,7 +1243,7 @@ li {
     font-size: 1.15em; }
 
 .facts-section {
-  background: url("/assets/images/facts-section-img.png") no-repeat center;
+  background: url("../images/facts-section-img.png") no-repeat center;
   background-size: cover;
   margin-top: 80px;
   display: flex;
@@ -1437,7 +1437,7 @@ li {
   display: flex; }
 
 .hero-img {
-  background: url("/assets/images/contact-hero-img.png");
+  background: url("../images/contact-hero-img.png");
   background-size: cover;
   height: 650px;
   width: 50%; }
