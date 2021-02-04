@@ -168,6 +168,16 @@ The Contact Us page is divided into 2 sections:
 When the form is submitted the "Message Sent" section appears on the screen for three seconds to inform, the user submission was successful. The form is also directly sent to the email address and correctly pulling all the fields user input.
 - *Company location*": in case user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
 
+<ins>*City Page*</ins>
+
+The City Page is divided into 4 sections
+
+- **Hero Section**: each city (8 in total) has three images which are presented with the slideshow.
+- **City Intro**: this section servers as a good reference to city history and some interesting facts which can grab users attention and alleviate holiday decision.
+- **City location**: users can get an understanding of city structure and some of the facilities it offers.
+- **Hotel Offering**: each city has three hotel offers. The filtering system is provided to segment the hotel order based on user preference(sort by: stars, price low to high & high to low). Each of the hotels has price, facts & star ratings on the front-facing.
+The user can "See More" - which launches the popup with additional hotel images, hotel position on the map & additional hotel information (about hotel & facilities). The option "Book Now" will also launch a pop-up with passengers selection dropdowns for adults and children, booking form and summary section that calculates the total price based on passenger selection.
+
 <ins>*Why Croatia page*</ins>
 
 Why Croatia page is divided into six sections:
@@ -190,29 +200,30 @@ Search result page contains two sections:
 
 ## **Languages Used**
 
-![](assets/documentation/readme-icons/html-5-icon.png) **HTML5**
+![](assets/documentation/readme-documentation/icons/html-5-icon.png) **HTML5**
 
-![](assets/documentation/readme-icons/css-3-icon.png)  **CSS3**
+![](assets/documentation/readme-documentation/icons/css-3-icon.png)  **CSS3**
 
-![](assets/documentation/readme-icons/javascript-icon.png)  **JavaScript**
+![](assets/documentation/readme-documentation/icons/javascript-icon.png)  **JavaScript**
 
 
 ## **Frameworks & Processors**
 
-![](assets/documentation/readme-icons/sass-icon.png)  **SCSS** - scss was used to enable quicker and more efficient coding. I've used the processor on purpose to learn about it and grow as a developer even though it's not a requirement for the project and it won't affect the grade.
+![](assets/documentation/readme-documentation/icons/sass-icon.png)  **SCSS** - scss was used to enable quicker and more efficient coding. I've used the processor on purpose to learn about it and grow as a developer even though it's not a requirement for the project and it won't affect the grade.
 
-![](assets/documentation/readme-icons/jquery-icon.png)  **JQuery** - jQuery was used as a good addition to JavaScript to enable efficent coding and easier solutions to the problem.
+![](assets/documentation/readme-documentation/icons/jquery-icon.png)  **JQuery** - jQuery was used as a good addition to JavaScript to enable efficent coding and easier solutions to the problem.
 
-![](assets/documentation/readme-icons/bootstrap-icon.png)  **Bootstrap** - Bootstrap framework was used only for small code snippets such as slide shows and showing elements such as form labels to screen readers only. 
+![](assets/documentation/readme-documentation/icons/bootstrap-icon.png)  **Bootstrap** - Bootstrap framework was used only for small code snippets such as slide shows and showing elements such as form labels to screen readers only. 
+
 
 
 ## **Workspace, version control and Repository storage**
 
-![](assets/documentation/readme-icons/gitpod-icon.png)  **GitPod** - All code is written in gitpod cloud environment, committed and pushed to GitHub
+![](assets/readme-documentation/icons/gitpod-icon.png)  **GitPod** - All code is written in gitpod cloud environment, committed and pushed to GitHub
 
-![](assets/documentation/readme-icons/github-icon.png) **Git** - Distributed Version Control tool to store versions of files and track changes.
+![](assets/readme-documentation/icons/github-icon.png) **Git** - Distributed Version Control tool to store versions of files and track changes.
 
-![](assets/documentation/readme-icons/git-icon.png) **GitHub** - A cloud-based hosting.
+![](assets/readme-documentation/icons/git-icon.png) **GitHub** - A cloud-based hosting.
 
 
 
@@ -248,6 +259,22 @@ The API is free to use with 500 calls a day as a hard limit.
 
 
 # **Testing & Deployment** 
+
+## **Validation**
+
+- #### HTML Validation 
+
+I have used W3C Markup validator to check all HTML pages for possible errors.
+
+
+First Check HTML page:
+
+![](assets/documentation/readme-icons/html-5-icon.png)
+
+
+
+
+
 
 
 
