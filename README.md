@@ -8,6 +8,8 @@ Adriatico tours is a travelling agency offering hotel booking in various cities 
 The main business objective is to offer a one-stop agency for Croatian vacation and provide a seamless booking process. 
 
 
+### **The live site can be view [here](https://boki136.github.io/Adriatico-Tours/index.html)**
+
 # **Table Of Contents:**
 
 -  **UX**
@@ -19,12 +21,36 @@ The main business objective is to offer a one-stop agency for Croatian vacation 
         - Colour pallet & Typography
         - Wireframes
 
-   
 
-  
 - **Features & Layout**
+
+    - Navigation
+    - Newsletter Section
+    - Homepage
+    - Our Company
+    - Contact Us
+    - City Page
+    - Why Croatia page
+    - Search Result Page
+
 - **Technologies & Resources Used**
-- **Testing & Deployment**
+
+    - Languages Used
+    - Frameworks & Processors
+    - Workspace, version control and Repository storage
+    - Integrations
+    - Resources & Media
+
+    - **Testing & Deployment**
+        - Validation
+        - API Testing
+        - Testing Users Stories
+        - Outstanding Bugs
+        - Fixed Bugs
+        - Testing responsiveness
+        - Deployment
+
+
 - **Credits**
 - **Acknowledgements**
 
@@ -307,6 +333,7 @@ The only other issue was function declaration inside of if statement which was u
 
 ![](assets/documentation/readme-documentation/testing-images/js-validate-3.png)
 
+## **API Testing**
 
 - #### [EmailJS API](https://www.emailjs.com/) 
 
