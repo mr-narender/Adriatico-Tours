@@ -264,7 +264,7 @@ The API is free to use with 500 calls a day as a hard limit.
 
 - #### HTML Validation 
 
-I have used W3C Markup validator to check all HTML pages for possible errors.
+I have used [W3C Markup validator]("https://validator.w3.org/") to check all HTML pages for possible errors.
 The below are highligthed unique issues with each page
 
 
@@ -281,6 +281,15 @@ After implementing fixes, I managed to address all the issues except one warning
 The rest of the pages had same issues as HTML page, altough some of them had unique issues such as missing alt tag, misuse of aria-label in breadcrumbs section & warnings for empty headings(which are populated with JS dynamically)
 The errors are removed from all HTML pages.
 
+
+- #### CSS Validation 
+
+Before Validating the CSS I used [Autoprefixer]("https://autoprefixer.github.io/") to add prefixes to all CSS properties which are not supported by all browser. I have used flex property for most of the elements, so it was crucial 
+to add prefixes to achieve the correct site rendering across browsers.
+
+I have used  [W3C CSS Validator]("https://jigsaw.w3.org/css-validator/") to validate CSS file. The CSS syntax was correct after the first try.
+
+![](assets/documentation/readme-documentation/testing-images/css-validate.png)
 
 
 ## **Fixed Bugs**
