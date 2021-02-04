@@ -229,17 +229,17 @@ Search result page contains two sections:
 
 ## **Integrations**
 
-- [Google Maps API]("https://developers.google.com/maps/documentation/javascript/overview")
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview)
 
 The Google Maps API was mostly used for City page. Each city and hotel is shown on the map, in addition to the marker on the map for each hotel.
 Additionally, I used the maps to show company location on the contact us page.
 
-- [EmailJS]("https://www.emailjs.com/")
+- [EmailJS](https://www.emailjs.com/)
 
 EmailJs has been used for both contact us form and booking form. The two templates were created in the software to enable sending correct parameters. Each of the fields is sent through as a parameter and sent directly to my email address. 
 
 
-- [Rapid API]("https://rapidapi.com/apiworker.com/api/currency-converter13")
+- [Rapid API](https://rapidapi.com/apiworker.com/api/currency-converter13)
 
 I have used Currency Converter API from Rapid API marketplace to enable the user to convert from Euro to Croatian Kuna currency on the Why Croatia Page.
 The API is free to use with 500 calls a day as a hard limit.
@@ -264,7 +264,7 @@ The API is free to use with 500 calls a day as a hard limit.
 
 - #### HTML Validation 
 
-I have used [W3C Markup validator]("https://validator.w3.org/") to check all HTML pages for possible errors.
+I have used [W3C Markup validator](https://validator.w3.org/) to check all HTML pages for possible errors.
 The below are highligthed unique issues with each page
 
 
@@ -284,10 +284,10 @@ The errors are removed from all HTML pages.
 
 - #### CSS Validation 
 
-Before Validating the CSS I used [Autoprefixer]("https://autoprefixer.github.io/") to add prefixes to all CSS properties which are not supported by all browser. I have used flex property for most of the elements, so it was crucial 
+Before Validating the CSS I used [Autoprefixer](https://autoprefixer.github.io/) to add prefixes to all CSS properties which are not supported by all browser. I have used flex property for most of the elements, so it was crucial 
 to add prefixes to achieve the correct site rendering across browsers.
 
-I have used  [W3C CSS Validator]("https://jigsaw.w3.org/css-validator/") to validate CSS file. The CSS syntax was correct after the first try.
+I have used  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS file. The CSS syntax was correct after the first try.
 
 ![](assets/documentation/readme-documentation/testing-images/css-validate.png)
 
@@ -310,7 +310,7 @@ The only other issue was function declaration inside of if statment which was us
 ![](assets/documentation/readme-documentation/testing-images/js-validate-3.png)
 
 
-- #### EmailJS API 
+- #### [EmailJS API](https://www.emailjs.com/) 
 
 The contact us form is sent through to my personal email address using EmailJS intergration.
 The test is demonstrated below:
@@ -324,7 +324,7 @@ Checking the form subbmision in the gmail inbox
 ![](assets/documentation/readme-documentation/testing-images/emailjs-test.png)
 
 
-- #### Google map API 
+- #### [Google map API](https://developers.google.com/maps/documentation/javascript/overview)
 
 Google maps are used for each city, hotel and company location.
 Each map is rendering correctly across pages.
@@ -338,6 +338,77 @@ Checking city map rendering for first hotel in Pula city
 ![](assets/documentation/readme-documentation/testing-images/map-test-2.png)
 
 
+
+
+## **Testing User Stories**
+
+
+As a **First Time** visitor I want to:
+
+i.  Easily navigate through the website - this is achieved with the clean navigation both on big and small screens, and breadcrumbs to easily revert to the previous pages.
+
+-  When users lands to the website they have additional options on using search bar to explore each of the available cities and read about Croatian culture.
+
+
+ ii.  Learn more about the company and booking rules - as mentioned before, website is focused on story telling which helps the user to understand more about the business and how the booking process works.
+- By visiting Our Company page, the user can find out more about the company in the hero section and the booking process outlined in three steps.
+
+![](assets/documentation/readme-documentation/testing-images/user-story-2.png)
+ 
+ iii.  Have a clear separation between services - at the moment there's only one service available (hotel booking) but in future development it's important to separate services in a way which ensures easy navigation and understanding of the
+ selected service
+
+- each city has dedicated page which contains clear information structure and the available hotel bookings. 
+
+ iv.  Have the support through the website journey - FAQ's are a good starting point to offer the support to the users. Additionally, there's scope for help articles & online chat support.
+
+- Users can access FAQ's section to potentially find the answer on their question. This could mean saving cutsomers & our time. The section can be accessed through clickin on our copmany or selecting FAQ's link in the footer section.
+
+v.  Have a diverse selection off destinations to choose from - at the moment destinations are segmented into three regions with each one offering 3 cities to choose from. Depending on users desire - two of the regions are coast based (generally summer vacation), and the third one 
+is focused on central part of Croatia and more on learning about the Croatian culture.
+
+- during the research & design phase, I've created an additional page for each region. During the website development, I have decided to remove the extra step in the user's journey to move them more straightforward through the sales funnel and save on the time. 
+Users can access destination options through main navigation, search bar, footer, and most popular destinations section on search results, why Croatia & homepage.
+
+
+vi.  Have detailed information about chosen location/trip - each destinations is propped up with detailed information containing some history, interesting facts and best places to visit.
+
+- Each city page contains of city slideshow images, intro, map and hotel offers. Additionally user can use filtering system to easily segment the hotel offering.
+
+![](assets/documentation/readme-documentation/testing-images/user-story-1.png) 
+
+
+![](assets/documentation/readme-documentation/testing-images/user-story-3.png) 
+
+- Additionally each hotel contains images, hotel location on the map, hotel intro, price & facilities.
+User can view city information by navigating through various sections on the website (search bar, main navigation, footer etc.), additionaly to see hotel information user has to select "See More" button.
+
+![](assets/documentation/readme-documentation/testing-images/user-story-4.png) 
+
+vii.  Easy & Efficient booking process - there are three steps to the booking process. Step one is to select a preferred destination, step two is to select a hotel in which user would like to stay and third step is to fill in a booking form.
+
+- The booking form can be access by selecting "Book Now" under the preferred hotel.
+
+![](assets/documentation/readme-documentation/testing-images/user-story-5.png) 
+
+ - Booking pop-up consits of passanger selection, form & booking summary. User can select for many passangers they would like to make a booking. The price and passanger count are calculated in the booking summary section.
+
+![](assets/documentation/readme-documentation/testing-images/user-story-6.png) 
+
+ 
+As a **Frequent** visitor I want to:
+
+i. Explore different destinations & activities for my next holidays 
+
+- Returning users can easily select desired locations based on their previous experience with the booking process. We need to ensure to let them know if the website UI will be changing beacuse they already have an expectation of the booking proces.
+
+ii. Subscribe to the newsletter to receive company updates & new offers - ensure up to date promotions, and deals are circulated to subscribed users, reward the users who are signed to the newsletter
+
+- newsletter section is located above the footer section for simple opt-in. The user has the opportunity to receive the discounts and information on new offers. On the other side we have the opportunity to increase revenu through email marketing channel.
+
+iii. Have a seamless booking journey - don't change the inetrface drastically and launch improvements.
+
+- ability to book a hotel on the same page saves the users an extra step in their journey.
 
 
 
