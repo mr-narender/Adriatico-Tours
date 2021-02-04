@@ -2,11 +2,13 @@
 ![Adriatico Tours Logo](assets/images/logo-transparent.png)
 # **ADRIATICO TOURS**
 
+![](assets/documentation/readme-documentation/testing-images/site-image-responsive.png)
+
+
 ## Project Overview
 
 Adriatico tours is a travelling agency offering hotel booking in various cities all around Croatia. The website contains information about Croatia, propped up with beautiful imagery of Croatian sea and cities. With over 15 years of experience working with our partners, our primary goal is to ensure the best deals & vacation possible.
 The main business objective is to offer a one-stop agency for Croatian vacation and provide a seamless booking process. 
-
 
 ### **The live site can be view [here](https://boki136.github.io/Adriatico-Tours/index.html)**
 
