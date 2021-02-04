@@ -44,50 +44,48 @@ Images are playing a key role in the whole user journey as they are the perfect 
 
 The reason why I selected this project is the chance to work with the content I'm familiar with, and also practice some of the technologies we explored recently.
 I've decided to narrow the offering and go with Croatian destinations only. I'm from Croatia and I have an understanding of cities and their offering alongside interesting facts and Croatian tradition.
-As a start-up business I wanted to offer rich information about all destinations and ability to book a hotel in a desired location. 
+As a start-up business, I wanted to offer rich information about all destinations and the ability to book a hotel in the desired location. 
 
 **Long term goals:**
 
-- enhancing current offering - destination packages (including flights, holiday programme, hotel & support). 
+- Enhancing current offering - destination packages (including flights, holiday programme, hotel & support). 
 Potential users can book the whole trip on one website rather than researching each component individually, better price point guaranteed.
-- improving search functionality - making all destinations and content easily searchable.
+- Improving search functionality - making all destinations and content easily searchable.
 - including checkout processability for the user to fully book and pay for the trip instead of submitting a form request.
 - include an online chat to improve the support throughout the user journey
 
 
 ### **User Stories**
 
-As a **First Time** visitor I want to:
+As a **First Time** visitor, I want to:
 
 i.  Easily navigate through the website - this is achieved with the clean navigation both on big and small screens, and breadcrumbs to easily revert to the previous pages.
 
 
- ii.  Learn more about the company and booking rules - as mentioned before, website is focused on story telling which helps the user to understand more about the business and how the booking process works.
+ ii.  Learn more about the company and booking rules - as mentioned before, the website focuses on storytelling which helps the user understand more about the business and how the booking process works.
 
  
- iii.  Have a clear separation between services - at the moment there's only one service available (hotel booking) but in future development it's important to separate services in a way which ensures easy navigation and understanding of the
- selected service
+ iii.  Have a clear separation between services - at the moment there's only one service available (hotel booking), but in future development, it's important to separate services in a way which ensures easy navigation and understanding of the selected service
 
- iv.  Have the support through the website journey - FAQ's are a good starting point to offer the support to the users. Additionally, there's scope for help articles & online chat support.
+ iv. Have the support through the website journey - FAQ's are a good starting point to offer support to the users. Additionally, there's scope for help articles & online chat support.
 
-v.  Have a diverse selection off destinations to choose from - at the moment destinations are segmented into three regions with each one offering 3 cities to choose from. Depending on users desire - two of the regions are coast based (generally summer vacation), and the third one 
-is focused on central part of Croatia and more on learning about the Croatian culture.
+v.  Have a diverse selection of destinations to choose from - at the moment, destinations are segmented into three regions with each one offering three cities to choose from. Depending on users desire - two of the regions are coast based (generally summer vacation). The third one is focused on the central part of Croatia and more on learning about the Croatian culture.
 
 vi.  Have detailed information about chosen location/trip - each destinations is propped up with detailed information containing some history, interesting facts and best places to visit.
 
 
-vii.  Easy & Efficient booking process - there are three steps to the booking process. Step one is to select a preferred destination, step two is to select a hotel in which user would like to stay and third step is to fill in a booking form.
+vii.  Easy & Efficient booking process - there are three steps to the booking process. Step one is to select a preferred destination, and step two is to choose a hotel in which the user would like to stay, and third step is to fill in a booking form.
 
 
 
  
-As a **Frequent** visitor I want to:
+As a **Frequent** visitor, I want to:
 
 i. Explore different destinations & activities for my next holidays 
 
 ii. Subscribe to the newsletter to receive company updates & new offers - ensure up to date promotions, and deals are circulated to subscribed users, reward the users who are signed to the newsletter
 
-iii. Have a seamless booking journey - keep on imporving on the booking process.
+iii. Have a seamless booking journey - keep on improving on the booking process.
 
 # **Design Phase**
 
@@ -111,11 +109,11 @@ Poppins is the selected font for all the headings with sans-serif as a fallback.
 ## **Wireframes**
 
 All wireframes are created in Adobe XD. Each individual page contains desktop & mobile view. Homepage specifically has a mobile menu design & destination link dropdown.
-Wireframes are saved in PDF file type and can be accessed [here](assets/documentation/wireframes)
+Wireframes are saved in PDF file type and can be accessed [here](assets/documentation/wireframes).
 
 # **Features & Layout**
 
-The website consist of 6 unique pages.
+The website consists of 6 unique pages.
 
 - Homepage 
 - Our Company
@@ -129,8 +127,8 @@ The website consist of 6 unique pages.
 
 The desktop version of navigation is relatively easy to use with clean and effective design in mind. The top bar servers as a contact details section and the main navigation consist of the company logo, functional search bar & navigation links.
 
-**Search Bar Funcionality** - users can search for two terms "food" & "culture" which is initially a part of the placeholder to instruct the user what to search for.
-Additionally, users can also search for individual destinations(current offering) which will redirect them to a relevant city page. If the user inputs the search term which is not stored in the js file the page will return no result found.
+**Search Bar Functionality** - users can search for two terms "food" & "culture" which is initially a part of the placeholder to instruct the user what to search for.
+Additionally, users can also search for individual destinations(current offering) which will redirect them to a relevant city page. If the user inputs the search term which is not stored in the js file, the page will return no result found.
 
 The mobile version navigation consists of contact details, a top bar, a hamburger menu, logo & search icon. The menu expands from left to right and consist of all navigation links. The search bar has the same functionality, but it expands and closes based on a users preference.
 
@@ -139,8 +137,8 @@ The mobile version navigation consists of contact details, a top bar, a hamburge
 This section is consistent across all the pages and servers to capture customer emails and utilize email marketing by sending special offers, discounts, and new releases.
 <ins>*Footer*</ins>
 
-The top part of footer section consists of company logo, useful company liks such as Our company, FAQ's and Contact us & popular cities links.
-The bottom part has comapny phone no., email and address. The copyright bar consist of credits and social icons.
+The top part of the footer section consists of the company logo, useful company links such as Our company, FAQ's and Contact us & popular cities links.
+The bottom part has comapny phone no., email and address. The copyright bar consists of credits and social icons.
 
 <ins>*Homepage*</ins>
 
@@ -150,27 +148,27 @@ The homepage is divided into six sections:
 - *About Section*: This section is meant to briefly inform the customer about who we are and also convince them to choose to Learn more to potentially explore more about the company and build a certain level of trust.
 - *Most popular destinations*: If the user happens to know preferred holiday destination, this section will serve as an opportunity to make an easy booking.
 - *Why Choose Us*:  Main company facts that will server as trust builder and a section colour that will instantly grab users' attention. The goal here is to get the user to find more about our experience and expertise to assure them they are in safe hands.
-- *Our partners & testimonials sections* - Each of the sections will provide the feeling of trust for new & potential consumers. Including partners, logo could indicate that we are working with prestige companies to ensure the best holidays possible. Testimonials section, however, shows user perspective of the service and experience they received from us, and mostly enables users to empathize with those who left the reviews
+- *Our partners & testimonials sections* - Each of the sections will provide the feeling of trust for new & potential consumers. Including partners, the logo could indicate that we are working with prestige companies to ensure the best holidays possible. Testimonials section, however, shows user perspective of the service and experience they received from us and mostly enables users to empathize with those who left the reviews
 
 <ins>*Our Company*</ins>
 
 Our Company page is divided into three sections:
 
-- *Hero Section*: This section inform the users about the company in the greater details and is propped with a cacthy image of Croatian National Park Plitvice.
+- *Hero Section*: This section informs the users about the company in the greater details and is propped with a catchy image of Croatian National Park Plitvice.
 - *How it works*: This section is meant to present a seamless process user has to take to make a booking with us and everything that goes into it.
-- *FAQ's*: Lastly, faq's section will consist of some of the most common questions users can ask to avoid them reaching out and potentially saving resources for the company.
+- *FAQ's*: Lastly, faq's section will consist of some of the most common questions users can ask to avoid them from reaching out and potentially saving resources for the company.
 
 <ins>*Contact Us*</ins>
 
-The Contact Us page is divided into 2 sections:
+The Contact Us page is divided into two sections:
 
 - *Hero image & form section*: the form consist of 5 main fields and opportunity for the users to raise any questions and queries they might have.
 When the form is submitted the "Message Sent" section appears on the screen for three seconds to inform, the user submission was successful. The form is also directly sent to the email address and correctly pulling all the fields user input.
-- *Company location*": in case user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
+- *Company location*": in case the user would love to visit the agency and make the booking in person they have the instruction provided with google maps on how to find our location.
 
 <ins>*City Page*</ins>
 
-The City Page is divided into 4 sections
+The City Page is divided into four sections
 
 - **Hero Section**: each city (8 in total) has three images which are presented with the slideshow.
 - **City Intro**: this section servers as a good reference to city history and some interesting facts which can grab users attention and alleviate holiday decision.
@@ -187,14 +185,14 @@ Why Croatia page is divided into six sections:
 - *Facts Section*: contains five facts about Croatia: currency, language used, the capital city and how to say good morning and good evening in Croatian.
 - *Top things carousel*: the six facts are spread out in most of the cities we are offering. They are mostly famous Croatian monuments and culture.
 - *Currency Converter*: opportunity to convert Euro to Croatian kuna to better understand currency difference.
-- *Most popular destinations*: This is the same section from the homepage. But, at this stage of the customer journey user should have a clearer understanding of Croatian culture and offering and therfore a good time to make a decision on the holiday options.
+- *Most popular destinations*: This is the same section from the homepage. But, at this stage of the customer journey user should have a clearer understanding of Croatian culture and offering and therefore a good time to make a decision on the holiday options.
 
 <ins>*Search Result Page*</ins>
 
-Search result page contains two sections:
+The search result page contains two sections:
 
 - *Search results*: based on user input it can be either food or culture and based on that search returns relevant content
-- *Most popular destinations*: another possiblity to push a user towards booking a holiday, also if the search returns no result found at least it shows some actions user can take.
+- *Most popular destinations*: another possibility to push a user towards booking a holiday, also if the search returns no result found at least it shows some actions user can take.
 
 # **Technologies & Resources Used**
 
@@ -219,7 +217,7 @@ Search result page contains two sections:
 
 ## **Workspace, version control and Repository storage**
 
-![](assets/readme-documentation/icons/gitpod-icon.png)  **GitPod** - All code is written in gitpod cloud environment, committed and pushed to GitHub
+![](assets/readme-documentation/icons/gitpod-icon.png)  **GitPod** - All code is written in gitpod cloud environment, committed and pushed to GitHub.
 
 ![](assets/readme-documentation/icons/github-icon.png) **Git** - Distributed Version Control tool to store versions of files and track changes.
 
@@ -247,7 +245,7 @@ The API is free to use with 500 calls a day as a hard limit.
 
 ## **Resources & Media**
 
-![](assets/documentation/readme-icons/fontawsome-icon.png) **Font Awsome** - Font awsome was used for the most of the icons on the page enabling usage of after and before pseudo elements with ease. 
+![](assets/documentation/readme-icons/fontawsome-icon.png) **Font Awesome** - Font awsome was used for most of the icons on the page enabling usage of after and before pseudo-elements with ease. 
 
 ![](assets/documentation/readme-icons/googlefonts-icon.png) **Google Fonts** - Google fonts was used for importing desired fonts to the page.
 
@@ -265,7 +263,7 @@ The API is free to use with 500 calls a day as a hard limit.
 - #### HTML Validation 
 
 I have used [W3C Markup validator](https://validator.w3.org/) to check all HTML pages for possible errors.
-The below are highligthed unique issues with each page
+The below are highlighted unique issues with each page
 
 
 First Check HTML page:
@@ -296,30 +294,32 @@ I have used  [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to valida
 
 I have used [JSHint]("https://jshint.com/") to validate all scripts.
 
-- main.js - validator returned numeros errors of using let & const varaibles and object short notation. After discussion with my mentor this is not considered the issue.
+- main.js - validator returned numerous errors of using let & const variables and object short notation. After a discussion with my mentor, this is not considered the issue.
 
 ![](assets/documentation/readme-documentation/testing-images/js-validate.png)
 
-- city.js - validator returned numeros errors of using ES6 syntax which was not considered the issue.
-The only other issue was function declaration inside of if statment which was used to list relevant hotels for each city. Given the time limit I will have to leave the error as is but to resolve the issue I would transfer all HTML code to html files and achieve better control and use of Javascript file.
+- city.js - validator returned numerous errors of using ES6 syntax, which was not considered the issue.
+The only other issue was function declaration inside of if statement which was used to list relevant hotels for each city. Given the time limit I will have to leave the error as is but to resolve the issue, I would transfer all HTML code to HTML files and achieve better control and use of Javascript file.
 
 ![](assets/documentation/readme-documentation/testing-images/js-validate-2.png)
 
-- search-result.js - validator returned warnings for use of ES6 syntax withouth extensions.
+- search-result.js - validator returned warnings for the use of ES6 syntax without extensions.
 
 ![](assets/documentation/readme-documentation/testing-images/js-validate-3.png)
 
 
 - #### [EmailJS API](https://www.emailjs.com/) 
 
-The contact us form is sent through to my personal email address using EmailJS intergration.
+The contact us form is sent through to my personal email address using EmailJS integration. 
 The test is demonstrated below:
 
 Filling in the form
 
 ![](assets/documentation/readme-documentation/testing-images/fill-form-test.png)
 
-Checking the form subbmision in the gmail inbox
+Checking the form submission success in console and inbox
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-5.png)
 
 ![](assets/documentation/readme-documentation/testing-images/emailjs-test.png)
 
@@ -333,18 +333,18 @@ Checking city map rendering for Pula city
 
 ![](assets/documentation/readme-documentation/testing-images/map-test-1.png)
 
-Checking city map rendering for first hotel in Pula city
+Checking city map rendering for the first hotel in Pula city
 
 ![](assets/documentation/readme-documentation/testing-images/map-test-2.png)
 
 
 - #### [Currency Converter Rapid API](https://rapidapi.com/apiworker.com/api/currency-converter13)
 
-API was retrived using XMLHttpRequest. The api was tested by converting from Euro to Kuna currency.
+API was retrieved using XMLHttpRequest. The API was tested by converting from Euro to Kuna currency.
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-3.png)
 
-JSON parsed object test in console.
+JSON parsed object tested in the console.
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-4.png)
 
@@ -352,98 +352,97 @@ JSON parsed object test in console.
 ## **Testing User Stories**
 
 
-As a **First Time** visitor I want to:
+As a **First Time** visitor, I want to:
 
 i.  Easily navigate through the website - this is achieved with the clean navigation both on big and small screens, and breadcrumbs to easily revert to the previous pages.
 
--  When users lands to the website they have additional options on using search bar to explore each of the available cities and read about Croatian culture.
+-  When users land to the website, they have additional options on using the search bar to explore each of the available cities and read about Croatian culture.
 
 
- ii.  Learn more about the company and booking rules - as mentioned before, website is focused on story telling which helps the user to understand more about the business and how the booking process works.
+ ii.   Learn more about the company and booking rules - as mentioned before, the website is focused on storytelling which helps the user to understand more about the business and how the booking process works.
 - By visiting Our Company page, the user can find out more about the company in the hero section and the booking process outlined in three steps.
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-2.png)
  
- iii.  Have a clear separation between services - at the moment there's only one service available (hotel booking) but in future development it's important to separate services in a way which ensures easy navigation and understanding of the
- selected service
+ iii. Have a clear separation between services - at the moment there's only one service available (hotel booking), but in future development, it's essential to separate services in a way which ensures easy navigation and understanding of the selected service
 
-- each city has dedicated page which contains clear information structure and the available hotel bookings. 
+- each city has a dedicated page which contains clear information structure and the available hotel bookings.
 
- iv.  Have the support through the website journey - FAQ's are a good starting point to offer the support to the users. Additionally, there's scope for help articles & online chat support.
+ iv. Have the support through the website journey - FAQ's are a good starting point to offer support to the users. Additionally, there's scope for help articles & online chat support.
 
-- Users can access FAQ's section to potentially find the answer on their question. This could mean saving cutsomers & our time. The section can be accessed through clickin on our copmany or selecting FAQ's link in the footer section.
+- Users can access FAQ's section to find the answer to their questions. This could mean saving customers & our time. The section can be accessed by clicking on our company or selecting FAQ's link in the footer section.
 
-v.  Have a diverse selection off destinations to choose from - at the moment destinations are segmented into three regions with each one offering 3 cities to choose from. Depending on users desire - two of the regions are coast based (generally summer vacation), and the third one 
-is focused on central part of Croatia and more on learning about the Croatian culture.
+v.   Have a diverse selection of destinations to choose from - at the moment, destinations are segmented into three regions with each one offering three cities to choose from. Depending on users desire - two of the regions are coast based (generally summer vacation). The third one is focused on the central part of Croatia and more on learning about the Croatian culture.
 
-- during the research & design phase, I've created an additional page for each region. During the website development, I have decided to remove the extra step in the user's journey to move them more straightforward through the sales funnel and save on the time. 
+- During the research & design phase, I've created an additional page for each region. During the website development, I have decided to remove the extra step in the user's journey to move them more straightforward through the sales funnel and save on the time. 
 Users can access destination options through main navigation, search bar, footer, and most popular destinations section on search results, why Croatia & homepage.
 
 
-vi.  Have detailed information about chosen location/trip - each destinations is propped up with detailed information containing some history, interesting facts and best places to visit.
+vi.  Have detailed information about the chosen location/trip - each destination is propped up with detailed information containing some history, interesting facts and best places to visit.
 
-- Each city page contains of city slideshow images, intro, map and hotel offers. Additionally user can use filtering system to easily segment the hotel offering.
+- Each city page contains city slideshow images, intro, map and hotel offers. Additionally, the user can use the filtering system to easily segment the hotel offers.
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-1.png) 
 
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-3.png) 
 
-- Additionally each hotel contains images, hotel location on the map, hotel intro, price & facilities.
-User can view city information by navigating through various sections on the website (search bar, main navigation, footer etc.), additionaly to see hotel information user has to select "See More" button.
+- Additionally, each hotel contains images, hotel location on the map, hotel intro, price & facilities. User can view city information by navigating through various sections on the website (search bar, main navigation, footer etc.), additionally to see hotel information the user has to select "See More" button.
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-4.png) 
 
-vii.  Easy & Efficient booking process - there are three steps to the booking process. Step one is to select a preferred destination, step two is to select a hotel in which user would like to stay and third step is to fill in a booking form.
+vii.  Easy & Efficient booking process - there are three steps to the booking process. Step one is to select a preferred destination. Step two is to select a hotel in which the user would like to stay and the third step is to fill in a booking form.
 
-- The booking form can be access by selecting "Book Now" under the preferred hotel.
+- The booking form can be accessed by selecting "Book Now" under the preferred hotel.
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-5.png) 
 
- - Booking pop-up consits of passanger selection, form & booking summary. User can select for many passangers they would like to make a booking. The price and passanger count are calculated in the booking summary section.
+ - Booking popup consits of passanger selection, form & booking summary. User can select for many passengers they would like to make a booking. The price and passenger count are calculated in the booking summary section.
 
 ![](assets/documentation/readme-documentation/testing-images/user-story-6.png) 
 
  
-As a **Frequent** visitor I want to:
+As a **Frequent** visitor, I want to:
 
 i. Explore different destinations & activities for my next holidays 
 
-- Returning users can easily select desired locations based on their previous experience with the booking process. We need to ensure to let them know if the website UI will be changing beacuse they already have an expectation of the booking proces.
+- Returning users can easily select desired locations based on their previous experience with the booking process. We need to ensure to let them know if the website UI will be changing because they already have an expectation of the booking proces.
 
 ii. Subscribe to the newsletter to receive company updates & new offers - ensure up to date promotions, and deals are circulated to subscribed users, reward the users who are signed to the newsletter
 
-- newsletter section is located above the footer section for simple opt-in. The user has the opportunity to receive the discounts and information on new offers. On the other side we have the opportunity to increase revenu through email marketing channel.
+- Newsletter section is located above the footer section for simple opt-in. The user has the opportunity to receive discounts and information on new offers. On the other side, we have the chance to increase revenue through the email marketing channel.
 
-iii. Have a seamless booking journey - don't change the inetrface drastically and launch improvements.
+iii. Have a seamless booking journey - don't change the interface drastically and launch improvements.
 
-- ability to book a hotel on the same page saves the users an extra step in their journey.
+- Ability to book a hotel on the same page saves the users an extra step in their journey.
 
 
 ## **Outstanding Bugs**
 
-- Mobile navigation dropdowns can't be closed individually, only when the other dropdown is selected or menu closed. For example if region Istra is expanded it can be only closed by selecting other region or closing the dropdown completely.
+- Mobile navigation dropdowns can't be closed individually, only when the other dropdown is selected or menu closed. For example, if region Istra is expanded, it can be only closed by selecting other region or closing the dropdown completely.
 
 
 ## **Fixed Bugs**
 
-**Dropdown mobile-menu funcionality** 
+**Dropdown mobile-menu functionality** 
 
-- when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
-To fix this I implemented the funcionality to always enable  only one dropdown to expand and close anothers dynamically. 
+- When it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height, especially at mobile devices, because the rest of the navigation wasn't visible. To fix this, I implemented the functionality to always enable only one dropdown to expand and close others dynamically.
 
 
-- full mobile menu content wasn't visible on the screens < 490px because of the positon fixed which was stopping user from scrolling down.
+- Full mobile menu content wasn't visible on the screens < 490px because of the position fixed, which stopped the user from scrolling down.
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-1.png) 
 
-it's clearly visible the company links (our company, why croatia & contact us are not visible due to second level dropdown expanding).
-To fix this I change the element to position absolute and increased height of the menu.
+It's clearly visible the company links (our company, why Croatia & contact us are not visible due to second level dropdown expanding).
+To fix this, I changed the element to position absolute and increased height of the menu.
 
 ![](assets/documentation/readme-documentation/testing-images/bug-fix-2.png) 
 
 The variable map was declared twice in city.js. js validation helped me resolve the issue.
 
+
+
+## **Testing responsiveness**
 
 
  

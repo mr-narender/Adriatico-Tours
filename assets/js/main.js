@@ -115,7 +115,6 @@ $(".second").click(function () {
 $(".third").click(function () {
     countThree = 0;
     countThree += 1;
-    console.log(countThree)
     $(".first .submenu,.second .submenu").hide();
     $(".trigger-three").addClass("rotate");
     $(this).find(".submenu").show();
@@ -215,7 +214,6 @@ function retriveData(cb) {
 }
 
 retriveData(function (data) {
-    console.log(data);
     $(".convert-button, .convert-button-mobile").click(function () {
         let amountInput = $(".amount-input").val();
         let convertedResult = data.amount * amountInput;
@@ -234,14 +232,7 @@ function sendMail(contactForm) {
             message: contactForm.message.value,
             phone_number: contactForm.phoneNumber.value,
         })
-        .then(
-            function (response) {
-                console.log("SUCCESS!", response);
-            },
-            function (error) {
-                console.log("FAILED...", error);
-            }
-        );
+
 
     return false;
 }
