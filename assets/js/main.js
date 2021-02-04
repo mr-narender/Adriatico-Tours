@@ -215,6 +215,7 @@ function retriveData(cb) {
 }
 
 retriveData(function (data) {
+    console.log(data);
     $(".convert-button, .convert-button-mobile").click(function () {
         let amountInput = $(".amount-input").val();
         let convertedResult = data.amount * amountInput;

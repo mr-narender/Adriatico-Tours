@@ -2570,12 +2570,25 @@ textarea {
     width: 35px;
   }
 
-  .level-one, .company-links {
-    font-size: 22px;
+  .mobile_menu-expand {
+      position: absolute;
+      height: 1000vh;
+  }
+
+  .level-one {
+    font-size: 25px;
     margin-top: 35px;
   }
 
   .level-two {
+      font-size: 22px;
+  }
+
+  .company-links {
+      font-size: 25px;
+  }
+
+  .submenu {
     font-size: 18px;
   }
 
@@ -2640,3 +2653,5 @@ textarea {
     font-size: 14px;
   }
 }
+
+

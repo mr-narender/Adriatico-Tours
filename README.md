@@ -338,6 +338,15 @@ Checking city map rendering for first hotel in Pula city
 ![](assets/documentation/readme-documentation/testing-images/map-test-2.png)
 
 
+- #### [Currency Converter Rapid API](https://rapidapi.com/apiworker.com/api/currency-converter13)
+
+API was retrived using XMLHttpRequest. The api was tested by converting from Euro to Kuna currency.
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-3.png)
+
+JSON parsed object test in console.
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-4.png)
 
 
 ## **Testing User Stories**
@@ -411,11 +420,27 @@ iii. Have a seamless booking journey - don't change the inetrface drastically an
 - ability to book a hotel on the same page saves the users an extra step in their journey.
 
 
+## **Outstanding Bugs**
+
+- Mobile navigation dropdowns can't be closed individually, only when the other dropdown is selected or menu closed. For example if region Istra is expanded it can be only closed by selecting other region or closing the dropdown completely.
+
 
 ## **Fixed Bugs**
 
-**Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
+**Dropdown mobile-menu funcionality** 
+
+- when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
 To fix this I implemented the funcionality to always enable  only one dropdown to expand and close anothers dynamically. 
+
+
+- full mobile menu content wasn't visible on the screens < 490px because of the positon fixed which was stopping user from scrolling down.
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-1.png) 
+
+it's clearly visible the company links (our company, why croatia & contact us are not visible due to second level dropdown expanding).
+To fix this I change the element to position absolute and increased height of the menu.
+
+![](assets/documentation/readme-documentation/testing-images/bug-fix-2.png) 
 
 The variable map was declared twice in city.js. js validation helped me resolve the issue.
 
