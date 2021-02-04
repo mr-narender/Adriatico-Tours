@@ -310,10 +310,44 @@ The only other issue was function declaration inside of if statment which was us
 ![](assets/documentation/readme-documentation/testing-images/js-validate-3.png)
 
 
+- #### EmailJS API 
+
+The contact us form is sent through to my personal email address using EmailJS intergration.
+The test is demonstrated below:
+
+Filling in the form
+
+![](assets/documentation/readme-documentation/testing-images/fill-form-test.png)
+
+Checking the form subbmision in the gmail inbox
+
+![](assets/documentation/readme-documentation/testing-images/emailjs-test.png)
+
+
+- #### Google map API 
+
+Google maps are used for each city, hotel and company location.
+Each map is rendering correctly across pages.
+
+Checking city map rendering for Pula city
+
+![](assets/documentation/readme-documentation/testing-images/map-test-1.png)
+
+Checking city map rendering for first hotel in Pula city
+
+![](assets/documentation/readme-documentation/testing-images/map-test-2.png)
+
+
+
+
 
 ## **Fixed Bugs**
 
 **Dropdown mobile-menu funcionality** - when it was created each of the second level dropdowns would expand and would be closed only on click. This caused issues for menu height especially at mobile devices because the rest of the navigation wasn't visible.
 To fix this I implemented the funcionality to always enable  only one dropdown to expand and close anothers dynamically. 
+
+The variable map was declared twice in city.js. js validation helped me resolve the issue.
+
+
 
  
