@@ -109,21 +109,21 @@ if (searchResult === "food") {
     </div>`);
   });
 } else if (searchResult === "pula") {
-  window.location.replace("Adriatico-Tours/city.html?pula");
+  window.location.replace("city.html?pula");
 } else if (searchResult === "rovinj") {
-  window.location.replace("Adriatico-Tours/city.html?rovinj");
+  window.location.replace("city.html?rovinj");
 } else if (searchResult === "porec") {
-  window.location.replace("Adriatico-Tours/city.html?porec");
+  window.location.replace("city.html?porec");
 } else if (searchResult === "dubrovnik") {
-  window.location.replace("Adriatico-Tours/city.html?dubrovnik");
+  window.location.replace("city.html?dubrovnik");
 } else if (searchResult === "split") {
-  window.location.replace("Adriatico-Tours/city.html?split");
+  window.location.replace("city.html?split");
 } else if (searchResult === "zadar") {
-  window.location.replace("Adriatico-Tours/city.html?zadar");
+  window.location.replace("city.html?zadar");
 } else if (searchResult === "zagreb") {
-  window.location.replace("Adriatico-Tours/city.html?zagreb");
+  window.location.replace("city.html?zagreb");
 } else if (searchResult === "karlovac") {
-  window.location.replace("Adriatico-Tours/city.html?karlovac");
+  window.location.replace("city.html?karlovac");
 } else {
   displaySearchResultTerm();
   $(".no-result-found-strip").css("display", "block");
